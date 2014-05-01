@@ -55,3 +55,24 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Añadir publicidad
 - Donaciones voluntarias, pero eso no cuenta.
 - ¿Algo más?
+* Instalación
+- Virtualenv: sudo pacman -Sy python-virtualenv
+- Activar virtualenv:
+  + virtualenv env
+  + source env/bin/activate
+  + Nota: Para salir del entorno de virtualenv, usar deactivate
+- Instalar paquetes requeridos:
+  + pip install django
+  + pip install djangorestframework
+  + pip install pygments
+
+** Configuración
+- Crear un nuevo proyecto de Django:
+  + django-admin.py startproject nombre-proyecto
+  + cd nombre-proyecto
+- Crear una nueva app:
+  + python manage.py startapp nombre-app
+- Configurar la base de datos en nombre-proyecto/settings.py
+  + python ./manage.py syncdb
+  + python ./manage.py createsuperuser
+- Configurar las URLs en nombre-proyecto/urls.py
