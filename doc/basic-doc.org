@@ -1,0 +1,57 @@
+* Definicion del proyecto
+** Descripción
+Proyecto Serenity (Recetario de cocina para Android)
+** Elementos
+- API
+- App Android
+- Web (futuro)
+
+** Objetivos
+*** Primarios
+- Semántica:
+  + Ingredientes "restringidos" y medidas "estándares"
+  + Introducción de pasos delimitada
+- Cronómetro (opcional) en cada paso
+- Media (opcional) en cada paso: imagen o video
+- Valorar recetas (puntuación)
+
+*** Secundarios o futuros
+- Dashboard inicial (recomendación de recetas en función de los
+  gustos)
+- Lectura automática de la receta
+- Reconocimiento de voz (órdenes de lectura)
+
+** API
+*** Clases
+
+
+** Cuestiones
+*** Qué base de datos escoger
+- ¿SQL o NoSQL?
+- Cuál de ellas
+*** Qué framework para la API escoger
+- Lenguaje: Python
+  Ya he trabajado con APIs en PHP y de los demás lenguajes, me
+  interesa probar con Python por ver otra faceta más de éste.
+
+- Qué framework: ¿Django o Flask?
+  Django es más complejo, pero permite hacer más cosas.
+
+*** Qué plataforma para la App escoger
+- iOS: trabajo con ella habitualmente, por lo que no me
+  interesa. Además es muy caro y no puedo permitírmelo: 90$ al año +
+  Mac.
+- Firefox OS: no tiene mucho mercado todavía. Quizá en un futuro.
+- Windows Phone: hay que desarrollar desde Windows 8 y, por
+  principios, no utilizo ese sistema, sólo uso equipos con GNU Linux
+  (salvo en el trabajo que uso Mac).
+- Android: elegido por poseer un mercado enorme, poseer un equipo
+  apto para su desarrollo y económicamente es mucho más viable
+  desarrollar (20 $ para toda la vida). Además tengo dispositivos
+  Android en los que poder realizar pruebas físicas, además de en el
+  simulador.
+
+*** Monetización
+- Añadir publicidad
+- Donaciones voluntarias, pero eso no cuenta.
+- ¿Algo más?
