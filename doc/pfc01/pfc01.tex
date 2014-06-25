@@ -1,0 +1,62 @@
+\documentclass[a4paper,11pt]{article}
+
+% Codificación
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Fuentes
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+
+% Otros paquetes
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xspace}
+\usepackage{varioref}
+\usepackage{microtype}
+\usepackage{graphicx}
+
+% Hyperref
+\usepackage{color}
+\definecolor{azul}{rgb}{.1,.1,.4}
+\usepackage[colorlinks=true, linkcolor=azul,citecolor=azul, filecolor=azul, menucolor=azul, pagecolor=azul, urlcolor=azul]{hyperref}
+
+% Color
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+% Tamaño de la página
+\setlength\parindent{0mm}
+\setlength\oddsidemargin{0cm}
+\setlength\textwidth{16cm}
+
+% Información
+\def\fecha{25 de junio de 2014}
+% Portada
+\title{Amuse Bouche\\Aplicación Android de visualización de recetas}
+\author{Noelia Sales Montes}
+\date{\fecha}
+
+\setlength{\extrarowheight}{4pt}
+\setlength\parindent{0mm}
+
+\begin{document}
+
+\maketitle
+
+\vspace*{1cm}
+
+El objetivo principal de este proyecto es desarrollar una aplicación móvil para dispositivos Android para la visualización de recetas de cocina.\\
+
+La parte básica de la aplicación permitirá visualizar dichas recetas, agregándole un sentido semántico a los ingredientes y a la propia receta en sí (mediante etiquetado, categorización o datos tomados del usuario o del contexto).\\
+
+Cada uno de los pasos de la receta podrá contener, además de la propia descripción textual, elementos gráficos (imágenes o videos) y un tiempo definido, gracias al cual se podrá activar un cronómetro de tiempo de espera.\\
+
+Además de poder acceder a otros datos básicos referentes a la propia receta, los usuarios podrán votarlas mediante un sistema de puntuación.\\
+
+Además se le dará un caracter internacional a la aplicación, puesto que las recetas tendrán definido el idioma en el cual están escritas. Así cada usuario podrá leer las recetas del lenguaje o lenguajes que le sean relevantes.\\
+
+Junto con la aplicación deberá ser necesario desarrollar una API para el manejo de datos entre el servidor y la aplicación, que evidentemente deberá satisfacer los requisitos de datos especificados anteriormente.
+
+\end{document}
