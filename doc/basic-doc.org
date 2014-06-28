@@ -56,17 +56,23 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Donaciones voluntarias, pero eso no cuenta.
 - ¿Algo más?
 * Instalación
-- Virtualenv: sudo pacman -Sy python-virtualenv
+** Desde cero
+- sudo apt-get install python-dev build-essential
+- PIP: sudo apt-get install python-pip
+- Virtualenv: sudo pip install virtualenv
+** Virtualenv
 - Activar virtualenv:
-  + virtualenv env
+  + La versión de python es opcional (toma una por defecto):
+    virtualenv -p /usr/bin/python3 env 
   + source env/bin/activate
   + Nota: Para salir del entorno de virtualenv, usar deactivate
 - Instalar paquetes requeridos:
   + pip install django
-  + pip install djangorestframework
-  + pip install pygments
+- django-admin.py startproject
+  --template=https://github.com/sebastibe/django-rest-skeleton/archive/master.zip amuseapi
 
-** Configuración
+
+** Configuración básica de Django
 - Crear un nuevo proyecto de Django:
   + django-admin.py startproject nombre-proyecto
   + cd nombre-proyecto
@@ -76,3 +82,26 @@ Proyecto Serenity (Recetario de cocina para Android)
   + python ./manage.py syncdb
   + python ./manage.py createsuperuser
 - Configurar las URLs en nombre-proyecto/urls.py
+
+** Configuración nueva plantilla
+
+- Development or production: echo "true" > envdir/DEBUG
+- Heroku-like DB:
+   echo "postgres://postgres@localhost:5432/project" > envdir/DATABASE_URL
+- 
+
+** Fuentes
+*** Plantillas
+- Django REST skeleton (plantilla):
+  https://github.com/sebastibe/django-rest-skeleton
+- Django REST framework template:
+  http://vincent.is/making-a-django-rest-framework-template/
+*** Modelos
+-
+  http://stackoverflow.com/questions/18958205/concurrent-requests-in-django
+-
+  http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
+*** Imgur
+- http://api.imgur.com/
+- https://github.com/jacobgreenleaf/imgur-python/
+- https://github.com/talklittle/ImgurAPIv3ExampleAndroid
