@@ -269,7 +269,7 @@ EMAIL_PORT = os.environ.get('EMAIL_PORT', 1025)
 DATABASES = {
     'default': dj_database_url.config(
         env='DATABASE_URL',
-        default='postgres://username:password@localhost:5432/dbname'
+        default='postgres://amuseuser:171287@localhost:5432/amusedb'
     )
 }
 

@@ -57,9 +57,23 @@ Proyecto Serenity (Recetario de cocina para Android)
 - ¿Algo más?
 * Instalación
 ** Desde cero
-- sudo apt-get install python-dev build-essential
+- Python: sudo apt-get install python-dev build-essential python3-dev
 - PIP: sudo apt-get install python-pip
 - Virtualenv: sudo pip install virtualenv
+- PostgreSQL:
+  + sudo apt-get install postgresql postgresql-contrib libpq-dev
+  + GUI: sudo apt-get install pgadmin3
+  + Change password: sudo -u postgres psql postgres
+  + \password postgres
+  + Create DB: sudo -u postgres createdb amusedb
+  + Lanzar servidor: sudo service postgresql start
+- Redis:
+  + wget http://download.redis.io/releases/redis-2.8.12.tar.gz
+  + tar xzf redis-2.8.12.tar.gz
+  + cd redis-2.8.12
+  + make
+- Sphinx: sudo apt-get install python-sphinx
+
 ** Virtualenv
 - Activar virtualenv:
   + La versión de python es opcional (toma una por defecto):
@@ -70,9 +84,14 @@ Proyecto Serenity (Recetario de cocina para Android)
   + pip install django
 - django-admin.py startproject
   --template=https://github.com/sebastibe/django-rest-skeleton/archive/master.zip amuseapi
+- Flake8: pip install flake8
+  + Para usarlo: flake8 directorio
+  + Intentar instalar el hook para git (no ha funcionado la primera vez)
 
 
 ** Configuración básica de Django
+- Actualizar paquetes requeridos:
+  pip install -r reqs/all.txt
 - Crear un nuevo proyecto de Django:
   + django-admin.py startproject nombre-proyecto
   + cd nombre-proyecto
@@ -83,12 +102,19 @@ Proyecto Serenity (Recetario de cocina para Android)
   + python ./manage.py createsuperuser
 - Configurar las URLs en nombre-proyecto/urls.py
 
-** Configuración nueva plantilla
 
-- Development or production: echo "true" > envdir/DEBUG
-- Heroku-like DB:
+** Configuración nueva plantilla
+- Desarrollo o producción: echo "true" > envdir/DEBUG
+- Base de datos estilo Heroku:
    echo "postgres://postgres@localhost:5432/project" > envdir/DATABASE_URL
-- 
+- Configuración de Postgres:
+  + Añadir -d para desarrollo: sudo -u postgres createuser -d -A -P amuseuser
+  + sudo -u postgres createdb -O amuseuser amusedb
+- Ejecutar Redis Server: $DIR/src/redis-server
+- Ejecutar configuración de Sphinx: sphinx-quickstart
+- Django Model Utils: pip install django-model-utils
+- Settings.py:
+  + Línea 272: Actualizar usuario, contraseña y BD
 
 ** Fuentes
 *** Plantillas
@@ -97,6 +123,7 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Django REST framework template:
   http://vincent.is/making-a-django-rest-framework-template/
 *** Modelos
+- Django Model Utils: https://django-model-utils.readthedocs.org/en/latest/index.html
 -
   http://stackoverflow.com/questions/18958205/concurrent-requests-in-django
 -
@@ -105,3 +132,5 @@ Proyecto Serenity (Recetario de cocina para Android)
 - http://api.imgur.com/
 - https://github.com/jacobgreenleaf/imgur-python/
 - https://github.com/talklittle/ImgurAPIv3ExampleAndroid
+*** Postgres
+- https://help.ubuntu.com/community/PostgreSQL
