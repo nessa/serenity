@@ -120,7 +120,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
@@ -151,15 +151,15 @@ else:
         'oauth_provider',
     )
 
-try:
-    import provider
-except ImportError:
-    pass
-else:
-    INSTALLED_APPS += (
-        'provider',
-        'provider.oauth2',
-    )
+#try:
+#    import provider
+#except ImportError:
+#    pass
+#else:
+#    INSTALLED_APPS += (
+#        'provider',
+#        'provider.oauth2',
+#    )
 
 
 if 'SENTRY_DSN' in os.environ:
@@ -273,12 +273,12 @@ DATABASES = {
     )
 }
 
-CACHES = {
-    'default': {
-        'BACKEND': 'redis_cache.cache.RedisCache',
-        'LOCATION': os.environ.get('REDIS_LOCATION', '127.0.0.1:6379:1'),
-        'OPTIONS': {
-            'CLIENT_CLASS': 'redis_cache.client.DefaultClient',
-        }
-    }
-}
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'redis_cache.cache.RedisCache',
+#        'LOCATION': os.environ.get('REDIS_LOCATION', '127.0.0.1:6379:1'),
+#        'OPTIONS': {
+#            'CLIENT_CLASS': 'redis_cache.client.DefaultClient',
+#        }
+#    }
+#}

@@ -88,7 +88,7 @@ Proyecto Serenity (Recetario de cocina para Android)
   + Para usarlo: flake8 directorio
   + Intentar instalar el hook para git (no ha funcionado la primera vez)
 
-
+    
 ** Configuración básica de Django
 - Actualizar paquetes requeridos:
   pip install -r reqs/all.txt
@@ -115,6 +115,23 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Django Model Utils: pip install django-model-utils
 - Settings.py:
   + Línea 272: Actualizar usuario, contraseña y BD
+
+** 11 septiembre
+- Ejecución del servidor: python ./manage.py runserver
+- Da un error por no tener instalado ciertas cosas, así que intento
+  reinstalar todos los paquetes requeridos:
+  pip install -r reqs/all.txt
+- Error: No moduel named 'backends'
+- pip install --upgrade setuptools
+- El módulo oAuth2 no soporta python 3
+- Desinstalar oauth2: pip uninstall django-oauth2-provider
+- Borrar los dos entornos de virtualenv y empezar con uno nuevo en el
+  directorio amuseapi
+- Crear un nuevo entorno e instalar los paquetes de reqs/required.txt
+  y reqs/optional.txt (reqs/all.txt)
+- Comentar las líneas 154 a 164 de api/settings.py
+- Ya ejecuta correctamente el servidor.
+- Siguiente día: probar usuario administrador e intentar hacer un modelo.
 
 ** Fuentes
 *** Plantillas
