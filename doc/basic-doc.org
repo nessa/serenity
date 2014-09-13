@@ -116,7 +116,8 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Settings.py:
   + Línea 272: Actualizar usuario, contraseña y BD
 
-** 11 septiembre
+** Diario
+*** 11 septiembre
 - Ejecución del servidor: python ./manage.py runserver
 - Da un error por no tener instalado ciertas cosas, así que intento
   reinstalar todos los paquetes requeridos:
@@ -132,6 +133,25 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Comentar las líneas 154 a 164 de api/settings.py
 - Ya ejecuta correctamente el servidor.
 - Siguiente día: probar usuario administrador e intentar hacer un modelo.
+
+** 12 septiembre
+- El ordenador ha vuelto a fallar, así que instalo todo de cero en el ordenador del trabajo.
+- Instalar python3 y buscar directorio
+- Instalar pip y virtualenv
+- Generar un nuevo entorno y entrar: virtualenv -p /usr/local/bin/python3 env
+- Instalar postgres (antes de instalar los paquetes o psycopg2 fallará):
+  + brew install postgresql
+  + sudo gem install lunchy
+  + sudo mkdir -p ~/Library/LaunchAgents
+  + sudo cp /usr/local/Cellar/postgresql/9.3.4/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
+  + Fuente: http://www.moncefbelyamani.com/how-to-install-postgresql-on-a-mac-with-homebrew-and-lunchy/
+- Iniciar postgres: lunchy start postgres
+- Instalar paquetes requeridos: pip install -r reqs/all.txt
+- Crear archivos de envdir:
+  + echo "postgres://postgres@localhost:5432/project" > DATABASE_URL
+  + echo "true" > DEBUG (o false)
+  + echo "password" > SECRET_KEY
+
 
 ** Fuentes
 *** Plantillas
