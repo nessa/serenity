@@ -133,6 +133,45 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Ya ejecuta correctamente el servidor.
 - Siguiente día: probar usuario administrador e intentar hacer un modelo.
 
+** 1 diciembre
+*** Vagrant
+    - Nuevo repo: drf-vagrant-config
+    - Uso:
+      + vagrant up
+      + vagrant ssh
+      + vagrant destroy
+    - Fracaso total: no funciona nada. Problemas con ansible.
+    - Borrado del repo
+*** Reinicio
+    - source env/bin/activate
+    - pip install -r reqs/all.txt
+    - python manage.py runserver
+    - Funciona, pero da un error de permisos: "Authentication
+      credentials were not provided."
+*** Postgre
+    - Acceso:  sudo -u postgres psql
+    - El usuario, la base de datos y la contraseña están
+      correctamente definidos.
+    - Reconfiguración de la base de datos en settings.py:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'amusedb',
+        'USER': 'amuseuser',
+        'PASSWORD': '171287',
+        'HOST': '127.0.0.1'
+    }
+}
+
+*** Otros problemas
+    - Nuevo error: "relation "django_site" does not exist"
+    - Resincronizando DB: python manage.py syncdb
+      A partir de ahora hay que usar manage.py migrate, para no
+      perder los datos.
+    - Fallo de sincronización con users_User: ./manage.py migrate
+    - Creación de superusuario: ./manage.py createsuperuser
+    - Entrar en la URL y loguearse ya funciona.
+
 ** Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):

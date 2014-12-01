@@ -15,7 +15,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 BASE_PATH = os.path.dirname(PROJECT_ROOT)
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Noelia Sales', 'noelia.salesmontes@gmail.com'),
 )
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
@@ -266,11 +266,21 @@ HOST = os.environ.get('HOST', 'http://localhost')
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
 EMAIL_PORT = os.environ.get('EMAIL_PORT', 1025)
 
+#DATABASES = {
+#    'default': dj_database_url.config(
+#        env='DATABASE_URL',
+#        default='postgres://amuseuser:171287@localhost:5432/amusedb'
+#    )
+#}
+
 DATABASES = {
-    'default': dj_database_url.config(
-        env='DATABASE_URL',
-        default='postgres://amuseuser:171287@localhost:5432/amusedb'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'amusedb',
+        'USER': 'amuseuser',
+        'PASSWORD': '171287',
+        'HOST': '127.0.0.1'
+    }
 }
 
 #CACHES = {
