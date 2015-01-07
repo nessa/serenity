@@ -134,7 +134,7 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Ya ejecuta correctamente el servidor.
 - Siguiente día: probar usuario administrador e intentar hacer un modelo.
 
-** 12 septiembre
+*** 12 septiembre
 - El ordenador ha vuelto a fallar, así que instalo todo de cero en el ordenador del trabajo.
 - Instalar python3 y buscar directorio
 - Instalar pip y virtualenv
@@ -152,8 +152,8 @@ Proyecto Serenity (Recetario de cocina para Android)
   + echo "true" > DEBUG (o false)
   + echo "password" > SECRET_KEY
 
-** 1 diciembre
-*** Vagrant
+*** 1 diciembre
+**** Vagrant
     - Nuevo repo: drf-vagrant-config
     - Uso:
       + vagrant up
@@ -161,13 +161,13 @@ Proyecto Serenity (Recetario de cocina para Android)
       + vagrant destroy
     - Fracaso total: no funciona nada. Problemas con ansible.
     - Borrado del repo
-*** Reinicio
+**** Reinicio
     - source env/bin/activate
     - pip install -r reqs/all.txt
     - python manage.py runserver
     - Funciona, pero da un error de permisos: "Authentication
       credentials were not provided."
-*** Postgre
+**** Postgre
     - Acceso:  sudo -u postgres psql
     - El usuario, la base de datos y la contraseña están
       correctamente definidos.
@@ -182,7 +182,7 @@ DATABASES = {
     }
 }
 
-*** Otros problemas
+**** Otros problemas
     - Nuevo error: "relation "django_site" does not exist"
     - Resincronizando DB: python manage.py syncdb
       A partir de ahora hay que usar manage.py migrate, para no
@@ -193,6 +193,9 @@ DATABASES = {
 
 
 
+*** 7 enero
+- Buscando tipos de datos
+- Maps y lists: http://drf-compound-fields.readthedocs.org/en/latest/readme.html
 
 ** Fuentes
 *** Plantillas
