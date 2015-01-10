@@ -23,7 +23,37 @@ Proyecto Serenity (Recetario de cocina para Android)
 
 ** API
 *** Clases
+- Recipe:
+  + Title
+  + User
+  + Language
+  + Created timestamp
+  + Updated timestamp
+  + Cooking time
+  + Image URL (¿?)
+  + Total rating
+  + Users rating
+  + Servings
+  + Source (URL or text)
+  + Categories (array):
+    * Category
+  + Ingredients (array):
+    * Quantity
+    * Name
+    * Measurement unit
+  + Directions (array):
+    * Sort number
+    * Description
+    * Image URL (¿?)
+    * Video URL (¿?)
+    * Time
+  + Comments (array):
+    * User
+    * Comment
 
+**** Future
+- Menu (recipes set)
+- Rating (user - recipes)
 
 ** Cuestiones
 *** Qué base de datos escoger
@@ -197,6 +227,12 @@ DATABASES = {
 - Buscando tipos de datos
 - Maps y lists: http://drf-compound-fields.readthedocs.org/en/latest/readme.html
 
+*** 10 enero
+- Nuevos modelos de datos
+- Nuevos serializadores
+- Nuevas vistas
+- Al probar la vista "recipe_list" da un error. No se si tiene que
+  ver con que no exista ninguna receta en la base de datos.
 ** Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):

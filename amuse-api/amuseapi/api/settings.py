@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     # internal
     'api.utils',
     'api.users',
+    'recipes',
 )
 
 # OAuth is optional and won't work if there is no oauth_provider & oauth2

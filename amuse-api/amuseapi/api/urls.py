@@ -22,6 +22,9 @@ urlpatterns = patterns('',  # noqa
 
     # swagger doc
     url(r'^api-docs/', include('rest_framework_swagger.urls')),
+
+    # internal
+    url(r'^', include('recipes.urls')),
 )
 
 # Format suffixes
