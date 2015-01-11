@@ -85,8 +85,8 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Añadir publicidad
 - Donaciones voluntarias, pero eso no cuenta.
 - ¿Algo más?
-* Instalación
-** Desde cero
+* Primera fase: API
+** Instalación desde cero
 - Python: sudo apt-get install python-dev build-essential python3-dev
 - PIP: sudo apt-get install python-pip
 - Virtualenv: sudo pip install virtualenv
@@ -233,6 +233,57 @@ DATABASES = {
 - Nuevas vistas
 - Al probar la vista "recipe_list" da un error. No se si tiene que
   ver con que no exista ninguna receta en la base de datos.
+*** 11 enero
+- ./manage.py syncdb
+  Creando tablas:
+Creating table recipes_category
+Creating table recipes_ingredient
+Creating table recipes_direction
+Creating table recipes_comment
+Creating table recipes_recipe_ingredients
+Creating table recipes_recipe_comments
+Creating table recipes_recipe_directions
+Creating table recipes_recipe_categories
+Creating table recipes_recipe
+   Elementos no sincronizados:
+Not synced (use migrations):
+ - rest_framework.authtoken
+ - api.users
+ - django_extensions
+(use ./manage.py migrate to migrate these)
+
+- Probablemente debería haber usado: python manage.py makemigrations
+  recipes
+  + No. makemigrations ya no existe.
+- Añadiendo permisos a la API:
+  +  Abrir los GETs a cualquiera (aunque no esté logueado).
+- Añadiendo usuario a la receta.
+- Añadiendo hipervínculos a toda la API.
+- Fallo con users.
+  + Tratando de hacer una migración, no funciona.
+  + Prueba de actualización de django a versión 1.7.2: no es
+    compatible con south (hay que hacer una actualización distinta).
+    https://docs.djangoproject.com/en/dev/topics/migrations/#upgrading-from-south
+  + Restauración de django (versión 1.6.9 en lugar de 1.6.5).
+  + Borrado de la base de datos (desde línea de comandos como usuario postgres):
+    dropdb 'amusedb'
+  + Creándola de nuevo:
+    createdb -O amuseuser amusedb
+  + Sincronizando esquema:
+    ./manage.py syncdb
+    ./manage.py migrate
+  + Creando superusuario de nuevo:
+    ./manage.py createsuperuser
+  + Ahora sí funciona users.
+
+
+*** Por hacer
+- TODO: Abrir los métodos GET a cualquiera, aunque no esté logueado.
+- TODO: Pruebas de datos.
+- TODO: Añadir usuario a comentarios.
+- TODO: Método para agregar comentarios a una receta (independiente de
+  los métodos básicos).
+- TODO: Revisar cómo funcionan las migraciones con south.
 ** Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):

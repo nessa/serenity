@@ -6,7 +6,7 @@ from api.users.models import User
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     # ReadOnlyField == CharField(read_only=True)
-    owner = serializers.CharField(source='owner.username')
+    owner = serializers.CharField(source='owner.email')
     
     class Meta:
         model = Recipe

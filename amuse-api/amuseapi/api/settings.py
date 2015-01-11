@@ -261,7 +261,7 @@ SWAGGER_SETTINGS = {
     "is_superuser": True,  # Set to True to enforce admin only access
 }
 
-PROJECT = os.environ.get('PROJECT_NAME', 'Django REST Skeleton')
+PROJECT = os.environ.get('PROJECT_NAME', 'Amuse API')
 HOST = os.environ.get('HOST', 'http://localhost')
 
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')

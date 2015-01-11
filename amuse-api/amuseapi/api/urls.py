@@ -10,7 +10,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = patterns('',  # noqa
     # Examples:
-    url(r'^$', 'api.views.api_root', name='home'),
+    ##url(r'^$', 'api.views.api_root', name='home'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -18,10 +18,10 @@ urlpatterns = patterns('',  # noqa
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'', include('api.users.urls')),
+    ##url(r'', include('api.users.urls')),
 
     # swagger doc
-    url(r'^api-docs/', include('rest_framework_swagger.urls')),
+    ##url(r'^api-docs/', include('rest_framework_swagger.urls')),
 
     # internal
     url(r'^', include('recipes.urls')),
