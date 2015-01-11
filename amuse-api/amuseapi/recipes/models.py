@@ -28,14 +28,15 @@ class Direction(models.Model):
     
 
 class Comment(models.Model):
-    # user
+    # TODO: Add user field properly
+    #user = models.ForeignKey('users.User', related_name='comments')
     comment = models.TextField()
 
 
 # Recipes with ingredientes and directions
 class Recipe(models.Model):
     title = models.CharField(max_length=100, blank=False)
-    # user
+    owner = models.ForeignKey('users.User', related_name='recipes')
     language = models.CharField(choices=LANGUAGE_CHOICES, default='ES', max_length=10)
     created_timestamp = models.DateTimeField()
     updated_timestamp = models.DateTimeField(auto_now_add=True)
