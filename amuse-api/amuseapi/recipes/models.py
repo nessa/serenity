@@ -25,21 +25,25 @@ class Ingredient(models.Model):
 
 class Direction(models.Model):
     sort_number = models.PositiveIntegerField()
-    
+    description = models.TextField()
+    image = models.URLField()
+    video = models.URLField()
+    time = models.FloatField()
+
 
 class Comment(models.Model):
-    # TODO: Add user field properly
-    #user = models.ForeignKey('users.User', related_name='comments')
+    user = models.ForeignKey('users.User', related_name='comments')
     comment = models.TextField()
+    timestamp = models.DateField(auto_now=True)
 
 
-# Recipes with ingredientes and directions
+# Recipes with ingredients and directions
 class Recipe(models.Model):
     title = models.CharField(max_length=100, blank=False)
     owner = models.ForeignKey('users.User', related_name='recipes')
     language = models.CharField(choices=LANGUAGE_CHOICES, default='ES', max_length=10)
-    created_timestamp = models.DateTimeField()
-    updated_timestamp = models.DateTimeField(auto_now_add=True)
+    created_timestamp = models.DateTimeField(auto_now_add=True)
+    updated_timestamp = models.DateTimeField(auto_now=True)
     cooking_time = models.FloatField()
     image = models.URLField()
     total_rating = models.IntegerField()

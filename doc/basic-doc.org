@@ -276,6 +276,16 @@ Not synced (use migrations):
     ./manage.py createsuperuser
   + Ahora sí funciona users.
 
+*** 12 enero
+- Añadiendo nuevos serializers (para los demás elementos).
+- Definiendo timestamps por defecto (actualizables en create o en
+  update).
+- Intentando buscar una forma de añadir un nuevo método: rate, para
+  añadir puntuación sin ser usuario poseedor de la receta y modificar
+  2 variables del modelo (total_rating y users_rating) a partir de
+  ambas y una tercera dada (la puntuación del nuevo usuario).
+- También hay que añadir filtros (normales y de campos manytomany).
+  http://stackoverflow.com/questions/25943426/django-rest-framework-get-filter-on-manytomany-field
 
 *** Por hacer
 - TODO: Abrir los métodos GET a cualquiera, aunque no esté logueado.
@@ -302,3 +312,4 @@ Not synced (use migrations):
 - https://github.com/talklittle/ImgurAPIv3ExampleAndroid
 *** Postgres
 - https://help.ubuntu.com/community/PostgreSQL
+  
