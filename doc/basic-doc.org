@@ -287,6 +287,22 @@ Not synced (use migrations):
 - También hay que añadir filtros (normales y de campos manytomany).
   http://stackoverflow.com/questions/25943426/django-rest-framework-get-filter-on-manytomany-field
 
+*** 13 enero
+- Definiendo método de puntuación básico: recipe el id de la receta y
+  la puntuación e incrementa la puntuación total en el valor dado y
+  el número de usuarios que han votado en 1.
+  + Habría que incluir una tabla más al modelo, con las puntuaciones,
+    para que cada usuario sepa que ya ha votado y cuál ha sido su
+    puntuación.
+  + También habría que añadir esa tabla a una comprobación inicial en
+    el método de puntuación, para que si hay una puntuación ya dada
+    se modifique (para ello, habría que dar otro dato más, que sería
+    la puntuación anterior, o mejor se podría obtener de la tabla
+    anexa).
+- Añadiendo filtros básicos a Recipe.
+- Añadiendo filtros complejos: categories, ingredients, users.
+- Hay que probar si la inserción de datos, modificación y lectura
+  funciona correctamente.
 *** Por hacer
 - TODO: Abrir los métodos GET a cualquiera, aunque no esté logueado.
 - TODO: Pruebas de datos.
