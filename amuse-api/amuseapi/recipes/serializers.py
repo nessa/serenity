@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.forms import widgets
 from rest_framework import serializers
-from recipes.models import Recipe, Category, Ingredient, Direction, Comment
-from api.users.models import User
+from recipes.models import Recipe, Category, Ingredient, Direction, Comment, User
 from datetime import datetime
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -16,6 +15,10 @@ class IngredientSerializer(serializers.ModelSerializer):
         fields = ('quantity', 'name', 'measurement_unit')
 
 class DirectionSerializer(serializers.ModelSerializer):
+    image = serializers.URLField(required=False)
+    video = serializers.URLField(required=False)
+    time = serializers.FloatField(required=False)
+
     class Meta:
         model = Direction
         fields = ('sort_number', 'description', 'image', 'video', 'time')
@@ -30,7 +33,9 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.CharField(source='owner.email')
-
+    recipes = serializers.HyperlinkedRelatedField(many=True, view_name='user-detail', read_only=True)
+    
+    image = serializers.URLField(required=False)
     total_rating = serializers.IntegerField(required=False)
     users_rating = serializers.IntegerField(required=False)
 
@@ -50,6 +55,15 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     recipes = serializers.HyperlinkedRelatedField(many=True, view_name='recipe-detail', read_only=True)
 
+    first_name = serializers.CharField(source='first_name', required=False)
+    last_name = serializers.CharField(source='last_name', required=False)
+    auth_token = serializers.CharField(read_only=True)
+    last_login_on = serializers.DateTimeField(source='last_login',
+                                              read_only=True)
+    joined_on = serializers.DateTimeField(source='date_joined', read_only=True)
+
     class Meta:
         model = User
-        fields = ('id', 'email', 'recipes')
+        fields = ('id', 'url', 'email', 'auth_token', 'first_name',
+                  'last_name', 'is_staff', 'last_login_on',
+                  'joined_on', 'recipes')

@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-from recipes.models import Recipe
-from recipes.serializers import RecipeSerializer
+from recipes.models import Recipe, User
+from recipes.serializers import RecipeSerializer, UserSerializer
 from rest_framework import generics
-from api.users.models import User
-from recipes.serializers import UserSerializer
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view
@@ -45,15 +43,18 @@ class RecipeList(generics.ListCreateAPIView):
     filter_class = RecipeFilter
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     
-    def perform_create(self, serializer):
+    def perform_create(self, serializer_class):
+        print("PERFORM CREATE")
+        print(self.request)
+        print(self.request.user)
         serializer.save(owner=self.request.user)
 
 
 class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-                          IsOwnerOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+                          #IsOwnerOrReadOnly,)
 
     # TODO: Remove permissions. Restricted to authenticated users, not only owners.
     # rate_recipe method: receives id_recipe (recipe pk) and rating (1 to 5 integer)
@@ -82,8 +83,11 @@ class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly,)
