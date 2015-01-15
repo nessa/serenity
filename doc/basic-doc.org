@@ -312,13 +312,25 @@ Not synced (use migrations):
   + ./manage.py schemamigration recipes --initial
   + Borrar y crear base de datos
   + ./manage.py syncdb
-  + ./manage.py migrate users (hace users y authtoken a la vez)
+  + ./manage.py migrate authtoken (hace la de users también)
   + ./manage.py migrate recipes
   + ./manage.py migrate django_extensions
   + ./manage.py createsuperuser
 - El usuario no se está enlazando porque no existe (hay un
   superusuario que no tiene nada que ver con uno de clase User)
+*** 15 enero
+- Sigo teniendo el mismo problema con los usuarios. He mirado en la
+  base de datos de postgre, pero no veo nada.
+- El error es:
+  IntegrityError: null value in column "owner_id" violates not-null
+  constraint
 
+*** Postgre
+- Acceder: psql (siendo usuario postgres)
+- Lista DB: \l
+- Ayuda: \?
+- Conectar a una DB: \c database
+- Queries: tipo SQL normales
 *** Por hacer
 - TODO: Pruebas de datos.
 - TODO: Añadir usuario a comentarios.
