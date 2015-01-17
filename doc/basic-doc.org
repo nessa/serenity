@@ -325,6 +325,19 @@ Not synced (use migrations):
   IntegrityError: null value in column "owner_id" violates not-null
   constraint
 
+*** 17 enero
+- Revisión de errores comunes con el usuario. Es un problema de las
+  funciones usadas (son para versiones más actuales de las que venía
+  usando).
+  + Solución: actualizar django-rest-framework de la versión 2.3.14 a
+    la 3.0.3.
+- Revisión de errores leves de imágenes y videos (no se permite que
+  sean campos con cadenas vacías).
+  + Solución: añadir al serializador el campo 'allow_blank' a True.
+- Nuevo error: los campos anidados no se generan automáticamente. Hay
+  que sobreescribir los métodos de creación para cada uno de ellos
+  tal y como explica este enlace:
+  http://stackoverflow.com/questions/14978464/django-rest-nested-object-add-on-create-post-not-just-update-put
 *** Postgre
 - Acceder: psql (siendo usuario postgres)
 - Lista DB: \l

@@ -37,7 +37,7 @@ class Direction(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey('users.User', related_name='comments')
+    user = models.ForeignKey(User, related_name='comments')
     comment = models.TextField()
     timestamp = models.DateField(auto_now=True)
 
@@ -45,7 +45,7 @@ class Comment(models.Model):
 # Recipes with ingredients and directions
 class Recipe(models.Model):
     title = models.CharField(max_length=100, blank=False)
-    owner = models.ForeignKey('users.User', related_name='recipes')
+    owner = models.ForeignKey(User, related_name='recipes')
     language = models.CharField(choices=LANGUAGE_CHOICES, default='ES', max_length=10)
     created_timestamp = models.DateTimeField(auto_now_add=True)
     updated_timestamp = models.DateTimeField(auto_now=True)

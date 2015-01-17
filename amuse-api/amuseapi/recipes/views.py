@@ -41,12 +41,21 @@ class RecipeList(generics.ListCreateAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
     filter_class = RecipeFilter
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly)
+
+    # Modified create method to create ingredients, directions, categories and
+    # comments if needed
+#    def create(self, request, *args, **kwargs):
+        # TODO
+#        serializer = self.get_serializer(data=request.POST)
+#        self.perform_create(serializer)
+#        serializer.is_valid(raise_exception=True)
+#        headers = self.get_success_headers(serializer.data)
+#        return Response(serializer.data, status=status.HTTP_201_CREATED,
+#                        headers=headers)
     
-    def perform_create(self, serializer_class):
-        print("PERFORM CREATE")
-        print(self.request)
-        print(self.request.user)
+    def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
