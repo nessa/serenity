@@ -118,7 +118,6 @@ Proyecto Serenity (Recetario de cocina para Android)
   + Para usarlo: flake8 directorio
   + Intentar instalar el hook para git (no ha funcionado la primera vez)
 
-    
 ** Configuración básica de Django
 - Actualizar paquetes requeridos:
   pip install -r reqs/all.txt
@@ -131,7 +130,6 @@ Proyecto Serenity (Recetario de cocina para Android)
   + python ./manage.py syncdb
   + python ./manage.py createsuperuser
 - Configurar las URLs en nombre-proyecto/urls.py
-
 
 ** Configuración nueva plantilla
 - Desarrollo o producción: echo "true" > envdir/DEBUG
@@ -220,7 +218,6 @@ DATABASES = {
     - Fallo de sincronización con users_User: ./manage.py migrate
     - Creación de superusuario: ./manage.py createsuperuser
     - Entrar en la URL y loguearse ya funciona.
-
 
 
 *** 7 enero
@@ -338,18 +335,33 @@ Not synced (use migrations):
   que sobreescribir los métodos de creación para cada uno de ellos
   tal y como explica este enlace:
   http://stackoverflow.com/questions/14978464/django-rest-nested-object-add-on-create-post-not-just-update-put
+- Nota: No dejar nunca otros ficheros en el directorio de migraciones.
+- Cambiando la estructura de los modelos:
+  + Nuevo campo 'recipe' que enlaza desde categorías, ingredientes,
+    etc al objecto 'Recipe'.
+  + Ahora estas listas se utilizan como el campo 'recipes' de usuario
+    (realmente no existe, sino que se lee en el momento a partir de
+    los datos de las demás tablas).
+- ¡Funciona! ¡Ya se pueden crear recetas!
 *** Postgre
-- Acceder: psql (siendo usuario postgres)
-- Lista DB: \l
-- Ayuda: \?
-- Conectar a una DB: \c database
-- Queries: tipo SQL normales
+- Desde terminal:
+  + Borrar base de datos: dropdb 'name'
+  + Create base de datos: createdb -O user name
+  + Acceder: psql (siendo usuario postgres)
+- Desde PSQL:
+  + Lista DB: \l
+  + Ayuda: \?
+  + Conectar a una DB: \c database
+  + Ver tablas: \dt
+  + Queries: tipo SQL normales
 *** Por hacer
-- TODO: Pruebas de datos.
-- TODO: Añadir usuario a comentarios.
+- TODO: Añadir más recetas para empezar con la APP Android.
 - TODO: Método para agregar comentarios a una receta (independiente de
-  los métodos básicos).
-- TODO: Revisar cómo funcionan las migraciones con south.
+  los métodos básicos). Probablemente a través de su propio endpoint
+  (comments).
+- TODO: Añadir nuevos modelos Ingredient y Category (genéricos) que
+  añadan cada nuevo ingrediente y categoría que no esté creado ya y
+  pueda servir para filtrar recetas y obtener información secundaria.
 ** Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):

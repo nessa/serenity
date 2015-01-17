@@ -17,6 +17,7 @@ def api_root(request, format=None):
         'recipes': reverse('recipe-list', request=request, format=format)
     })
 
+# TODO: Add a comment list class to create and list them (with filters)
 
 # TODO: Add rating filter (using both total_rating and users_rating)
 class RecipeFilter(django_filters.FilterSet):
@@ -43,17 +44,6 @@ class RecipeList(generics.ListCreateAPIView):
     filter_class = RecipeFilter
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly)
-
-    # Modified create method to create ingredients, directions, categories and
-    # comments if needed
-#    def create(self, request, *args, **kwargs):
-        # TODO
-#        serializer = self.get_serializer(data=request.POST)
-#        self.perform_create(serializer)
-#        serializer.is_valid(raise_exception=True)
-#        headers = self.get_success_headers(serializer.data)
-#        return Response(serializer.data, status=status.HTTP_201_CREATED,
-#                        headers=headers)
     
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

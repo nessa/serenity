@@ -1,51 +1,58 @@
 # -*- coding: utf-8 -*-
 from django.forms import widgets
 from rest_framework import serializers
-from recipes.models import Recipe, Category, Ingredient, Direction, Comment, User
+from recipes.models import Recipe, RecipeCategory, RecipeIngredient
+from recipes.models import RecipeDirection, RecipeComment, User
 from datetime import datetime
 
-class CategorySerializer(serializers.ModelSerializer):
+
+class RecipeCategorySerializer(serializers.ModelSerializer):
+    recipe = serializers.CharField(source='recipe.id', read_only=True)
+
     class Meta:
-        model = Category
-        fields = ('name',)
+        model = RecipeCategory
+        fields = ('recipe', 'name',)
 
 
-class IngredientSerializer(serializers.ModelSerializer):
+class RecipeIngredientSerializer(serializers.ModelSerializer):
+    recipe = serializers.CharField(source='recipe.id', read_only=True)
+
     class Meta:
-        model = Ingredient
-        fields = ('quantity', 'name', 'measurement_unit')
+        model = RecipeIngredient
+        fields = ('recipe', 'quantity', 'name', 'measurement_unit')
 
 
-class DirectionSerializer(serializers.ModelSerializer):
+class RecipeDirectionSerializer(serializers.ModelSerializer):
+    recipe = serializers.CharField(source='recipe.id', read_only=True)
     image = serializers.URLField(required=False, allow_blank=True)
     video = serializers.URLField(required=False, allow_blank=True)
     time = serializers.FloatField(required=False)
 
     class Meta:
-        model = Direction
-        fields = ('sort_number', 'description', 'image', 'video', 'time')
+        model = RecipeDirection
+        fields = ('recipe', 'sort_number', 'description', 'image', 'video', 'time')
 
 
-class CommentSerializer(serializers.ModelSerializer):
-    user = serializers.CharField(source='user.username', read_only=True)
+class RecipeCommentSerializer(serializers.ModelSerializer):
+    recipe = serializers.CharField(source='recipe.id', read_only=True)
+    user = serializers.CharField(source='user.id', read_only=True)
 
     class Meta:
-        model = Comment
-        fields = ('user', 'comment', 'timestamp')
+        model = RecipeComment
+        fields = ('recipe',  'user', 'comment', 'timestamp')
 
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
-    #owner = serializers.CharField(source='owner.id')
-    owner = serializers.CharField(source='owner.id', read_only=True)
-    
+    owner = serializers.CharField(source='owner.id', read_only=True)    
     image = serializers.URLField(required=False, allow_blank=True)
     total_rating = serializers.IntegerField(required=False)
     users_rating = serializers.IntegerField(required=False)
 
-    categories = CategorySerializer(many=True, required=False)
-    ingredients = IngredientSerializer(many=True, required=False)
-    directions = DirectionSerializer(many=True, required=False)
-    comments = CommentSerializer(many=True, required=False, read_only=True)
+    categories = RecipeCategorySerializer(many=True)
+    ingredients = RecipeIngredientSerializer(many=True)
+    directions = RecipeDirectionSerializer(many=True)
+    # Comments will be added in its own method
+    comments = RecipeCommentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Recipe
@@ -53,8 +60,10 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
                   'updated_timestamp', 'cooking_time', 'image', 'total_rating',
                   'users_rating', 'servings', 'source', 'categories',
                   'ingredients', 'directions', 'comments')
-        read_only_fields = ('created_timestamp', 'updated_timestamp')
+        read_only_fields = ('created_timestamp', 'updated_timestamp',
+                            'comments')
 
+    # Override create method to create all nested fields
     def create(self, validated_data):
         categories = validated_data.pop('categories')
         ingredients = validated_data.pop('ingredients')
@@ -63,12 +72,12 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         recipe = Recipe.objects.create(**validated_data)
 
         for category in categories:
-            Category.objects.create(recipe=recipe, **category)
+            RecipeCategory.objects.create(recipe=recipe, **category)
         for ingredient in ingredients:
-            Ingredient.objects.create(recipe=recipe, **ingredient)
+            RecipeIngredient.objects.create(recipe=recipe, **ingredient)
         for direction in directions:
-            Direction.objects.create(recipe=recipe, **direction)
-
+            RecipeDirection.objects.create(recipe=recipe, **direction)
+            
         return recipe
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):

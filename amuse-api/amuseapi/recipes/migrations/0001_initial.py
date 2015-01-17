@@ -8,42 +8,6 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Category'
-        db.create_table(u'recipes_category', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-        ))
-        db.send_create_signal(u'recipes', ['Category'])
-
-        # Adding model 'Ingredient'
-        db.create_table(u'recipes_ingredient', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('quantity', self.gf('django.db.models.fields.FloatField')()),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('measurement_unit', self.gf('django.db.models.fields.CharField')(default='unit', max_length=100)),
-        ))
-        db.send_create_signal(u'recipes', ['Ingredient'])
-
-        # Adding model 'Direction'
-        db.create_table(u'recipes_direction', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('sort_number', self.gf('django.db.models.fields.PositiveIntegerField')()),
-            ('description', self.gf('django.db.models.fields.TextField')()),
-            ('image', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
-            ('video', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
-            ('time', self.gf('django.db.models.fields.FloatField')()),
-        ))
-        db.send_create_signal(u'recipes', ['Direction'])
-
-        # Adding model 'Comment'
-        db.create_table(u'recipes_comment', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['users.User'])),
-            ('comment', self.gf('django.db.models.fields.TextField')()),
-            ('timestamp', self.gf('django.db.models.fields.DateField')(auto_now=True, blank=True)),
-        ))
-        db.send_create_signal(u'recipes', ['Comment'])
-
         # Adding model 'Recipe'
         db.create_table(u'recipes_recipe', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
@@ -61,70 +25,62 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'recipes', ['Recipe'])
 
-        # Adding M2M table for field categories on 'Recipe'
-        m2m_table_name = db.shorten_name(u'recipes_recipe_categories')
-        db.create_table(m2m_table_name, (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('recipe', models.ForeignKey(orm[u'recipes.recipe'], null=False)),
-            ('category', models.ForeignKey(orm[u'recipes.category'], null=False))
+        # Adding model 'RecipeCategory'
+        db.create_table(u'recipes_recipecategory', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('recipe', self.gf('django.db.models.fields.related.ForeignKey')(related_name='categories', to=orm['recipes.Recipe'])),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
         ))
-        db.create_unique(m2m_table_name, ['recipe_id', 'category_id'])
+        db.send_create_signal(u'recipes', ['RecipeCategory'])
 
-        # Adding M2M table for field ingredients on 'Recipe'
-        m2m_table_name = db.shorten_name(u'recipes_recipe_ingredients')
-        db.create_table(m2m_table_name, (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('recipe', models.ForeignKey(orm[u'recipes.recipe'], null=False)),
-            ('ingredient', models.ForeignKey(orm[u'recipes.ingredient'], null=False))
+        # Adding model 'RecipeIngredient'
+        db.create_table(u'recipes_recipeingredient', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('recipe', self.gf('django.db.models.fields.related.ForeignKey')(related_name='ingredients', to=orm['recipes.Recipe'])),
+            ('quantity', self.gf('django.db.models.fields.FloatField')()),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('measurement_unit', self.gf('django.db.models.fields.CharField')(default='unit', max_length=100)),
         ))
-        db.create_unique(m2m_table_name, ['recipe_id', 'ingredient_id'])
+        db.send_create_signal(u'recipes', ['RecipeIngredient'])
 
-        # Adding M2M table for field directions on 'Recipe'
-        m2m_table_name = db.shorten_name(u'recipes_recipe_directions')
-        db.create_table(m2m_table_name, (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('recipe', models.ForeignKey(orm[u'recipes.recipe'], null=False)),
-            ('direction', models.ForeignKey(orm[u'recipes.direction'], null=False))
+        # Adding model 'RecipeDirection'
+        db.create_table(u'recipes_recipedirection', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('recipe', self.gf('django.db.models.fields.related.ForeignKey')(related_name='directions', to=orm['recipes.Recipe'])),
+            ('sort_number', self.gf('django.db.models.fields.PositiveIntegerField')()),
+            ('description', self.gf('django.db.models.fields.TextField')()),
+            ('image', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
+            ('video', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
+            ('time', self.gf('django.db.models.fields.FloatField')()),
         ))
-        db.create_unique(m2m_table_name, ['recipe_id', 'direction_id'])
+        db.send_create_signal(u'recipes', ['RecipeDirection'])
 
-        # Adding M2M table for field comments on 'Recipe'
-        m2m_table_name = db.shorten_name(u'recipes_recipe_comments')
-        db.create_table(m2m_table_name, (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('recipe', models.ForeignKey(orm[u'recipes.recipe'], null=False)),
-            ('comment', models.ForeignKey(orm[u'recipes.comment'], null=False))
+        # Adding model 'RecipeComment'
+        db.create_table(u'recipes_recipecomment', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('recipe', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['recipes.Recipe'])),
+            ('user', self.gf('django.db.models.fields.related.ForeignKey')(related_name='comments', to=orm['users.User'])),
+            ('comment', self.gf('django.db.models.fields.TextField')()),
+            ('timestamp', self.gf('django.db.models.fields.DateField')(auto_now=True, blank=True)),
         ))
-        db.create_unique(m2m_table_name, ['recipe_id', 'comment_id'])
+        db.send_create_signal(u'recipes', ['RecipeComment'])
 
 
     def backwards(self, orm):
-        # Deleting model 'Category'
-        db.delete_table(u'recipes_category')
-
-        # Deleting model 'Ingredient'
-        db.delete_table(u'recipes_ingredient')
-
-        # Deleting model 'Direction'
-        db.delete_table(u'recipes_direction')
-
-        # Deleting model 'Comment'
-        db.delete_table(u'recipes_comment')
-
         # Deleting model 'Recipe'
         db.delete_table(u'recipes_recipe')
 
-        # Removing M2M table for field categories on 'Recipe'
-        db.delete_table(db.shorten_name(u'recipes_recipe_categories'))
+        # Deleting model 'RecipeCategory'
+        db.delete_table(u'recipes_recipecategory')
 
-        # Removing M2M table for field ingredients on 'Recipe'
-        db.delete_table(db.shorten_name(u'recipes_recipe_ingredients'))
+        # Deleting model 'RecipeIngredient'
+        db.delete_table(u'recipes_recipeingredient')
 
-        # Removing M2M table for field directions on 'Recipe'
-        db.delete_table(db.shorten_name(u'recipes_recipe_directions'))
+        # Deleting model 'RecipeDirection'
+        db.delete_table(u'recipes_recipedirection')
 
-        # Removing M2M table for field comments on 'Recipe'
-        db.delete_table(db.shorten_name(u'recipes_recipe_comments'))
+        # Deleting model 'RecipeComment'
+        db.delete_table(u'recipes_recipecomment')
 
 
     models = {
@@ -148,44 +104,12 @@ class Migration(SchemaMigration):
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
         },
-        u'recipes.category': {
-            'Meta': {'object_name': 'Category'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        u'recipes.comment': {
-            'Meta': {'object_name': 'Comment'},
-            'comment': ('django.db.models.fields.TextField', [], {}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'timestamp': ('django.db.models.fields.DateField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': u"orm['users.User']"})
-        },
-        u'recipes.direction': {
-            'Meta': {'object_name': 'Direction'},
-            'description': ('django.db.models.fields.TextField', [], {}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
-            'sort_number': ('django.db.models.fields.PositiveIntegerField', [], {}),
-            'time': ('django.db.models.fields.FloatField', [], {}),
-            'video': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'})
-        },
-        u'recipes.ingredient': {
-            'Meta': {'object_name': 'Ingredient'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'measurement_unit': ('django.db.models.fields.CharField', [], {'default': "'unit'", 'max_length': '100'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'quantity': ('django.db.models.fields.FloatField', [], {})
-        },
         u'recipes.recipe': {
             'Meta': {'object_name': 'Recipe'},
-            'categories': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['recipes.Category']", 'symmetrical': 'False'}),
-            'comments': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['recipes.Comment']", 'symmetrical': 'False'}),
             'cooking_time': ('django.db.models.fields.FloatField', [], {}),
             'created_timestamp': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'directions': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['recipes.Direction']", 'symmetrical': 'False'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'image': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
-            'ingredients': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['recipes.Ingredient']", 'symmetrical': 'False'}),
             'language': ('django.db.models.fields.CharField', [], {'default': "'ES'", 'max_length': '10'}),
             'owner': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'recipes'", 'to': u"orm['users.User']"}),
             'servings': ('django.db.models.fields.IntegerField', [], {}),
@@ -194,6 +118,38 @@ class Migration(SchemaMigration):
             'total_rating': ('django.db.models.fields.IntegerField', [], {}),
             'updated_timestamp': ('django.db.models.fields.DateTimeField', [], {'auto_now': 'True', 'blank': 'True'}),
             'users_rating': ('django.db.models.fields.IntegerField', [], {})
+        },
+        u'recipes.recipecategory': {
+            'Meta': {'object_name': 'RecipeCategory'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'recipe': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'categories'", 'to': u"orm['recipes.Recipe']"})
+        },
+        u'recipes.recipecomment': {
+            'Meta': {'object_name': 'RecipeComment'},
+            'comment': ('django.db.models.fields.TextField', [], {}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'recipe': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': u"orm['recipes.Recipe']"}),
+            'timestamp': ('django.db.models.fields.DateField', [], {'auto_now': 'True', 'blank': 'True'}),
+            'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'comments'", 'to': u"orm['users.User']"})
+        },
+        u'recipes.recipedirection': {
+            'Meta': {'object_name': 'RecipeDirection'},
+            'description': ('django.db.models.fields.TextField', [], {}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'image': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
+            'recipe': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'directions'", 'to': u"orm['recipes.Recipe']"}),
+            'sort_number': ('django.db.models.fields.PositiveIntegerField', [], {}),
+            'time': ('django.db.models.fields.FloatField', [], {}),
+            'video': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'})
+        },
+        u'recipes.recipeingredient': {
+            'Meta': {'object_name': 'RecipeIngredient'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'measurement_unit': ('django.db.models.fields.CharField', [], {'default': "'unit'", 'max_length': '100'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'quantity': ('django.db.models.fields.FloatField', [], {}),
+            'recipe': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'ingredients'", 'to': u"orm['recipes.Recipe']"})
         },
         u'users.user': {
             'Meta': {'object_name': 'User'},
