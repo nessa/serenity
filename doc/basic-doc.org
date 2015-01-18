@@ -361,6 +361,11 @@ Not synced (use migrations):
 *** [API] 18 enero
 - Implementación del método update. Sólo actualiza si es
   necesario.
+- Empezando a leer acerca de Android y Material:
+  + http://developer.android.com/training/material/index.html
+  + http://developer.android.com/training/material/get-started.html
+- Review de la especificación de Material. Actualmente voy por:
+  http://www.google.com/design/spec/animation/authentic-motion.html
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
@@ -409,3 +414,6 @@ Not synced (use migrations):
 *** Postgres
 - https://help.ubuntu.com/community/PostgreSQL
   
+*** Material
+- Especificación de Material Design: http://www.google.com/design/spec/material-design/introduction.html
+- Material con Polymer: https://www.polymer-project.org/docs/elements/material.html#shadow-effect
