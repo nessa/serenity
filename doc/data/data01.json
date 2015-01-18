@@ -48,41 +48,49 @@
     ],
     "ingredients": [
         {
+            "sort_number": 1,
             "quantity": 5,
             "name": "pechugas de pollo",
             "measurement_unit": "unit"
         },
         {
+            "sort_number": 2,
 	        "quantity": 0.25,
             "name": "harina de trigo",
             "measurement_unit": "cup"
         },
         {
+            "sort_number": 3,
             "quantity": 2,
             "name": "mantequilla",
             "measurement_unit": "tbsp"
         },
         {
+            "sort_number": 4,
             "quantity": 1,
             "name": "aceite de oliva",
             "measurement_unit": "tbsp"
         },
         {
+            "sort_number": 5,
             "quantity": 0.5,
             "name": "vino blanco",
             "measurement_unit": "cup"
         },
          {
+            "sort_number": 6,
             "quantity": 0.5,
             "name": "caldo de pollo",
             "measurement_unit": "cup"
         },
         {
+            "sort_number": 7,
             "quantity": "100",
             "name": "queso Fontina",
             "measurement_unit": "g"
         },
         {
+            "sort_number": 8,
             "quantity": "5",
             "name": "jamón serrano",
             "measurement_unit": "rasher"
@@ -131,6 +139,5 @@
             "video": "",
             "time": 0
 	    }
-    ],
-    "comments": []
+    ]
 }

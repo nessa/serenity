@@ -37,6 +37,7 @@ class Migration(SchemaMigration):
         db.create_table(u'recipes_recipeingredient', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('recipe', self.gf('django.db.models.fields.related.ForeignKey')(related_name='ingredients', to=orm['recipes.Recipe'])),
+            ('sort_number', self.gf('django.db.models.fields.PositiveIntegerField')()),
             ('quantity', self.gf('django.db.models.fields.FloatField')()),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('measurement_unit', self.gf('django.db.models.fields.CharField')(default='unit', max_length=100)),
@@ -149,7 +150,8 @@ class Migration(SchemaMigration):
             'measurement_unit': ('django.db.models.fields.CharField', [], {'default': "'unit'", 'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'quantity': ('django.db.models.fields.FloatField', [], {}),
-            'recipe': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'ingredients'", 'to': u"orm['recipes.Recipe']"})
+            'recipe': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'ingredients'", 'to': u"orm['recipes.Recipe']"}),
+            'sort_number': ('django.db.models.fields.PositiveIntegerField', [], {})
         },
         u'users.user': {
             'Meta': {'object_name': 'User'},

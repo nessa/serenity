@@ -144,8 +144,23 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Settings.py:
   + Línea 272: Actualizar usuario, contraseña y BD
 
-** Diario
-*** 11 septiembre
+** Objetivos
+- Recetas:
+  + Datos básicos
+  + Categorías
+  + Ingredientes
+  + Direcciones
+  + (Comentarios)
+- Método listar recetas
+- Método listar usuarios
+- Login y autenticación
+- Método crear recetas
+- Método actualizar recetas
+* Segunda fase: App
+
+* Diario
+** Previo
+*** [API] 11 septiembre
 - Ejecución del servidor: python ./manage.py runserver
 - Da un error por no tener instalado ciertas cosas, así que intento
   reinstalar todos los paquetes requeridos:
@@ -162,7 +177,7 @@ Proyecto Serenity (Recetario de cocina para Android)
 - Ya ejecuta correctamente el servidor.
 - Siguiente día: probar usuario administrador e intentar hacer un modelo.
 
-*** 12 septiembre
+*** [API] 12 septiembre
 - El ordenador ha vuelto a fallar, así que instalo todo de cero en el ordenador del trabajo.
 - Instalar python3 y buscar directorio
 - Instalar pip y virtualenv
@@ -180,7 +195,7 @@ Proyecto Serenity (Recetario de cocina para Android)
   + echo "true" > DEBUG (o false)
   + echo "password" > SECRET_KEY
 
-*** 1 diciembre
+*** [API] 1 diciembre
 **** Vagrant
     - Nuevo repo: drf-vagrant-config
     - Uso:
@@ -219,18 +234,18 @@ DATABASES = {
     - Creación de superusuario: ./manage.py createsuperuser
     - Entrar en la URL y loguearse ya funciona.
 
-
-*** 7 enero
+** Enero
+*** [API] 7 enero
 - Buscando tipos de datos
 - Maps y lists: http://drf-compound-fields.readthedocs.org/en/latest/readme.html
 
-*** 10 enero
+*** [API] 10 enero
 - Nuevos modelos de datos
 - Nuevos serializadores
 - Nuevas vistas
 - Al probar la vista "recipe_list" da un error. No se si tiene que
   ver con que no exista ninguna receta en la base de datos.
-*** 11 enero
+*** [API] 11 enero
 - ./manage.py syncdb
   Creando tablas:
 Creating table recipes_category
@@ -273,7 +288,7 @@ Not synced (use migrations):
     ./manage.py createsuperuser
   + Ahora sí funciona users.
 
-*** 12 enero
+*** [API] 12 enero
 - Añadiendo nuevos serializers (para los demás elementos).
 - Definiendo timestamps por defecto (actualizables en create o en
   update).
@@ -284,7 +299,7 @@ Not synced (use migrations):
 - También hay que añadir filtros (normales y de campos manytomany).
   http://stackoverflow.com/questions/25943426/django-rest-framework-get-filter-on-manytomany-field
 
-*** 13 enero
+*** [API] 13 enero
 - Definiendo método de puntuación básico: recipe el id de la receta y
   la puntuación e incrementa la puntuación total en el valor dado y
   el número de usuarios que han votado en 1.
@@ -301,7 +316,7 @@ Not synced (use migrations):
 - Hay que probar si la inserción de datos, modificación y lectura
   funciona correctamente.
 
-*** 14 enero
+*** [API] 14 enero
 - Abriendo los métodos GET a cualquier usuario (registrado o anónimo).
 - Users no funciona de ninguna manera.
 - Migración de datos:
@@ -315,14 +330,14 @@ Not synced (use migrations):
   + ./manage.py createsuperuser
 - El usuario no se está enlazando porque no existe (hay un
   superusuario que no tiene nada que ver con uno de clase User)
-*** 15 enero
+*** [API] 15 enero
 - Sigo teniendo el mismo problema con los usuarios. He mirado en la
   base de datos de postgre, pero no veo nada.
 - El error es:
   IntegrityError: null value in column "owner_id" violates not-null
   constraint
 
-*** 17 enero
+*** [API] 17 enero
 - Revisión de errores comunes con el usuario. Es un problema de las
   funciones usadas (son para versiones más actuales de las que venía
   usando).
@@ -343,18 +358,31 @@ Not synced (use migrations):
     (realmente no existe, sino que se lee en el momento a partir de
     los datos de las demás tablas).
 - ¡Funciona! ¡Ya se pueden crear recetas!
-*** Postgre
-- Desde terminal:
+*** [API] 18 enero
+- Implementación del método update. Sólo actualiza si es
+  necesario.
+** Importante
+- Migración de datos:
+  + ./manage.py schemamigration users --initial (no hace falta)
+  + ./manage.py schemamigration recipes --initial
+  + dropbd amusedb
+  + createdb -O amuseuser amusedb
+  + ./manage.py syncdb
+  + ./manage.py migrate authtoken (hace la de users también)
+  + ./manage.py migrate recipes
+  + ./manage.py migrate django_extensions
+  + ./manage.py createsuperuser
+- Postgre desde terminal:
   + Borrar base de datos: dropdb 'name'
   + Create base de datos: createdb -O user name
   + Acceder: psql (siendo usuario postgres)
-- Desde PSQL:
+- Postrge desde PSQL:
   + Lista DB: \l
   + Ayuda: \?
   + Conectar a una DB: \c database
   + Ver tablas: \dt
   + Queries: tipo SQL normales
-*** Por hacer
+** Por hacer
 - TODO: Añadir más recetas para empezar con la APP Android.
 - TODO: Método para agregar comentarios a una receta (independiente de
   los métodos básicos). Probablemente a través de su propio endpoint
@@ -362,7 +390,7 @@ Not synced (use migrations):
 - TODO: Añadir nuevos modelos Ingredient y Category (genéricos) que
   añadan cada nuevo ingrediente y categoría que no esté creado ya y
   pueda servir para filtrar recetas y obtener información secundaria.
-** Fuentes
+* Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):
   https://github.com/sebastibe/django-rest-skeleton

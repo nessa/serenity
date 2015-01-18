@@ -39,6 +39,7 @@ class RecipeCategory(models.Model):
 
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, related_name='ingredients')
+    sort_number = models.PositiveIntegerField()
     quantity = models.FloatField()
     name = models.CharField(max_length=100)
     measurement_unit = models.CharField(choices=MEASUREMENT_CHOICES, default='unit', max_length=100)
