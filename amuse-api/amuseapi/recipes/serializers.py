@@ -167,8 +167,8 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     recipes = serializers.HyperlinkedRelatedField(many=True, view_name='recipe-detail', read_only=True)
 
-    first_name = serializers.CharField(source='first_name', required=False)
-    last_name = serializers.CharField(source='last_name', required=False)
+    first_name = serializers.CharField(required=False)
+    last_name = serializers.CharField(required=False)
     auth_token = serializers.CharField(read_only=True)
     last_login_on = serializers.DateTimeField(source='last_login',
                                               read_only=True)
