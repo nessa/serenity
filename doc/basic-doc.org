@@ -366,6 +366,20 @@ Not synced (use migrations):
   + http://developer.android.com/training/material/get-started.html
 - Review de la especificación de Material. Actualmente voy por:
   http://www.google.com/design/spec/animation/authentic-motion.html
+*** [API] 19 enero
+- Instalando Postgre en Mac OS X:
+  + http://www.enterprisedb.com/products-services-training/pgdownload#osx
+  + sudo su postgres
+  + psql
+  + Crear usuario: CREATE USER amuseuser WITH PASSWORD 'X';
+  + Crear base de datos: createdb -O user name
+  + Sincronización y migración de datos (syncdb, etc)
+  + Ejecución: funciona correctamente
+- Definiendo un orden por defecto en ingredientes y direcciones (en función
+  de sort_order).
+- Comprobando que el método delete borra tanto la propia receta como los
+  campos anidados correspondientes (usando psql).
+
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)

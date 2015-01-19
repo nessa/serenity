@@ -44,6 +44,9 @@ class RecipeIngredient(models.Model):
     name = models.CharField(max_length=100)
     measurement_unit = models.CharField(choices=MEASUREMENT_CHOICES, default='unit', max_length=100)
 
+    class Meta:
+        ordering = ['sort_number']
+
 class RecipeDirection(models.Model):
     recipe = models.ForeignKey(Recipe, related_name='directions')
     sort_number = models.PositiveIntegerField()
@@ -52,6 +55,8 @@ class RecipeDirection(models.Model):
     video = models.URLField(blank=True)
     time = models.FloatField()
 
+    class Meta:
+        ordering = ['sort_number']
 
 class RecipeComment(models.Model):
     recipe = models.ForeignKey(Recipe, related_name='comments')

@@ -1,0 +1,141 @@
+{
+    "title": "Pollo Valdostana",
+    "language": "ES",
+    "cooking_time": 1.5,
+    "image": "",
+    "total_rating": 0,
+    "users_rating": 0,
+    "servings": 5,
+    "source": "http://foodyschmoodyblog.com/chicken-valdostana/",
+    "categories": [
+        {
+            "name": "ITALIAN"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 5,
+            "name": "pechugas de pollo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+	        "quantity": 0.25,
+            "name": "harina de trigo",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 2,
+            "name": "mantequilla",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 1,
+            "name": "aceite de oliva",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 0.5,
+            "name": "vino blanco",
+            "measurement_unit": "cup"
+        },
+         {
+            "sort_number": 6,
+            "quantity": 0.5,
+            "name": "caldo de pollo",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 7,
+            "quantity": "100",
+            "name": "queso Fontina",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 8,
+            "quantity": "5",
+            "name": "jamón serrano",
+            "measurement_unit": "rasher"
+        }
+    ],
+    "directions": [
+    {
+            "sort_number": "1",
+            "description": "Espolvorear ligeramente el pollo con harina.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": "2",
+            "description": "Calentar una cucharada de mantequilla y el aceite en una sartén a fuego medio-alto. Echar el pollo en la sartén y dorar por las dos caras. Retirar el pollo de la sartén y reservar.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": "3",
+            "description": "Colocar la sartén de nuevo en el fuego, agregar el vino y el caldo, raspando los pedacitos de la parte inferior de la cacerola. Reducir la salsa a la mitad.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": "4",
+            "description": "Mientras la salsa se está cocinando, colocar un pedazo de queso sobre cada pechuga de pollo y envolverla con una tira de jamón.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": "5",
+            "description": "Una vez la salsa se haya reducido, eche la cucharada de mantequilla restante. Volver a poner el pollo en la sartén, cubrir y cocinar a fuego lento aproximadamente 5 minutos.",
+            "image": "",
+            "video": "",
+            "time": 0
+	    },
+        {
+            "sort_number": "6",
+            "description": "Servir cada pechuga sobre un nido de pasta y salsear bien.",
+            "image": "",
+            "video": "",
+            "time": 0
+	    }
+    ]
+}
+
+{
+    "title": "", 
+    "language": "", 
+    "cooking_time": 0, 
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 0, 
+    "source": "", 
+    "categories": [
+    {
+        "name": ""
+    }
+    ], 
+    "ingredients": [
+    {
+        "quantity": "",
+        "name": "",
+        "measurement_unit": ""
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": "",
+        "description": "",
+        "image": "",
+        "video": "",
+        "time": ""
+    }
+    ]
+}
