@@ -379,6 +379,17 @@ Not synced (use migrations):
   de sort_order).
 - Comprobando que el método delete borra tanto la propia receta como los
   campos anidados correspondientes (usando psql).
+- Arreglando un error de redundancia en el serializador de usuario
+  (aparecía denifido el 'source' de los campos first_name y
+  second_name y no es necesario puesto que se llaman igual).
+- He encontrado el layout que me gustaría usar para la vista
+  principal. Parecido al que aparece en la sección Animation >
+  Meaningful transitions > Visual continuity
+  http://www.google.com/design/spec/animation/meaningful-transitions.html#meaningful-transitions-visual-continuity
+- Las transiciones necesarias se pueden ver aquí:
+  http://developer.android.com/training/material/animations.html#Transitions
+- Sigo leyendo la especificación de Material. Voy por:
+  http://www.google.com/design/spec/patterns/data-formats.html
 
 ** Importante
 - Migración de datos:
@@ -409,6 +420,10 @@ Not synced (use migrations):
 - TODO: Añadir nuevos modelos Ingredient y Category (genéricos) que
   añadan cada nuevo ingrediente y categoría que no esté creado ya y
   pueda servir para filtrar recetas y obtener información secundaria.
+- TODO: Definición del layout inicial en Inkscape.
+- TODO: Posibilidad. ¿Añadir un campo 'rating' para facilitar la
+  filtración en función de un único campo en lugar de tener que usar
+  2 (total_rating y users_rating)?
 * Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):
