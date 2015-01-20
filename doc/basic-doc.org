@@ -390,7 +390,19 @@ Not synced (use migrations):
   http://developer.android.com/training/material/animations.html#Transitions
 - Sigo leyendo la especificación de Material. Voy por:
   http://www.google.com/design/spec/patterns/data-formats.html
-
+*** [API] 20 enero
+- Getting started: http://developer.android.com/training/basics/firstapp/index.html
+- Primera app.
+- Eligiendo colores de la app e idea para el icono (amuse bouche de pepino):
+  + DARK PRIMARY COLOR: #689F38
+  + PRIMARY COLOR: #8BC34A
+  + LIGHT PRIMARY COLOR: #DCEDC8
+  + TEXT / ICONS: #212121
+  + ACCENT COLOR: #FF5722
+  + PRIMARY TEXT: #212121
+  + SECONDARY TEXT: #727272
+  + DIVIDER COLOR: #B6B6B6
+- Construyendo la interfaz: http://developer.android.com/training/basics/firstapp/building-ui.html
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
