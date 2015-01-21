@@ -403,6 +403,17 @@ Not synced (use migrations):
   + SECONDARY TEXT: #727272
   + DIVIDER COLOR: #B6B6B6
 - Construyendo la interfaz: http://developer.android.com/training/basics/firstapp/building-ui.html
+*** [API] 21 enero
+- Ejecución en dispositivo físico:
+  + Activar las opciones de desarrollo. Para ello, en el móvil acceder a
+    Ajustes > Acerca del teléfono y pulsar 7 veces "Número de compilación".
+  + Habilitar depuración USB. Para ello acceder a Ajustes > Opciones de
+    desarrollo y activar "Depuración USB".
+- Añadir definición de colores: fichero res/values/colors.xml
+- Añadir iconos en directorios: res/drawable/ldpi (o mdpi, xdpi, xxdpi, xxxdpi)
+- Siguiente sección:
+  http://developer.android.com/training/basics/activity-lifecycle/starting.html
+
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
@@ -424,6 +435,9 @@ Not synced (use migrations):
   + Conectar a una DB: \c database
   + Ver tablas: \dt
   + Queries: tipo SQL normales
+- Iconos Material:
+  + Referencia: https://google.github.io/material-design-icons/
+  + Repo: https://github.com/google/material-design-icons
 ** Por hacer
 - TODO: Añadir más recetas para empezar con la APP Android.
 - TODO: Método para agregar comentarios a una receta (independiente de
