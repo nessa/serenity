@@ -390,7 +390,7 @@ Not synced (use migrations):
   http://developer.android.com/training/material/animations.html#Transitions
 - Sigo leyendo la especificación de Material. Voy por:
   http://www.google.com/design/spec/patterns/data-formats.html
-*** [API] 20 enero
+*** [APP] 20 enero
 - Getting started: http://developer.android.com/training/basics/firstapp/index.html
 - Primera app.
 - Eligiendo colores de la app e idea para el icono (amuse bouche de pepino):
@@ -403,7 +403,7 @@ Not synced (use migrations):
   + SECONDARY TEXT: #727272
   + DIVIDER COLOR: #B6B6B6
 - Construyendo la interfaz: http://developer.android.com/training/basics/firstapp/building-ui.html
-*** [API] 21 enero
+*** [APP] 21 enero
 - Ejecución en dispositivo físico:
   + Activar las opciones de desarrollo. Para ello, en el móvil acceder a
     Ajustes > Acerca del teléfono y pulsar 7 veces "Número de compilación".
@@ -413,7 +413,10 @@ Not synced (use migrations):
 - Añadir iconos en directorios: res/drawable/ldpi (o mdpi, xdpi, xxdpi, xxxdpi)
 - Siguiente sección:
   http://developer.android.com/training/basics/activity-lifecycle/starting.html
-
+*** [APP] 22 enero
+- Desarrollando el grid en la ventana principal.
+- Añadiendo icono de "búsqueda" a la barra de título.
+- Añadiendo colores al estilo.
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
@@ -450,6 +453,16 @@ Not synced (use migrations):
 - TODO: Posibilidad. ¿Añadir un campo 'rating' para facilitar la
   filtración en función de un único campo en lugar de tener que usar
   2 (total_rating y users_rating)?
+- TODO: Conexión con DBpedia:
+  + http://es.dbpedia.org/index.html
+  + http://es.dbpedia.org/sparql
+  + Consultas: http://es.dbpedia.org/wiki/Wiki.jsp?page=Ejemplos%20de%20consultas%20SPARQL
+  + http://es.dbpedia.org/page/Receta_de_cocina
+  + http://es.dbpedia.org/page/Categor%C3%ADa:Gastronom%C3%ADa
+- TODO: Guardar recipe draft en onPause() (si mientras se está creando 
+  una receta se sale de la app)
+- TODO: Sin conexión = recetas favoritas y recetas propias (creadas en la app)
+
 * Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):
