@@ -462,7 +462,11 @@ Not synced (use migrations):
 - TODO: Guardar recipe draft en onPause() (si mientras se está creando 
   una receta se sale de la app)
 - TODO: Sin conexión = recetas favoritas y recetas propias (creadas en la app)
-
+- TODO: Conectar con Amazon S3 (web services)
+  + http://aws.amazon.com/es/mobile/sdk/
+  + http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/setup.html#setting-up
+  + http://docs.aws.amazon.com/AWSAndroidSDK/latest/javadoc/
+  + http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transfermanager.html
 * Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):
