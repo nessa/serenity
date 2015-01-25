@@ -432,10 +432,21 @@ Not synced (use migrations):
     que queremos transitar del propio contexto.
 - Cuando se añada una image principal al layout que corresponde,
   podremos probar si es adecuada la transición.
-- Lo siguientes es añadir un botón flotante para crear nuevas recetas:
+- Lo siguiente es añadir un botón flotante para crear nuevas recetas:
   +
     http://www.myandroidsolutions.com/2015/01/01/android-floating-action-button-fab-tutorial/
-  + http://www.bignerdranch.com/blog/floating-action-buttons-in-android-l/
+  +
+    http://www.bignerdranch.com/blog/floating-action-buttons-in-android-l/
+- He modificado parte del manifest, para añadir información.
+- Después de mucho buscar, he añadido el botón que ha hecho este
+  usuario, que me ha parecido la mejor opción:
+  http://prolificinteractive.com/blog/2014/07/24/android-floating-action-button-aka-fab/
+- Buscando una alternativa parecida a esta para mover elementos en
+  función del scroll: https://github.com/lawloretienne/QuickReturn
+
+- [API] Revisando la subida de archivos en DJango:
+  + https://docs.djangoproject.com/en/1.7/topics/http/file-uploads/
+  + http://stackoverflow.com/questions/5871730/need-a-minimal-django-file-upload-example
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
