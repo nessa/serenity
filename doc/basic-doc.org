@@ -417,6 +417,25 @@ Not synced (use migrations):
 - Desarrollando el grid en la ventana principal.
 - Añadiendo icono de "búsqueda" a la barra de título.
 - Añadiendo colores al estilo.
+*** [APP] 25 enero
+- Añadiendo nueva vista de detalle (sin layout específico).
+- Haciendo pruebas de transiciones. Hay dos formas de hacer la
+  transición que queremos:
+  + A través del gridview, para lo cual hace falta especificar el
+    siguiente parámetro en el RelativeLayout de la celda:
+    android:descendantFocusability="blocksDescendants"
+    El problema de este caso es que no interviene la propia imagen,
+    sino la celda completa, por lo que la transición no queda todo lo
+    bien que podría.
+  + A través de la imagen insertada en el ImageAdapter. La dificultad
+    de este método está en que hay que tomar la actividad desde la
+    que queremos transitar del propio contexto.
+- Cuando se añada una image principal al layout que corresponde,
+  podremos probar si es adecuada la transición.
+- Lo siguientes es añadir un botón flotante para crear nuevas recetas:
+  +
+    http://www.myandroidsolutions.com/2015/01/01/android-floating-action-button-fab-tutorial/
+  + http://www.bignerdranch.com/blog/floating-action-buttons-in-android-l/
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
