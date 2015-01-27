@@ -443,10 +443,29 @@ Not synced (use migrations):
   http://prolificinteractive.com/blog/2014/07/24/android-floating-action-button-aka-fab/
 - Buscando una alternativa parecida a esta para mover elementos en
   función del scroll: https://github.com/lawloretienne/QuickReturn
-
 - [API] Revisando la subida de archivos en DJango:
   + https://docs.djangoproject.com/en/1.7/topics/http/file-uploads/
   + http://stackoverflow.com/questions/5871730/need-a-minimal-django-file-upload-example
+*** [APP] 26 enero
+- Diseño de icono de la aplicación.
+- Hay que añadir el menú lateral:
+  + https://gpmess.com/blog/2014/04/08/implementar-un-menu-lateral-usando-navigationdrawer-en-android#.VMYnh2SG-G8
+- Información acerca del reconocimiento de voz:
+  + http://www.jameselsey.co.uk/blogs/techblog/android-how-to-implement-voice-recognition-a-nice-easy-tutorial/
+  + http://androidbite.blogspot.com.es/2013/04/android-voice-recognition-example.html
+  + http://code4reference.com/2012/07/tutorial-android-voice-recognition/
+  + http://stackoverflow.com/questions/11789791/android-speech-to-text-example
+  + http://viralpatel.net/blogs/android-speech-to-text-api/
+*** [APP] 27 enero
+- Pasando de usar activities a usar una única activity y varios fragments.
+- Añadiendo un menu lateral (casi todo el tiempo he estado con esto, porque
+  daba muchos problemas a la hora de integrarlo con fragments).
+- Corrigiendo problema con el botón que lanza el menú lateral (quería que cuando
+  pasara a otro fragment saliera el botón de volver hacia atrás).
+- Diferenciando los menús de cada fragment (de momento sólo list y detail).
+- Limpiando y comentando el código.
+- Falta colocar de nuevo el FAB para tener la aplicación como estaba antes de
+  los cambios de hoy.
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
