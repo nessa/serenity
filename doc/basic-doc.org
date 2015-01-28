@@ -466,6 +466,14 @@ Not synced (use migrations):
 - Limpiando y comentando el código.
 - Falta colocar de nuevo el FAB para tener la aplicación como estaba antes de
   los cambios de hoy.
+*** [APP] 28 enero
+- Añadiendo el FAB correctamente. He tenido que reescribirlo entero.
+- Información acerca de JSON y obtener datos de una API:
+  + http://www.androidhive.info/2012/01/android-json-parsing-tutorial/
+- Información acerca de speech:
+  + http://developer.android.com/reference/android/speech/tts/package-summary.html
+  + http://developer.android.com/reference/android/speech/package-summary.html
+- Prueba de text-to-speech exitosa.
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
