@@ -474,6 +474,63 @@ Not synced (use migrations):
   + http://developer.android.com/reference/android/speech/tts/package-summary.html
   + http://developer.android.com/reference/android/speech/package-summary.html
 - Prueba de text-to-speech exitosa.
+*** 29 enero
+- Ideas para el proyecto:
+  + Implementar modelos ocultos de Markov en Django para que al hacer
+    un GET de una receta concreta se devuelva también las recetas que
+    "también te pueden gustar" (en función del conjunto de recetas que
+    otros usuarios han seteado como favoritas).
+    * Tengo que pensar cómo encajarían estas recetas en el modelo de
+      fragments actual. ¿Probablemente deba añadir otra actividad? De
+      todas formas, puede que me hiciera falta igualmente, puesto que
+      hay otros fragments que añadir (creo): cronómetro, imagen a
+      pantalla completa, video idem,...
+    *
+      http://www.genbetadev.com/paradigmas-de-programacion/seleccion-aleatoria-ponderada-y-las-cadenas-de-markov
+    * http://scikit-learn.org/stable/modules/hmm.html
+    * https://github.com/jamesmcinerney/np-hmm
+    * https://bitbucket.org/GuyZ/hmm
+  + Para añadir la conexión con dbpedia:
+    * Hay que añadir un modelo "Ingrediente", que contenga el idioma
+      del ingrediente, el nombre, la fecha de creación y modificación
+      (para hacer los sincronizadores más eficientes) y la URL del
+      elemento de dbpedia que le corresponda.
+    * Además esta URL (es decir, la adición de un nuevo Ingrediente
+      genérico) se deberá hacer a la hora de subir nuevas recetas y
+      comprobar que hay un ingrediente que no existe.
+    * Para facilitar el uso de la app a usuarios básicos, este
+      comportamiento deberá activarse en la configuración de la
+      aplicación. Así que, por defecto, un usuario podrá subir una
+      receta con un ingrediente que defina él o ella, pero no tiene
+      porqué estar registrado en la base de datos como ingrediente
+      genérico.
+    * Estos ingredientes genéricos se utilizarán también para que los
+      campos de texto donde se deban añadir ingredientes se
+      autocompleten (para facilitar la elección a los usuarios).
+  + Sincronización:
+    * En principio no va a haber una sincronización de recetas
+      automática (es decir, una conexión inicial de la base de datos
+      para bajarse todas las recetas).
+    * Al iniciar la aplicación se comprobará si hay conexión internet
+      o no. Si la hay, el gridview principal se actualizará con las
+      10 recetas que corresponda (las 10 más votadas, por
+      ejemplo). Si no la hay, se comprobará si hay recetas guardadas
+      en la base de datos y se cargarán en el gridview en función de
+      algún criterio (puede que el mismo). Si no hay ninguna de las
+      dos, se informará al usuario de que no hay datos y debe
+      conectarse a internet.
+    * Cuando se entre en una receta (o aparezca en el gridview
+      principal) y ésta se encuentre guardada en la base de datos, si
+      hay conexión a internet, ésta deberá ser actualizada en la base
+      de datos para que los datos sean lo más correctos posible.
+  + Media:
+    * Si una receta no tiene enlazada una imagen principal, deberá
+      tomarse una de las imágenes creadas como "demo" para no
+      prescindir de la transición del fragment (de imagen a imagen).
+- TODO Prueba de voz: comprobar si TTS tiene pausas de tiempo y se
+  puede ejecutar en secuencia, o se lanzan todas las órdenes a la
+  vez. Si se ejecutan a la vez, buscar cómo averiguar cuando ha
+  terminado.
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
