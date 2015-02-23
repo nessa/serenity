@@ -80,6 +80,11 @@ Proyecto Serenity (Recetario de cocina para Android)
   desarrollar (20 $ para toda la vida). Además tengo dispositivos
   Android en los que poder realizar pruebas físicas, además de en el
   simulador.
+  + Motivación por dicha tecnología: Estoy trabajando desarrollando
+    aplicaciones para iOS y quiero aprender otras tecnologías. Además
+    prefiero que sean software libre, tanto por afinidad como por
+    economía (dado que además de libre es gratuito el desarrollo y la
+    publicación).
 
 *** Monetización
 - Añadir publicidad
@@ -531,6 +536,8 @@ Not synced (use migrations):
   puede ejecutar en secuencia, o se lanzan todas las órdenes a la
   vez. Si se ejecutan a la vez, buscar cómo averiguar cuando ha
   terminado.
+*** 20 febrero
+- Trabajando en los mockups de la aplicación (diseño completo).
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
