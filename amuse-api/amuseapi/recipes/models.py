@@ -11,6 +11,8 @@ LANGUAGE_CHOICES = (
 MEASUREMENT_CHOICES = (
     ('g', 'gram'),
     ('kg', 'kilogram'),
+    ('ml', 'milliliter'),
+    ('l', 'liter'),
     ('unit', 'unit'),
     ('cup', 'cup'),
     ('tsp', 'teaspoon'),

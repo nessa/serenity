@@ -538,6 +538,15 @@ Not synced (use migrations):
   terminado.
 *** 20 febrero
 - Trabajando en los mockups de la aplicación (diseño completo).
+** Abril
+*** [API] 4 abril
+- Pruebas de inicio.
+- Añadiendo nuevas recetas (4 de momento). El objetivo es empezar a
+  programar la descarga de recetas (necesito más de 10, si puede ser
+  más de 20, para ver cómo se comporta la APP).
+- Añadiendo litros y mililitros como medidas aceptadas.
+  + time y quantity = 0 significa que no tienen valor definido (por
+    lo que ni se mostrará).
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)

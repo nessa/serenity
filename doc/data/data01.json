@@ -15,6 +15,7 @@
     ], 
     "ingredients": [
 	{
+	    "sort_number": 0,
 	    "quantity": "",
 	    "name": "",
 	    "measurement_unit": ""
@@ -22,11 +23,11 @@
     ], 
     "directions": [
 	{
-	    "sort_number": "",
+	    "sort_number": 0,
 	    "description": "",
 	    "image": "",
 	    "video": "",
-	    "time": ""
+	    "time": 0
 	}
     ], 
     "comments": []

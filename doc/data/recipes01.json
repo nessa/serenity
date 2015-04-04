@@ -109,14 +109,481 @@
 }
 
 {
-    "title": "", 
-    "language": "", 
-    "cooking_time": 0, 
+    "title": "Rancho canario", 
+    "language": "ES", 
+    "cooking_time": 1,
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 4, 
+    "source": "http://noeliarcado.es/2015/04/rancho-canario/", 
+    "categories": [
+    {
+        "name": "STEW"
+    }
+    ], 
+    "ingredients": [
+    {
+        "sort_number": 1,
+        "quantity": 120,
+        "name": "garbanzos",
+        "measurement_unit": "g"
+    },
+    {
+        "sort_number": 2,
+        "quantity": 2,
+        "name": "muslos de pollo",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 3,
+        "quantity": 80,
+        "name": "ternera",
+        "measurement_unit": "g"
+    },
+    {
+        "sort_number": 4,
+        "quantity": 2,
+        "name": "chorizos",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 5,
+        "quantity": 80,
+        "name": "pasta",
+        "measurement_unit": "g"
+    },
+    {
+        "sort_number": 6,
+        "quantity": 2,
+        "name": "patatas",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 7,
+        "quantity": 0.5,
+        "name": "cebolleta",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 8,
+        "quantity": 1,
+        "name": "tomate",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 9,
+        "quantity": 2,
+        "name": "dientes de ajo",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 10,
+        "quantity": 0,
+        "name": "aceite de oliva",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 11,
+        "quantity": 0,
+        "name": "sal",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 12,
+        "quantity": 1,
+        "name": "pimentón dulce",
+        "measurement_unit": "tbsp"
+    },
+    {
+        "sort_number": 13,
+        "quantity": 1,
+        "name": "orégano",
+        "measurement_unit": "tbsp"
+    },
+    {
+        "sort_number": 14,
+        "quantity": 0,
+        "name": "azafrán",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 15,
+        "quantity": 0,
+        "name": "perejil",
+        "measurement_unit": "unit"
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": 1,
+        "description": "Poner los garbanzos a remojo durante al menos 8 horas (mejor 12).",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 2,
+        "description": "Poner las carnes en la olla a presión, cubrir con agua, sazonar y calentar. Ir desespumando hasta que empiece a hervir.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 3,
+        "description": "Añadir los garbanzos. Tapar la olla y dejar cocinar durante unos 30 minutos a partir de que empiece a salir el vapor. Si no se usa olla a presión, cocinar los garbanzos durante al menos una hora y media (puede que dos).",
+        "image": "",
+        "video": "",
+        "time": 30
+    },
+    {
+        "sort_number": 4,
+        "description": "Pelar y picar la cebolleta y los ajos. Ponerlos en una sartén a fuego medio para que se pochen.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 5,
+        "description": "Echar el tomate bien picado y sazonar. Rehogar un poco y añadir el pimentón, el orégano y el azafrán. Remover.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 6,
+        "description": "Pelar y trocear las patatas en dados medianos.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 7,
+        "description": "Cuando el cocido este listo, retirar las carnes de la olla y trocearlas quitando los huesos y sobrantes.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 8,
+        "description": "Echar las verduras pochadas, las patatas y la pasta a la olla.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 9,
+        "description": "Cocinar durante unos 6 u 8 minutos (dependiendo de las instrucciones de la pasta).",
+        "image": "",
+        "video": "",
+        "time": 6
+    },
+    {
+        "sort_number": 10,
+        "description": "Abrir la olla, volver a introducir las carnes y remover. Espolvorear perejil picado al servir.",
+        "image": "",
+        "video": "",
+        "time": 0
+    }
+    ]
+}
+
+{
+    "title": "Torrijas de vino con miel", 
+    "language": "ES", 
+    "cooking_time": 40, 
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 10, 
+    "source": "http://noeliarcado.es/2015/03/torrijas-de-vino-con-miel/", 
+    "categories": [
+    {
+        "name": "DESSERT"
+    }
+    ], 
+    "ingredients": [
+    {
+        "sort_number": 1,
+        "quantity": 1,
+        "name": "barra de pan",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 2,
+        "quantity": 500,
+        "name": "leche",
+        "measurement_unit": "ml"
+    },
+    {
+        "sort_number": 3,
+        "quantity": 1,
+        "name": "rama de canela",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 4,
+        "quantity": 1,
+        "name": "limón",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 5,
+        "quantity": 120,
+        "name": "vino moscatel",
+        "measurement_unit": "ml"
+    },
+    {
+        "sort_number": 6,
+        "quantity": 3,
+        "name": "azúcar",
+        "measurement_unit": "tsp"
+    },
+    {
+        "sort_number": 7,
+        "quantity": 3,
+        "name": "huevos",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 8,
+        "quantity": 0.5,
+        "name": "miel",
+        "measurement_unit": "cup"
+    },
+    {
+        "sort_number": 9,
+        "quantity": 0.25,
+        "name": "agua",
+        "measurement_unit": "cup"
+    },
+    {
+        "sort_number": 10,
+        "quantity": 0,
+        "name": "aceite de girasol",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 11,
+        "quantity": 0,
+        "name": "azúcar glas",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 12,
+        "quantity": 0,
+        "name": "canela en polvo",
+        "measurement_unit": "unit"
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": 1,
+        "description": "Si se va a usar una barra de pan duro, cortarla en rebanadas de poco más de un centímetro. Si el pan no está suficientemente duro, hacer las rebanadas más anchas para que no se deshagan.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 2,
+        "description": "Echar el vino en un cazo y calentarlo a fuego medio. Añadir el azúcar y dejar que se diluya sin llegar a ebullición. Apartar y dejar enfriar.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 3,
+        "description": "Cortar tiras de la piel del limón con cuidado de no dejar la parte blanca, que amarga. Con un pelapatatas resulta muy fácil.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 4,
+        "description": "En el mismo o en otro cazo infusionar llevar la leche casi al punto de ebullición. Apartar del fuego y añadir la rama de canela y la piel de limón. Dejar que se enfríe hasta llegar a temperatura ambiente.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 5,
+        "description": "Cuando la leche y el vino estén fríos, quitar la rama de canela y la piel de limón de la leche. Mezclar la leche y el vino en un mismo recipiente.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 6,
+        "description": "Bañar las rebanadas de pan en la mezcla de leche y vino. Dejarlas sobre una bandeja para que vayan soltando el líquido sobrante.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 7,
+        "description": "Poner el aceite en una sartén a fuego fuerte y batir los huevos en otro recipiente.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 8,
+        "description": "Pasar las rebanadas por el huevo por ambas caras y freír en el aceite bien caliente. Cuando estén doradas por un lado, darles la vuelta y dejar que se tuesten por el otro. Sacarlas a una bandeja con papel absorbente para que escurran el aceite sobrante.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 9,
+        "description": "Espolvorear canela en polvo y azúcar glas sobre las torrijas.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 10,
+        "description": "Echar la miel y el agua en un cazo y calentar hasta que la miel se diluya un poco, para que no quede tan espesa.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 11,
+        "description": "Bañar las torrijas en la miel.",
+        "image": "",
+        "video": "",
+        "time": 0
+    }
+    ]
+}
+
+
+{
+    "title": "Ensalada de judías verdes y bonito", 
+    "language": "ES", 
+    "cooking_time": 55,
     "image": "", 
     "total_rating": 0, 
     "users_rating": 0, 
     "servings": 0, 
-    "source": "", 
+    "source": "http://noeliarcado.es/2015/03/ensalada-de-judias-verdes-y-bonito/",
+    "categories": [
+    {
+        "name": "SALAD"
+    }
+    ], 
+    "ingredients": [
+    {
+        "sort_number": 1,
+        "quantity": 2,
+        "name": "patatas",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 2,
+        "quantity": 2,
+        "name": "tomates",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 3,
+        "quantity": 200,
+        "name": "judías verdes",
+        "measurement_unit": "g"
+    },
+    {
+        "sort_number": 4,
+        "quantity": 60,
+        "name": "bonito",
+        "measurement_unit": "g"
+    },
+    {
+        "sort_number": 5,
+        "quantity": 4,
+        "name": "huevos de codorniz",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 6,
+        "quantity": 0,
+        "name": "sal",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 7,
+        "quantity": 0,
+        "name": "aceite de oliva",
+        "measurement_unit": "unit"
+    },
+    {
+        "sort_number": 8,
+        "quantity": 0,
+        "name": "vinagre de jerez",
+        "measurement_unit": "unit"
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": 1,
+        "description": "Quitar las puntas a las judías verdes, cortarlas longitudinalmente en dos y luego cada trozo resultante en tres de igual tamaño.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 2,
+        "description": "Cocer las judías en abundante agua con sal durante unos 15 minutos.",
+        "image": "",
+        "video": "",
+        "time": 15
+    },
+    {
+        "sort_number": 3,
+        "description": "Cocer las patatas y los huevos en abundante agua con sal. Los huevos deben cocer durante unos 10 minutos y las patatas de 20 a 40 minutos (dependiendo del tamaño).",
+        "image": "",
+        "video": "",
+        "time": 20
+    },
+    {
+        "sort_number": 4,
+        "description": "Pelar y trocear las patatas en láminas de unos 2 centímetros.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 5,
+        "description": "Quitar las cáscaras de los huevos y cortarlos por la mitad a lo largo.",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 6,
+        "description": "Lavar y laminar los tomates muy finalmente (en tiras de medio centímetro aproximadamente).",
+        "image": "",
+        "video": "",
+        "time": 0
+    },
+    {
+        "sort_number": 7,
+        "description": "Cuando estén todos los ingredientes a temperatura ambiente, montar el plato poniendo primero una capa de patata, luego tomate, siguiendo con las judías, el bonito y por último los huevos. Aliñar con sal, aceite de oliva y vinagre de Jerez.",
+        "image": "",
+        "video": "",
+        "time": 0
+    }
+    ]
+}
+
+{
+    "title": "", 
+    "language": "ES", 
+    "cooking_time": 0,
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 0, 
+    "source": "",
     "categories": [
     {
         "name": ""
@@ -124,18 +591,119 @@
     ], 
     "ingredients": [
     {
-        "quantity": "",
+        "sort_number": 0,
+        "quantity": 0,
         "name": "",
-        "measurement_unit": ""
+        "measurement_unit": "unit"
     }
     ], 
     "directions": [
     {
-        "sort_number": "",
+        "sort_number": 0,
         "description": "",
         "image": "",
         "video": "",
-        "time": ""
+        "time": 0
     }
     ]
 }
+
+{
+    "title": "", 
+    "language": "ES", 
+    "cooking_time": 0,
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 0, 
+    "source": "",
+    "categories": [
+    {
+        "name": ""
+    }
+    ], 
+    "ingredients": [
+    {
+        "sort_number": 0,
+        "quantity": 0,
+        "name": "",
+        "measurement_unit": "unit"
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": 0,
+        "description": "",
+        "image": "",
+        "video": "",
+        "time": 0
+    }
+    ]
+}
+
+{
+    "title": "", 
+    "language": "ES", 
+    "cooking_time": 0,
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 0, 
+    "source": "",
+    "categories": [
+    {
+        "name": ""
+    }
+    ], 
+    "ingredients": [
+    {
+        "sort_number": 0,
+        "quantity": 0,
+        "name": "",
+        "measurement_unit": "unit"
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": 0,
+        "description": "",
+        "image": "",
+        "video": "",
+        "time": 0
+    }
+    ]
+}
+
+{
+    "title": "", 
+    "language": "ES", 
+    "cooking_time": 0,
+    "image": "", 
+    "total_rating": 0, 
+    "users_rating": 0, 
+    "servings": 0, 
+    "source": "",
+    "categories": [
+    {
+        "name": ""
+    }
+    ], 
+    "ingredients": [
+    {
+        "sort_number": 0,
+        "quantity": 0,
+        "name": "",
+        "measurement_unit": "unit"
+    }
+    ], 
+    "directions": [
+    {
+        "sort_number": 0,
+        "description": "",
+        "image": "",
+        "video": "",
+        "time": 0
+    }
+    ]
+}
+
