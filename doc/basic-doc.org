@@ -547,6 +547,17 @@ Not synced (use migrations):
 - Añadiendo litros y mililitros como medidas aceptadas.
   + time y quantity = 0 significa que no tienen valor definido (por
     lo que ni se mostrará).
+** Junio
+*** [API] 15 junio
+- Para rellenar la base de datos con datos iniciales hay que utilizar
+  fixtures: https://docs.djangoproject.com/en/1.8/howto/initial-data/
+- El archivo debe seguir una sixtaxis concreta, por lo que es preferible
+  rellenar la base de datos con toda la información que se desee y lueg
+  ejecutar el siguiente comando para exportar toda la información:
+  + ./manage.py dumpdata recipes > recipes/fixtures/initial_data.json
+- Para cargar el fixture es necesario ejecutar:
+  + ./manage.py loaddata recipes/fixtures/initial_data.json
+
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
