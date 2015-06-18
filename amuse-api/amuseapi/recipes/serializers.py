@@ -20,7 +20,7 @@ class RecipeIngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeIngredient
         fields = ('recipe', 'sort_number', 'quantity', 'name',
-                  'measurement_unit')
+            'measurement_unit')
 
 
 class RecipeDirectionSerializer(serializers.ModelSerializer):
@@ -32,7 +32,7 @@ class RecipeDirectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeDirection
         fields = ('recipe', 'sort_number', 'description', 'image', 'video',
-                  'time')
+            'time')
 
 
 class RecipeCommentSerializer(serializers.ModelSerializer):
@@ -45,7 +45,7 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
 
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.CharField(source='owner.id', read_only=True)    
+    owner = serializers.CharField(source='owner.id', read_only=True)
     image = serializers.URLField(required=False, allow_blank=True)
     total_rating = serializers.IntegerField(required=False)
     users_rating = serializers.IntegerField(required=False)
@@ -58,12 +58,13 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Recipe
-        fields = ('id', 'title', 'owner', 'language', 'created_timestamp',
-                  'updated_timestamp', 'cooking_time', 'image', 'total_rating',
-                  'users_rating', 'servings', 'source', 'categories',
-                  'ingredients', 'directions', 'comments')
+        fields = ('id', 'title', 'owner', 'language', 'type_of_dish',
+            'difficulty', 'created_timestamp', 'updated_timestamp',
+            'cooking_time', 'image', 'total_rating', 'users_rating',
+            'servings', 'source', 'categories', 'ingredients', 'directions',
+            'comments')
         read_only_fields = ('created_timestamp', 'updated_timestamp',
-                            'comments')
+            'comments')
 
     # Override create method to create all nested fields
     def create(self, validated_data):
@@ -103,7 +104,7 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         for item in categories:
             try:
                 category = RecipeCategory.objects.get(recipe=instance,
-                                                      name=item['name'])
+                    name=item['name'])
             except RecipeCategory.DoesNotExist:
                 # Create a new category
                 category = RecipeCategory(recipe=instance, name=item['name'])
@@ -119,14 +120,14 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         for item in ingredients:
             try:
                 ingredient = RecipeIngredient.objects.get(recipe=instance,
-                                                           sort_number = item['sort_number'])
+                    sort_number = item['sort_number'])
             except RecipeIngredient.DoesNotExist:
                 # Create a new ingredient
                 ingredient = RecipeIngredient(recipe=instance,
-                                              sort_number=item['sort_number'],
-                                              quantity=item['quantity'],
-                                              name=item['name'],
-                                              measurement_unit=item['measurement_unit'])
+                    sort_number=item['sort_number'],
+                    quantity=item['quantity'],
+                    name=item['name'],
+                    measurement_unit=item['measurement_unit'])
 
             # Update present ingredient
             ingredient.quantity = item['quantity']
@@ -144,15 +145,15 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         for item in directions:
             try:
                 direction = RecipeDirection.objects.get(recipe=instance,
-                                                        sort_number=item['sort_number'])
+                    sort_number=item['sort_number'])
             except RecipeDirection.DoesNotExist:
                 # Create a new direction
                 direction = RecipeDirection(recipe=instance,
-                                            sort_number=item['sort_number'],
-                                            description=item['description'],
-                                            image=item['image'],
-                                            video=item['video'],
-                                            time=item['time'])
+                    sort_number=item['sort_number'],
+                    description=item['description'],
+                    image=item['image'],
+                    video=item['video'],
+                    time=item['time'])
             
             # Update present direction
             direction.description = item['description']
@@ -165,17 +166,18 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    recipes = serializers.HyperlinkedRelatedField(many=True, view_name='recipe-detail', read_only=True)
+    recipes = serializers.HyperlinkedRelatedField(many=True,
+        view_name='recipe-detail', read_only=True)
 
     first_name = serializers.CharField(required=False)
     last_name = serializers.CharField(required=False)
     auth_token = serializers.CharField(read_only=True)
     last_login_on = serializers.DateTimeField(source='last_login',
-                                              read_only=True)
+        read_only=True)
     joined_on = serializers.DateTimeField(source='date_joined', read_only=True)
 
     class Meta:
         model = User
         fields = ('id', 'email', 'url', 'auth_token', 'first_name',
-                  'last_name', 'is_staff', 'last_login_on',
-                  'joined_on', 'recipes')
+            'last_name', 'is_staff', 'last_login_on', 'joined_on',
+            'recipes')

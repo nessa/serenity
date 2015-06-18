@@ -20,12 +20,48 @@ MEASUREMENT_CHOICES = (
     ('rasher', 'rasher'),
 )
 
+MENU = (
+    ('APPETIZER', 'Appetizer'),
+    ('FIRST-COURSE', 'First Course'),
+    ('SECOND-COURSE', 'Second Course'),
+    ('MAIN-DISH', 'Main Dish'),
+    ('DESSERT', 'Dessert'),
+    ('OTHER', 'Other'),
+)
+
+DIFFICULTY = (
+    ('HIGH', 'High'),
+    ('MEDIUM', 'Medium'),
+    ('LOW', 'Low'),
+)
+
+# For now
+CATEGORIES = (
+    ('SUITABLE-FOR-CELIACS', 'Suitable for celiacs'),
+    ('SUITABLE-FOR-LACTOSE-INTOLERANTS', 'Suitable for lactose intolerants'),
+    ('VEGETARIAN', 'Vegetarian'),
+    ('VEGAN', 'Vegan'),
+    ('ARAB', 'Arab'),
+    ('MEDITERRANEAN', 'Mediterranean'),
+    ('ASIAN', 'Asian'),
+    ('NORTH-AMERICAN', 'North American'),
+    ('SOUTH-AMERICAN', 'South American'),
+    ('CENTRAL-AMERICAN', 'Central American'),
+    ('AFRICAN', 'African'),
+    ('EUROPEAN', 'European'),
+    ('OCEANIAN', 'Oceanian'),
+)
 
 # Recipes with ingredients and directions
 class Recipe(models.Model):
     title = models.CharField(max_length=100, blank=False)
     owner = models.ForeignKey(User, related_name='recipes')
-    language = models.CharField(choices=LANGUAGE_CHOICES, default='ES', max_length=10)
+    language = models.CharField(choices=LANGUAGE_CHOICES, default='ES',
+        max_length=10)
+    type_of_dish = models.CharField(choices=MENU, default='OTHER',
+        max_length=20)
+    difficulty = models.CharField(choices=DIFFICULTY, default='MEDIUM',
+        max_length=10)
     created_timestamp = models.DateTimeField(auto_now_add=True)
     updated_timestamp = models.DateTimeField(auto_now=True)
     cooking_time = models.FloatField()
@@ -44,7 +80,8 @@ class RecipeIngredient(models.Model):
     sort_number = models.PositiveIntegerField()
     quantity = models.FloatField()
     name = models.CharField(max_length=100)
-    measurement_unit = models.CharField(choices=MEASUREMENT_CHOICES, default='unit', max_length=100)
+    measurement_unit = models.CharField(choices=MEASUREMENT_CHOICES,
+        default='unit', max_length=100)
 
     class Meta:
         ordering = ['sort_number']

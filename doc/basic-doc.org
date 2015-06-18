@@ -557,6 +557,44 @@ Not synced (use migrations):
   + ./manage.py dumpdata recipes > recipes/fixtures/initial_data.json
 - Para cargar el fixture es necesario ejecutar:
   + ./manage.py loaddata recipes/fixtures/initial_data.json
+*** [API]16 junio
+- Intentando arreglar el método rate_recipe (sigue fallando).
+- Info: http://www.django-rest-framework.org/api-guide/views/
+- Categorización de platos:
+  + Intolerancias:
+    * SUITABLE-FOR-CELIACS
+    * SUITABLE-FOR-LACTOSE-INTOLERANTS
+  + Tipos de regímenes:
+    * LOW-CALORIES (bajo en calorías)
+    * LOW-FAT (bajo en grasa)
+    * LOW-CARB (bajo en hidratos de carbono)
+    * VEGETARIAN
+    * VEGAN
+  + Tipo de plato:
+    * APPETIZER (aperitivo)
+    * FIRST COURSE (primer plato)
+    * SECOND COURSE (segundo plato)
+    * MAIN DISH (plato principal)
+    * DESSERT (postre)
+    * OTHER
+  + Dificultad:
+    * HIGH
+    * MEDIUM
+    * LOW
+  + Idioma
+  + País o zona típica de esta receta
+
+*** [API] 16 junio
+- He añadido 2 campos nuevos al modelo de recetas: type_of_dish y difficulty
+- He creado un nuevo archivo de migración para añadir esos 2 nuevos campos
+
+*** [API] 17 junio
+- He terminado de añadir 21 recetas a la base de datos.
+- He exportado los datos de usuarios y recetas a los archivos del directorio
+  fixtures.
+- Para restaurar los datos:
+  + ./manage.py loaddata recipes/fixtures/users_initial_data.json
+  + ./manage.py loaddata recipes/fixtures/recipes_initial_data.json
 
 ** Importante
 - Migración de datos:
@@ -569,11 +607,14 @@ Not synced (use migrations):
   + ./manage.py migrate recipes
   + ./manage.py migrate django_extensions
   + ./manage.py createsuperuser
+- Fixture:
+  + ./manage.py dumpdata recipes > recipes/fixtures/initial_data.json
+  + ./manage.py loaddata recipes/fixtures/initial_data.json
 - Postgre desde terminal:
   + Borrar base de datos: dropdb 'name'
   + Create base de datos: createdb -O user name
   + Acceder: psql (siendo usuario postgres)
-- Postrge desde PSQL:
+- Postgre desde PSQL:
   + Lista DB: \l
   + Ayuda: \?
   + Conectar a una DB: \c database
@@ -582,6 +623,7 @@ Not synced (use migrations):
 - Iconos Material:
   + Referencia: https://google.github.io/material-design-icons/
   + Repo: https://github.com/google/material-design-icons
+
 ** Por hacer
 - TODO: Añadir más recetas para empezar con la APP Android.
 - TODO: Método para agregar comentarios a una receta (independiente de
@@ -590,6 +632,7 @@ Not synced (use migrations):
 - TODO: Añadir nuevos modelos Ingredient y Category (genéricos) que
   añadan cada nuevo ingrediente y categoría que no esté creado ya y
   pueda servir para filtrar recetas y obtener información secundaria.
+  + Añadirlo solo para ingredientes (categorías serán fijas).
 - TODO: Definición del layout inicial en Inkscape.
 - TODO: Posibilidad. ¿Añadir un campo 'rating' para facilitar la
   filtración en función de un único campo en lugar de tener que usar
