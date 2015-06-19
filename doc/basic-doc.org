@@ -596,6 +596,16 @@ Not synced (use migrations):
   + ./manage.py loaddata recipes/fixtures/users_initial_data.json
   + ./manage.py loaddata recipes/fixtures/recipes_initial_data.json
 
+*** [API-APP] 19 junio
+- He empezado a desarrollar la descarga de objetos JSON de la API.
+- El servidor no es público, por lo que no puedo probar las cosas desde el
+  móvil. Y el emulador va demasiado lento.
+- Opto por intentar utilizar vagrant y ansible para ejecutar un servidor
+  que pueda funcionar correctamente.
+- Reestructuro el repositorio (hay un nivel de directorio que no tiene sentido
+  y dificulta la configuración de ansible).
+
+
 ** Importante
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
@@ -625,7 +635,6 @@ Not synced (use migrations):
   + Repo: https://github.com/google/material-design-icons
 
 ** Por hacer
-- TODO: Añadir más recetas para empezar con la APP Android.
 - TODO: Método para agregar comentarios a una receta (independiente de
   los métodos básicos). Probablemente a través de su propio endpoint
   (comments).
@@ -651,6 +660,12 @@ Not synced (use migrations):
   + http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/setup.html#setting-up
   + http://docs.aws.amazon.com/AWSAndroidSDK/latest/javadoc/
   + http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transfermanager.html
+- Posibilidad. ¿Conectar con flickr o similares en lugar de Amazon?
+
+*** Hecho
+- [17 junio] Añadir más recetas para empezar con la APP Android.
+
+
 * Fuentes
 *** Plantillas
 - Django REST skeleton (plantilla):
