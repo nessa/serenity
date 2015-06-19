@@ -1,11 +1,25 @@
 # -*- coding: utf-8 -*-
 from django.forms import widgets
+from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from recipes.models import Recipe, RecipeCategory, RecipeIngredient
 from recipes.models import RecipeDirection, RecipeComment, User
 from datetime import datetime
 
+# Users
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('url', 'username', 'email', 'groups')
 
+
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Group
+        fields = ('url', 'name')
+
+
+# Recipes
 class RecipeCategorySerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id', read_only=True)
 
@@ -165,19 +179,19 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         return instance
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    recipes = serializers.HyperlinkedRelatedField(many=True,
-        view_name='recipe-detail', read_only=True)
+# class UserSerializer(serializers.HyperlinkedModelSerializer):
+#     recipes = serializers.HyperlinkedRelatedField(many=True,
+#         view_name='recipe-detail', read_only=True)
 
-    first_name = serializers.CharField(required=False)
-    last_name = serializers.CharField(required=False)
-    auth_token = serializers.CharField(read_only=True)
-    last_login_on = serializers.DateTimeField(source='last_login',
-        read_only=True)
-    joined_on = serializers.DateTimeField(source='date_joined', read_only=True)
+#     first_name = serializers.CharField(required=False)
+#     last_name = serializers.CharField(required=False)
+#     auth_token = serializers.CharField(read_only=True)
+#     last_login_on = serializers.DateTimeField(source='last_login',
+#         read_only=True)
+#     joined_on = serializers.DateTimeField(source='date_joined', read_only=True)
 
-    class Meta:
-        model = User
-        fields = ('id', 'email', 'url', 'auth_token', 'first_name',
-            'last_name', 'is_staff', 'last_login_on', 'joined_on',
-            'recipes')
+#     class Meta:
+#         model = User
+#         fields = ('id', 'email', 'url', 'auth_token', 'first_name',
+#             'last_name', 'is_staff', 'last_login_on', 'joined_on',
+#             'recipes')

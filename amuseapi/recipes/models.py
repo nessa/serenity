@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from api.users.models import User
+from django.contrib.auth.models import User
 
 # Search a way to do this programatically
 LANGUAGE_CHOICES = (

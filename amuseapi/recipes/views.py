@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
-from recipes.models import Recipe, User
-from recipes.serializers import RecipeSerializer, UserSerializer
+from recipes.models import Recipe
+from django.contrib.auth.models import User, Group
+
+from rest_framework import viewsets
+
+from recipes.serializers import RecipeSerializer, UserSerializer, GroupSerializer
 from rest_framework import generics
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
@@ -11,12 +15,34 @@ from rest_framework.decorators import detail_route
 import django_filters
 
 
+# Root
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
         'recipes': reverse('recipe-list', request=request, format=format)
     })
+
+
+# Users
+class UserViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsOwnerOrReadOnly,)
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+    permission_classes = (IsOwnerOrReadOnly,)
+
+# Recipes
 
 # TODO: Add a comment list class to create and list them (with filters)
 
@@ -56,12 +82,15 @@ class RecipeFilter(django_filters.FilterSet):
             'ingredients', 'users']
 
 
-class RecipeList(generics.ListCreateAPIView):
+class RecipeViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows recipes to be viewed or edited.
+    """
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
     filter_class = RecipeFilter
     permission_classes = (IsOwnerOrReadOnly,)
-    
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
@@ -73,57 +102,44 @@ class RecipeList(generics.ListCreateAPIView):
             return 20
         return 10
 
+# class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Recipe.objects.all()
+#     serializer_class = RecipeSerializer
+#     permission_classes = (IsOwnerOrReadOnly,)
 
-class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Recipe.objects.all()
-    serializer_class = RecipeSerializer
-    permission_classes = (IsOwnerOrReadOnly,)
-
-    # TODO: Remove permissions. Restricted to authenticated users, not only
-    # owners.
-    # rate_recipe method: receives id_recipe (recipe pk) and rating (1 to 5
-    # integer)
-    #@api_view(['POST'])
-    #@permission_classes((IsOwnerOrReadOnly,))
-    @detail_route(methods=['post'])#, permission_classes=[IsOwnerOrReadOnly])
-    def rate_recipe(self, request, pk=None):
-        print("PRUEBA")
+#     # TODO: Remove permissions. Restricted to authenticated users, not only
+#     # owners.
+#     # rate_recipe method: receives id_recipe (recipe pk) and rating (1 to 5
+#     # integer)
+#     #@api_view(['POST'])
+#     #@permission_classes((IsOwnerOrReadOnly,))
+#     @detail_route(methods=['post'])#, permission_classes=[IsOwnerOrReadOnly])
+#     def rate_recipe(self, request, pk=None):
+#         print("PRUEBA")
         
 
-        if 'rating' in request.POST:
-            id_recipe = request.POST['id_recipe']
-            rating = request.POST['rating']
-            recipe = Recipe.objects.get(pk=pk)
+#         if 'rating' in request.POST:
+#             id_recipe = request.POST['id_recipe']
+#             rating = request.POST['rating']
+#             recipe = Recipe.objects.get(pk=pk)
 
-            if recipe:
-                self.check_object_permissions(self.request, recipe)
+#             if recipe:
+#                 self.check_object_permissions(self.request, recipe)
 
-                recipe.total_rating = recipe.total_rating + rating
-                recipe.users_rating = recipe.users_rating + 1
+#                 recipe.total_rating = recipe.total_rating + rating
+#                 recipe.users_rating = recipe.users_rating + 1
 
-                print("Rating:" + recipe.total_rating)
-                #recipe.save()
+#                 print("Rating:" + recipe.total_rating)
+#                 #recipe.save()
 
-                # TODO: Add new relation between user and rated recipe (future)
+#                 # TODO: Add new relation between user and rated recipe (future)
 
-                # TODO: Response with the new total_rating and the new
-                # users_rating
-                return HttpResponse("OK")
-            else:
-                raise Http404("No recipe")
-        else:
-            error_format = _('Missing arguments: id recipe and rating')
-            raise Http404(error_format)
+#                 # TODO: Response with the new total_rating and the new
+#                 # users_rating
+#                 return HttpResponse("OK")
+#             else:
+#                 raise Http404("No recipe")
+#         else:
+#             error_format = _('Missing arguments: id recipe and rating')
+#             raise Http404(error_format)
 
-
-class UserList(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-
-
-class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly,)

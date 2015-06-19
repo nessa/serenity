@@ -604,6 +604,14 @@ Not synced (use migrations):
   que pueda funcionar correctamente.
 - Reestructuro el repositorio (hay un nivel de directorio que no tiene sentido
   y dificulta la configuración de ansible).
+- Actualización de la configuración de Vagrant y Ansible (fork de abrahanfer).
+- Instalación de vagrant, ansible y virtualbox.
+- Ejecutar vagrant up (o vagrant provision para seguir desde un punto con la
+  máquina arrancada).
+- Pruebas varias con vagrant.
+- He actualizado todo el proyecto a la última versión de Django y me he desecho
+  de muchos paquetes que no eran necesarios. Las primeras pruebas indican que
+  sigue funcionando, pero hay que comprobarlo más a fondo.
 
 
 ** Importante
@@ -620,6 +628,11 @@ Not synced (use migrations):
 - Fixture:
   + ./manage.py dumpdata recipes > recipes/fixtures/initial_data.json
   + ./manage.py loaddata recipes/fixtures/initial_data.json
+- Vagrant:
+  + up: ejecutar
+  + provision: para seguir desde un punto con la máquina arrancada
+  + halt: apagar la máquina
+  + destroy: destruir la máquina (al iniciarla instalará todo desde 0)
 - Postgre desde terminal:
   + Borrar base de datos: dropdb 'name'
   + Create base de datos: createdb -O user name
@@ -664,7 +677,6 @@ Not synced (use migrations):
 
 *** Hecho
 - [17 junio] Añadir más recetas para empezar con la APP Android.
-
 
 * Fuentes
 *** Plantillas

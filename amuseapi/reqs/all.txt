@@ -1,4 +1,1 @@
 -r required.txt
--r optional.txt
--r testing.txt
--r deploy.txt
