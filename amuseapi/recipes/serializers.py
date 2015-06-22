@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.forms import widgets
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group
 from rest_framework import serializers
 from recipes.models import Recipe, RecipeCategory, RecipeIngredient
 from recipes.models import RecipeDirection, RecipeComment, User
@@ -10,7 +10,7 @@ from datetime import datetime
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('username', 'email', 'groups', 'url', 'birthday', 'avatar')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
@@ -51,7 +51,7 @@ class RecipeDirectionSerializer(serializers.ModelSerializer):
 
 class RecipeCommentSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id', read_only=True)
-    user = serializers.CharField(source='user.id', read_only=True)
+    user = serializers.CharField(source='user.username', read_only=True)
 
     class Meta:
         model = RecipeComment
@@ -59,7 +59,7 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
 
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.CharField(source='owner.id', read_only=True)
+    owner = serializers.CharField(source='owner.username', read_only=True)
     image = serializers.URLField(required=False, allow_blank=True)
     total_rating = serializers.IntegerField(required=False)
     users_rating = serializers.IntegerField(required=False)

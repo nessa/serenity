@@ -613,6 +613,14 @@ Not synced (use migrations):
   de muchos paquetes que no eran necesarios. Las primeras pruebas indican que
   sigue funcionando, pero hay que comprobarlo más a fondo.
 
+*** [API] 22 junio
+- Actualizando la configuración de Vagrant para poder hacer llamadas a la API
+  desde otros dispositivos (forwarded ports). Acceder a través de
+  http://IP-pública:8002
+- Creando un usuario personalizado con campos nuevos.
+- Migrando datos y creando un dump de datos para cargarlo al inicio.
+
+
 
 ** Importante
 - Migración de datos:
@@ -620,10 +628,7 @@ Not synced (use migrations):
   + ./manage.py schemamigration recipes --initial
   + dropbd amusedb
   + createdb -O amuseuser amusedb
-  + ./manage.py syncdb
-  + ./manage.py migrate authtoken (hace la de users también)
-  + ./manage.py migrate recipes
-  + ./manage.py migrate django_extensions
+  + ./manage.py migrate
   + ./manage.py createsuperuser
 - Fixture:
   + ./manage.py dumpdata recipes > recipes/fixtures/initial_data.json

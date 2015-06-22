@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 # Search a way to do this programatically
 LANGUAGE_CHOICES = (
@@ -52,6 +52,11 @@ CATEGORIES = (
     ('OCEANIAN', 'Oceanian'),
 )
 
+class User(AbstractUser):
+    birthday = models.DateField(blank=True, null=True)
+    avatar = models.CharField(max_length=20, blank=True)
+
+
 # Recipes with ingredients and directions
 class Recipe(models.Model):
     title = models.CharField(max_length=100, blank=False)
@@ -101,4 +106,4 @@ class RecipeComment(models.Model):
     recipe = models.ForeignKey(Recipe, related_name='comments')
     user = models.ForeignKey(User, related_name='comments')
     comment = models.TextField()
-    timestamp = models.DateField(auto_now=True)
+    timestamp = models.DateTimeField(auto_now=True)

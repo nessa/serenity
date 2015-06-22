@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-from recipes.models import Recipe
-from django.contrib.auth.models import User, Group
+from recipes.models import Recipe, User
+from django.contrib.auth.models import Group
 
 from rest_framework import viewsets
 
-from recipes.serializers import RecipeSerializer, UserSerializer, GroupSerializer
+from recipes.serializers import RecipeSerializer, UserSerializer
+from recipes.serializers import GroupSerializer
 from rest_framework import generics
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
@@ -71,7 +72,7 @@ class RecipeFilter(django_filters.FilterSet):
         lookup_type='contains')
     ingredients = django_filters.CharFilter(name='ingredients__name',
         lookup_type='contains')
-    users = django_filters.CharFilter(name='users__email',
+    users = django_filters.CharFilter(name='users__username',
         lookup_type='contains')
 
     class Meta:
