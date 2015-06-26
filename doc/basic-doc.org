@@ -619,7 +619,31 @@ Not synced (use migrations):
   http://IP-pública:8002
 - Creando un usuario personalizado con campos nuevos.
 - Migrando datos y creando un dump de datos para cargarlo al inicio.
+- Si falla el git clone, probablemente es porque hay que hacer un pull en local
+  para meter la contraseña por primera vez.
 
+*** [APP] 23 junio
+- Sincronización con la API (get Recipes)
+
+*** [APP] 25 junio
+- Comprobación de conexión a internet.
+- Obtener imágenes aleatorias para colocar en las recetas cuando la que venga
+  esté vacía o no se encuentre.
+- Añadiendo nueva clase Recipe, que implementa Parcelable (para poder pasar
+  los datos a través de intents y bundles).
+
+*** [APP] 26 junio
+- Añadiendo nueva forma de descargar las imágenes:
+  + Librería Picasso: http://square.github.io/picasso/
+  + Está licenciada bajo Licencia Apache (compatible según la Free Software
+    Foundation con GPLv3).
+  + Resuelve el problema del grid (desorden en las vistas y mal funcionamiento
+    de memoria). Utilizar un método que implemente AsyncTask en este caso no es
+    suficiente, porque hay que manejar la cache y tener en cuenta muchos otros
+    factores.
+- He añadido una nueva Activity para la vista de detalle. También he ampliado
+  el layout del fragment correspondiente y he corregido la transición (que no 
+  funcionaba). También se pasa la receta a través de un Bundle.
 
 
 ** Importante
@@ -638,6 +662,13 @@ Not synced (use migrations):
   + provision: para seguir desde un punto con la máquina arrancada
   + halt: apagar la máquina
   + destroy: destruir la máquina (al iniciarla instalará todo desde 0)
+  + Ejecución:
+    * Cambiar variable domain en vars.yml (a la IP pública)
+    * Parar apache (no se si es necesario)
+    * Hacer pull en local de un proyecto (para que solicite la contraseña
+      y no se bloquee después)
+    * Vagrant up
+    * Vagrant provision
 - Postgre desde terminal:
   + Borrar base de datos: dropdb 'name'
   + Create base de datos: createdb -O user name
@@ -682,6 +713,15 @@ Not synced (use migrations):
 
 *** Hecho
 - [17 junio] Añadir más recetas para empezar con la APP Android.
+
+*** Ideas
+- Añadir a "Opciones de configuración" la posibilidad de descargar en la DB
+  todas las recetas que se vean.
+- En la vista de detalle de "paso de preparación", ¿posibilidad de cambiar el
+  tiempo del cronómetro?
+- Sacar el GET de comentarios fuera del GET de Recipes (en la API), para evitar
+  que se ralentice la app.
+- ¿Sincronización con flickr o imgur?
 
 * Fuentes
 *** Plantillas
