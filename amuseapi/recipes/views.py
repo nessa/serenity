@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-from recipes.models import Recipe, User
+from recipes.models import Recipe, User, RecipeComment, RecipeRating
 from django.contrib.auth.models import Group
 
 from rest_framework import viewsets
 
 from recipes.serializers import RecipeSerializer, UserSerializer
+from recipes.serializers import RecipeCommentSerializer
+from recipes.serializers import RecipeRatingSerializer
 from recipes.serializers import GroupSerializer
 from rest_framework import generics
 from rest_framework import permissions
@@ -16,7 +18,9 @@ from rest_framework.decorators import detail_route
 import django_filters
 
 
-# Root
+from pprint import pprint
+
+## ROOT
 @api_view(('GET',))
 def api_root(request, format=None):
     return Response({
@@ -25,7 +29,7 @@ def api_root(request, format=None):
     })
 
 
-# Users
+## USERS
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -43,9 +47,9 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = (IsOwnerOrReadOnly,)
 
-# Recipes
 
-# TODO: Add a comment list class to create and list them (with filters)
+
+## RECIPES
 
 # TODO: Add rating filter (using both total_rating and users_rating)
 class RecipeFilter(django_filters.FilterSet):
@@ -103,44 +107,75 @@ class RecipeViewSet(viewsets.ModelViewSet):
             return 20
         return 10
 
-# class RecipeDetail(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Recipe.objects.all()
-#     serializer_class = RecipeSerializer
-#     permission_classes = (IsOwnerOrReadOnly,)
 
-#     # TODO: Remove permissions. Restricted to authenticated users, not only
-#     # owners.
-#     # rate_recipe method: receives id_recipe (recipe pk) and rating (1 to 5
-#     # integer)
-#     #@api_view(['POST'])
-#     #@permission_classes((IsOwnerOrReadOnly,))
-#     @detail_route(methods=['post'])#, permission_classes=[IsOwnerOrReadOnly])
-#     def rate_recipe(self, request, pk=None):
-#         print("PRUEBA")
-        
+## COMMENTS
 
-#         if 'rating' in request.POST:
-#             id_recipe = request.POST['id_recipe']
-#             rating = request.POST['rating']
-#             recipe = Recipe.objects.get(pk=pk)
+class RecipeCommentFilter(django_filters.FilterSet):
+    # Relationships
+    recipes = django_filters.CharFilter(name='recipes__id',
+        lookup_type='contains')
+    users = django_filters.CharFilter(name='users__username',
+        lookup_type='contains')
 
-#             if recipe:
-#                 self.check_object_permissions(self.request, recipe)
+    class Meta:
+        model = RecipeComment
+        fields = ['recipes', 'users']
 
-#                 recipe.total_rating = recipe.total_rating + rating
-#                 recipe.users_rating = recipe.users_rating + 1
 
-#                 print("Rating:" + recipe.total_rating)
-#                 #recipe.save()
+class RecipeCommentViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows recipes to be viewed or edited.
+    """
+    queryset = RecipeComment.objects.all()
+    serializer_class = RecipeCommentSerializer
+    filter_class = RecipeCommentFilter
+    permission_classes = (IsOwnerOrReadOnly,)
 
-#                 # TODO: Add new relation between user and rated recipe (future)
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
-#                 # TODO: Response with the new total_rating and the new
-#                 # users_rating
-#                 return HttpResponse("OK")
-#             else:
-#                 raise Http404("No recipe")
-#         else:
-#             error_format = _('Missing arguments: id recipe and rating')
-#             raise Http404(error_format)
+    def get_paginate_by(self):
+        """
+        Use smaller pagination for HTML representations.
+        """
+        if self.request.accepted_renderer.format == 'html':
+            return 20
+        return 10
 
+
+## RATINGS
+
+class RecipeRatingFilter(django_filters.FilterSet):
+    # Relationships
+    recipes = django_filters.CharFilter(name='recipes__id',
+        lookup_type='contains')
+    users = django_filters.CharFilter(name='users__username',
+        lookup_type='contains')
+
+    class Meta:
+        model = RecipeRating
+        fields = ['recipes', 'users']
+
+
+class RecipeRatingViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows recipes to be viewed or edited.
+    """
+    queryset = RecipeRating.objects.all()
+    serializer_class = RecipeRatingSerializer
+    filter_class = RecipeRatingFilter
+    #permission_classes = (IsOwnerOrReadOnly,)
+
+    def perform_create(self, serializer):
+        print("PERFORM CREATE")
+        pprint(self)
+        print(self.request.user)
+        serializer.save(owner=self.request.user)
+
+    def get_paginate_by(self):
+        """
+        Use smaller pagination for HTML representations.
+        """
+        if self.request.accepted_renderer.format == 'html':
+            return 20
+        return 10

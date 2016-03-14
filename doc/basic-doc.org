@@ -645,8 +645,19 @@ Not synced (use migrations):
   el layout del fragment correspondiente y he corregido la transición (que no 
   funcionaba). También se pasa la receta a través de un Bundle.
 
+** Octubre
+*** 11 octubre
+- Instalación y configuración del proyecto Android en el nuevo
+  sobremesa.
+- Ejecución correcta.
 
+** Marzo 2016
+*** 13
+- Arreglando captura de órdenes en la app
+*** 14
+- Implementación de ratings en API
 ** Importante
+*** Básico
 - Migración de datos:
   + ./manage.py schemamigration users --initial (no hace falta)
   + ./manage.py schemamigration recipes --initial
@@ -682,6 +693,39 @@ Not synced (use migrations):
 - Iconos Material:
   + Referencia: https://google.github.io/material-design-icons/
   + Repo: https://github.com/google/material-design-icons
+*** Instalaciones primarias
+**** Virtualenv
+- Python: sudo apt-get install python-dev build-essential python3-dev
+- PIP: sudo apt-get install python-pip
+- Virtualenv: sudo pip install virtualenv
+- PostgreSQL:
+  + sudo apt-get install postgresql postgresql-contrib libpq-dev
+  + GUI: sudo apt-get install pgadmin3
+  + Change password: sudo -u postgres psql postgres
+  + \password postgres
+  + Añadir -d para desarrollo: sudo -u postgres createuser -d -A -P amuseuser
+  + sudo -u postgres createdb -O amuseuser amusedb
+  + Lanzar servidor: sudo service postgresql start
+- Activar virtualenv:
+  + La versión de python es opcional (toma una por defecto):
+    virtualenv -p /usr/bin/python3 env 
+  + source env/bin/activate
+  + pip install -r reqs/all.txt
+- Reiniciar datos
+  + dropbd amusedb
+  + createdb -O amuseuser amusedb
+  + ./manage.py migrate
+  + ./manage.py createsuperuser
+**** Modificación de un modelo
+- ./manage.py makemigrations
+- ./manage.py migrate
+**** Vagrant
+- sudo apt-get install virtualbox
+- sudo apt-get install vagrant
+- sudo apt-get install virtualbox-dkms
+- vagrant up
+
+
 
 ** Por hacer
 - TODO: Método para agregar comentarios a una receta (independiente de

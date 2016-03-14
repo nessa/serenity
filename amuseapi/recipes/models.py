@@ -107,3 +107,8 @@ class RecipeComment(models.Model):
     user = models.ForeignKey(User, related_name='comments')
     comment = models.TextField()
     timestamp = models.DateTimeField(auto_now=True)
+
+class RecipeRating(models.Model):
+    recipe = models.ForeignKey(Recipe, related_name='ratings')
+    user = models.ForeignKey(User, related_name='ratings')
+    rating = models.IntegerField()

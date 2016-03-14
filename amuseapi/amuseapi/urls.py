@@ -23,6 +23,8 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'recipes', views.RecipeViewSet)
+router.register(r'comments', views.RecipeCommentViewSet)
+router.register(r'ratings', views.RecipeRatingViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

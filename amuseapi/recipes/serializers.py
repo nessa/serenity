@@ -3,7 +3,8 @@ from django.forms import widgets
 from django.contrib.auth.models import Group
 from rest_framework import serializers
 from recipes.models import Recipe, RecipeCategory, RecipeIngredient
-from recipes.models import RecipeDirection, RecipeComment, User
+from recipes.models import RecipeDirection, RecipeComment
+from recipes.models import RecipeRating, User
 from datetime import datetime
 
 # Users
@@ -48,14 +49,6 @@ class RecipeDirectionSerializer(serializers.ModelSerializer):
         fields = ('recipe', 'sort_number', 'description', 'image', 'video',
             'time')
 
-
-class RecipeCommentSerializer(serializers.ModelSerializer):
-    recipe = serializers.CharField(source='recipe.id', read_only=True)
-    user = serializers.CharField(source='user.username', read_only=True)
-
-    class Meta:
-        model = RecipeComment
-        fields = ('recipe',  'user', 'comment', 'timestamp')
 
 
 class RecipeSerializer(serializers.HyperlinkedModelSerializer):
@@ -168,7 +161,7 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
                     image=item['image'],
                     video=item['video'],
                     time=item['time'])
-            
+
             # Update present direction
             direction.description = item['description']
             direction.image = item['image']
@@ -195,3 +188,56 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 #         fields = ('id', 'email', 'url', 'auth_token', 'first_name',
 #             'last_name', 'is_staff', 'last_login_on', 'joined_on',
 #             'recipes')
+
+
+
+class RecipeCommentSerializer(serializers.ModelSerializer):
+    recipe = serializers.CharField(source='recipe.id')
+    user = serializers.CharField(source='user.username')
+
+    class Meta:
+        model = RecipeComment
+        fields = ('recipe',  'user', 'comment', 'timestamp')
+
+
+class RecipeRatingSerializer(serializers.ModelSerializer):
+    recipe = serializers.CharField(source='recipe.id')
+    user = serializers.CharField(source='user.username')
+    
+    class Meta:
+        model = RecipeRating
+        fields = ('recipe',  'user', 'rating')
+        
+    # Override create method to update recipe rating
+    def create(self, validated_data):
+        related_recipe = Recipe.objects.get(id=validated_data.get('recipe')['id'])
+        related_user = User.objects.get(username=validated_data.get('user')['username'])
+
+        # Check if rating exists
+        new_rating = None
+        try:
+            rating = RecipeRating.objects.get(recipe=related_recipe,
+                user=related_user)
+        except RecipeRating.DoesNotExist:
+            # Create a new rating
+            rating = RecipeRating(recipe=related_recipe,
+                user=related_user,
+                rating=validated_data.get('rating'))
+            new_rating = True
+
+        if (new_rating):
+            # Add new rating values to recipe
+            related_recipe.total_rating += validated_data.get('rating')
+            related_recipe.users_rating += 1
+        else:
+            # Substract old value from recipe and add new one
+            related_recipe.total_rating -= rating.rating;
+            related_recipe.total_rating += validated_data.get('rating')
+            rating.rating = validated_data.get('rating')
+    
+        related_recipe.save()
+        rating.save()
+        
+        return rating
+
+    
