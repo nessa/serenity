@@ -71,8 +71,9 @@ class Recipe(models.Model):
     updated_timestamp = models.DateTimeField(auto_now=True)
     cooking_time = models.FloatField()
     image = models.URLField(blank=True)
-    total_rating = models.IntegerField()
-    users_rating = models.IntegerField()
+    total_rating = models.IntegerField(default=0)
+    users_rating = models.IntegerField(default=0)
+    comments_number = models.IntegerField(default=0)
     servings = models.IntegerField()
     source = models.CharField(max_length=200)
 

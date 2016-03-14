@@ -655,12 +655,13 @@ Not synced (use migrations):
 *** 13
 - Arreglando captura de órdenes en la app
 *** 14
-- Implementación de ratings en API
++ Implementación de ratings en API
++ Implementación de comentarios en API
++ Modificando permisos de las peticiones en la API
+
 ** Importante
 *** Básico
 - Migración de datos:
-  + ./manage.py schemamigration users --initial (no hace falta)
-  + ./manage.py schemamigration recipes --initial
   + dropbd amusedb
   + createdb -O amuseuser amusedb
   + ./manage.py migrate

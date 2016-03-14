@@ -56,22 +56,20 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     image = serializers.URLField(required=False, allow_blank=True)
     total_rating = serializers.IntegerField(required=False)
     users_rating = serializers.IntegerField(required=False)
+    comments_number = serializers.IntegerField(required=False)
 
     categories = RecipeCategorySerializer(many=True)
     ingredients = RecipeIngredientSerializer(many=True)
     directions = RecipeDirectionSerializer(many=True)
-    # Comments will be added in its own method
-    comments = RecipeCommentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Recipe
         fields = ('id', 'title', 'owner', 'language', 'type_of_dish',
             'difficulty', 'created_timestamp', 'updated_timestamp',
             'cooking_time', 'image', 'total_rating', 'users_rating',
-            'servings', 'source', 'categories', 'ingredients', 'directions',
-            'comments')
-        read_only_fields = ('created_timestamp', 'updated_timestamp',
-            'comments')
+            'comments_number', 'servings', 'source', 'categories',
+            'ingredients', 'directions')
+        read_only_fields = ('created_timestamp', 'updated_timestamp')
 
     # Override create method to create all nested fields
     def create(self, validated_data):
@@ -197,8 +195,24 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = RecipeComment
-        fields = ('recipe',  'user', 'comment', 'timestamp')
+        fields = ('id', 'recipe',  'user', 'comment', 'timestamp')
 
+    # Override create method to update recipe rating
+    def create(self, validated_data):
+        related_recipe = Recipe.objects.get(id=validated_data.get('recipe')['id'])
+        related_user = User.objects.get(username=validated_data.get('user')['username'])
+
+        
+        comment = RecipeComment.objects.create(recipe=related_recipe,
+                                               user=related_user,
+                                               comment=validated_data.get('comment'))
+        comment.save()
+        
+        related_recipe.comments_number += 1
+        related_recipe.save()
+
+        return comment
+    
 
 class RecipeRatingSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
@@ -206,7 +220,7 @@ class RecipeRatingSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = RecipeRating
-        fields = ('recipe',  'user', 'rating')
+        fields = ('id', 'recipe',  'user', 'rating')
         
     # Override create method to update recipe rating
     def create(self, validated_data):
