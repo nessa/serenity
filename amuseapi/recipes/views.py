@@ -15,7 +15,8 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from rest_framework.decorators import detail_route
-import django_filters
+import rest_framework_filters as filters
+from rest_framework.filters import OrderingFilter
 
 
 from pprint import pprint
@@ -52,31 +53,33 @@ class GroupViewSet(viewsets.ModelViewSet):
 ## RECIPES
 
 # TODO: Add rating filter (using both total_rating and users_rating)
-class RecipeFilter(django_filters.FilterSet):
-    created_before = django_filters.DateTimeFilter(name="created_timestamp",
+class RecipeFilter(filters.FilterSet):
+    created_before = filters.DateTimeFilter(name="created_timestamp",
         lookup_type='lt')
-    created_after = django_filters.DateTimeFilter(name="created_timestamp",
+    created_after = filters.DateTimeFilter(name="created_timestamp",
         lookup_type='ge')
-    updated_before = django_filters.DateTimeFilter(name="updated_timestamp",
+    updated_before = filters.DateTimeFilter(name="updated_timestamp",
         lookup_type='lt')
-    updated_after = django_filters.DateTimeFilter(name="updated_timestamp",
+    updated_after = filters.DateTimeFilter(name="updated_timestamp",
         lookup_type='ge')
-    servings_bigger = django_filters.NumberFilter(name="servings",
+    servings_bigger = filters.NumberFilter(name="servings",
         lookup_type = 'ge')   
-    servings_lower = django_filters.NumberFilter(name="servings",
-        lookup_type = 'le')
+    servings_lower = filters.NumberFilter(name="servings",
+        lookup_expr = 'le')
+    
     # Exact (or iexact to be case-insensitive)
-    language = django_filters.CharFilter(name='language', lookup_type='exact')
-    type_of_dish = django_filters.CharFilter(name='type_of_dish',
+    language = filters.CharFilter(name='language', lookup_type='exact')
+    type_of_dish = filters.CharFilter(name='type_of_dish',
         lookup_type='exact')
-    difficulty = django_filters.CharFilter(name='difficulty',
+    difficulty = filters.CharFilter(name='difficulty',
         lookup_type='exact')
+    
     # Relationships
-    categories = django_filters.CharFilter(name='categories__name',
+    categories = filters.CharFilter(name='categories__name',
         lookup_type='contains')
-    ingredients = django_filters.CharFilter(name='ingredients__name',
+    ingredients = filters.CharFilter(name='ingredients__name',
         lookup_type='contains')
-    users = django_filters.CharFilter(name='users__username',
+    users = filters.CharFilter(name='users__username',
         lookup_type='contains')
 
     class Meta:
@@ -95,6 +98,10 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     filter_class = RecipeFilter
     permission_classes = (IsOwnerOrReadOnly,)
+    filter_backends = (OrderingFilter,)
+    ordering_fields = '__all__'
+    ordering = ('updated_timestamp')
+        
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -110,11 +117,11 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
 ## COMMENTS
 
-class RecipeCommentFilter(django_filters.FilterSet):
+class RecipeCommentFilter(filters.FilterSet):
     # Relationships
-    recipes = django_filters.CharFilter(name='recipes__id',
+    recipes = filters.CharFilter(name='recipes__id',
         lookup_type='contains')
-    users = django_filters.CharFilter(name='users__username',
+    users = filters.CharFilter(name='users__username',
         lookup_type='contains')
 
     class Meta:
@@ -145,11 +152,11 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
 
 ## RATINGS
 
-class RecipeRatingFilter(django_filters.FilterSet):
+class RecipeRatingFilter(filters.FilterSet):
     # Relationships
-    recipes = django_filters.CharFilter(name='recipes__id',
+    recipes = filters.CharFilter(name='recipes__id',
         lookup_type='contains')
-    users = django_filters.CharFilter(name='users__username',
+    users = filters.CharFilter(name='users__username',
         lookup_type='contains')
 
     class Meta:
