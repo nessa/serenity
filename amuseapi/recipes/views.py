@@ -66,6 +66,10 @@ class RecipeFilter(filters.FilterSet):
         lookup_type = 'ge')   
     servings_lower = filters.NumberFilter(name="servings",
         lookup_expr = 'le')
+    rating_bigger = filters.NumberFilter(name="average_rating",
+        lookup_type = 'ge')   
+    rating_lower = filters.NumberFilter(name="average_rating",
+        lookup_expr = 'le')
     
     # Exact (or iexact to be case-insensitive)
     language = filters.CharFilter(name='language', lookup_type='exact')
@@ -86,8 +90,8 @@ class RecipeFilter(filters.FilterSet):
         model = Recipe
         fields = ['title', 'created_before', 'created_after', 'updated_before',
             'updated_after', 'servings', 'servings_bigger', 'servings_lower',
-            'language', 'type_of_dish', 'difficulty', 'categories',
-            'ingredients', 'users']
+            'average_rating', 'rating_bigger', 'rating_lower', 'language',
+            'type_of_dish', 'difficulty', 'categories', 'ingredients', 'users']
 
 
 class RecipeViewSet(viewsets.ModelViewSet):

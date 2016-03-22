@@ -73,6 +73,7 @@ class Recipe(models.Model):
     image = models.URLField(blank=True)
     total_rating = models.IntegerField(default=0)
     users_rating = models.IntegerField(default=0)
+    average_rating = models.FloatField(default=0)
     comments_number = models.IntegerField(default=0)
     servings = models.IntegerField()
     source = models.CharField(max_length=200)

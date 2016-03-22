@@ -56,6 +56,7 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
     image = serializers.URLField(required=False, allow_blank=True)
     total_rating = serializers.IntegerField(required=False)
     users_rating = serializers.IntegerField(required=False)
+    average_rating = serializers.FloatField(required=False)
     comments_number = serializers.IntegerField(required=False)
 
     categories = RecipeCategorySerializer(many=True)
@@ -67,8 +68,8 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('id', 'title', 'owner', 'language', 'type_of_dish',
             'difficulty', 'created_timestamp', 'updated_timestamp',
             'cooking_time', 'image', 'total_rating', 'users_rating',
-            'comments_number', 'servings', 'source', 'categories',
-            'ingredients', 'directions')
+            'average_rating', 'comments_number', 'servings', 'source',
+            'categories', 'ingredients', 'directions')
         read_only_fields = ('created_timestamp', 'updated_timestamp')
 
     # Override create method to create all nested fields
@@ -197,7 +198,7 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
         model = RecipeComment
         fields = ('id', 'recipe',  'user', 'comment', 'timestamp')
 
-    # Override create method to update recipe rating
+    # Override create method to update recipe comment
     def create(self, validated_data):
         related_recipe = Recipe.objects.get(id=validated_data.get('recipe')['id'])
         related_user = User.objects.get(username=validated_data.get('user')['username'])
@@ -248,7 +249,12 @@ class RecipeRatingSerializer(serializers.ModelSerializer):
             related_recipe.total_rating -= rating.rating;
             related_recipe.total_rating += validated_data.get('rating')
             rating.rating = validated_data.get('rating')
-    
+
+        if related_recipe.users_rating > 0:
+            related_recipe.average_rating = related_recipe.total_rating / related_recipe.users_rating
+        else:
+            related_recipe.average_rating = 0
+            
         related_recipe.save()
         rating.save()
         
