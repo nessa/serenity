@@ -102,10 +102,13 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
     filter_class = RecipeFilter
     permission_classes = (IsOwnerOrReadOnly,)
-    filter_backends = (OrderingFilter,)
+    ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
     ordering = ('updated_timestamp')
-        
+
+    def filter_queryset(self, queryset):
+        queryset = super(RecipeViewSet, self).filter_queryset(queryset)
+        return self.ordering_filter.filter_queryset(self.request, queryset, self)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
