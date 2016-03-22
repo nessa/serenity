@@ -72,18 +72,18 @@ class RecipeFilter(filters.FilterSet):
         lookup_expr = 'le')
     
     # Exact (or iexact to be case-insensitive)
-    language = filters.CharFilter(name='language', lookup_type='exact')
+    language = filters.CharFilter(name='language', lookup_type='contains')
     type_of_dish = filters.CharFilter(name='type_of_dish',
         lookup_type='exact')
     difficulty = filters.CharFilter(name='difficulty',
         lookup_type='exact')
     
     # Relationships
-    categories = filters.CharFilter(name='categories__name',
+    category = filters.CharFilter(name='categories__name',
         lookup_type='contains')
-    ingredients = filters.CharFilter(name='ingredients__name',
+    ingredient = filters.CharFilter(name='ingredients__name',
         lookup_type='contains')
-    users = filters.CharFilter(name='users__username',
+    user = filters.CharFilter(name='users__username',
         lookup_type='contains')
 
     class Meta:
@@ -91,7 +91,7 @@ class RecipeFilter(filters.FilterSet):
         fields = ['title', 'created_before', 'created_after', 'updated_before',
             'updated_after', 'servings', 'servings_bigger', 'servings_lower',
             'average_rating', 'rating_bigger', 'rating_lower', 'language',
-            'type_of_dish', 'difficulty', 'categories', 'ingredients', 'users']
+            'type_of_dish', 'difficulty', 'category', 'ingredient', 'user']
 
 
 class RecipeViewSet(viewsets.ModelViewSet):
