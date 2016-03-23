@@ -72,7 +72,8 @@ class RecipeFilter(filters.FilterSet):
         lookup_expr = 'le')
     
     # Exact (or iexact to be case-insensitive)
-    language = filters.CharFilter(name='language', lookup_type='contains')
+    language = filters.CharFilter(name='language',
+        lookup_type='iexact')
     type_of_dish = filters.CharFilter(name='type_of_dish',
         lookup_type='exact')
     difficulty = filters.CharFilter(name='difficulty',
