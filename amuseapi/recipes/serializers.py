@@ -11,7 +11,8 @@ from datetime import datetime
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'groups', 'url', 'birthday', 'avatar')
+        fields = ('username', 'email', 'name', 'surname', 'groups',
+                  'url', 'birthday')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):

@@ -4,8 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 # Search a way to do this programatically
 LANGUAGE_CHOICES = (
-    ('ES', 'Español'),
-    ('EN', 'English'),
+    ('es', 'Español'),
+    ('en', 'English'),
 )
 
 MEASUREMENT_CHOICES = (
@@ -35,33 +35,30 @@ DIFFICULTY = (
     ('LOW', 'Low'),
 )
 
-# For now
+
 CATEGORIES = (
-    ('SUITABLE-FOR-CELIACS', 'Suitable for celiacs'),
-    ('SUITABLE-FOR-LACTOSE-INTOLERANTS', 'Suitable for lactose intolerants'),
+    ('GLUTEN_ALLERGY', 'Not suitable for celiacs'),
+    ('LACTOSE_ALLERGY', 'Not suitable for lactose intolerants'),
+    ('SHELLFISH_ALLERGY', 'Not suitable for allergics to shellfish'),
+    ('FISH_ALLERGY', 'Not suitable for allergics to fish'),
+    ('DRIED_FRUIT_ALLERGY', 'Not suitable for allergics to dried fruits'),
     ('VEGETARIAN', 'Vegetarian'),
     ('VEGAN', 'Vegan'),
-    ('ARAB', 'Arab'),
     ('MEDITERRANEAN', 'Mediterranean'),
-    ('ASIAN', 'Asian'),
-    ('NORTH-AMERICAN', 'North American'),
-    ('SOUTH-AMERICAN', 'South American'),
-    ('CENTRAL-AMERICAN', 'Central American'),
-    ('AFRICAN', 'African'),
-    ('EUROPEAN', 'European'),
-    ('OCEANIAN', 'Oceanian'),
 )
 
+
 class User(AbstractUser):
+    name = models.CharField(max_length=100, default="")
+    surname = models.CharField(max_length=100, default="")
     birthday = models.DateField(blank=True, null=True)
-    avatar = models.CharField(max_length=20, blank=True)
 
 
 # Recipes with ingredients and directions
 class Recipe(models.Model):
     title = models.CharField(max_length=100, blank=False)
     owner = models.ForeignKey(User, related_name='recipes')
-    language = models.CharField(choices=LANGUAGE_CHOICES, default='ES',
+    language = models.CharField(choices=LANGUAGE_CHOICES, default='es',
         max_length=10)
     type_of_dish = models.CharField(choices=MENU, default='OTHER',
         max_length=20)

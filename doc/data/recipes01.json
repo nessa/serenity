@@ -1,12 +1,13 @@
 {
     "title": "Porrusalda",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "LOW",
     "cooking_time": 50,
     "image": "https://c2.staticflickr.com/6/5341/17561617071_7ee1bdb54b_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 4,
     "source": "http://noeliarcado.es/2015/03/porrusalda/",
     "categories": [
@@ -125,16 +126,23 @@
 
 {
     "title": "Macarrones al horno con bechamel de gorgonzola",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "SECOND-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 25,
     "image": "https://c1.staticflickr.com/9/8716/16941382873_d24d37c631_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 4,
     "source": "http://noeliarcado.es/2015/04/macarrones-al-horno-con-bechamel-de-gorgonzola/",
     "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        },
+        {
+            "name": "LACTOSE_ALLERGY"
+        },
         {
             "name": "MEDITERRANEAN"
         },
@@ -152,7 +160,7 @@
         {
             "sort_number": 2,
             "quantity": 120,
-            "name": "harina",
+            "name": "harina de trigo",
             "measurement_unit": "g"
         },
         {
@@ -301,24 +309,19 @@
 
 {
     "title": "Spaghetti carbonara",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 25,
     "image": "https://c2.staticflickr.com/8/7794/17373929738_1170a8bf1b_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/04/spaghetti-carbonara/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
-        {
             "name": "MEDITERRANEAN"
-        },
-        {
-            "name": "VEGETARIAN"
         }
     ],
     "ingredients": [
@@ -408,21 +411,19 @@
 
 {
     "title": "Garbanzos pizzeros",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 50,
     "image": "https://c2.staticflickr.com/8/7775/17373934218_7abaa07bec_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/04/garbanzos-pizzeros/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "NORTH-AMERICAN"
+            "name": "DRIED_FRUIT_ALLERGY"
         },
         {
             "name": "VEGETARIAN"
@@ -539,21 +540,22 @@
 
 {
     "title": "Fideuá",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 40,
     "image": "https://c2.staticflickr.com/6/5470/17559428122_a4322ca36c_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/04/fideua/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
+            "name": "FISH_ALLERGY"
         },
         {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
+            "name": "SHELLFISH_ALLERGY"
         },
         {
             "name": "MEDITERRANEAN"
@@ -724,21 +726,19 @@
 
 {
     "title": "Macarrones con espinacas y alcachofas",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 40,
     "image": "https://c1.staticflickr.com/9/8805/16939155954_edeba8786c_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 4,
     "source": "http://noeliarcado.es/2015/04/macarrones-con-espinacas-y-alcachofas/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "NORTH-AMERICAN"
+            "name": "LACTOSE_ALLERGY"
         },
         {
             "name": "VEGETARIAN"
@@ -772,7 +772,7 @@
         {
             "sort_number": 5,
             "quantity": 3,
-            "name": "harina",
+            "name": "harina de trigo",
             "measurement_unit": "tbsp"
         },
         {
@@ -908,22 +908,17 @@
 
 {
     "title": "Puchero gaditano",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "MAIN-DISH",
     "difficulty": "LOW",
     "cooking_time": 35,
     "image": "https://c1.staticflickr.com/9/8731/17375393149_5279af0534_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/05/puchero/",
     "categories": [
-        {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
         {
             "name": "MEDITERRANEAN"
         }
@@ -1051,18 +1046,22 @@
 
 {
     "title": "Nidos Luigi",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "LOW",
     "cooking_time": 20,
     "image": "https://c2.staticflickr.com/6/5458/17567211666_3aa166defd_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/05/nidos-luigi/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
+            "name": "LACTOSE_ALLERGY"
+        },
+        {
+            "name": "FISH_ALLERGY"
         },
         {
             "name": "MEDITERRANEAN"
@@ -1168,18 +1167,19 @@
 
 {
     "title": "Risotto de champiñones",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 35,
     "image": "https://c1.staticflickr.com/9/8887/17479615718_3e7bb8d1fd_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/05/risotto-de-champinones/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
+            "name": "LACTOSE_ALLERGY"
         },
         {
             "name": "VEGETARIAN"
@@ -1321,21 +1321,22 @@
 
 {
     "title": "Spaghetti al pesto",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "APPETIZER",
     "difficulty": "LOW",
     "cooking_time": 25,
     "image": "https://c2.staticflickr.com/8/7687/17885060832_d63b553229_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/05/spaghetti-al-pesto/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
+            "name": "LACTOSE_ALLERGY"
         },
         {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
+            "name": "DRIED_FRUIT_ALLERGY"
         },
         {
             "name": "MEDITERRANEAN"
@@ -1453,25 +1454,17 @@
 
 {
     "title": "Huevos rellenos con bacon, queso azul y espárragos verdes",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "APPETIZER",
     "difficulty": "MEDIUM",
     "cooking_time": 40,
     "image": "https://c2.staticflickr.com/8/7792/17773021099_4337781d24_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 1,
     "source": "http://noeliarcado.es/2015/05/huevos-rellenos-con-bacon-queso-azul-y-esparragos-verdes/",
     "categories": [
-        {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
-        {
-            "name": "NORTH-AMERICAN"
-        }
     ],
     "ingredients": [
         {
@@ -1599,18 +1592,22 @@
 
 {
     "title": "Empanadillas de ternera",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "APPETIZER",
     "difficulty": "LOW",
     "cooking_time": 40,
     "image": "https://c2.staticflickr.com/6/5452/17453724613_2ea25781eb_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 6,
     "source": "http://noeliarcado.es/2015/05/empanadillas-de-ternera/",
     "categories": [
         {
-            "name": "EUROPEAN"
+            "name": "GLUTEN_ALLERGY"
+        },
+        {
+            "name": "LACTOSE_ALLERGY"
         }
     ],
     "ingredients": [
@@ -1647,7 +1644,7 @@
         {
             "sort_number": 6,
             "quantity": 1,
-            "name": "harina",
+            "name": "harina de trigo",
             "measurement_unit": "tsp"
         },
         {
@@ -1767,18 +1764,19 @@
 
 {
     "title": "Cerdo caramelizado con patatas deluxe",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "MAIN-DISH",
     "difficulty": "LOW",
     "cooking_time": 40,
     "image": "https://c2.staticflickr.com/8/7767/18149798392_c24103ff78_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/05/cerdo-caramelizado-con-patatas-deluxe/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
+            "name": "LACTOSE_ALLERGY"
         }
     ],
     "ingredients": [
@@ -1937,16 +1935,23 @@
 
 {
     "title": "Souvlaki de pollo en pan de pita con tzatziki",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "MAIN-DISH",
     "difficulty": "MEDIUM",
     "cooking_time": 35,
     "image": "https://c2.staticflickr.com/8/7795/18148443858_f228cb9ed1_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/05/cerdo-caramelizado-con-patatas-deluxe/",
     "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        },
+        {
+            "name": "LACTOSE_ALLERGY"
+        },
         {
             "name": "MEDITERRANEAN"
         }
@@ -2182,27 +2187,19 @@
 
 {
     "title": "Tamagoyaki",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "APPETIZER",
     "difficulty": "LOW",
     "cooking_time": 25,
     "image": "https://c1.staticflickr.com/9/8829/18226471849_a3b5feb064_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/06/tamagoyaki/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
-        {
-            "name": "ASIAN"
-        },
-        {
-            "name": "VEGETARIAN"
+            "name": "LACTOSE_ALLERGY"
         }
     ],
     "ingredients": [
@@ -2313,21 +2310,22 @@
 
 {
     "title": "Pionono de calabacín",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 60,
     "image": "https://c1.staticflickr.com/1/369/18293800010_a3fc9f9cff_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/06/pionono-de-calabacin/",
     "categories": [
         {
-            "name": "EUROPEAN"
+            "name": "GLUTEN_ALLERGY"
         },
         {
-            "name": "VEGETARIAN"
+            "name": "LACTOSE_ALLERGY"
         }
     ],
     "ingredients": [
@@ -2394,7 +2392,7 @@
         {
             "sort_number": 11,
             "quantity": 50,
-            "name": "harina",
+            "name": "harina de trigo",
             "measurement_unit": "g"
         },
         {
@@ -2599,24 +2597,19 @@
 
 {
     "title": "Endivias horneadas con cebolla, jamón serrano y queso emmental",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "LOW",
     "cooking_time": 25,
     "image": "https://c1.staticflickr.com/1/519/18588390862_78dd3b88d9_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 2,
     "source": "http://noeliarcado.es/2015/06/endivias-horneadas-con-cebolla-jamon-serrano-y-queso-emmental/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
-        {
-            "name": "EUROPEAN"
+            "name": "LACTOSE-ALLERGY"
         }
     ],
     "ingredients": [
@@ -2741,21 +2734,19 @@
 
 {
     "title": "Pulpo a la gallega",
-    "language": "ES",
+    "language": "es",
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 60,
     "image": "https://c1.staticflickr.com/1/399/18479688630_aab1fdd86a_o.png",
     "total_rating": 0,
     "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 5,
     "source": "http://noeliarcado.es/2015/06/pulpo-a-la-gallega/",
     "categories": [
         {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
+            "name": "SHELLFISH_ALLERGY"
         },
         {
             "name": "MEDITERRANEAN"
@@ -2871,22 +2862,17 @@
 
 {
     "title": "Rancho canario", 
-    "language": "ES", 
+    "language": "es", 
     "type_of_dish": "SECOND-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 1,
     "image": "https://c2.staticflickr.com/6/5322/16939147204_1d42ed1345_o.png",
     "total_rating": 0, 
-    "users_rating": 0, 
+    "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 4, 
     "source": "http://noeliarcado.es/2015/04/rancho-canario/", 
     "categories": [
-        {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
         {
             "name": "MEDITERRANEAN"
         }
@@ -3059,18 +3045,22 @@
 
 {
     "title": "Torrijas de vino con miel", 
-    "language": "ES", 
+    "language": "es", 
     "type_of_dish": "DESSERT",
     "difficulty": "HIGH",
     "cooking_time": 40, 
     "image": "https://c2.staticflickr.com/6/5332/16939142964_9e672531d0_o.png",
     "total_rating": 0, 
-    "users_rating": 0, 
+    "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 10, 
     "source": "http://noeliarcado.es/2015/03/torrijas-de-vino-con-miel/", 
     "categories": [
         {
-            "name": "EUROPEAN"
+            "name": "GLUTEN_ALLERGY"
+        },
+        {
+            "name": "LACTOSE_ALLERGY"
         },
         {
             "name": "VEGETARIAN"
@@ -3234,25 +3224,17 @@
 
 {
     "title": "Ensalada de judías verdes y bonito", 
-    "language": "ES", 
+    "language": "es", 
     "type_of_dish": "FIRST-COURSE",
     "difficulty": "MEDIUM",
     "cooking_time": 55,
     "image": "https://c2.staticflickr.com/6/5449/17374117920_089425c4b3_o.png",
-    "total_rating": 0, 
-    "users_rating": 0, 
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 0, 
     "source": "http://noeliarcado.es/2015/03/ensalada-de-judias-verdes-y-bonito/",
     "categories": [
-        {
-            "name": "SUITABLE-FOR-CELIACS"
-        },
-        {
-            "name": "SUITABLE-FOR-LACTOSE-INTOLERANTS"
-        },
-        {
-            "name": "MEDITERRANEAN"
-        }
     ], 
     "ingredients": [
     {
@@ -3360,13 +3342,14 @@
 // BASE
 {
     "title": "", 
-    "language": "ES", 
+    "language": "es", 
     "type_of_dish": "OTHER",
     "difficulty": "MEDIUM",
     "cooking_time": 0,
     "image": "", 
-    "total_rating": 0, 
-    "users_rating": 0, 
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
     "servings": 0, 
     "source": "",
     "categories": [

@@ -652,12 +652,96 @@ Not synced (use migrations):
 - Ejecución correcta.
 
 ** Marzo 2016
-*** 13
+*** 13 marzo
 - Arreglando captura de órdenes en la app
-*** 14
-+ Implementación de ratings en API
-+ Implementación de comentarios en API
-+ Modificando permisos de las peticiones en la API
+*** 14 marzo
+- Implementación de ratings en API
+- Implementación de comentarios en API
+- Corrigiendo permisos en API
+- Corregida la animación desde el grid inicial a la vista de 
+  detalle.
+- Nuevos indicadores de carga en las imágenes del grid inicial
+  (indicadores reales, no GIF).
+*** 15 marzo
+- Nuevo drawer lateral: vista de búsqueda
+- Rediseño de la vista de detalle: pestañas
+*** 16 marzo
+- Rediseño de la vista de detalle: imagen superior fija, con
+  el nombre, el usuario y la valoración.
+- Detalle: guardada pestaña actual en cambio de orientación
+- Detalle: actualizado estilo de la vista de información
+*** 17 marzo
+- Nueva activity: Añadir recetas
+- Clase para obtener textos user-friendly
+- Nueva biblioteca de Floating Action Buttons.
+- Actualizado el estilo del diálogo receptor de órdenes.
+- Nueva estructura en la vista de edición/creación. Corrección de
+  estilos.
+*** 18 marzo
+- Añadiendo validación al título de la vista de edición.
+- Preparando guardado de datos de la receta.
+- Nuevo estilo para la vista de ingredientes
+- Nuevos métodos de textos user-friendly.
+- Nuevo diálogo de actualización/creación de ingrediente.
+*** 19 marzo
+- Corrigiendo comportamiento de la lista de ingredientes.
+- Añadidos nuevos FABS a la vista de edición/creación.
+- Corregido método onBack al volver de detalle cuando
+  está seleccionada la pestaña de pasos.
+- Añadiendo acceso a la activity de edición/creación desde la
+  vista de detalle.
+- Actualizando lista de pasos en la vista de edición/creción.
+- Corrigiendo guardado de ingrediente. Actualizando estilo de
+  la celda de ingrediente.
+- Actualizando estilo del diálogo de edición de ingrediente.
+- Actualizando estilo del diálogo de edidión de paso.
+*** 20 marzo
+- Actualizando estilo de las celdas del gridview.
+- Corregido el comportamiento del scroll infinito.
+- Añadida validación a la vista de edición/creación
+- Actualizado el comportamiento del menu lateral.
+- Añadidos nuevos fragments sin vista ni funcionalidad:
+  + Usuario
+  + Configuración
+  + Información
+*** 21 marzo
+- Corregido el método onBack de la activity principal.
+- Actualizado el estilo del menu lateral.
+- Corregido bucle eterno de la tarea asíncrona que solicitaba las
+  recetas.
+- Borrado de bibliotecas unnecesarias del gradle.
+- Configurando el idioma para el modo automático de la vista de
+  detalle.
+- Guardando vista seleccionada del activity principal cuando la
+  orientación cambia.
+*** 22 marzo
+- Rellenando vista de configuración.
+- Añadiendo filtros mejorados y ordenación a la API
+- Descarga de recetas desde la API, usando paginación.
+- Añadiendo nuevo atributo "average_rating" a las recetas de la API.
+*** 23 marzo
+- Permitiendo enviar lenguaje en mayúsculas o minúsculas a la API.
+- Implementación de la configuración de los filtros para la API y
+  la base de datos.
+- Añadiendo elementos básicos a la vista lateral de búsqueda.
+- Completando vista lateral de búsqueda.
+- Testeando vista lateral de búsqueda con la API.
+*** 25 marzo
+- Mostrando lenguages seleccionados en la vista de configuración.
+- Implementación de filtros en la base de datos.
+- Ordenación
+- Testeando DBpedia:
+  + URL: http://es.dbpedia.org/sparql
+
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+select * where{
+ ?marisco dcterms:subject <http://es.dbpedia.org/resource/Categoría:Marisco> .
+}
+
+- Solicitando idioma en splash.
+- Actualizando recetas en la API con las nuevas categorías.
+
 
 ** Importante
 *** Básico
@@ -727,46 +811,79 @@ Not synced (use migrations):
 - vagrant up
 
 
+*** Android
+- Cuando Android Studio se queda pillado reinstalando la app:
+  + File > Invalidate caches / Restart
+- Para borrar la base de datos:
+  + getApplicationContext().deleteDatabase("amuse.sqlite");
 
-** Por hacer
-- TODO: Método para agregar comentarios a una receta (independiente de
-  los métodos básicos). Probablemente a través de su propio endpoint
-  (comments).
-- TODO: Añadir nuevos modelos Ingredient y Category (genéricos) que
+** TODO Por hacer
+- Añadir nuevos modelos Ingredient y Category (genéricos) que
   añadan cada nuevo ingrediente y categoría que no esté creado ya y
   pueda servir para filtrar recetas y obtener información secundaria.
-  + Añadirlo solo para ingredientes (categorías serán fijas).
-- TODO: Definición del layout inicial en Inkscape.
-- TODO: Posibilidad. ¿Añadir un campo 'rating' para facilitar la
-  filtración en función de un único campo en lugar de tener que usar
-  2 (total_rating y users_rating)?
-- TODO: Conexión con DBpedia:
+  + Añadirlo solo para ingredientes (categorías serán fijas)
+- Guardar recipe draft en onPause() (si mientras se está creando 
+  una receta se sale de la app)
+- Login
+- Vista de detalle: comentarios y rating
+- Configuración:
+  + No apagar la pantalla
+  + Límite por página (defecto y mínimo: 10)
+- Vista de detalle: descargar y guardar en BD
+  + Opción con imágenes
+- Diseñar imágenes para recetas no cargadas
+- Splash: ¿Solicitar login?
+- Modo automático:
+  + Comando "salir" (también 'on back')
+  + Comprobar al pasar a otra pestaña
+- API: Guardar recetas con las nuevas categorías
+- API: oAuth
+- Definición del layout inicial en Inkscape -> Memoria
+- Conexión con DBpedia:
+  + Python dbpedia: https://github.com/ubergrape/pyspotlight/blob/master/README.rst
   + http://es.dbpedia.org/index.html
   + http://es.dbpedia.org/sparql
   + Consultas: http://es.dbpedia.org/wiki/Wiki.jsp?page=Ejemplos%20de%20consultas%20SPARQL
   + http://es.dbpedia.org/page/Receta_de_cocina
   + http://es.dbpedia.org/page/Categor%C3%ADa:Gastronom%C3%ADa
-- TODO: Guardar recipe draft en onPause() (si mientras se está creando 
-  una receta se sale de la app)
-- TODO: Sin conexión = recetas favoritas y recetas propias (creadas en la app)
-- TODO: Conectar con Amazon S3 (web services)
+
+*** Hecho
+- [17 junio] Añadir más recetas para empezar con la APP Android.
+- [14 marzo] Método para agregar comentarios a una receta (independiente de
+  los métodos básicos). Probablemente a través de su propio endpoint
+  (comments).
+- [22 marzo] Añadir un campo 'rating' para facilitar la
+  filtración en función de un único campo en lugar de tener que usar
+  2 (total_rating y users_rating)
+- [25 marzo] Sin conexión = recetas favoritas y recetas propias (creadas
+  en la app)
+- [25 marzo] Filtrado en API y en Base de datos
+- [25 marzo] Ordenación
+- [25 marzo] Splash: Solicitar idioma, pero no sincronizar nada
+
+*** Ideas
+- En la vista de detalle de "paso de preparación", ¿posibilidad de cambiar el
+  tiempo del cronómetro?
+- ¿Sincronización con flickr o imgur?
+- Introducir otra espera con 'Speech recognition' al terminar el temporizador
+  o conseguir que siga sonando indefinidamente
+- Web
+- Compartir RRSS
+- Alarma en background (como la app de alarma del sistema)
+- Tutorial dinámico para la primera vez que se entra en las vistas
+- Filtrar varios idiomas a la vez
+
+**** Descartadas
+- Añadir a "Opciones de configuración" la posibilidad de descargar en la DB
+  todas las recetas que se vean:
+  + Desproporcionado.
+- Conectar con Amazon S3 (web services)
   + http://aws.amazon.com/es/mobile/sdk/
   + http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/setup.html#setting-up
   + http://docs.aws.amazon.com/AWSAndroidSDK/latest/javadoc/
   + http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/s3transfermanager.html
-- Posibilidad. ¿Conectar con flickr o similares en lugar de Amazon?
-
-*** Hecho
-- [17 junio] Añadir más recetas para empezar con la APP Android.
-
-*** Ideas
-- Añadir a "Opciones de configuración" la posibilidad de descargar en la DB
-  todas las recetas que se vean.
-- En la vista de detalle de "paso de preparación", ¿posibilidad de cambiar el
-  tiempo del cronómetro?
-- Sacar el GET de comentarios fuera del GET de Recipes (en la API), para evitar
-  que se ralentice la app.
-- ¿Sincronización con flickr o imgur?
+- ¿Conectar con flickr o similares en lugar de Amazon?
+  
 
 * Fuentes
 *** Plantillas
