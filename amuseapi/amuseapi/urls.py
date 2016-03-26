@@ -21,7 +21,6 @@ from recipes import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 router.register(r'recipes', views.RecipeViewSet)
 router.register(r'comments', views.RecipeCommentViewSet)
 router.register(r'ratings', views.RecipeRatingViewSet)
@@ -35,5 +34,6 @@ urlpatterns = patterns('',
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls',
-        namespace='rest_framework'))
+                               namespace='rest_framework')),
+    #url(r'^register', 'recipes.views.create'),
 )

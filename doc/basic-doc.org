@@ -740,8 +740,15 @@ select * where{
 }
 
 - Solicitando idioma en splash.
+- Añadiendo nombre y apellido al modelo de usuario en la API.
 - Actualizando recetas en la API con las nuevas categorías.
+- Intentando mejorar el login:
+http://django-rest-auth.readthedocs.org/en/latest/
 
+*** 26 marzo
+- Revisando Tokens:
+https://github.com/GetBlimp/django-rest-framework-jwt
+http://getblimp.github.io/django-rest-framework-jwt/
 
 ** Importante
 *** Básico

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 from rest_framework import permissions
 
-
+    
 class IsOwnerOrReadOnly(permissions.BasePermission):
 
     """
@@ -14,8 +14,8 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        # Write permissions are only allowed to the owner of the recipe.
+        # Write permissions are only allowed to the owner of the object
         if hasattr(obj, 'owner'):
-            return obj.owner == request.user
+            return obj.owner == request.user and request.user.is_authenticated()
         else:
-            return obj.user == request.user
+            return obj.user == request.user and request.user.is_authenticated()

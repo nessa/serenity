@@ -11,6 +11,8 @@ from recipes.serializers import GroupSerializer
 from rest_framework import generics
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -19,36 +21,23 @@ import rest_framework_filters as filters
 from rest_framework.filters import OrderingFilter
 
 
-from pprint import pprint
-
-## ROOT
-@api_view(('GET',))
-def api_root(request, format=None):
-    return Response({
-        'users': reverse('user-list', request=request, format=format),
-        'recipes': reverse('recipe-list', request=request, format=format)
-    })
-
-
 ## USERS
+    
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (IsOwnerOrReadOnly,)
 
+    def get_permissions(self):
+        # Open user registration
+        if self.request.method == 'POST':
+            self.permission_classes = (AllowAny,)
 
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
-    permission_classes = (IsOwnerOrReadOnly,)
+        return super(UserViewSet, self).get_permissions()
 
-
+    
 
 ## RECIPES
 
@@ -131,6 +120,7 @@ class RecipeCommentFilter(filters.FilterSet):
         lookup_type='contains')
     users = filters.CharFilter(name='users__username',
         lookup_type='contains')
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     class Meta:
         model = RecipeComment
@@ -144,10 +134,12 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
     queryset = RecipeComment.objects.all()
     serializer_class = RecipeCommentSerializer
     filter_class = RecipeCommentFilter
-    permission_classes = (IsOwnerOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
+        print("PERFORM")
         serializer.save(owner=self.request.user)
+        print("AFTER")
 
     def get_paginate_by(self):
         """
@@ -179,12 +171,9 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
     queryset = RecipeRating.objects.all()
     serializer_class = RecipeRatingSerializer
     filter_class = RecipeRatingFilter
-    #permission_classes = (IsOwnerOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
-        print("PERFORM CREATE")
-        pprint(self)
-        print(self.request.user)
         serializer.save(owner=self.request.user)
 
     def get_paginate_by(self):
