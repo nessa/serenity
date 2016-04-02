@@ -29,7 +29,7 @@ HOST = os.environ.get('HOST', 'http://localhost')
 SECRET_KEY = ')$86g)oo8#vjufw1@ax7o^cgzx+22*%=j_w_1-=v1h$978rgy*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
