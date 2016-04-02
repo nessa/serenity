@@ -137,7 +137,7 @@ LOGGING = {
         # Log to a text file that can be rotated by logrotate
         'logfile': {
             'class': 'logging.handlers.WatchedFileHandler',
-            'filename': '/var/log/serenity.log'
+            'filename': '/var/log/django/serenity.log'
         },
     },
     'loggers': {
