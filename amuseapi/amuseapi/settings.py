@@ -29,7 +29,7 @@ HOST = os.environ.get('HOST', 'http://localhost')
 SECRET_KEY = ')$86g)oo8#vjufw1@ax7o^cgzx+22*%=j_w_1-=v1h$978rgy*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -145,13 +145,13 @@ LOGGING = {
         'django': {
             'handlers': ['logfile'],
             'level': 'ERROR',
-            'propagate': False,
+            'propagate': True,
         },
         # Your own app - this assumes all your logger names start with "recipes".
         'recipes': {
             'handlers': ['logfile'],
             'level': 'WARNING', # Or maybe INFO or DEBUG
-            'propagate': False
+            'propagate': True
         },
     },
 }
