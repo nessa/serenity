@@ -147,6 +147,11 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'django.request': {
+            'handlers': ['logfile'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
         # Your own app - this assumes all your logger names start with "recipes".
         'recipes': {
             'handlers': ['logfile'],
