@@ -11,6 +11,7 @@ from recipes.serializers import GroupSerializer
 from rest_framework import generics
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
+from rest_framework.permissions import SAFE_METHODS
 from rest_framework.permissions import AllowAny
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
@@ -99,7 +100,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
     filter_class = RecipeFilter
-    permission_classes = (IsOwnerOrReadOnly,)
     ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
     ordering = ('updated_timestamp')
@@ -118,6 +118,14 @@ class RecipeViewSet(viewsets.ModelViewSet):
         if self.request.accepted_renderer.format == 'html':
             return 20
         return 10
+    
+    def get_permissions(self):
+        # Open recipes read
+        if self.request.method in SAFE_METHODS:
+            self.permission_classes = (AllowAny,)
+
+        self.permission_classes = (IsOwnerOrReadOnly,)
+        return super(RecipeViewSet, self).get_permissions()
 
 
 ## COMMENTS
@@ -142,12 +150,9 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
     queryset = RecipeComment.objects.all()
     serializer_class = RecipeCommentSerializer
     filter_class = RecipeCommentFilter
-    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
-        print("PERFORM")
         serializer.save(owner=self.request.user)
-        print("AFTER")
 
     def get_paginate_by(self):
         """
@@ -156,6 +161,14 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
         if self.request.accepted_renderer.format == 'html':
             return 20
         return 10
+
+    def get_permissions(self):
+        # Open recipes read
+        if self.request.method in SAFE_METHODS:
+            self.permission_classes = (AllowAny,)
+
+        self.permission_classes = (IsAuthenticatedOrReadOnly,)
+        return super(RecipeCommentViewSet, self).get_permissions()
 
 
 ## RATINGS
@@ -179,7 +192,6 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
     queryset = RecipeRating.objects.all()
     serializer_class = RecipeRatingSerializer
     filter_class = RecipeRatingFilter
-    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -191,3 +203,11 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
         if self.request.accepted_renderer.format == 'html':
             return 20
         return 10
+
+    def get_permissions(self):
+        # Open recipes read
+        if self.request.method in SAFE_METHODS:
+            self.permission_classes = (AllowAny,)
+
+        self.permission_classes = (IsAuthenticatedOrReadOnly,)
+        return super(RecipeRatingViewSet, self).get_permissions()
