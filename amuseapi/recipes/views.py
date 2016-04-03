@@ -22,6 +22,12 @@ from rest_framework.filters import OrderingFilter
 
 
 ## USERS
+
+class UserFilter(filters.FilterSet):
+    class Meta:
+        model = User
+        fields = ['username']
+        
     
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -29,6 +35,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    filter_class = UserFilter
 
     def get_permissions(self):
         # Open user registration
@@ -41,7 +48,6 @@ class UserViewSet(viewsets.ModelViewSet):
 
 ## RECIPES
 
-# TODO: Add rating filter (using both total_rating and users_rating)
 class RecipeFilter(filters.FilterSet):
     created_before = filters.DateTimeFilter(name="created_timestamp",
         lookup_type='lt')
