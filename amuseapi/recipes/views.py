@@ -12,6 +12,7 @@ from rest_framework import generics
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
 from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -42,7 +43,7 @@ class UserViewSet(viewsets.ModelViewSet):
         if self.request.method == 'POST':
             self.permission_classes = (AllowAny,)
 
-        self.permission_classes = (IsAuthenticatedOrReadOnly,)
+        self.permission_classes = (IsAuthenticated,)
         return super(UserViewSet, self).get_permissions()
 
     
