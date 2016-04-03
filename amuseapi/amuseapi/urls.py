@@ -18,6 +18,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from rest_framework import routers
 from recipes import views
+from rest_framework.authtoken import views as auth_views
+
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -28,12 +30,9 @@ router.register(r'ratings', views.RecipeRatingViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'geniusfeed.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
-    #url(r'^register', 'recipes.views.create'),
+    url(r'^api-token-auth/', auth_views.obtain_auth_token),
 )
