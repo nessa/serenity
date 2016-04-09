@@ -43,8 +43,9 @@ class UserViewSet(viewsets.ModelViewSet):
         # Open user registration
         if self.request.method == 'POST':
             self.permission_classes = (AllowAny,)
-
-        self.permission_classes = (IsAuthenticated,)
+        else:
+            self.permission_classes = (IsAuthenticated,)
+            
         return super(UserViewSet, self).get_permissions()
 
     
