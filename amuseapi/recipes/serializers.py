@@ -191,25 +191,7 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         return instance
 
 
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#     recipes = serializers.HyperlinkedRelatedField(many=True,
-#         view_name='recipe-detail', read_only=True)
-
-#     first_name = serializers.CharField(required=False)
-#     last_name = serializers.CharField(required=False)
-#     auth_token = serializers.CharField(read_only=True)
-#     last_login_on = serializers.DateTimeField(source='last_login',
-#         read_only=True)
-#     joined_on = serializers.DateTimeField(source='date_joined', read_only=True)
-
-#     class Meta:
-#         model = User
-#         fields = ('id', 'email', 'url', 'auth_token', 'first_name',
-#             'last_name', 'is_staff', 'last_login_on', 'joined_on',
-#             'recipes')
-
-
-
+# Comments
 class RecipeCommentSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
     user = serializers.CharField(source='user.username')
@@ -233,8 +215,9 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
         related_recipe.save()
 
         return comment
-    
 
+    
+# Ratings
 class RecipeRatingSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
     user = serializers.CharField(source='user.username')

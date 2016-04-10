@@ -83,7 +83,7 @@ class RecipeFilter(filters.FilterSet):
         lookup_type='contains')
     ingredient = filters.CharFilter(name='ingredients__name',
         lookup_type='contains')
-    user = filters.CharFilter(name='users__username',
+    user = filters.CharFilter(name='owner__username',
         lookup_type='contains')
 
     class Meta:
@@ -124,8 +124,9 @@ class RecipeViewSet(viewsets.ModelViewSet):
         # Open recipes read
         if self.request.method in SAFE_METHODS:
             self.permission_classes = (AllowAny,)
-
-        self.permission_classes = (IsOwnerOrReadOnly,)
+        else:
+            self.permission_classes = (IsOwnerOrReadOnly,)
+            
         return super(RecipeViewSet, self).get_permissions()
 
 
@@ -133,15 +134,15 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
 class RecipeCommentFilter(filters.FilterSet):
     # Relationships
-    recipes = filters.CharFilter(name='recipes__id',
+    recipe = filters.CharFilter(name='recipe__id',
         lookup_type='contains')
-    users = filters.CharFilter(name='users__username',
+    user = filters.CharFilter(name='user__username',
         lookup_type='contains')
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     class Meta:
         model = RecipeComment
-        fields = ['recipes', 'users']
+        fields = ['recipe', 'user']
 
 
 class RecipeCommentViewSet(viewsets.ModelViewSet):
@@ -151,7 +152,14 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
     queryset = RecipeComment.objects.all()
     serializer_class = RecipeCommentSerializer
     filter_class = RecipeCommentFilter
+    ordering_filter = OrderingFilter()
+    ordering_fields = '__all__'
+    ordering = ('-timestamp')
 
+    def filter_queryset(self, queryset):
+        queryset = super(RecipeCommentViewSet, self).filter_queryset(queryset)
+        return self.ordering_filter.filter_queryset(self.request, queryset, self)
+    
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
@@ -167,8 +175,9 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
         # Open recipes read
         if self.request.method in SAFE_METHODS:
             self.permission_classes = (AllowAny,)
-
-        self.permission_classes = (IsAuthenticatedOrReadOnly,)
+        else:
+            self.permission_classes = (IsAuthenticatedOrReadOnly,)
+            
         return super(RecipeCommentViewSet, self).get_permissions()
 
 
@@ -176,14 +185,14 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
 
 class RecipeRatingFilter(filters.FilterSet):
     # Relationships
-    recipes = filters.CharFilter(name='recipes__id',
+    recipe = filters.CharFilter(name='recipe__id',
         lookup_type='contains')
-    users = filters.CharFilter(name='users__username',
+    user = filters.CharFilter(name='user__username',
         lookup_type='contains')
 
     class Meta:
         model = RecipeRating
-        fields = ['recipes', 'users']
+        fields = ['recipe', 'user']
 
 
 class RecipeRatingViewSet(viewsets.ModelViewSet):
@@ -209,6 +218,7 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
         # Open recipes read
         if self.request.method in SAFE_METHODS:
             self.permission_classes = (AllowAny,)
-
-        self.permission_classes = (IsAuthenticatedOrReadOnly,)
+        else:
+            self.permission_classes = (IsAuthenticatedOrReadOnly,)
+            
         return super(RecipeRatingViewSet, self).get_permissions()
