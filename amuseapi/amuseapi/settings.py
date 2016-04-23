@@ -115,9 +115,9 @@ WSGI_APPLICATION = 'amuseapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'amusedb',
-        'USER': 'amuseuser',
-        'PASSWORD': '171287',
+        'NAME': 'serenitydb',
+        'USER': 'serenityuser',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1'
     }
 }
