@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # External configuration
 config = RawConfigParser()
-config.read('settings.ini')
+config.read('/etc/serenity-settings.ini')
 
 # True X_FORWARDED_HOTS for proxy redirection
 USE_X_FORWARDED_HOST = True
