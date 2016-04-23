@@ -122,7 +122,7 @@ DATABASES = {
         'NAME': config.get('database', 'DATABASE_NAME'),
         'USER': config.get('database', 'DATABASE_USER'),
         'PASSWORD': config.get('database', 'DATABASE_PASSWORD'),
-        'HOST': config.get('database', 'HOST'),
+        'HOST': '127.0.0.1'
     }
 }
 
