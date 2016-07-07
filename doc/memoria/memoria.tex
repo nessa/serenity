@@ -1,0 +1,175 @@
+% Instalar texlive-full y python-pygments
+\documentclass[a4paper, 12pt]{book}
+
+\pdfminorversion=4
+
+\pagestyle{headings}
+
+% Codificación
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+% Fuentes
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+% Márgenes
+\usepackage[a4paper,top=3cm,right=3cm,left=3cm,bottom=3cm]{geometry}
+% Hiperenlaces
+\usepackage[pdftex, breaklinks=false, colorlinks=true, linkcolor=black, anchorcolor=black, urlcolor=blue, citecolor=red]{hyperref}
+
+
+% Paquete para dibujos
+\usepackage{tikz}
+% Referencias externas
+\usepackage{xr-hyper}
+
+% Paquete con el entorno tabularx, que define un tipo de celda X que hace word-wrapping
+\usepackage{tabularx}
+
+% Tablas de varias páginas
+\usepackage{longtable}
+
+% Provee la flag H para forzar los floats en el sitio donde los pongas
+\usepackage{float}
+
+% Provee el comando \captionof para dar etiquetas a elementos no flotados
+\usepackage{caption}
+
+% Paquete que provee el comando \FloatBarrier para poner una barrera para floats
+\usepackage{placeins}
+
+% Paquete para controlar el interlineado a nivel de entorno
+\usepackage{setspace}
+
+% Paquete para la fuente charter
+\usepackage{charter}
+
+% Paquete para la fuente para códigos
+\usepackage{inconsolata}
+
+% Paquete para la fuente helvética
+\usepackage[scaled=0.92]{helvet}
+
+% Paquete para GNUPlot
+\usepackage{gnuplottex}
+
+% Guiones de hyphenado
+\usepackage{hyphenat}
+
+% Extra ToC listings
+\usepackage{tocbibind}
+
+% Gráficos
+\usepackage{graphicx}
+
+% Para poner figuras una al lado de otra
+\usepackage[lofdepth,lotdepth]{subfig}
+
+% Paquete para figuras giradas
+\usepackage{rotating}
+
+% Borra la indentación de párrafos y añade separación entre ellos
+\usepackage{parskip}
+
+% Paquete para quitar la numeración de las páginas en blanco
+\usepackage{emptypage}
+
+% Cálculos de márgenes
+\usepackage{calc}
+
+% Entornos para tablas y figuras giradas
+\usepackage{rotating}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paquetes en local (directorio 'paquetes')
+
+% Automatiza el resaltado de sintaxis usando pygments
+\usepackage{paquetes/minted}
+
+\usemintedstyle[console]{vs}
+
+\newminted[bashcode]{console}{} % tango vs
+\newminted{python}{}
+
+
+% Soporte de acrónimos
+\usepackage[printonlyused]{paquetes/acronym-custom}
+
+% Cambia el nombre del apéndice de bibliografía
+\addto\captionsspanish{
+\renewcommand\bibname{Bibliografía y referencias}
+}
+
+\renewcommand{\listtablename}{Índice de tablas}
+\renewcommand{\tablename}{Tabla}
+
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+
+
+\begin{document}
+
+\input{previo/contenido.tex}
+
+% Índices
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Introducción}
+\label{chap:introduccion}
+\input{cap1/contenido.tex}
+
+\chapter{Planificación}
+\label{chap:calendario}
+\input{cap2/contenido.tex}
+
+\chapter{Requisitos del sistema}
+\label{chap:requisitos}
+\input{cap3/contenido.tex}
+
+\chapter{Análisis}
+\label{chap:analisis}
+\input{cap4/contenido.tex}
+
+\chapter{Diseño}
+\label{chap:diseno}
+\input{cap5/contenido.tex}
+
+\chapter{Implementación}
+\label{chap:implementacion}
+\input{cap6/contenido.tex}
+
+\chapter{Pruebas}
+\label{chap:pruebas}
+\input{cap7/contenido.tex}
+
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+\input{cap8/contenido.tex}
+
+\appendix
+
+\chapter{Manual de usuario}
+\label{chap:manual_usuario}
+\input{apen1/contenido.tex}
+
+\chapter{GNU Free Documentation License}
+\label{sec:fdl}
+\input{licencia.tex}
+
+\bibliographystyle{paquetes/hispa-annote}
+\bibliography{bibliografia}
+
+\end{document}

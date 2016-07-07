@@ -1,0 +1,250 @@
+\section{Contexto social}
+
+Los móviles y tabletas son parte habitual en la vida diaria de las personas, por
+lo que cada día surgen nuevas aplicaciones para mejorar cualquiera de las
+acciones que tenemos que llevar a cabo a diario. Esto incluye la cocina.
+
+Son multitud las aplicaciones creadas tanto para los amantes de esta actividad,
+como para aquellos a los que esto les aborrece y necesitan de un impulso para
+manejarse mejor. Son habituales las aplicaciones con recetarios variados, aunque
+la mayoría cerrados a actualizaciones externas. Menos son las que incluyen la
+capacidad de permitir a sus usuarios subir y compartir sus propias recetas.
+
+De esto se extra la necesidad de que existan aplicaciones para facilitar la
+lectura y comprensión de las diferentes recetas de cocina.
+
+
+\section{Motivación}
+\label{sec:situacion-actual}
+
+El impulso principal para desarrollar este proyecto es una necesidad personal
+de la autora de esta memoria.
+
+Soy amante de la cocina y llevo años mejorando mis técnicas culinarias a nivel
+autodidacta. Trabajando a diario en la cocina por motivaciones personales y
+totalmente voluntarias, he llegado a tropezar con ciertos inconvenientes a la
+hora de cocinar.
+
+El primero y más evidente viene a la hora de tratar de recordar una receta que
+has cocinado pocas veces o al tratar de replicar una nueva receta que has
+encontrado en un libro de cocina o en la red. Es perfectamente normal que, no
+habiendo practicado mucho una receta, se te olviden ciertos ingredientes o
+procedimientos. 
+
+Por eso, la necesidad principal de tener una app que recoja y recopile todas
+las recetas posibles, incluso las que nosotros mismos podemos añadir, resulta
+importante.
+
+Pero además, una vez tenemos nuestra receta disponible, ¿qué solemos hacer?
+Pues colocar nuestro smarthphone o tableta en plena cocina. Todo va bien hasta
+que llega la hora de actualizar la información o activar pantalla que se ha
+apagado. Así, tendríamos que limpiarnos las manos con mucho cuidado para no
+manchar ni estropear nuestros dispositivos.
+
+Ante esto, surge una necesidad más imperante: la capacidad de que nuestro
+dispositivo nos indique los pasos a seguir, incluso de que podamos darle
+órdenes para poder ir paso a paso. Así surge la idea base de Amuse Bouche.
+
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+Los objetivos de un sistema se agrupan en dos tipos: \textbf{funcionales} y
+\textbf{transversales}.
+
+Los primeros se refieren a \textit{qué} debe hacer el sistema en sí mismo,
+e inciden directamente en la experiencia del usuario y de potenciales
+desarrolladores.
+
+Los transversales son aquellos que se refieren al resultado final del sistema
+y a la propia experiencia durante el desarrollo del mismo.
+
+\subsection{Funcionales}
+\begin{itemize}
+\item Crear una app de acceso público que permita la visualización de recetas
+  de cocina, su lectura automática y la recepción de órdenes del usuario.
+\item Permitir la creación y la subida de nuevas recetas para poder compartirlas.
+\item Habilitar la categorización de dichas recetas a través de sus propios
+  ingredientes o según otros criterios, para facilitar su búsqueda, sobre todo
+  de cara a personas alérgicas o intolerantes.
+\item Permitir mostrar imágenes, videos o utilizar un cronómetro en cada paso
+  de la receta.
+\item Permitir que se suban las recetas en varios idiomas.
+\item Permitir la socialización por medio de comentarios y votaciones sobre las
+  recetas.
+\end{itemize}
+
+
+\subsection{Transversales}
+\begin{itemize}
+\item Ampliar mis conocimientos sobre desarrollo de aplicaciones móviles (en
+  particular, en plataformas Android) y sobre desarrollo de una API REST.
+\item Investigar y conocer más información acerca del mundo de la cocina.
+\item Permitir ampliaciones y moficicaciones a futuro sobre la aplicación.
+\end{itemize}
+
+
+\section{Estado del arte}
+\label{sec:estado-del-arte}
+
+Se detalla a continuación el estado del arte de las funcionalidades más
+habituales y de las apps de cocina más similares~\cite{mejores-apps-cocina}
+a lo que se busca construir en el proyecto.
+
+\subsection{Funcionalidades habituales}
+
+\begin{itemize}
+\item Recopilación de recetas
+\item Compartir recetas
+\item Categorización y filtrado
+\item Lectura automática
+\item Recepción de órdenes
+\item Imágenes y videos
+\item Cronómetro
+\item Socialización: permitir votar y comentar las recetas de otros usuarios.
+\item Varios idiomas
+\end{itemize}
+
+\subsection{Aps similares}
+
+Hay muchas más aplicaciones de cocina de las que se incluyen en este apartado,
+por eso solo se indican las más populares y relevantes:
+
+\textbf{Canal Cocina} permite al usuario (ya logueado) subir sus propias
+recetas, descargar las nuevas recetas automáticamente, consultar las recetas
+subidas por otros usuarios, comentar y valorar las recetas y filtrar las
+recetas por cocinero o programa. También incluye videos explicativos.
+
+\textbf{Nestlé Cocina} permite consultar las recetas en español y menús variados,
+planificar la dieta, filtrar y buscar recetas, marcar recetas como favoritas
+y compartirlas. Hay más 2000 recetas fijas y no permite a los usuarios subir
+nada.
+
+\textbf{Recetario} posee una gran comunidad de usuarios que comparten sus
+recetas entre ellos. También un modo online y offline, puede filtrar recetas
+por varios criterios y contiene un cronómetro.
+
+\textbf{¿Qué cocino hoy?} es un recetario con más de 4000 recetas fijas. Posee
+un modo offline y un modo de lectura automática, que permite escuchar las recetas
+mientras se cocina.
+
+\subsection{Comparativa}
+
+En la figura~\ref{comparativa_apps} se hace una comparativa de los requisitos
+que se buscan en el proyecto, verificando si se ofrecen o no en las alternativas
+de servicio previamente estudiadas.
+
+Una carencia importante bastante generalizada es la falta de aplicaciones que
+faciliten la accesibilidad a la información de las recetas (con lectura
+automática) y ninguna de ellas posee ningún método de captura de órdenes.
+
+Así pues, es evidente la dificultad de encontrar una app que aúne el mayor
+número de características posibles, aumentando incluso cuando sea gratuita,
+quedando manifiesta la necesidad del proyecto.
+
+
+\begin{sidewaystable}
+  \centering
+  \begin{tabular}{|l|c|c|c|c|c|}
+    \hline
+    \textit{Concepto} & Canal cocina & Nestlé Cocina & Recetario & ¿Qué cocino hoy? & SiteUp\\
+    \hline
+    Recopilación de recetas & Sí & Sí & Sí & Sí & Sí \\
+    \hline
+    Compartir recetas & Sí & No & Sí & No & Sí \\
+    \hline
+    Categorización y filtrado & Sí & Sí & Sí & Sí & Sí \\
+    \hline
+    Lectura automática & No & No & No & Sí & Sí \\
+    \hline
+    Recepción de órdenes & No & No & No & No & Sí \\
+    \hline
+    Imágenes y videos & Sí & Sí & Sí & Sí & Sí \\
+    \hline
+    Cronómetro & No & No & Sí & No & Sí \\
+    \hline
+    Socialización & Sí & No & Sí & No & Sí \\
+    \hline
+    Varios idiomas & No & No & No & No & Sí \\
+    \hline
+  \end{tabular}
+  \caption{Tabla comparativa de apps de cocina}
+  \label{comparativa_apps}
+\end{sidewaystable}
+
+
+\section{Alcance}
+
+Amuse Bouche se define como una aplicación móvil para la visualización de
+recetas de cocina. Los usuarios tendrán la posibilidad de crear y compartir
+sus recetas, activar un modo de lectura autómatica y dar órdenes al dispositivo
+para modificar esta lectura.
+
+También se permitirá filtrar categorizar las recetas para facilitar su búsqueda,
+escribir las recetas en varios idiomas y escribir comentarios y valorarlas.
+
+
+\subsection{Licencia}
+El proyecto está publicado como software libre bajo la licencia
+\ac{GPL} versión 3. El conjunto de bibliotecas y módulos utilizados
+tienen las siguientes licencias:
+
+\begin{itemize}
+\item El intérprete del lenguaje de programación \textbf{Python} se distribuye
+  bajo la licencia \ac{PSFL}, una licencia permisiva de tipo \ac{BSD} y
+  compatible con la \ac{GNU} \ac{GPL}.
+
+\item \textbf{Django}~\cite{django}, el framework de desarrollo web sobre el
+  cual se ha construido la API, se distribuye bajo la licencia \textit{\ac{BSD}}.
+
+\item El servidor web \textbf{nginx}~\cite{nginx} está licenciado bajo la
+  licencia \ac{BSD} simplificada.
+
+\item Los siguientes paquetes de Python utilizan también la licencia \ac{BSD}:
+  \begin{itemize}
+  \item django-rest-framework
+  \end{itemize}
+\end{itemize}
+
+
+
+\section{Estructura del documento}
+El presente documento se rige según la siguiente estructura:
+
+\begin{itemize}
+\item \textbf{\nameref{chap:introduccion}}. Se exponen el contexto, las
+  motivaciones y los objetivos del proyecto \textbf{Amuse Bouche}, así como
+  información sobre las licencias de sus componentes, glosario y estructura del
+  documento.
+
+\item \textbf{\nameref{chap:calendario}}. Se especifica la planificación del
+  proyecto, la división y extensión de sus etapas y los porcentajes de esfuerzo
+  durante todo el desarrollo.
+
+\item \textbf{\nameref{chap:requisitos}}. Se formalizan los objetivos y
+  requisitos planteados en la introducción más detalladamente.
+
+\item \textbf{\nameref{chap:analisis}}. Se detalla la fase de análisis del
+  sistema, explicando los requisitos funcionales del sistema y los diferentes
+  casos de uso. Se muestran los diseñors en los cuales se basan las interfaces
+  visuales de los diferentes sistemas.
+
+\item \textbf{\nameref{chap:diseno}}. Se expone en detalle la etapa de diseño
+  del sistema, con los diagramas de las arquitecturas lógicas de los sistemas y
+  los diagramas de diseño de datos.
+
+\item \textbf{\nameref{chap:implementacion}}. Se detallan las decisiones de
+  implementación más relevantes que tuvieron lugar durante el desarrollo del
+  proyecto.
+
+\item \textbf{\nameref{chap:pruebas}}. Se describen las pruebas que se han
+  llevado a cabo sobre el proyecto para garantizar su fiabilidad y estabilidad.
+
+\item \textbf{\nameref{chap:conclusiones}}. Comentamos las conclusiones a las
+  que se ha llegado tras desarrollar el proyecto.
+\end{itemize}
+
+Y los siguientes apéndices:
+\begin{itemize}
+\item \textbf{\nameref{chap:manual_usuario}}. Se explica cómo usar la aplicación.
+\end{itemize}

@@ -1,0 +1,301 @@
+En este capítulo se detalla la planificación que se ha seguido durante el
+desarrollo del proyecto. Se describe la metodología escogida, las iteraciones
+por las que ha pasado el proyecto, la planificación temporal y la organización
+del personal.
+
+A continuación, se exponen los recursos inventariables de los que se ha hecho
+uso a lo largo del desarrollo y puesta en producción del producto, haciendo una
+estimación de los costes y, por último, explicando los posibles riesgos que
+podrían darse.
+
+El desarrollo se ha ajustado razonablemente bien en cuanto a la
+cantidad de horas planificadas, aunque hay que especificar que por motivos
+laborales y personales y dado que no se ha podido dedicar una cantidad de horas
+fijas (ni al día ni a la semana) a este proyecto, estas horas no han podido ser
+continuadas, por lo que hay franjas de tiempo en las que no se han podido
+desarrollar nada.
+
+\section{Metodología de desarrollo}
+
+Para la realización del proyecto se ha utilizado un modelo de desarrollo
+iterativo incremental, definiendo en cada etapa las funcionalidades a
+elaborar y completando el ciclo completo de desarrollo y pruebas. 
+
+A continuación se detallan cada una de las iteraciones por las que ha ido
+pasando el proyecto.
+
+\subsection{Primera iteración: preparación previa}
+\label{sec:primera_iteracion}
+
+Antes de abarcar el desarrollo de la API y la app, era obligatorio adquirir los
+conocimientos necesarios para afrontarlo. Esta etapa se dedicó a aprender de
+manera autodidacta cómo funcionaban los sistemas y herramientas que se iban a
+utilizar: el framework Django para el caso de la API y todo lo relacionado con
+Android para la app. Se desarrollaron una API muy básica de ejemplo utilizando
+Django REST Framework, además de varias apps básicas, cada una centrada en
+elementos básicos de Android, como pueden ser la utilización de Activities y
+Fragments o pruebas de la biblioteca de lectura automática.
+
+También se utilizó este tiempo para definir los requisitos (definidos en el
+capítulo~\ref{chap:requisitos}) que tendría el sistema y dividirlos en niveles
+de prioridad. Así, en las primeras etapas de desarrollo (la segunda iteración que
+aparece en la sección~\ref{sec:segunda_iteracion} y la tercera que aparece en la
+sección~\ref{sec:tercera_iteracion}) se abarcarían los más necesarios e
+imprescindibles y se dejarían los menos prioritarios para las siguientes (la
+cuarta iteración que se especifica en la sección~\ref{sec:cuarta_iteracion} y
+la quinta, en la sección~\ref{sec:quinta_iteración}).
+
+Por último, se empezó a definir el diseño visual de aplicación, tanto el
+logotipo como la paleta de colores y demás detalles involucrados.
+
+
+\subsection{Segunda iteración: desarrollo de la base de la API}
+\label{sec:segunda_iteracion}
+
+En esta etapa, se define el modelo de datos básico a abarcar para los requisitos
+más prioritarios, que principalmente se basaban en que en la app fuera posible
+la visualización de recetas. Además, se creó el proyecto de Django y se construyó
+la estructura básica de modelos, serializadores y vistas, desarrollando la
+funcionalidad CRUD necesaria para obtener la información de las recetas, sus
+ingredientes y pasos.
+
+La gran mayoría de lo que se construyó en esta etapa se han mantenido hasta el
+final, tan sólo siendo ampliado en cuanto a nuevos atributos o clases que fueran
+necesarios.
+
+
+\subsection{Tercera iteración: desarrollo de la base de la app}
+\label{sec:tercera_iteracion}
+
+Tras construir la base de la API, se empezó a desarrollar la app Android.
+Conforme a lo aprendido en la primera iteración
+(sección~\ref{sec:primera_iteración}), se vio la necesidad de construir clases
+para conectarse con la API (peticiones REST) y obtener y guardar información en
+la base de datos, además de todas aquellas necesarias para las vistas de la app.
+
+Se construyó la estructura del proyecto y se implementaron las clases y métodos
+necesarios descritos anteriormente, así como las \textit{Activities} y
+\textit{Fragments} que forman las vistas iniciales. Estas vistas eran las
+referentes a la vista inicial (el listado de recetas) y la vista de detalle de
+una receta concreta.
+
+
+\subsection{Cuarta iteración: ampliación de la API}
+\label{sec:cuarta_iteracion}
+
+Una vez la API y la app eran estables y cumplían los requisitos más prioritarios,
+se decidió ampliar la API para abarcar el resto de requisitos. Se añadieron los
+atributos y métodos necesarios para permitir el filtrado de recetas (tanto por
+ingredientes o categorías como por idioma o cualquier otro atributo), lo cual
+era necesario para abarcar la semántica de las recetas y la internacionalización
+(para poder buscar recetas por idiomas). También se añadió la funcionalidad
+necesaria para permitir comentar y puntuar las recetas.
+
+
+\subsection{Quinta iteración: ampliación de la app}
+\label{sec:quinta_iteracion}
+
+Tras ampliar la API como se indica en la sección~\ref{sec:cuarta_iteracion},
+se actualizaron los métodos que trabajaban con la base de datos para añadir
+los nuevos atributos. También se añadieron nuevas vistas a la app, como la vista
+de filtrado, la vista de edición y la vista de creación, así como la vista de
+\textit{login}.
+
+Hubo que reestructurar algunas vistas, como la vista de detalle de una receta,
+ya que, tras utilizarla varias veces, se percibió que era poco amigable con el
+usuario.
+
+\subsection{Sexta iteración: pruebas finales y despliegue}
+\label{sec:sexta_iteracion}
+
+
+
+
+\section{Planificación temporal}
+\label{sec:planificacion}
+
+A continuación, se expone una comparación de la cantidad de horas estimadas
+frente a las utilizadas realmente para cada iteración.
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Fase} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+    \hline
+    Planificación & 56 horas & 77 horas \\
+    \hline
+    Aprendizaje & 224 horas & 242 horas \\
+    \hline
+    Diseño visual & 56 horas & 22 horas \\
+    \hline
+    Desarrollo API & 128 horas & 110 horas \\
+    \hline
+    Desarrollo app & 128 horas & 132 horas \\
+    \hline
+    Ampliación API & 168 horas & 88 horas \\
+    \hline
+    Ampliación app & 168 horas & 176 horas \\
+    \hline
+    Despliegue & - & - \\
+    \hline
+    Edición de la documentación & 224 horas & - \\
+    \hline
+    Total & 928 horas & 847 horas \\
+    \hline
+  \end{tabular}
+  \caption{Comparación de la estimación con los tiempos reales}
+  \label{tab:estimacion_tiempo}
+\end{table}
+
+Cada tarea necesitaba de la terminación por completo de la anterior, por lo que
+no se han podido paralelizar tiempos.
+
+No se muestra el diagrama de Gantt dado que, como ya se ha explicado en la
+introducción del presente capítulo, no se ha podido dedicar una cantidad de horas
+fijas (ni al día ni a la semana) a este proyecto, por lo que las horas no han
+podido ser continuadas. Por tanto, no hay una franja temporal continua de
+desarrollo.
+
+\section{Organización}
+
+El proyecto ha sido desarrollado en su totalidad por la autora de esta memoria,
+que ha llevado a cabo las labores de análisis, diseño y desarrollo, así como de
+diseño de las interfaces y \textit{branding} del proyecto.
+
+El desarrollo del proyecto ha sido revisado y guiado de forma continua por el
+tutor, Manuel Palomo Duarte.
+
+\section{Recursos inventariables}
+
+Los recursos de hardware utilizados durante el desarrollo y el despliegue del
+proyecto son aquellos empleados por la autora para la elaboración del
+proyecto y los necesarios para la implantación y puesta en marcha del proyecto,
+los cuales se definen a continuación.
+
+
+\begin{itemize}
+\item Como puesto de desarrollo se ha utilizado un equipo con las siguientes
+  características:
+  \begin{itemize}
+  \item Procesador Intel Core i5 CPU M480 a 2.67GHz
+  \item Gráfica Intel HD Graphics 3000
+  \item Memoria 8GiB DDR3
+  \item HDD 320GiB
+  \item Pantalla de 15,6 pulgadas
+  \end{itemize}
+
+\item Como dispositivo para las pruebas de la aplicación móvil se ha utilizado
+  un \textbf{Motorola Moto G (segunda generación)} con las siguientes
+  características:
+
+  \begin{itemize}
+  \item Sistema: Android 5.1/6.0
+  \item CPU: Qualcomm MSM8226 Snapdragon 400 quad-core 1.2 GHz
+  \item GPU: GPU Adreno 305
+  \item Memoria: 1 GB.
+  \item Almacenamiento: 8GB
+  \item Pantalla: 5" HD, 1280x720px
+  \end{itemize}
+
+\item Como servidores para el despliegue...
+  
+\end{itemize}
+
+
+\section{Costes}
+
+El coste total del proyecto abarcaría por un lado el coste del personal que
+lo desarrolla y mantiene y, por otro, el coste de la infraestructura necesaria
+para ello.
+
+En cuanto al personal, se requieren:
+\begin{itemize}
+\item Un analista que se encargue de elicitar los requisitos, analizar el
+  sistema y diseñarlo. Según el convenio vigente~\cite{convenio}, su sueldo base
+  es de 11,24€/hora. En total, su sueldo costaría 865,48 €.
+\item Un programador senior de Python para implementar la API REST. Según el
+  convenio vigente~\cite{convenio}, su sueldo base es de 7,9€/hora. En total, su
+  sueldo costaría 2520,1€.
+\item Un programador senior de Android para implementar la app. Según el
+  convenio vigente~\cite{convenio}, su sueldo base es de 7,9€/hora. En total, su
+  sueldo costaría 3389,1€.
+\item Un diseñador gráfico que se encargue de toda la imagen del proyecto. Según
+  el convenio vigente~\cite{convenio}, su sueldo base es de 10,99€/hora. En
+  total, sueldo costaría 241,78€.
+\item Un administrador de sistemas que despliegue y mantenga la API y su
+  servidor. Según el convenio vigente~\cite{convenio}, su sueldo base es de
+  11,24€/hora. 
+\end{itemize}
+
+Teniendo en cuenta que todos los roles son desempeñados por la autora de la
+memoria, este coste no es real.
+
+En cuanto al coste de infraestructura:
+\begin{itemize}
+\item El puesto de desarrollo tiene un coste de 489€.
+\item El dispositivo de pruebas tiene un coste de 179€.
+\item El servidor de despliegue tiene un coste de x€/mes (IVA incluido). El coste
+  de un año de servicios sería de...
+\end{itemize}
+
+Tanto el puesto de desarrollo como el dispositivo de pruebas no han sido
+comprados para este proyecto, así que tampoco entran del cómputo real. Aún así,
+el coste total suponiendo que todos los gastos fueran reales se especifica en
+el cuadro~\ref{tab:costes}.
+
+\begin{table}[hbtp]
+  \centering
+  \begin{tabular}[h]{|l|c|c|r|}
+    \hline
+    \textbf{Concepto} & \textbf{Coste} & \textbf{Cantidad} & \textbf{Coste total} \\
+    \hline
+    \textit{Analista} & 11,24€/hora & 77 horas & 865,48€ \\
+    \hline
+    \textit{Programador senior Python} & 7,9€/hora & 319 horas & 2520,1€ \\
+    \hline
+    \textit{Programador senior Android} & 7,9€/hora & 429 horas & 3389,1€ \\
+    \hline
+    \textit{Diseñador gráfico} & 10,99€/hora & 22 horas & 241,78€ \\
+    \hline
+    \textit{Administrador de sistemas} & 11,24€/hora &  horas & € \\
+    \hline
+    \textit{Puesto de desarrollo} & 489€ & 1 & 489€ \\
+    \hline
+    \textit{Dispositivo de pruebas} & 179€ & 1 & 179€ \\
+    \hline
+    \textit{Servidor de despliegue} & €/mes & 12 meses & € \\
+    \hline
+    \textbf{Total} & \multicolumn{3}{r|}{\textbf{7684,46€}} \\
+    \hline
+  \end{tabular}
+  \caption{Tabla de planificación de costes}
+  \label{tab:costes}
+\end{table}
+
+\section{Riesgos}
+\label{sec:riesgos}
+
+
+A continuación se detallan los riesgos detectados para el proyecto.
+
+\subsection{Estabilidad del servidor de despliegue}
+\label{subsec:estabilidad-servidor}
+
+La app de Amuse Bouche lee información de su API, alojada en un único servidor,
+por lo que si ocurriera cualquier problema que pudiera comprometer su
+estabilidad, los usuarios quedarían sin posibilidad de acceder a las recetas
+conectados en red. Aunque la app seguirá funcionando y podrán ver las que sí
+tengan guardadas en local, no podrán tener una experiencia completa.
+
+Con mayor presupuesto y personal, lo lógico sería replicar el sistema en
+varios servidores en distintas localizaciones, con información simétrica aunque
+conectados entre sí, para poder evitar un fallo de este tipo.
+
+\subsection{Limitación de recursos}
+
+Además de lo comentado en la subsección~\ref{subsec:estabilidad-servidor},
+el servidor de despliegue tiene unos recursos limitados, por lo que pudiera
+darse el caso de que si llegara una gran afluencia de peticiones, el servidor
+no diera abasto y colapsara. La solución puede pasar por hacer lo mismo que en
+el caso anterior y replicar el servidor y/o mejorar los recursos del actual.

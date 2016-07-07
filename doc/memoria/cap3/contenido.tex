@@ -1,0 +1,491 @@
+
+En este capítulo se describen de manera formal los objetivos que se presentaron
+de manera genérica en la sección~\ref{sec:objetivos},
+\textit{\nameref{sec:objetivos}}. 
+
+Concretamente se exponen:
+
+\begin{itemize}
+\item Los \textbf{objetivos del sistema} resumen la funcionalidad genérica del
+ proyecto.
+\item Los \textbf{requisitos funcionales} definen las funciones del sistema
+  software y sus componentes.
+\item Los \textbf{requisitos de información} especifican los datos que el
+  sistema necesita para llevar a cabo correctamente su funcionalidad.
+\item Los \textbf{requisitos no funcionales} detallan criterios de diversas
+  categorías que el software debe cumplir para garantizar un buen nivel de
+  calidad más allá de su funcionamiento.
+\end{itemize}
+
+Para terminar el capítulo se presentan diversas alternativas tecnológicas para
+cubrir las necesidades surgidas en los requerimientos del sistema, detallando
+las decisiones tomadas.
+
+
+\section{Objetivos del sistema}
+
+El objetivo principal del proyecto a grandes rasgos es:
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Visualización de recetas \\
+
+    \hline
+
+    Descripción & Amuse Bouche permitirá crear y editar recetas de cocina,
+    compartirlas y puntuarlas.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{OBJ-1, objetivo del sistema 1}
+\end{center}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Accesibilidad en detalle de receta \\
+
+    \hline
+
+    Descripción & Amuse Bouche permitirá dar órdenes y que el dispositivo
+    lea automáticamente el contenido de la receta.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{OBJ-2, objetivo del sistema 2}
+\end{center}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Búsqueda y filtrado \\
+
+    \hline
+
+    Descripción & Amuse Bouche permitirá filtrar las recetas en función de
+    multitud de parámetros, ya sean los ingredientes que contiene, el idioma o
+    la categoría a la que pertenezca.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{OBJ-3, objetivo del sistema 3}
+\end{center}
+
+\section{Catálogo de requisitos}
+
+A continuación se exponen los requisitos del sistema a nivel funcional, de
+información y no funcionales.
+
+\subsection{Requisitos funcionales}
+
+En esta subsección se introducen los requisitos que describen las funciones del
+sistema.
+
+\subsubsection{Gestión de usuarios}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Creación de cuenta de usuario \\
+
+    \hline
+
+    Descripción & El usuario de Amuse Bouche deberá ser capaz de crear una
+    cuenta de usuario para acceder a algunas de las funciones de Amuse Bouche,
+    proporcionando su dirección de correo electrónico y contraseña.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-1, requisito funcional 1: creación de cuenta de usuario}
+\end{center}
+
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Edición de cuenta de usuario \\
+
+    \hline
+
+    Descripción & Un usuario logueado deberá ser capaz de editar sus datos
+    personales y preferencias de usuario. En particular, deberá ser capaz de
+    editar su dirección de correo electrónico y contraseña entre otros datos.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-2, requisito funcional 2: edición de cuenta de usuario}
+\end{center}
+
+
+
+\subsubsection{Gestión de recetas}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Obtención de recetas \\
+
+    \hline
+
+    Descripción & Un usuario (logueado o no) deberá ser capaz de obtener los
+    datos de una o varias recetas.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-3, req. funcional 3: obtención de receta}
+\end{center}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Creación de recetas \\
+
+    \hline
+
+    Descripción & Un usuario logueado deberá ser capaz de crear una receta,
+    indicando su título, ingredientes y pasos entre otros datos.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-4, req. funcional 4: creación de receta}
+\end{center}
+
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Edición de recetas \\
+
+    \hline
+
+    Descripción & Un usuario logueado deberá ser capaz de editar una receta que
+    previamente haya creado. En particular, deberá ser capaz de modificar
+    todos sus datos.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-5, req. funcional 5: edición de receta}
+\end{center}
+
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Eliminación de receta \\
+
+    \hline
+
+    Descripción & Un usuario logueado deberá ser capaz de eliminar una receta. \\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-6, req. funcional 6: eliminación de receta}
+\end{center}
+
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Obtener comentarios de receta \\
+
+    \hline
+
+    Descripción & Un usuario (logueado o no) deberá ser capaz de obtener los
+    comentarios que se han hecho sobre una receta.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-7, req. funcional 7: obtener comentarios de receta}
+\end{center}
+
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Comentar receta \\
+
+    \hline
+
+    Descripción & Un usuario logueado deberá ser capaz de añadir un comentario
+    a cualquier receta compartida por él u otro usuario. \\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-8, req. funcional 8: comentar receta}
+\end{center}
+
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Valorar receta \\
+
+    \hline
+
+    Descripción & Un usuario logueado deberá ser capaz de valorar con una
+    puntuación cualquier receta compartida por él u otro usuario. \\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-9, req. funcional 9: valorar receta}
+\end{center}
+
+
+\subsection{Requisitos de información}
+\label{sec:requisitos-informacion}
+
+Seguidamente se exponen los requisitos que describen los datos necesarios que
+requiere el sistema.
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Usuario\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Dirección de correo electrónico
+    \item Contraseña
+    \item Nombre
+    \item Apellidos
+    \item Fecha de cumpleaños
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-1, req. de información 1: usuario}
+\end{center}
+
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Receta\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Título
+    \item Usuario
+    \item Idioma
+    \item Tipo de plato
+    \item Dificultad
+    \item Momento de creación
+    \item Momento de actualización
+    \item Tiempo de cocinado
+    \item Imagen
+    \item Puntuación total
+    \item Puntuación media
+    \item Usuarios que han puntuado
+    \item Número de comentarios
+    \item Comensales
+    \item Fuente
+    \item Lista de ingredientes
+    \item Lista de pasos
+    \item Lista de categorías
+    \end{itemize}
+    \\
+
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-2, req. de información 2: receta}
+\end{center}
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Ingrediente de una receta\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Posición
+    \item Cantidad
+    \item Nombre
+    \item Unidad de medida
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-3, req. de información 3: ingrediente de una receta}
+\end{center}
+    
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Paso de una receta\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Posición
+    \item Descripción
+    \item (\textit{Opcional}) Imagen
+    \item (\textit{Opcional}) Video
+    \item Tiempo a cronometrar
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-4, req. de información 4: paso de una receta}
+\end{center}
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Comentario de una receta\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Receta
+    \item Usuario
+    \item Comentario
+    \item Tiempo de creación
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-5, req. de información 5: comentario de una receta}
+\end{center}
+
+
+\subsection{Requisitos no funcionales}
+
+A continuación se indican los requisitos que especifican criterios usados para
+juzgar la operación del software a través de varias categorias, más allá de su
+comportamiento específico.
+
+\subsubsection{Requisitos de seguridad}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Restricción de acceso a usuarios \\
+
+    \hline
+
+    Descripción & Los datos de otros usuarios y las peticiones de creación,
+    actualización y borrado sólo estarán disponibles para usuarios logueados.\\
+
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{NRQ-1, req. no funcional 1: restricción de acceso}
+\end{center}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Seguridad en las peticiones \\
+
+    \hline
+
+    Descripción & Las peticiones de usuarios logueados se realizarán utilizando
+    tokens de autenticación.\\
+
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{NRQ-2, req. no funcional 2: seguridad en peticiones}
+\end{center}
+
+
+\subsubsection{Requisitos de accesibilidad y usabilidad}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Lectura automática \\
+
+    \hline
+
+    Descripción & La app deberá ser capaz de leer los pasos de la receta
+    automáticamente.\\
+
+    \hline
+  \end{tabularx}
+  \label{tab:accesibilidad}
+  \captionof{table}{NRQ-3, req. no funcional 3: lectura automática}
+\end{center}
+
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Captura de órdenes por voz \\
+
+    \hline
+
+    Descripción & La app deberá ser capaz de capturar órdenes del usuario por
+    voz.\\
+
+    \hline
+  \end{tabularx}
+  \label{tab:accesibilidad}
+  \captionof{table}{NRQ-4, req. no funcional 4: órdenes por voz}
+\end{center}
+
+
+\section{Alternativas de solución}
+\label{sec:alternativas-solucion}
+
+En esta sección, se especifican las diferentes alternativas tecnológicas que
+podrían permitir implementar los requerimientos del sistema, argumentando porqué
+se han escogido ciertas aquellas con que se ha terminado desarrollando el
+proyecto.
+
+\subsection{Frameworks para el desarrollo de API REST}
+
+Dado que ya había trabajado en varias ocasiones con Python, quería optar por este
+lenguaje para mejorar mi conocimiento sobre él. Además ya había desarrollado
+APIs en otros lenguajes como PHP (utilizando Code Igniter), por lo que los había
+descartado.
+
+En cuanto a los frameworks de Python para web,~\cite{api-python} se manejaron
+los siguientes:
+\begin{itemize}
+\item Django y Djando REST Framework. rough community sentiment
+ 
+\item Django y Tastypie.
+
+\item Flask y Flask-RESTful.
+\item Flask y Flask API.
+\end{itemize}
