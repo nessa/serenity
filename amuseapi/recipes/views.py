@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from recipes.models import Recipe, User, RecipeComment, RecipeRating
+from recipes.models import Ingredient, TranslatedIngredient
 from django.contrib.auth.models import Group
 
 from rest_framework import viewsets
@@ -8,6 +9,9 @@ from recipes.serializers import RecipeSerializer, UserSerializer
 from recipes.serializers import RecipeCommentSerializer
 from recipes.serializers import RecipeRatingSerializer
 from recipes.serializers import GroupSerializer
+from recipes.serializers import IngredientSerializer
+from recipes.serializers import TranslatedIngredientSerializer
+from recipes.serializers import TranslationSerializer
 from rest_framework import generics
 from rest_framework import permissions
 from recipes.permissions import IsOwnerOrReadOnly
@@ -222,3 +226,87 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
             self.permission_classes = (IsAuthenticatedOrReadOnly,)
             
         return super(RecipeRatingViewSet, self).get_permissions()
+
+
+# GENERIC INGREDIENTS
+class IngredientFilter(filters.FilterSet):
+    class Meta:
+        model = Ingredient
+        fields = ['code']
+        
+class TranslationFilter(filters.FilterSet):
+    updated_before = filters.DateTimeFilter(name="timestamp", lookup_type='lt')
+    updated_after = filters.DateTimeFilter(name="timestamp", lookup_type='ge')
+    
+    # Exact (or iexact to be case-insensitive)
+    language = filters.CharFilter(name='language', lookup_type='iexact')
+
+    class Meta:
+        model = TranslatedIngredient
+        fields = ['updated_before', 'updated_after', 'language']
+
+        
+class IngredientViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows generic ingredients to be viewed or edited.
+    """
+    queryset = Ingredient.objects.all()
+    serializer_class = IngredientSerializer
+    filter_class = IngredientFilter
+    ordering_filter = OrderingFilter()
+    ordering_fields = '__all__'
+    ordering = ('code')
+
+    def filter_queryset(self, queryset):
+        queryset = super(IngredientViewSet, self).filter_queryset(queryset)
+        return self.ordering_filter.filter_queryset(self.request, queryset, self)
+
+    def get_paginate_by(self):
+        """
+        Use smaller pagination for HTML representations.
+        """
+        if self.request.accepted_renderer.format == 'html':
+            return 20
+        return 10
+    
+    def get_permissions(self):
+        # Open recipes read
+        if self.request.method in SAFE_METHODS:
+            self.permission_classes = (AllowAny,)
+        else:
+            self.permission_classes = (IsAuthenticated,)
+            
+        return super(IngredientViewSet, self).get_permissions()
+
+
+class TranslationViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows generic ingredients to be viewed or edited.
+    """
+    queryset = TranslatedIngredient.objects.all()
+    serializer_class = TranslationSerializer
+    filter_class = TranslationFilter
+    ordering_filter = OrderingFilter()
+    ordering_fields = '__all__'
+    ordering = ('timestamp')
+
+    def filter_queryset(self, queryset):
+        queryset = super(TranslationViewSet, self).filter_queryset(queryset)
+        return self.ordering_filter.filter_queryset(self.request, queryset, self)
+
+    def get_paginate_by(self):
+        """
+        Use smaller pagination for HTML representations.
+        """
+        if self.request.accepted_renderer.format == 'html':
+            return 20
+        return 10
+    
+    def get_permissions(self):
+        # Open recipes read
+        if self.request.method in SAFE_METHODS:
+            self.permission_classes = (AllowAny,)
+        else:
+            self.permission_classes = (IsAuthenticated,)
+            
+        return super(TranslationViewSet, self).get_permissions()

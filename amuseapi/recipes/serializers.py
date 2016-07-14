@@ -5,6 +5,7 @@ from rest_framework import serializers
 from recipes.models import Recipe, RecipeCategory, RecipeIngredient
 from recipes.models import RecipeDirection, RecipeComment
 from recipes.models import RecipeRating, User
+from recipes.models import Ingredient, TranslatedIngredient, IngredientCategory
 from datetime import datetime
 
 # Users
@@ -263,4 +264,119 @@ class RecipeRatingSerializer(serializers.ModelSerializer):
         
         return rating
 
+
+# Generic ingredients
+
+        
+class TranslatedIngredientSerializer(serializers.ModelSerializer):
+    ingredient = serializers.CharField(source='ingredient.id', read_only=True)
     
+    class Meta:
+        model = TranslatedIngredient
+        fields = ('ingredient', 'translation', 'language', 'timestamp',)
+
+        
+class IngredientCategorySerializer(serializers.ModelSerializer):
+    ingredient = serializers.CharField(source='ingredient.id', read_only=True)
+
+    class Meta:
+        model = IngredientCategory
+        fields = ('ingredient', 'name',)
+
+        
+class IngredientSerializer(serializers.HyperlinkedModelSerializer):
+    translations = TranslatedIngredientSerializer(many=True)
+    categories = IngredientCategorySerializer(many=True)
+
+    class Meta:
+        model = Ingredient
+        fields = ('id', 'code', 'translations', 'categories',)
+
+    # Override create method to create all nested fields
+    def create(self, validated_data):
+        categories = validated_data.pop('categories')
+        translations = validated_data.pop('translations')
+
+        ingredient = Ingredient.objects.create(**validated_data)
+
+        for category in categories:
+            IngredientCategory.objects.create(ingredient=ingredient, **category)
+        for translation in translations:
+            TranslatedIngredient.objects.create(ingredient=ingredient,
+                                                **translation)
+            
+        return ingredient
+
+    
+    # Override update method to update nested fields if needed
+    def update(self, instance, validated_data):
+        categories = validated_data.pop('categories')
+        translations = validated_data.pop('translations')
+
+        # Update the ingredient instance
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        # Delete any categories not included in the request
+        category_names = [item['name'] for item in categories]
+        for category in instance.categories.all():
+            if category.name not in category_names:
+                category.delete()
+
+        # Create or update category instances that are in the request
+        for item in categories:
+            try:
+                category = IngredientCategory.objects.get(ingredient = instance,
+                                                          name = item['name'])
+            except IngredientCategory.DoesNotExist:
+                # Create a new category
+                category = IngredientCategory(ingredient=instance,
+                                              name = item['name'])
+                category.save()
+
+                
+        # Delete any translations not included in the request
+        tranlation_languages = [item['language'] for item in translations]
+        for translation in instance.translations.all():
+            if translation.language not in translation_languages:
+                 translation.delete()
+
+        # Create or update tranlation instances that are in the request
+        for item in translations:
+            try:
+                translation = TranslatedIngredient.objects.get(
+                    ingredient = instance,
+                    language = item['language'])
+            except TranslatedIngredient.DoesNotExist:
+                # Create a new translation
+                translation = TranslationIngredient(ingredient = instance,
+                    translation = item['translation'],
+                    language = item['language'])
+
+            # Update present translation
+            translation.translation = item['translation']
+            ingredient.save()
+
+        return instance
+
+
+class SimpleIngredientCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = IngredientCategory
+        fields = ('name',)
+        
+class SimpleIngredientSerializer(serializers.ModelSerializer):
+    categories = SimpleIngredientCategorySerializer(many=True)
+
+    class Meta:
+        model = Ingredient
+        fields = ('code', 'categories',)
+        
+    
+class TranslationSerializer(serializers.ModelSerializer):
+    ingredient = SimpleIngredientSerializer()
+    
+    class Meta:
+        model = TranslatedIngredient
+        fields = ('ingredient', 'translation', 'language', 'timestamp',)

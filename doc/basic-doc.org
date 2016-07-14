@@ -924,3 +924,7 @@ http://getblimp.github.io/django-rest-framework-jwt/
 - python manage.py migrate
 - python manage.py loaddata recipes/fixtures/initial_data.json
 - python manage.py runserver
+** Migraciones
+- Cambiando los modelos: por ejemplo, añadiendo ingredientes genéricos
+- python manage.py makemigrations
+- python manage.py migrate

@@ -1,0 +1,48 @@
+{
+    "code": "chickpeas",
+    "translations": [
+        {
+            "translation": "garbanzos",
+            "language": "es"
+        },
+        {
+            "translation": "chickpeas",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "wheat flour",
+    "translations": [
+        {
+            "translation": "harina de trigo",
+            "language": "es"
+        },
+        {
+            "translation": "wheat flour",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "olive oil",
+    "translations": [
+        {
+            "translation": "aceite de oliva",
+            "language": "es"
+        },
+        {
+            "translation": "olive oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}

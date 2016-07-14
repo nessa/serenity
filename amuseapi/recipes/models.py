@@ -120,3 +120,20 @@ class RecipeRating(models.Model):
     recipe = models.ForeignKey(Recipe, related_name='ratings')
     user = models.ForeignKey(User, related_name='ratings')
     rating = models.IntegerField()
+
+
+# Generic ingredients
+class Ingredient(models.Model):
+    code = models.CharField(max_length=100)
+
+class TranslatedIngredient(models.Model):
+    ingredient = models.ForeignKey(Ingredient, related_name='translations')
+    translation = models.CharField(max_length=100)
+    language = models.CharField(choices=LANGUAGE_CHOICES, default='es',
+        max_length=10)
+    timestamp = models.DateTimeField(auto_now=True)
+
+class IngredientCategory(models.Model):
+    ingredient = models.ForeignKey(Ingredient, related_name='categories')
+    name = models.CharField(max_length=100)
+    
