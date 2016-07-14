@@ -825,13 +825,8 @@ http://getblimp.github.io/django-rest-framework-jwt/
   + getApplicationContext().deleteDatabase("amuse.sqlite");
 
 ** TODO Por hacer
-- Añadir nuevos modelos Ingredient y Category (genéricos) que
-  añadan cada nuevo ingrediente y categoría que no esté creado ya y
-  pueda servir para filtrar recetas y obtener información secundaria.
-  + Añadirlo solo para ingredientes (categorías serán fijas)
 - Guardar recipe draft en onPause() (si mientras se está creando 
   una receta se sale de la app)
-- Login
 - Vista de detalle: comentarios y rating
 - Configuración:
   + No apagar la pantalla
@@ -844,7 +839,6 @@ http://getblimp.github.io/django-rest-framework-jwt/
   + Comando "salir" (también 'on back')
   + Comprobar al pasar a otra pestaña
 - API: Guardar recetas con las nuevas categorías
-- API: oAuth
 - Definición del layout inicial en Inkscape -> Memoria
 - Conexión con DBpedia:
   + Python dbpedia: https://github.com/ubergrape/pyspotlight/blob/master/README.rst
@@ -867,6 +861,12 @@ http://getblimp.github.io/django-rest-framework-jwt/
 - [25 marzo] Filtrado en API y en Base de datos
 - [25 marzo] Ordenación
 - [25 marzo] Splash: Solicitar idioma, pero no sincronizar nada
+- Añadir nuevos modelos Ingredient y Category (genéricos) que
+  añadan cada nuevo ingrediente y categoría que no esté creado ya y
+  pueda servir para filtrar recetas y obtener información secundaria.
+  + Añadirlo solo para ingredientes (categorías serán fijas)
+- Login
+- API: authentication
 
 *** Ideas
 - En la vista de detalle de "paso de preparación", ¿posibilidad de cambiar el
@@ -914,3 +914,13 @@ http://getblimp.github.io/django-rest-framework-jwt/
 *** Material
 - Especificación de Material Design: http://www.google.com/design/spec/material-design/introduction.html
 - Material con Polymer: https://www.polymer-project.org/docs/elements/material.html#shadow-effect
+
+* Extra
+** Configuración dividida en la API
+- Una para desarrollo y otra para producción
+- virtualenv -p /usr/bin/python3 env
+- source env/bin/activate
+- pip install -r reqs/development.txt
+- python manage.py migrate
+- python manage.py loaddata recipes/fixtures/initial_data.json
+- python manage.py runserver
