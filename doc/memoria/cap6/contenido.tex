@@ -1,60 +1,422 @@
-
+En este capítulo se presentan los detalles de implementación del proyecto,
+que se basa en el análisis y el diseño mostrado en los anteriores apartados. Se
+detallan el entorno de construcción y la organización del código fuente, además
+de otros detalles.
 
 \section{Entorno de construcción}
 
 En esta sección se detalla el entorno tecnológico utilizado para la construcción
-del sistema, que se basa en lo especificado en la
+del sistema, basada en lo especificado en la
 sección~\ref{sec:alternativas-solucion},\textit{~\nameref{sec:alternativas-solucion}}.
 
 \subsection{API REST}
-\label{subsec:entorno-aplicacion-web}
+\label{subsec:entorno-api}
 
-\subsubsection{Herramientas de diseño y desarrollo}
+\subsubsection{Herramientas de desarrollo}
 
-Emacs
+Como editor principal se ha utilizado \textbf{GNU Emacs}. ``Un editor extensible,
+personalizable, auto-documentado y de tiempo real'', tal y como indica su propio
+manual. Emacs forma parte del proyecto GNU y fue desarrollado por Richard
+Stallman.
 
-draw.io
+Se ha utilizado tanto para el desarrollo de la API usando Python y Django,
+gracias a paquetes como \textit{python-mode}, \textit{pylint} y \textit{flymake}
+(utilizados para verificar el código). Además también se ha utilizado para
+el resto de documentación relacionada con el proyecto, incluyendo esta memoria,
+gracias a los paquetes \textit{org-mode}.
+
+\subsubsection{Herramientas de diseño}
+
+\textbf{Dia}~\cite{dia} es una aplicación informática de propósito general para
+la creación de diagramas, desarrollada como parte del proyecto GNOME. Se ha
+utilizado para la generación de diagramas de casos de uso, de secuencia,
+diagramas de flujo y similares.
+
+También se han realizado otros esquemas y diagramas con la aplicación
+\textbf{mock.io}, una herramienta web integrable en Google Drive, con un enorme
+número de elementos de dibujo y la capacidad de exportar en un gran número de
+formatos, entre ellos en formato vectorial PDF.
 
 \subsubsection{Gestión de dependencias}
 \label{subsec:gestion-dependencias}
 
-Virtualenv
+\textbf{Virtualenv}~\cite{virtualenv} es una herramienta que crea entornos
+virtuales que tienen sus propios directorios de instalación y que no comparten
+con los demás entornos. Así, se facilita el control de las versiones de cada una
+de las dependencias usadas.
 
-Pip
+\textbf{Pip}~\cite{pip} es un sistema de gestión de paquetes utilizado para
+instalar y administrar paquetes de software escritos en Python. Muchos paquetes
+pueden ser encontrados en PyPI.
+
+
+\subsubsection{Configuración de entorno}
+
+\textbf{Vagrant}~\cite{vagrant} es una herramienta para crear y configurar
+entornos de desarrollo ligeros, reproducibles y portátiles.
+
+\textbf{Ansible}~\cite{ansible} es una plataforma de software libre para
+configurar y administrar computadoras. Combina instalación multi-nodo,
+ejecuciones de tareas \textit{ad-hoc} y administración de configuraciones.
+
+Ambos se utilizaron para, primero definir las reglas de instalación y
+configuración del entorno de desarrollo necesario para probar la API, y luego
+para desplegar dicho entorno conforme a las reglas definidas.
 
 
 \subsubsection{Control de versiones}
 
-Git + GitHub
+El uso de un control de versiones es fundamental por multitud de motivos. El
+principal es que sirve como sistema de copia de seguridad. Además permite
+deshacer cambios en el código o comprobar cómo funcionaba el sistema varios
+commits atrás.
+
+En particular, \textbf{Git}~\cite{git} es un software de control de versiones
+diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del
+mantenimiento de versiones de aplicaciones cuando éstas tienen un gran número de
+archivos de código fuente. Entre las ventajas de Git con respecto a otros
+sistemas, está la utilización de ramas y la descentralización mediante copias
+locales.
+
+Sabiendo que el software elegido era Git y que el software iba a ser liberado
+públicamente, todo el código fuente del proyecto se alojó en repositorios
+públicos en \textbf{GitHub},\cite{github} gracias a los planes gratuitos.
 
 
 \subsubsection{Lenguaje de programación}
 
-Python
+Como se comentó en la sección~\nameref{sec:alternativas-solucion}, se eligió
+\textbf{Python} como lenguaje de programación por los requisitos definidos
+en la subsección~\nameref{subsec:frameworks}.
 
-\subsubsection{Nivel de persistencia}
+\subsubsection{Sistema de gestión de bases de datos}
 
-Postgresql
+Como se comentó en la sección~\nameref{sec:alternativas-solucion}, se eligió
+\textbf{PostgreSQL} como sistema de gestión por las características introducidas
+en la subsección~\nameref{subsec:sistemas-bases-datos}.
+
+\subsubsection{Bibliotecas de terceros}
+
+En el proyecto se han utilizado un gran número de bibliotecas auxiliares para
+facilitar el desarrollo y ampliar la funcionalidad de forma sencilla.
+
+\begin{description}
+\item[djangorestframework] Conjunto de herramientas potente y flexible para la
+  construcción de APIs.\cite{django-rest-framework}
+
+\item[django-filter] Proporciona una forma sencilla de filtrar por un conjunto
+  de consultas sobre la base de parámetros que un usuario
+  proporciona.\cite{django-filter}
+  
+\item[djangorestframework-filters] Filtrado más avanzado para Django REST
+  Framework. Corrige algunas limitaciones de
+  \textit{django-filter}.\cite{django-rest-framework-filters}
+  
+\item[psycopg2] Es el adaptador de base de datos PostgreSQL más popular para el
+  lenguaje de programación Python. Sus principales características son la
+  implementación completa de la especificación API Python DB 2.0 y el hilo de
+  seguridad (varios hilos pueden compartir la misma conexión). Fue diseñado para
+  aplicaciones multihilo que crean y destruyen gran cantidad de cursores y
+  hacen que un gran número de inserciones y actualizaciones
+  concurrentes.\cite{psycopg2}
+
+\item[django-extensions] Es una colección de extensiones para Django de muy
+  diversos tipos: comandos de administración, extensiones para la zona de
+  administración, ...\cite{django-extensions}
+  
+  Algunas de las herramientas más útiles que provee son las siguientes:
+  \begin{itemize}
+  \item El comando \textit{shell\_plus} provee una shell que carga automáticamente
+    todos los modelos de la aplicación, de forma que sea fácil hacer consultas
+    rápidas a la base de datos.
+  \item El comando \textit{graph\_models} genera automáticamente un diagrama
+    visual con el modelo entidad-relación de la base de datos.
+  \end{itemize}
+\end{description}
+
 
 \subsection{Aplicación móvil}
 
 \subsubsection{Herramientas de desarrollo}
 
-Android Studio
+Para el desarrollo de la aplicación móvil se ha optado por
+\textbf{Android Studio},\cite{android-studio} un entorno de desarrollo integrado
+para la plataforma Android basado en IntelliJ IDEA y publicado bajo la licencia
+Apache 2.0. Sustituyó a Eclipse como el IDE oficial para desarrollo de
+aplicaciones Android.
 
-Ansible 
+Entre sus características más interesantes están la renderización en tiempo real,
+la consola de desarrollador (que da consejos de optimización, ayuda para la
+traducción, estadísticas de uso,...) y el soporte para construcción basado en
+Gradle, entre otras.
+
+
+\subsubsection{Herramientas de diseño}
+
+\textbf{Inkscape}~\cite{inkscape} es un editor gráfico de vectores, gratuito y
+de código libre, que permite crear y editar gráficos vectoriales como
+ilustraciones, diagramas, líneas, gráficos, logotipos,... Se ha utilizado para
+diseñar el logotipo de la aplicación, así como los iconos e imágenes necesarias.
+
+
 
 \section{Organización del código fuente}
 
-Como complemento a esta sección se recomienda tener acceso una copia del
+Como complemento a esta sección se recomienda tener acceso a una copia del
 repositorio del proyecto, disponible para su libre descarga desde la
-la forja de GitHub~\cite{forja}.
+la forja de GitHub.
+
+El código fuente presente en la forja está dividido en 3 repositorios, cada uno
+con los siguientes elementos:
+\begin{itemize}
+\item Repositorio \textbf{serenity}~\cite{repo-serenity}: Repositorio con dos
+  directorios en la raíz:
+  \begin{itemize}
+  \item \textbf{amuseapi}: Contiene el código de la API.
+  \item \textbf{doc}: Contiene la documentación del proyecto, incluyendo esta
+    memoria.
+  \end{itemize}
+\item Repositorio \textbf{serenity-app}~\cite{repo-serenity-app}: Repositorio con
+  dos directorios en la raíz:
+  \begin{itemize}
+  \item AmuseApp: Contiene el código de la app.
+  \item Resources: Fuentes de los recursos que han tenido que diseñarse
+    específicamente para la app.
+  \end{itemize}
+\item Repositorio \textbf{drf-vagrant-config}~\cite{repo-serenity}: Configuración
+  de vagrant y ansible para un proyecto con Django REST Framwork.
+\end{itemize}
+
 
 \subsection{API REST}
 
-\subsection{App}
+El código de la API contiene lo siguiente:
+\begin{itemize}
+\item \texttt{amuseapi}: Directorio con ficheros a nivel de proyecto.
+  \begin{itemize}
+  \item \texttt{settings.py}: Archivo de configuración
+  \item \texttt{urls.py}: Configuración de rutas de acceso web y URLs.
+  \item \texttt{wsgi.py}: Configuración del punto de acceso para el servidor
+    WSGI.
+  \end{itemize}
+\item \texttt{recipes}: Directorio de la app que gestiona la API de recetas.
+  \begin{itemize}
+  \item \texttt{fixtures}: Directorio de datos a cargar inicialmente.
+  \item \texttt{migrations}: Directorio de las migraciones generadas.
+  \item \texttt{admin.py}: Configuración de la app para el panel de
+    administración.
+  \item \texttt{models.py}: Definiciones de los modelos de la base de datos.
+  \item \texttt{serializers.py}: Serializadores que intervienen entre las vistas
+    y los modelos.
+  \item \texttt{tests.py}: Tests de la API.
+  \item \texttt{views.py}: Vistas de acceso.
+  \end{itemize}
+\item \texttt{reqs}: Directorio con las dependencias de Python.
+\item \texttt{manage.py}: Ejecutable con la línea de comandos de Python.
+\end{itemize}
+
+\subsection{Aplicación móvil}
+
+El código de la aplicación móvil contiene lo siguiente:
+
+\begin{itemize}
+\item \texttt{app/src/main}:
+  \begin{itemize}
+  \item \texttt{assets}
+  \item \texttt{java/com/amusebouche}
+    \begin{itemize}
+    \item \texttt{amuseapp}: Directorio con las clases con las actividades, los
+      fragmentos y los adaptadores.
+      \begin{itemize}
+      \item \texttt{DetailActivity.java}
+      \item \texttt{EditionActivity.java}
+      \item \texttt{GridviewCellAdapter.java}
+      \item \texttt{InformationFragment.java}
+      \item \texttt{LanguagesDialog.java}
+      \item \texttt{LeftMenuAdapter.java}
+      \item \texttt{MainActivity.java}
+      \item \texttt{MediaActivity.java}
+      \item \texttt{RecipeDetailFirstTabFragment.java}
+      \item \texttt{RecipeDetailFourthTabFragment.java}
+      \item \texttt{RecipeDetailSecondTabFragment.java}
+      \item \texttt{RecipeDetailThirdTabFragment.java}
+      \item \texttt{RecipeEditionDirectionListAdapter.java}
+      \item \texttt{RecipeEditionFirstTabFragment.java	}
+      \item \texttt{RecipeEditionIngredientListAdapter.java}
+      \item \texttt{RecipeEditionSecondTabFragment.java}
+      \item \texttt{RecipeEditionThirdTabFragment.java	}
+      \item \texttt{RecipeListFragment.java}
+      \item \texttt{SettingsFragment.java}
+      \item \texttt{SplashScreenActivity.java}
+      \item \texttt{UserFragment.java}
+      \end{itemize}
+    \item \texttt{data}: Directorio con las clases que reflejan los datos a
+      mover por la aplicación y a guardar en la base de datos.
+      \begin{itemize}
+      \item \texttt{Comment.java}
+      \item \texttt{DatabaseHelper.java}
+      \item \texttt{Recipe.java}
+      \item \texttt{RecipeCategory.java}
+      \item \texttt{RecipeCategoryContract.java}
+      \item \texttt{RecipeContract.java}
+      \item \texttt{RecipeDirection.java}
+      \item \texttt{RecipeDirectionContract.java}
+      \item \texttt{RecipeIngredient.java}
+      \item \texttt{RecipeIngredientContract.java}
+      \item \texttt{UserFriendlyRecipeData.java}
+      \end{itemize}
+    \item \texttt{services}: Directorio con los servicios.
+      \begin{itemize}
+      \item \texttt{ServiceHandler.java}
+      \end{itemize}
+    \item \texttt{ui}: Directorio con las clases relacionadas con la interfaz
+      de usuario.
+      \begin{itemize}
+      \item \texttt{CustomNumberPicker.java}
+      \item \texttt{ImageManager.java}
+      \end{itemize}
+    \end{itemize}
+    
+  \item \texttt{res}
+    \begin{itemize}
+    \item \texttt{anim}: Directorio con las animaciones
+    \item \texttt{drawable-hdpi}: Directorio con los iconos de resolución HDPI.
+    \item \texttt{drawable-mdpi}: Directorio con los iconos de resolución MDPI.
+    \item \texttt{drawable-xhdpi}: Directorio con los iconos de resolución
+      XHDPI.
+    \item \texttt{drawable-xxhdpi}: Directorio con los iconos de resolución
+      XXHDPI.
+    \item \texttt{drawable-xxxhpdi}: Directorio con los iconos de resolución
+      XXXXHDPI.
+    \item \texttt{drawable}: Directorio con los iconos o imágenes sin
+      resolución concreta.
+    \item \texttt{layout}: Directorio con los layouts genéricos de la app.
+    \item \texttt{layout-land}: Directorio con los layouts para la perspectiva
+      landscape (con el dispositivo girado).
+    \item \texttt{menu}: Directorio con los menús.
+    \item \texttt{raw}: Directorio con los elementos.
+    \item \texttt{transition}: Directorio con las transiciones.
+    \item \texttt{values-es}: Directorio con los datos en español (traducción
+      al español).
+    \item \texttt{values-land}: Directorio con los datos para la perspectiva
+      landscape.
+    \item \texttt{values}: Directorio con los datos genéricos.
+      \begin{itemize}
+      \item \texttt{colors.xml}
+      \item \texttt{dimens.xml}
+      \item \texttt{integers.xml}
+      \item \texttt{strings.xml}
+      \item \texttt{styles.xml}
+      \end{itemize}
+    \end{itemize}
+  \item \texttt{AndroidManifest.xml}
+  \end{itemize}
+\end{itemize}
+
+\subsection{Configuración de Vagrant}
+
+
+El código de la aplicación móvil contiene lo siguiente:
+
+\begin{itemize}
+\item \texttt{provisioning}
+  \begin{itemize}
+  \item \texttt{roles}
+    \begin{itemize}
+    \item \texttt{deploy}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \end{itemize}
+    \item \texttt{django}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \item \texttt{templates}
+      \end{itemize}
+    \item \texttt{gunicorn}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \item \texttt{templates}
+      \end{itemize}
+    \item \texttt{nginx}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \item \texttt{templates}
+      \end{itemize}
+    \item \texttt{postgresql}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \item \texttt{templates}
+      \end{itemize}
+    \item \texttt{supervisor}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \item \texttt{templates}
+      \end{itemize}
+    \item \texttt{system}
+      \begin{itemize}
+      \item \texttt{tasks}
+      \end{itemize}
+    \end{itemize}
+  \item \texttt{playbook.yml}
+  \item \texttt{vars.yml}
+  \end{itemize}
+\item \texttt{Vagrantfile}
+\end{itemize}
 
 
 \section{Detalles de implementación}
 
-\section{Gestión de la base de datos}
+TODO
+
+\subsection{Ingredientes categorizados}
+
+%Se intentó usar dbpedia, pero no eran suficientemente fiables.
+
+%Testeando DBpedia: URL: http://es.dbpedia.org/sparql
+
+
+%\begin{bashcode}
+%PREFIX dcterms: <http://purl.org/dc/terms/>
+%select * where{
+% ?marisco dcterms:subject <http://es.dbpedia.org/resource/Categoría:Marisco> .
+%}
+%\end{bashcode}
+
+
+%Es muy importante que la aplicación no de un falso positivo, es decir,
+%\textbf{nunca} debe filtrar como ``APTA PARA CELÍACOS'' una receta que no lo es.
+%Para ello, hemos implementado un sistema de ingredientes categorizados.
+
+%Entonces, cuando un usuario introduce los ingredientes de una receta se comprueba
+%uno a uno si tiene categorías asociadas. Si las tiene, se añaden a la receta.
+%Si el ingrediente no existe entre los ingredientes descargados, se añade la
+%categoría de ``SIN CATEGORIZAR'', para asegurar que se revise manualmente.
+
+%Hemos intentado buscar otros métodos que automaticen esto, pero de momento no
+%se ha encontrado ninguno que no ponga en riesgo de que aparezcan falsos
+%positivos.
+
+
+
+\subsection{Desincronización entre elementos del grid}
+
+%Librería Picasso: http://square.github.io/picasso/
+%Está licenciada bajo Licencia Apache (compatible según la Free Software Foundation con GPLv3).
+
+%Resuelve el problema del grid (desorden en las vistas y mal funcionamiento
+%de memoria). Utilizar un método que implemente AsyncTask en este caso no es
+%suficiente, porque hay que manejar la cache y tener en cuenta muchos otros
+%factores.
+
+
+\subsection{Lectura automática y reconocimiento de voz}
+
+%Los tiempos no cuadraban y se quedaba en un bucle infinito.
+    
+
+\subsection{Vagrant y Ansible}
+
+
+
+
+\subsection{Migraciones de la base de datos}

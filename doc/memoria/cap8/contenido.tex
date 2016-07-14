@@ -1,13 +1,115 @@
+Tras la realización del proyecto se han dado unos resultados que dan lugar a
+conclusiones, tanto personales como públicas, que se van a exponer en este
+capítulo.
 
 \section{Objetivos cumplidos}
+
+Se han completado con éxito todos los objetivos presentes desde el inico del
+proyecto (que ya quedaron reflejados en la sección~\ref{sec:objetivos}.
+Concretamente:
+
+\begin{itemize}
+\item Se ha creado una aplicación de acceso público con la que los usuarios
+  puede crear sus propias recetas y compartirlas. Está disponible en Google
+  Play (falta enlace).
+\item Dicha aplicación permite todos los requisitos que se elicitaron
+  inicialmente: listado de recetas, compartir recetas, categorización y filtrado,
+  varios idiomas y socialización.
+\item El sistema se ha desarrollado de tal forma que es fácilmente ampliable,
+  tanto la API como la aplicación Android.
+\end{itemize}
+
+Además de completar los objetivos funcionales, se han completado aquellos
+transversales, mucho más personales. He ampliado mucho mis conocimientos en las
+tecnologías utilizadas, hasta tal punto que en mi trabajo ya he podido
+participar en proyectos Android gracias a la experiencia conseguida y
+demostrada. También me ha servido para ampliar mis conocimientos culinarios,
+llegando incluso a abrir un blog de cocina personal,\cite{noeliarcado} fuente
+inicial y principal de las recetas publicadas en la aplicación.
 
 
 \subsection{Limitaciones del proyecto}
 
+Hay varias limitaciones a tener en cuenta en este proyecto. La mayoría tienen
+que ver con las limitaciones del propio software actual.
+
+La primera limitación importante es la plataforma móvil, dado que sólo se ha
+podido desarrollar este sistema para Android, dado que las demás plataformas no
+cuentan con una biblioteca de lectura automática y captación de órdenes por
+voz adecuada o están en proceso de desarrollarla (como es el caso de iOS).
+
+La segunda limitación es la imposibilidad de categorizar las recetas con sus
+respectivos alérgenos en función de sus ingredientes, teniendo la seguridad de
+que no va a fallar y obligando a depender o bien del usuario o bien de un grupo
+de ``administradores generales'' que se encarguen de revisar estas
+categorizaciones.
+
 \section{Conclusiones personales}
+
+\textit{Amuse Bouche} es un proyecto personal que ha surgido para suplir una
+necesidad propia, real y compartida por muchas personas, y que ha cumplido su
+objetivo, aunque todavía queda mucho por hacer. La aplicación es capaz de
+solventar los problemas indicados en la sección~\ref{sec:situacion-actual}, por
+lo que estoy muy satisfecha con el trabajo realizado.
 
 \subsection{Lecciones aprendidas}
 
+Este proyecto puede parecer algo simple si lo separamos en cada una de sus
+funcionalidades por separado, pero el querer reunir todas ellas en un mismo
+sistema ha sido complejo y duro, bastante más de lo que parece desde una
+perspectiva externa.
+
+Como aspecto positivo, he tenido la oportunidad de trabajar con tecnologías
+actuales y bien estructuradas, con las cuales no me importaría volver a trabajar
+en un futuro.
+
 \section{Trabajo futuro}
 
+Durante el desarrollo y la prueba de la aplicación, han surgido varios detalles
+que me encantaría abarcar para mejorar la aplicación en un futuro.
+
+\subsection{Unidades de medida dinámicas}
+
+Una ampliación bastante sencilla sería añadir a la vista de detalle la capacidad
+de poder indicar un multiplicador (puede que en función del número de comensales
+indicado en los datos de la receta) para obtener la cantidad de ingredientes
+necesaria para mayor o menos cantidad final de comida.
+
+
+\subsection{Calendario de comidas}
+
+Esta idea empieza a salirse bastante del marco inicial del proyecto, pero me
+parece muy interesante para llegar a conseguir una comunidad más amplia.
+Consiste en añadir un calendario a la aplicación, para poder indicar qué
+recetas quieres hacer cada día.
+
+Un sistema más complejo consistiría en hacer esto mismo conforme a una dieta
+de un tipo concreto, pero para ello haría falta conocer las proteínas, los
+hidratos y las grasas de cada ingrediente, lo cual sería una ampliación bastante
+importante.
+
+
+\subsection{Listado de la compra}
+
+Junto con el calendario de comidas o utilizando un listado de recetas
+seleccionadas, se podría dar la opción de generar el listado de la compra para
+dichas recetas, calculando las cantidades sumando todos los ingredientes de todas
+las recetas.
+
+
 \subsection{Monetización}
+
+Para asegurar la supervivencia de un proyecto suele ser necesario contar con un
+\textbf{modelo de negocio} que sufrague los gastos que se generan. Podría
+conseguirse esto haciendo que los usuarios registrados paguen, por ejemplo, 2€
+al mes o un importe variable en función de la cantidad de recetas que vean.
+
+La implementación de este modelo de monetización no es compleja, aunque la
+gestión de pasarelas de pago y cobros recurrentes es uno de los procedimientos
+más problemáticos a nivel de programación, sobre todo a la hora de verificar la
+correcta ejecución del sistema.
+
+Teniendo en cuenta el tipo de proyecto que se intenta llevar a cabo y la
+apertura de todos los datos, creo que lo más apropiado sería crear la
+posibilidad de realizar donaciones voluntarias para que la gente que considere
+que el proyecto es interesante, aporte lo que considere.

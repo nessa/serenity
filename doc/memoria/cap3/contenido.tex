@@ -17,7 +17,7 @@ Concretamente se exponen:
   calidad más allá de su funcionamiento.
 \end{itemize}
 
-Para terminar el capítulo se presentan diversas alternativas tecnológicas para
+Para terminar el capítulo, se presentan diversas alternativas tecnológicas para
 cubrir las necesidades surgidas en los requerimientos del sistema, detallando
 las decisiones tomadas.
 
@@ -34,8 +34,8 @@ El objetivo principal del proyecto a grandes rasgos es:
 
     \hline
 
-    Descripción & Amuse Bouche permitirá crear y editar recetas de cocina,
-    compartirlas y puntuarlas.\\
+    Descripción & \textit{Amuse Bouche} permitirá crear y editar recetas de
+    cocina, compartirlas y puntuarlas.\\
 
     \hline
   \end{tabularx}
@@ -50,8 +50,8 @@ El objetivo principal del proyecto a grandes rasgos es:
 
     \hline
 
-    Descripción & Amuse Bouche permitirá dar órdenes y que el dispositivo
-    lea automáticamente el contenido de la receta.\\
+    Descripción & \textit{Amuse Bouche} permitirá dar órdenes y que el
+    dispositivo lea automáticamente el contenido de la receta.\\
 
     \hline
   \end{tabularx}
@@ -66,8 +66,8 @@ El objetivo principal del proyecto a grandes rasgos es:
 
     \hline
 
-    Descripción & Amuse Bouche permitirá filtrar las recetas en función de
-    multitud de parámetros, ya sean los ingredientes que contiene, el idioma o
+    Descripción & \textit{Amuse Bouche} permitirá filtrar las recetas en función
+    de multitud de parámetros, ya sean los ingredientes que contiene, el idioma o
     la categoría a la que pertenezca.\\
 
     \hline
@@ -82,7 +82,7 @@ información y no funcionales.
 
 \subsection{Requisitos funcionales}
 
-En esta subsección se introducen los requisitos que describen las funciones del
+En este apartado se introducen los requisitos que describen las funciones del
 sistema.
 
 \subsubsection{Gestión de usuarios}
@@ -95,9 +95,9 @@ sistema.
 
     \hline
 
-    Descripción & El usuario de Amuse Bouche deberá ser capaz de crear una
-    cuenta de usuario para acceder a algunas de las funciones de Amuse Bouche,
-    proporcionando su dirección de correo electrónico y contraseña.\\
+    Descripción & El usuario de \textit{Amuse Bouche} deberá ser capaz de crear
+    una cuenta de usuario para acceder a algunas de las funciones de
+    \textit{Amuse Bouche}, proporcionando su nombre de usuario y contraseña.\\
 
     \hline
   \end{tabularx}
@@ -197,7 +197,7 @@ sistema.
   
   \begin{tabularx}{\textwidth}{|c|X|}
     \hline
-    Título & Obtener comentarios de receta \\
+    Título & Obtención de comentarios de receta \\
 
     \hline
 
@@ -206,7 +206,7 @@ sistema.
 
     \hline
   \end{tabularx}
-  \captionof{table}{RQF-7, req. funcional 7: obtener comentarios de receta}
+  \captionof{table}{RQF-7, req. funcional 7: obtención de comentarios de receta}
 \end{center}
 
 
@@ -243,6 +243,22 @@ sistema.
   \captionof{table}{RQF-9, req. funcional 9: valorar receta}
 \end{center}
 
+\begin{center}
+  
+  \begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    Título & Obtención de ingredientes genéricos \\
+
+    \hline
+
+    Descripción & Un usuario logueado o no deberá ser capaz de obtener un
+    listado con los ingredientes categorizados en función de si son alérgenos
+    o no.\\
+
+    \hline
+  \end{tabularx}
+  \captionof{table}{RQF-10, req. funcional 10: obtención de ingredientes genéricos}
+\end{center}
 
 \subsection{Requisitos de información}
 \label{sec:requisitos-informacion}
@@ -261,8 +277,9 @@ requiere el sistema.
     Datos específicos &
 
     \begin{itemize}
-    \item Dirección de correo electrónico
+    \item Nombre de usuario
     \item Contraseña
+    \item Dirección de correo electrónico
     \item Nombre
     \item Apellidos
     \item Fecha de cumpleaños
@@ -360,6 +377,28 @@ requiere el sistema.
   \captionof{table}{IRQ-4, req. de información 4: paso de una receta}
 \end{center}
 
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Categoría de una receta\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Nombre
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-5, req. de información 5: categoría de una receta}
+\end{center}
+
+
 \begin{center}  
   \begin{tabularx}{\textwidth}{|l|X|}
     \hline
@@ -373,16 +412,104 @@ requiere el sistema.
     \item Receta
     \item Usuario
     \item Comentario
-    \item Tiempo de creación
+    \item Momento de creación
     \end{itemize}
     \\
     
     \hline
     
   \end{tabularx}
-  \captionof{table}{IRQ-5, req. de información 5: comentario de una receta}
+  \captionof{table}{IRQ-6, req. de información 6: comentario de una receta}
 \end{center}
 
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Puntuación de una receta\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Receta
+    \item Usuario
+    \item Puntuación
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-7, req. de información 7: puntuación de una receta}
+\end{center}
+
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Ingrediente\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Código
+    \item Lista de categorías
+    \item Lista de traducciones
+    \end{itemize}
+    \\
+
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-8, req. de información 8: ingrediente}
+\end{center}
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Categoría de un ingrediente\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Nombre
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-9, req. de información 9: categoría de un ingrediente}
+\end{center}
+
+
+\begin{center}  
+  \begin{tabularx}{\textwidth}{|l|X|}
+    \hline
+
+    Título & Traducción de un ingrediente\\
+
+    \hline
+    Datos específicos &
+
+    \begin{itemize}
+    \item Traducción
+    \item Idioma
+    \item Momento de actualización
+    \end{itemize}
+    \\
+    
+    \hline
+    
+  \end{tabularx}
+  \captionof{table}{IRQ-10, req. de información 10: traducción de un ingrediente}
+\end{center}
 
 \subsection{Requisitos no funcionales}
 
@@ -418,7 +545,7 @@ comportamiento específico.
     \hline
 
     Descripción & Las peticiones de usuarios logueados se realizarán utilizando
-    tokens de autenticación.\\
+    \textit{tokens} de autenticación.\\
 
 
     \hline
@@ -473,19 +600,170 @@ se han escogido ciertas aquellas con que se ha terminado desarrollando el
 proyecto.
 
 \subsection{Frameworks para el desarrollo de API REST}
+\label{subsec:frameworks}
 
 Dado que ya había trabajado en varias ocasiones con Python, quería optar por este
 lenguaje para mejorar mi conocimiento sobre él. Además ya había desarrollado
 APIs en otros lenguajes como PHP (utilizando Code Igniter), por lo que los había
 descartado.
 
-En cuanto a los frameworks de Python para web,~\cite{api-python} se manejaron
-los siguientes:
+En cuanto a los frameworks de Python para desarrollar APIs REST,~\cite{api-python}
+se barajaron los siguientes:
 \begin{itemize}
-\item Django y Djando REST Framework. rough community sentiment
- 
-\item Django y Tastypie.
+\item \textit{Django} y \textit{Django REST Framework}.
 
-\item Flask y Flask-RESTful.
-\item Flask y Flask API.
+\textit{Django} es un framework de desarrollo web libre que se basa en el patrón
+de diseño conocido como \textit{modelo–vista–controlador}. Pone énfasis en la
+reutilización, la conectividad y la extensibilidad de componentes, el desarrollo
+rápido y el principio \textit{No te repitas}. Lo más importante de este framework
+es su gran comunidad, gracias a la cual surgen grandes proyectos internos como
+\textit{Django REST Framework}, un framework específico para desarrollar APIs REST.
+
+Entre sus ventajas tenemos una documentación impecable y muy fácil de seguir, la
+capacidad de mostrar la API directamente en la web con un sistemas de plantillas
+automático, su flexibilidad y los diferentes métodos de autenticación ya
+implementados y disponibles, entre otras.
+
+\item \textit{Django} y \textit{Tastypie}.
+
+Al igual que \textit{Django REST Framework}, surgió \textit{Tastypie} para
+\textit{Django}. Sus características principales se basan en la construcción de
+APIs a nivel básico. Esto descarta la posibilidad de escribir serializadores
+propios (que como veremos más adelante, era requisito indispensable para este
+proyecto, dada la complejidad de ciertos componentes de la API).
+
+\item \textit{Flask}.
+
+\textit{Flask} es un framework minimalista escrito en Python y basado en la
+especificación WSGI de Werkzeug y el motor de plantillas Jinja2. Es un proyecto
+nacido en 2010 y, por tanto, mucho menos maduro que \textit{Django} (creado en
+2006). Suele ser utilizado en proyectos pequeños, con un par de funcionalidades
+como mucho.
+
+Aunque \textit{Flask} también posee subproyectos específicos para desarrollar
+APIs REST (como, por ejemplo, \textit{Flask-RESTful} o \textit{Flask API}),
+estos se quedaban bastante cortos para el tipo de API que se deseaba desarrollar
+(que no contiene muchos objetos pero sí tiene ciertas particularidades en las
+relaciones que requieren de una implementación personalizada).
 \end{itemize}
+
+Se tomó la decisión de continuar el desarrollo del proyecto utilizando
+\textit{Django} y \textit{Django REST Framework}, por ser el framework más
+robusto y que mejor se adaptaba a las necesidades de éste.
+
+
+\subsection{Plataformas para el desarrollo de la aplicación móvil}
+
+La aplicación móvil se podría desarrollar en cualquiera de las plataformas
+móviles existentes. Sólo contemplaremos las dos que cubren la gran mayoría de
+la cuota de mercado:
+
+\begin{itemize}
+\item \textit{Android}.~\cite{android}
+
+\textit{Android} es un sistema operativo basado en el núcleo Linux. Fue diseñado
+principalmente para dispositivos móviles con pantalla táctil, como teléfonos
+inteligentes, tablets o tabléfonos; y también para relojes inteligentes,
+televisores y automóviles. Inicialmente fue desarrollado por Android Inc.,
+empresa que Google respaldó económicamente y que más tarde, en 2005, compró.
+Actualmente Google es quien lidera e impulsa el desarrollo..
+
+El desarrollo en \textit{Android} se realiza utilizando Java, un lenguaje de
+programación compilado muy conocido y utulizado en muchos ámbitos, más allá del
+desarrollo móvil.
+
+Las aplicaciones se pueden lanzar en un mercado llamado Google Play Store.
+Google cobra una tarifa única vitalicia de 25 dólares por desarrollador.
+
+\item \textit{iOS}.~\cite{ios}
+
+\textit{iOS} es un sistema operativo móvil de la multinacional Apple Inc.
+Originalmente fue desarrollado para el iPhone, aunque después se ha usado en
+dispositivos como el iPod touch y el iPad.
+
+El desarrollo para iOS es bastante estricto: deben utilizarse computadoras Mac
+con el sistema operativo OS X más actual (en este caso, El Capitan). La
+programación se lleva a cabo utilizando Objective-C, un lenguaje derivado del C
+cuyo uso a día de hoy prácticamente se limita al desarrollo en iOS, o bien, la
+alternativa novedosa, Swift. Además, es obligatorio  utilizar XCode como
+herramienta de desarrollo.
+
+Las aplicaciones se pueden lanzar en la App Store, aplicación desde la que los
+usuarios instalan nuevos programas. Se controla fuertemente las aplicaciones que
+se envían mediante exhaustivas revisiones. Apple cobra una tarifa anual de 99
+dólares.
+
+\end{itemize}
+
+La elección en este caso es Android. Básicamente hay dos razones principales:
+la primera el interés en aprender a utilizar una tecnología con una cuota de
+mercado que supera a todas las demás a nivel global, y la segunda, que la
+biblioteca de lectura automática desarrollada por Google sólo existe para esta
+plataforma. Han empezado a desarrollar una parecida para iOS, pero aún no es
+estable y además no ha sido posible escoger esta plataforma por el coste.
+
+
+
+\subsection{Sistemas de gestión de bases de datos}
+\label{subsec:sistemas-bases-datos}
+
+Los datos de la API estarán alojados en una base de datos, por lo que también
+debemos elegir qué sistema de gestión de bases de datos utilizaremos.
+\textit{Django} nos permite la utilización de varios sistemas, entre ellos:
+
+
+\begin{itemize}
+\item \textit{MariaDB}.~\cite{mariadb}
+
+MariaDB es un sistema de gestión de bases de datos derivado de MySQL con
+licencia GPL. Está desarrollado por Michael Widenius (fundador de MySQL) y la
+comunidad de desarrolladores de software libre. Está considerado como la base
+datos de código abierto más popular del mundo, y una de las más populares en
+general junto a Oracle y Microsoft SQL Server, sobre todo para entornos de
+desarrollo web.
+
+Su utilidad y fiabilidad están más que demostradas. Cuenta con una arquitectura
+cliente-servidor, y suele necesitar bastantes recursos.
+
+
+\item \textit{PostgreSQL}.~\cite{postgresql}
+
+PostgreSQL es un sistema de gestión de bases de datos objeto-relacional,
+distribuido bajo licencia BSD y con su código fuente disponible libremente.
+Es el sistema de gestión de bases de datos de código abierto más potente del
+mercado y en sus últimas versiones no tiene nada que envidiarle a otras bases
+de datos comerciales.
+
+PostgreSQL utiliza un modelo cliente/servidor y usa multiprocesos en vez de
+multihilos para garantizar la estabilidad del sistema. Un fallo en uno de los
+procesos no afectará el resto y el sistema continuará funcionando.
+
+Las ventajas principales de PostgreSQL son la velocidad y la replicación. 
+PostgreSQL no solo es más rápido, sino que también es una de las pocas
+bases de datos relacionas que también soporta NoSQL, gracias al soporte de JSON.
+Además siempre ha sido estricto en cuanto a asegurar los datos son
+válidos antes de insertarlos o actualizarlos.~\cite{postgresql-over-mariadb}
+
+
+\item \textit{SQLite}.~\cite{sqlite}
+
+SQLite es un sistema de gestión de bases de datos relacional compatible con ACID,
+de dominio público contenida en una pequeña biblioteca escrita en C.
+
+A diferencia de los sistema de gestión de bases de datos cliente-servidor, el
+motor de SQLite no es un proceso independiente con el que el programa principal
+se comunica. En lugar de eso, la biblioteca SQLite se enlaza con el programa
+pasando a ser parte integral del mismo. El programa utiliza la funcionalidad de
+SQLite a través de llamadas simples a subrutinas y funciones. Esto reduce la
+latencia en el acceso a la base de datos, debido a que las llamadas a funciones
+son más eficientes que la comunicación entre procesos. El conjunto de la base de
+datos (definiciones, tablas, índices, y los propios datos), son guardados como
+un sólo fichero estándar en la máquina host. Este diseño simple se logra
+bloqueando todo el fichero de base de datos al principio de cada transacción.
+
+\end{itemize}
+
+Para la API se elige utilizar PostgreSQL por su velocidad y rendimiento, siendo
+aún un sistema de bases de datos objeto-relacional. Para Android, se opta por
+SQLite, por ser la norma general.
+

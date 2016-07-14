@@ -27,14 +27,15 @@ pasando el proyecto.
 \subsection{Primera iteración: preparación previa}
 \label{sec:primera_iteracion}
 
-Antes de abarcar el desarrollo de la API y la app, era obligatorio adquirir los
-conocimientos necesarios para afrontarlo. Esta etapa se dedicó a aprender de
-manera autodidacta cómo funcionaban los sistemas y herramientas que se iban a
-utilizar: el framework Django para el caso de la API y todo lo relacionado con
-Android para la app. Se desarrollaron una API muy básica de ejemplo utilizando
-Django REST Framework, además de varias apps básicas, cada una centrada en
-elementos básicos de Android, como pueden ser la utilización de Activities y
-Fragments o pruebas de la biblioteca de lectura automática.
+Antes de abarcar el desarrollo de la \ac{API} y la aplicación móvil, era
+obligatorio adquirir los conocimientos necesarios para afrontarlo. Esta etapa se
+dedicó a aprender de manera autodidacta cómo funcionaban los sistemas y
+herramientas que se iban a utilizar: el framework Django para el caso de la API y
+todo lo relacionado con Android para la aplicación. Se desarrollaron una API muy
+básica de ejemplo utilizando Django REST Framework, además de varias
+aplicaciones móviles básicas, cada una centrada en elementos básicos de Android,
+como pueden ser la utilización de actividades y fragmentos o pruebas de la
+biblioteca de lectura automática.
 
 También se utilizó este tiempo para definir los requisitos (definidos en el
 capítulo~\ref{chap:requisitos}) que tendría el sistema y dividirlos en niveles
@@ -43,7 +44,7 @@ aparece en la sección~\ref{sec:segunda_iteracion} y la tercera que aparece en l
 sección~\ref{sec:tercera_iteracion}) se abarcarían los más necesarios e
 imprescindibles y se dejarían los menos prioritarios para las siguientes (la
 cuarta iteración que se especifica en la sección~\ref{sec:cuarta_iteracion} y
-la quinta, en la sección~\ref{sec:quinta_iteración}).
+la quinta, en la sección~\ref{sec:quinta_iteracion}).
 
 Por último, se empezó a definir el diseño visual de aplicación, tanto el
 logotipo como la paleta de colores y demás detalles involucrados.
@@ -53,11 +54,11 @@ logotipo como la paleta de colores y demás detalles involucrados.
 \label{sec:segunda_iteracion}
 
 En esta etapa, se define el modelo de datos básico a abarcar para los requisitos
-más prioritarios, que principalmente se basaban en que en la app fuera posible
-la visualización de recetas. Además, se creó el proyecto de Django y se construyó
-la estructura básica de modelos, serializadores y vistas, desarrollando la
-funcionalidad CRUD necesaria para obtener la información de las recetas, sus
-ingredientes y pasos.
+más prioritarios, que principalmente se basaban en que en la aplicación móvil
+fuera posible la visualización de recetas. Además, se creó el proyecto de Django
+y se construyó la estructura básica de modelos, serializadores y vistas,
+desarrollando la funcionalidad CRUD necesaria para obtener la información de las
+recetas, sus ingredientes y pasos.
 
 La gran mayoría de lo que se construyó en esta etapa se han mantenido hasta el
 final, tan sólo siendo ampliado en cuanto a nuevos atributos o clases que fueran
@@ -67,15 +68,16 @@ necesarios.
 \subsection{Tercera iteración: desarrollo de la base de la app}
 \label{sec:tercera_iteracion}
 
-Tras construir la base de la API, se empezó a desarrollar la app Android.
+Tras construir la base de la API, se empezó a desarrollar la aplicación Android.
 Conforme a lo aprendido en la primera iteración
-(sección~\ref{sec:primera_iteración}), se vio la necesidad de construir clases
-para conectarse con la API (peticiones REST) y obtener y guardar información en
-la base de datos, además de todas aquellas necesarias para las vistas de la app.
+(sección~\ref{sec:primera_iteracion}), se vio la necesidad de construir clases
+para conectarse con la API \ac{REST} y obtener y guardar información
+en la base de datos, además de todas aquellas necesarias para las vistas de la
+aplicación.
 
 Se construyó la estructura del proyecto y se implementaron las clases y métodos
-necesarios descritos anteriormente, así como las \textit{Activities} y
-\textit{Fragments} que forman las vistas iniciales. Estas vistas eran las
+necesarios descritos anteriormente, así como las \textit{actividades} y
+\textit{fragmentos} que forman las vistas iniciales. Estas vistas eran las
 referentes a la vista inicial (el listado de recetas) y la vista de detalle de
 una receta concreta.
 
@@ -83,13 +85,13 @@ una receta concreta.
 \subsection{Cuarta iteración: ampliación de la API}
 \label{sec:cuarta_iteracion}
 
-Una vez la API y la app eran estables y cumplían los requisitos más prioritarios,
-se decidió ampliar la API para abarcar el resto de requisitos. Se añadieron los
-atributos y métodos necesarios para permitir el filtrado de recetas (tanto por
-ingredientes o categorías como por idioma o cualquier otro atributo), lo cual
-era necesario para abarcar la semántica de las recetas y la internacionalización
-(para poder buscar recetas por idiomas). También se añadió la funcionalidad
-necesaria para permitir comentar y puntuar las recetas.
+Una vez la API y la aplicación eran estables y cumplían los requisitos más
+prioritarios, se decidió ampliar la API para abarcar el resto de requisitos. Se
+añadieron los atributos y métodos necesarios para permitir el filtrado de recetas
+(tanto por ingredientes o categorías como por idioma o cualquier otro atributo),
+lo cual era necesario para abarcar la semántica de las recetas y la
+internacionalización (para poder buscar recetas por idiomas). También se añadió
+la funcionalidad necesaria para permitir comentar y puntuar las recetas.
 
 
 \subsection{Quinta iteración: ampliación de la app}
@@ -108,7 +110,14 @@ usuario.
 \subsection{Sexta iteración: pruebas finales y despliegue}
 \label{sec:sexta_iteracion}
 
+Para finalizar, hubo que realizar el plan de pruebas de forma más estricta para
+encontrar los \textit{bugs} que surgieran y corregirlos. Este plan se llevó a
+cabo una vez realizado el despliegue de la API en un servidor en producción, para
+asegurar que funcionara en las mismas condiciones en las que se encontrarán los
+usuarios finales.
 
+En esta etapa también se documentó esta memoria y se afinaron los detalles
+finales.
 
 
 \section{Planificación temporal}
@@ -168,11 +177,10 @@ tutor, Manuel Palomo Duarte.
 
 \section{Recursos inventariables}
 
-Los recursos de hardware utilizados durante el desarrollo y el despliegue del
-proyecto son aquellos empleados por la autora para la elaboración del
-proyecto y los necesarios para la implantación y puesta en marcha del proyecto,
-los cuales se definen a continuación.
-
+Los recursos de \textit{hardware} utilizados durante el desarrollo y el
+despliegue del proyecto son aquellos empleados por la autora para la elaboración
+del proyecto y los necesarios para la implantación y puesta en marcha del
+proyecto, los cuales se definen a continuación.
 
 \begin{itemize}
 \item Como puesto de desarrollo se ha utilizado un equipo con las siguientes
@@ -198,7 +206,7 @@ los cuales se definen a continuación.
   \item Pantalla: 5" HD, 1280x720px
   \end{itemize}
 
-\item Como servidores para el despliegue...
+\item Como servidor para el despliegue...
   
 \end{itemize}
 
@@ -282,11 +290,11 @@ A continuación se detallan los riesgos detectados para el proyecto.
 \subsection{Estabilidad del servidor de despliegue}
 \label{subsec:estabilidad-servidor}
 
-La app de Amuse Bouche lee información de su API, alojada en un único servidor,
-por lo que si ocurriera cualquier problema que pudiera comprometer su
-estabilidad, los usuarios quedarían sin posibilidad de acceder a las recetas
-conectados en red. Aunque la app seguirá funcionando y podrán ver las que sí
-tengan guardadas en local, no podrán tener una experiencia completa.
+La aplicación \textit{Amuse Bouche} lee información de su API, alojada en un
+único servidor, por lo que si ocurriera cualquier problema que pudiera
+comprometer su estabilidad, los usuarios quedarían sin posibilidad de acceder a
+las recetas conectados en red. Aunque la app seguirá funcionando y podrán ver
+las que sí tengan guardadas en local, no podrán tener una experiencia completa.
 
 Con mayor presupuesto y personal, lo lógico sería replicar el sistema en
 varios servidores en distintas localizaciones, con información simétrica aunque
