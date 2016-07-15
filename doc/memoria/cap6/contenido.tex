@@ -420,3 +420,120 @@ TODO
 
 
 \subsection{Migraciones de la base de datos}
+
+También se puede generar una migración personalizada para realizar otras
+tareas, como por ejemplo, rellenar la base de datos.
+
+Para ello, lo primero que tendremos que hacer es, teniendo la base de datos ya
+rellena, exportar los datos:
+
+\begin{bashcode}
+
+\end{bashcode}
+
+
+Luego hemos de generar una migración vacía, para poder personalizarla. Para
+crearla hemos de ejecutar el siguente comando:
+
+\begin{bashcode}
+$ python manage.py makemigrations --empty recipes
+Migrations for 'recipes':
+  0003_auto_20160715_1028.py:
+\end{bashcode}
+
+Que como se ve en la salida, genera un nuevo archivo de migraciones:
+
+
+\begin{pythoncode}
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from django.db import models, migrations
+        
+class Migration(migrations.Migration):
+    
+    dependencies = [
+        ('recipes', '0002_ingredient_ingredientcategory_translatedingredient'),
+    ]
+
+    operations = []
+
+\end{pythoncode}
+
+Al cual tan solo hemos de añadir la funcionalidad que deseamos. En nuestro
+caso, un método para cargar un archivo de datos fixtures.
+
+    
+\begin{pythoncode}
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.core.management import call_command
+from django.db import models, migrations
+
+fixture = 'initial_data'
+
+def load_fixture(apps, schema_editor):
+    call_command('loaddata', fixture, app_label='recipes')
+        
+class Migration(migrations.Migration):
+    
+    dependencies = [
+        ('recipes', '0002_ingredient_ingredientcategory_translatedingredient'),
+    ]
+
+    operations = [
+        migrations.RunPython(load_fixture),
+    ]
+\end{pythoncode}
+
+Solo quedaría ejecutar la migración y comprobar que la base de datos está
+correctamente creada y con los datos correspondientes.
+
+
+\begin{minted}{bash}
+$ python manage.py migrate                            
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: auth, contenttypes, authtoken, sessions, recipes, admin
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying recipes.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying authtoken.0001_initial... OK
+  Applying recipes.0002_ingredient_ingredientcategory_translatedingredient... OK
+  Applying recipes.0003_auto_20160715_1028.../home/nsales/Proyectos/serenity/amuseapi/env/lib/python3.4/site-packages/django/core/management/commands/loaddata.py:229: RemovedInDjango19Warning: initial_data fixtures are deprecated. Use data migrations instead.
+  RemovedInDjango19Warning
+
+Installed 498 object(s) from 1 fixture(s)
+ OK
+  Applying sessions.0001_initial... OK
+\end{minted}
+
+Además, tiene la ventaja de que este sistema sabe perfectamente si necesita o
+no ejecutar las migraciones de nuevo, por lo que si por cualquier motivo
+volvemos a ejecutar el comando de la migración, no hará nada si no es necesario.
+
+\begin{bashcode}
+$ ./manage.py migrate              
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles, rest_framework
+  Apply all migrations: auth, admin, sessions, recipes, contenttypes, authtoken
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  No migrations to apply.
+\end{bashcode}
