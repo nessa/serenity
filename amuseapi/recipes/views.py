@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from rest_framework import viewsets
 
 # Import models
@@ -29,6 +28,11 @@ from recipes.permissions import IsOwnerOrModerator
 import rest_framework_filters as filters
 from rest_framework.filters import OrderingFilter
 
+# Import pagination classes
+from recipes.pagination import LargeResultsSetPagination
+from recipes.pagination import StandardResultsSetPagination
+
+
 # Actions:
 # ModelViewSet automatically provides `list`, `create`, `retrieve`,
 # `update` and `destroy` actions.
@@ -54,7 +58,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     queryset = User.objects.all()
     filter_class = UserFilter
-
+    pagination_class = LargeResultsSetPagination
 
     def get_permissions(self):
         # Open user registration
@@ -151,6 +155,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
+    pagination_class = LargeResultsSetPagination
     filter_class = RecipeFilter
     ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
@@ -179,14 +184,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
         serializer.save(owner=self.request.user)
 
 
-    def get_paginate_by(self):
-        """
-        Use smaller pagination for HTML representations.
-        """
-        if self.request.accepted_renderer.format == 'html':
-            return 20
-        return 10
-
 
 
 
@@ -214,6 +211,7 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
 
     queryset = RecipeComment.objects.all()
     serializer_class = RecipeCommentSerializer
+    pagination_class = StandardResultsSetPagination
     filter_class = RecipeCommentFilter
     ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
@@ -234,14 +232,6 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
     
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-
-    def get_paginate_by(self):
-        """
-        Use smaller pagination for HTML representations.
-        """
-        if self.request.accepted_renderer.format == 'html':
-            return 20
-        return 10
 
 
 
@@ -269,6 +259,7 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
 
     queryset = RecipeRating.objects.all()
     serializer_class = RecipeRatingSerializer
+    pagination_class = StandardResultsSetPagination
     filter_class = RecipeRatingFilter
 
     def get_permissions(self):
@@ -283,15 +274,6 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-
-
-    def get_paginate_by(self):
-        """
-        Use smaller pagination for HTML representations.
-        """
-        if self.request.accepted_renderer.format == 'html':
-            return 20
-        return 10
 
 
 
@@ -325,6 +307,7 @@ class IngredientViewSet(viewsets.ModelViewSet):
 
     queryset = Ingredient.objects.all()
     serializer_class = IngredientSerializer
+    pagination_class = StandardResultsSetPagination
     filter_class = IngredientFilter
     ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
@@ -341,15 +324,6 @@ class IngredientViewSet(viewsets.ModelViewSet):
         return self.ordering_filter.filter_queryset(self.request, queryset, self)
 
 
-    def get_paginate_by(self):
-        """
-        Use smaller pagination for HTML representations.
-        """
-        if self.request.accepted_renderer.format == 'html':
-            return 20
-        return 10
-    
-
 
 class TranslationViewSet(viewsets.ModelViewSet):
     """
@@ -362,6 +336,7 @@ class TranslationViewSet(viewsets.ModelViewSet):
 
     queryset = TranslatedIngredient.objects.all()
     serializer_class = TranslationSerializer
+    pagination_class = LargeResultsSetPagination
     filter_class = TranslationFilter
     ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
@@ -382,12 +357,3 @@ class TranslationViewSet(viewsets.ModelViewSet):
         queryset = super(TranslationViewSet, self).filter_queryset(queryset)
         return self.ordering_filter.filter_queryset(self.request, queryset, self)
 
-
-    def get_paginate_by(self):
-        """
-        Use smaller pagination for HTML representations.
-        """
-        if self.request.accepted_renderer.format == 'html':
-            return 20
-        return 10
-    
