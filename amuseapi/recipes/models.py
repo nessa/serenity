@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
+
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Group
+from rest_framework.authtoken.models import Token
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from rest_framework.authtoken.models import Token
 from django.conf import settings
 
-# Search a way to do this programatically
+# Enumerates
+
 LANGUAGE_CHOICES = (
     ('es', 'Español'),
     ('en', 'English'),
 )
+
 
 MEASUREMENT_CHOICES = (
     ('g', 'gram'),
@@ -33,6 +36,7 @@ MENU = (
     ('OTHER', 'Other'),
 )
 
+
 DIFFICULTY = (
     ('HIGH', 'High'),
     ('MEDIUM', 'Medium'),
@@ -52,16 +56,24 @@ CATEGORIES = (
 )
 
 
+# User
 class User(AbstractUser):
     name = models.CharField(max_length=100, default="")
     surname = models.CharField(max_length=100, default="")
     birthday = models.DateField(blank=True, null=True)
     
-# This code is triggered whenever a new user has been created and saved to the database
+# This code is triggered whenever a new user has been created and saved
+# to the database
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
+        # Create a new token
         Token.objects.create(user=instance)
+
+        # Set basic group by default
+        group = Group.objects.get(name='Usuario')
+        instance.groups.add(group)
+
 
 # Recipes with ingredients and directions
 class Recipe(models.Model):

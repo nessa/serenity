@@ -1,19 +1,29 @@
 # -*- coding: utf-8 -*-
-from django.forms import widgets
-from django.contrib.auth.models import Group
+
 from rest_framework import serializers
+from datetime import datetime
+
+# Import models
 from recipes.models import Recipe, RecipeCategory, RecipeIngredient
 from recipes.models import RecipeDirection, RecipeComment
 from recipes.models import RecipeRating, User
 from recipes.models import Ingredient, TranslatedIngredient, IngredientCategory
-from datetime import datetime
+from django.contrib.auth.models import Group
 
-# Users
+
+## Users
+
+class ModeratorUserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'name', 'surname', 'groups',
+                  'url', 'birthday',)
+
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('username', 'email', 'name', 'surname', 'groups',
-                  'url', 'birthday', 'password')
+                  'url', 'birthday', 'password',)
         extra_kwargs = {
             'password': {'write_only': True}
         }
@@ -27,6 +37,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             birthday = validated_data['birthday']
         )
         user.set_password(validated_data['password'])
+
         user.save()
         return user
 
@@ -40,10 +51,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
-        fields = ('url', 'name')
+        fields = ('url', 'name',)
 
 
-# Recipes
+## Recipes
+
 class RecipeCategorySerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id', read_only=True)
 
@@ -58,7 +70,7 @@ class RecipeIngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeIngredient
         fields = ('recipe', 'sort_number', 'quantity', 'name',
-            'measurement_unit')
+                  'measurement_unit',)
 
 
 class RecipeDirectionSerializer(serializers.ModelSerializer):
@@ -70,7 +82,7 @@ class RecipeDirectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeDirection
         fields = ('recipe', 'sort_number', 'description', 'image', 'video',
-            'time')
+                  'time',)
 
 
 
@@ -92,8 +104,8 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
             'difficulty', 'created_timestamp', 'updated_timestamp',
             'cooking_time', 'image', 'total_rating', 'users_rating',
             'average_rating', 'comments_number', 'servings', 'source',
-            'categories', 'ingredients', 'directions')
-        read_only_fields = ('created_timestamp', 'updated_timestamp')
+            'categories', 'ingredients', 'directions',)
+        read_only_fields = ('created_timestamp', 'updated_timestamp',)
 
     # Override create method to create all nested fields
     def create(self, validated_data):
@@ -194,14 +206,15 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
         return instance
 
 
-# Comments
+## Comments
+
 class RecipeCommentSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
     user = serializers.CharField(source='user.username')
 
     class Meta:
         model = RecipeComment
-        fields = ('id', 'recipe',  'user', 'comment', 'timestamp')
+        fields = ('id', 'recipe',  'user', 'comment', 'timestamp',)
 
     # Override create method to update recipe comment
     def create(self, validated_data):
@@ -220,14 +233,15 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
         return comment
 
     
-# Ratings
+## Ratings
+
 class RecipeRatingSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
     user = serializers.CharField(source='user.username')
     
     class Meta:
         model = RecipeRating
-        fields = ('id', 'recipe',  'user', 'rating')
+        fields = ('id', 'recipe',  'user', 'rating',)
         
     # Override create method to update recipe rating
     def create(self, validated_data):
@@ -267,8 +281,7 @@ class RecipeRatingSerializer(serializers.ModelSerializer):
         return rating
 
 
-# Generic ingredients
-
+## Generic ingredients
         
 class TranslatedIngredientSerializer(serializers.ModelSerializer):
     ingredient = serializers.CharField(source='ingredient.id', read_only=True)

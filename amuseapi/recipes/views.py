@@ -1,30 +1,37 @@
 # -*- coding: utf-8 -*-
+
+from rest_framework import viewsets
+
+# Import models
 from recipes.models import Recipe, User, RecipeComment, RecipeRating
 from recipes.models import Ingredient, TranslatedIngredient
 from django.contrib.auth.models import Group
 
-from rest_framework import viewsets
-
-from recipes.serializers import RecipeSerializer, UserSerializer
+# Import serializers
+from recipes.serializers import RecipeSerializer, GroupSerializer
+from recipes.serializers import UserSerializer, ModeratorUserSerializer
 from recipes.serializers import RecipeCommentSerializer
 from recipes.serializers import RecipeRatingSerializer
 from recipes.serializers import GroupSerializer
 from recipes.serializers import IngredientSerializer
 from recipes.serializers import TranslatedIngredientSerializer
 from recipes.serializers import TranslationSerializer
-from rest_framework import generics
-from rest_framework import permissions
-from recipes.permissions import IsOwnerOrReadOnly
+
+# Import permissions
 from rest_framework.permissions import SAFE_METHODS
 from rest_framework.permissions import AllowAny
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.reverse import reverse
-from rest_framework.decorators import detail_route
+from recipes.permissions import IsModerator
+from recipes.permissions import IsOwnerOrModerator
+
+# Import filters
 import rest_framework_filters as filters
 from rest_framework.filters import OrderingFilter
+
+# Actions:
+# ModelViewSet automatically provides `list`, `create`, `retrieve`,
+# `update` and `destroy` actions.
 
 
 ## USERS
@@ -39,18 +46,51 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
+
+    # PERMISSIONS:
+    # This endpoint will be completely open only for Moderators.
+    # The other users only could see or edit its own user data.
+    # The authenticated or unauthenticated users could create new users.
+
     queryset = User.objects.all()
-    serializer_class = UserSerializer
     filter_class = UserFilter
+
 
     def get_permissions(self):
         # Open user registration
-        if self.request.method == 'POST':
+        if self.action == 'create':
             self.permission_classes = (AllowAny,)
         else:
-            self.permission_classes = (IsAuthenticated,)
+            # List only available for moderators
+            if self.action == 'list':
+                self.permission_classes = (IsModerator,)
+            else:
+                self.permission_classes = (IsOwnerOrModerator,)
             
         return super(UserViewSet, self).get_permissions()
+
+
+    def get_serializer_class(self):
+        user_groups = self.request.user.groups.values_list('name', flat=True)
+
+        if 'Moderador' in user_groups:
+            if self.action != 'create':
+                return ModeratorUserSerializer
+
+        return UserSerializer
+
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+
+    # PERMISSIONS:
+    # This endpoint will be open only for Moderators.
+
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+    permission_classes = (IsModerator,)
 
     
 
@@ -98,10 +138,17 @@ class RecipeFilter(filters.FilterSet):
             'type_of_dish', 'difficulty', 'category', 'ingredient', 'user']
 
 
+
 class RecipeViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows recipes to be viewed or edited.
     """
+
+    # PERMISSIONS:
+    # This endpoint will be completely open only for Moderators.
+    # Only authenticated users and Moderators could create a new recipe.
+    # The authenticated or unauthenticated users could see all the recipes.
+
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
     filter_class = RecipeFilter
@@ -109,12 +156,28 @@ class RecipeViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
     ordering = ('updated_timestamp')
 
+
+    def get_permissions(self):
+        # List and retrieve are open to any user
+        if self.action == 'list' or self.action == 'retrieve':
+            self.permission_classes = (AllowAny,)
+        # Create are open to authenticated users
+        elif self.action == 'create':
+            self.permission_classes = (IsAuthenticated,)
+        else:
+            self.permission_classes = (IsOwnerOrModerator,)
+            
+        return super(RecipeViewSet, self).get_permissions()
+
+
     def filter_queryset(self, queryset):
         queryset = super(RecipeViewSet, self).filter_queryset(queryset)
         return self.ordering_filter.filter_queryset(self.request, queryset, self)
 
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
     def get_paginate_by(self):
         """
@@ -123,26 +186,17 @@ class RecipeViewSet(viewsets.ModelViewSet):
         if self.request.accepted_renderer.format == 'html':
             return 20
         return 10
-    
-    def get_permissions(self):
-        # Open recipes read
-        if self.request.method in SAFE_METHODS:
-            self.permission_classes = (AllowAny,)
-        else:
-            self.permission_classes = (IsOwnerOrReadOnly,)
-            
-        return super(RecipeViewSet, self).get_permissions()
+
+
 
 
 ## COMMENTS
 
 class RecipeCommentFilter(filters.FilterSet):
-    # Relationships
     recipe = filters.CharFilter(name='recipe__id',
         lookup_type='contains')
     user = filters.CharFilter(name='user__username',
         lookup_type='contains')
-    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     class Meta:
         model = RecipeComment
@@ -151,14 +205,28 @@ class RecipeCommentFilter(filters.FilterSet):
 
 class RecipeCommentViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows recipes to be viewed or edited.
+    API endpoint that allows comments to be viewed or edited.
     """
+
+    # PERMISSIONS:
+    # This endpoint will be completely open for authenticated users.
+    # The authenticated or unauthenticated users could see all the comments.
+
     queryset = RecipeComment.objects.all()
     serializer_class = RecipeCommentSerializer
     filter_class = RecipeCommentFilter
     ordering_filter = OrderingFilter()
     ordering_fields = '__all__'
     ordering = ('-timestamp')
+
+    def get_permissions(self):
+        # Open comments read
+        if self.action == 'list' or self.action == 'retrieve':
+            self.permission_classes = (AllowAny,)
+        else:
+            self.permission_classes = (IsAuthenticatedOrReadOnly,)
+            
+        return super(RecipeCommentViewSet, self).get_permissions()
 
     def filter_queryset(self, queryset):
         queryset = super(RecipeCommentViewSet, self).filter_queryset(queryset)
@@ -175,20 +243,11 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
             return 20
         return 10
 
-    def get_permissions(self):
-        # Open recipes read
-        if self.request.method in SAFE_METHODS:
-            self.permission_classes = (AllowAny,)
-        else:
-            self.permission_classes = (IsAuthenticatedOrReadOnly,)
-            
-        return super(RecipeCommentViewSet, self).get_permissions()
 
 
 ## RATINGS
 
 class RecipeRatingFilter(filters.FilterSet):
-    # Relationships
     recipe = filters.CharFilter(name='recipe__id',
         lookup_type='contains')
     user = filters.CharFilter(name='user__username',
@@ -203,12 +262,28 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows recipes to be viewed or edited.
     """
+
+    # PERMISSIONS:
+    # This endpoint will be completely open for authenticated users.
+    # The authenticated or unauthenticated users could see all the comments.
+
     queryset = RecipeRating.objects.all()
     serializer_class = RecipeRatingSerializer
     filter_class = RecipeRatingFilter
 
+    def get_permissions(self):
+        # Open ratings read
+        if self.action == 'list' or self.action == 'retrieve':
+            self.permission_classes = (AllowAny,)
+        else:
+            self.permission_classes = (IsAuthenticatedOrReadOnly,)
+            
+        return super(RecipeRatingViewSet, self).get_permissions()
+
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
     def get_paginate_by(self):
         """
@@ -218,21 +293,15 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
             return 20
         return 10
 
-    def get_permissions(self):
-        # Open recipes read
-        if self.request.method in SAFE_METHODS:
-            self.permission_classes = (AllowAny,)
-        else:
-            self.permission_classes = (IsAuthenticatedOrReadOnly,)
-            
-        return super(RecipeRatingViewSet, self).get_permissions()
 
 
-# GENERIC INGREDIENTS
+## GENERIC INGREDIENTS
+
 class IngredientFilter(filters.FilterSet):
     class Meta:
         model = Ingredient
         fields = ['code']
+
         
 class TranslationFilter(filters.FilterSet):
     updated_before = filters.DateTimeFilter(name="timestamp", lookup_type='lt')
@@ -250,6 +319,10 @@ class IngredientViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows generic ingredients to be viewed or edited.
     """
+
+    # PERMISSIONS:
+    # This endpoint will be completely open only for Moderators.
+
     queryset = Ingredient.objects.all()
     serializer_class = IngredientSerializer
     filter_class = IngredientFilter
@@ -257,9 +330,16 @@ class IngredientViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
     ordering = ('code')
 
+
+    def get_permissions(self):
+        self.permission_classes = (IsModerator,)
+        return super(IngredientViewSet, self).get_permissions()
+
+
     def filter_queryset(self, queryset):
         queryset = super(IngredientViewSet, self).filter_queryset(queryset)
         return self.ordering_filter.filter_queryset(self.request, queryset, self)
+
 
     def get_paginate_by(self):
         """
@@ -269,20 +349,17 @@ class IngredientViewSet(viewsets.ModelViewSet):
             return 20
         return 10
     
-    def get_permissions(self):
-        # Open recipes read
-        if self.request.method in SAFE_METHODS:
-            self.permission_classes = (AllowAny,)
-        else:
-            self.permission_classes = (IsAuthenticated,)
-            
-        return super(IngredientViewSet, self).get_permissions()
 
 
 class TranslationViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows generic ingredients to be viewed or edited.
     """
+
+    # PERMISSIONS:
+    # This endpoint will be completely open only for Moderators.
+    # The authenticated or unauthenticated users could see all the translations.
+
     queryset = TranslatedIngredient.objects.all()
     serializer_class = TranslationSerializer
     filter_class = TranslationFilter
@@ -290,9 +367,21 @@ class TranslationViewSet(viewsets.ModelViewSet):
     ordering_fields = '__all__'
     ordering = ('timestamp')
 
+
+    def get_permissions(self):
+        # Open translations read
+        if self.action == 'list' or self.action == 'retrieve':
+            self.permission_classes = (AllowAny,)
+        else:
+            self.permission_classes = (IsModerator,)
+            
+        return super(TranslationViewSet, self).get_permissions()
+
+
     def filter_queryset(self, queryset):
         queryset = super(TranslationViewSet, self).filter_queryset(queryset)
         return self.ordering_filter.filter_queryset(self.request, queryset, self)
+
 
     def get_paginate_by(self):
         """
@@ -302,11 +391,3 @@ class TranslationViewSet(viewsets.ModelViewSet):
             return 20
         return 10
     
-    def get_permissions(self):
-        # Open recipes read
-        if self.request.method in SAFE_METHODS:
-            self.permission_classes = (AllowAny,)
-        else:
-            self.permission_classes = (IsAuthenticated,)
-            
-        return super(TranslationViewSet, self).get_permissions()
