@@ -13,12 +13,6 @@ from django.contrib.auth.models import Group
 
 ## Users
 
-class ModeratorUserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('username', 'email', 'name', 'surname', 'groups',
-                  'url', 'birthday',)
-
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User

@@ -23,6 +23,7 @@ router.register(r'translations', views.TranslationViewSet)
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^auth/', include('djoser.urls')),
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
     url(r'^api-token-auth/', auth_views.obtain_auth_token),

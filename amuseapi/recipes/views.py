@@ -7,8 +7,8 @@ from recipes.models import Ingredient, TranslatedIngredient
 from django.contrib.auth.models import Group
 
 # Import serializers
-from recipes.serializers import RecipeSerializer, GroupSerializer
-from recipes.serializers import UserSerializer, ModeratorUserSerializer
+from recipes.serializers import RecipeSerializer
+from recipes.serializers import UserSerializer, GroupSerializer
 from recipes.serializers import RecipeCommentSerializer
 from recipes.serializers import RecipeRatingSerializer
 from recipes.serializers import GroupSerializer
@@ -58,30 +58,12 @@ class UserViewSet(viewsets.ModelViewSet):
 
     queryset = User.objects.all()
     filter_class = UserFilter
+    serializer_class = UserSerializer
     pagination_class = LargeResultsSetPagination
 
     def get_permissions(self):
-        # Open user registration
-        if self.action == 'create':
-            self.permission_classes = (AllowAny,)
-        else:
-            # List only available for moderators
-            if self.action == 'list':
-                self.permission_classes = (IsModerator,)
-            else:
-                self.permission_classes = (IsOwnerOrModerator,)
-            
+        self.permission_classes = (IsModerator,)
         return super(UserViewSet, self).get_permissions()
-
-
-    def get_serializer_class(self):
-        user_groups = self.request.user.groups.values_list('name', flat=True)
-
-        if 'Moderador' in user_groups:
-            if self.action != 'create':
-                return ModeratorUserSerializer
-
-        return UserSerializer
 
 
 class GroupViewSet(viewsets.ModelViewSet):

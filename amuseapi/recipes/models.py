@@ -62,6 +62,8 @@ class User(AbstractUser):
     surname = models.CharField(max_length=100, default="")
     birthday = models.DateField(blank=True, null=True)
     
+    REQUIRED_FIELDS = ['email', 'name', 'surname', 'url', 'birthday']
+    
 # This code is triggered whenever a new user has been created and saved
 # to the database
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
