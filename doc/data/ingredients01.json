@@ -1,4 +1,1025 @@
 {
+    "code": "almond",
+    "translations": [
+        {
+            "translation": "almendra",
+            "language": "es"
+        },
+        {
+            "translation": "almond",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "anchovie",
+    "translations": [
+        {
+            "translation": "anchoa",
+            "language": "es"
+        },
+        {
+            "translation": "anchovie",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+
+{
+    "code": "anise",
+    "translations": [
+        {
+            "translation": "anís",
+            "language": "es"
+        },
+        {
+            "translation": "anise",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "apple",
+    "translations": [
+        {
+            "translation": "manzana",
+            "language": "es"
+        },
+        {
+            "translation": "apple",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "apple juice",
+    "translations": [
+        {
+            "translation": "zumo de manzana",
+            "language": "es"
+        },
+        {
+            "translation": "apple juice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "apricot",
+    "translations": [
+        {
+            "translation": "albaricoque",
+            "language": "es"
+        },
+        {
+            "translation": "apricot",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "arborio rice",
+    "translations": [
+        {
+            "translation": "arroz arborio",
+            "language": "es"
+        },
+        {
+            "translation": "arborio rice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "artichoke",
+    "translations": [
+        {
+            "translation": "alcachofa",
+            "language": "es"
+        },
+        {
+            "translation": "artichoke",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "asparagus",
+    "translations": [
+        {
+            "translation": "espárrago",
+            "language": "es"
+        },
+        {
+            "translation": "asparagus",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "avocado",
+    "translations": [
+        {
+            "translation": "aguacate",
+            "language": "es"
+        },
+        {
+            "translation": "avocado",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "bacon",
+    "translations": [
+        {
+            "translation": "bacon",
+            "language": "es"
+        },
+        {
+            "translation": "bacon",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "baking powder",
+    "translations": [
+        {
+            "translation": "levadura en polvo",
+            "language": "es"
+        },
+        {
+            "translation": "baking powder",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "balsamic vinegar",
+    "translations": [
+        {
+            "translation": "vinagre de módena",
+            "language": "es"
+        },
+        {
+            "translation": "balsamic vinegar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "banana",
+    "translations": [
+        {
+            "translation": "plátano",
+            "language": "es"
+        },
+        {
+            "translation": "banana",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "basmati rice",
+    "translations": [
+        {
+            "translation": "arroz basmati",
+            "language": "es"
+        },
+        {
+            "translation": "basmati rice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+
+{
+    "code": "bay leaf",
+    "translations": [
+        {
+            "translation": "hoja de laurel",
+            "language": "es"
+        },
+        {
+            "translation": "bay leaf",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "basil",
+    "translations": [
+        {
+            "translation": "albahaca",
+            "language": "es"
+        },
+        {
+            "translation": "basil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "beans",
+    "translations": [
+        {
+            "translation": "habichuelas",
+            "language": "es"
+        },
+        {
+            "translation": "beans",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "beef",
+    "translations": [
+        {
+            "translation": "ternera",
+            "language": "es"
+        },
+        {
+            "translation": "beef",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "beef stock",
+    "translations": [
+        {
+            "translation": "caldo de ternera",
+            "language": "es"
+        },
+        {
+            "translation": "beef stock",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "beer",
+    "translations": [
+        {
+            "translation": "cerveza",
+            "language": "es"
+        },
+        {
+            "translation": "beer",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "beetroot",
+    "translations": [
+        {
+            "translation": "remolacha",
+            "language": "es"
+        },
+        {
+            "translation": "beetroot",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "bicarbonate of soda",
+    "translations": [
+        {
+            "translation": "bicarbonato de sodio",
+            "language": "es"
+        },
+        {
+            "translation": "bicarbonate of soda",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "black beans",
+    "translations": [
+        {
+            "translation": "alubias negras",
+            "language": "es"
+        },
+        {
+            "translation": "black beans",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "black pepper",
+    "translations": [
+        {
+            "translation": "pimienta negra",
+            "language": "es"
+        },
+        {
+            "translation": "black pepper",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "black sesame seeds",
+    "translations": [
+        {
+            "translation": "semillas de sésamo negro",
+            "language": "es"
+        },
+        {
+            "translation": "black sesame seeds",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "blackberry",
+    "translations": [
+        {
+            "translation": "mora",
+            "language": "es"
+        },
+        {
+            "translation": "blackberry",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "blueberry",
+    "translations": [
+        {
+            "translation": "arándano",
+            "language": "es"
+        },
+        {
+            "translation": "blueberry",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "boar",
+    "translations": [
+        {
+            "translation": "jabalí",
+            "language": "es"
+        },
+        {
+            "translation": "boar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "bok choi",
+    "translations": [
+        {
+            "translation": "col china",
+            "language": "es"
+        },
+        {
+            "translation": "bock choi",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "bonito",
+    "translations": [
+        {
+            "translation": "bonito",
+            "language": "es"
+        },
+        {
+            "translation": "bonito",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "bream",
+    "translations": [
+        {
+            "translation": "besugo",
+            "language": "es"
+        },
+        {
+            "translation": "bream",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "brandy",
+    "translations": [
+        {
+            "translation": "brandy",
+            "language": "es"
+        },
+        {
+            "translation": "brandy",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "bratwurst",
+    "translations": [
+        {
+            "translation": "bratwurst",
+            "language": "es"
+        },
+        {
+            "translation": "bratwurst",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "bread",
+    "translations": [
+        {
+            "translation": "pan",
+            "language": "es"
+        },
+        {
+            "translation": "bread",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "breadcrumbs",
+    "translations": [
+        {
+            "translation": "pan rallado",
+            "language": "es"
+        },
+        {
+            "translation": "breadcrumbs",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "brie cheese",
+    "translations": [
+        {
+            "translation": "queso brie",
+            "language": "es"
+        },
+        {
+            "translation": "brie cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "brill",
+    "translations": [
+        {
+            "translation": "rodaballo",
+            "language": "es"
+        },
+        {
+            "translation": "brill",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "broccoli",
+    "translations": [
+        {
+            "translation": "brócoli",
+            "language": "es"
+        },
+        {
+            "translation": "broccoli",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "brown rice",
+    "translations": [
+        {
+            "translation": "arroz integral",
+            "language": "es"
+        },
+        {
+            "translation": "brown rice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "brown sugar",
+    "translations": [
+        {
+            "translation": "azúcar moreno",
+            "language": "es"
+        },
+        {
+            "translation": "brown sugar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "brussels sprouts",
+    "translations": [
+        {
+            "translation": "coles de bruselas",
+            "language": "es"
+        },
+        {
+            "translation": "brussels sprouts",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "butter",
+    "translations": [
+        {
+            "translation": "mantequilla",
+            "language": "es"
+        },
+        {
+            "translation": "butter",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cabbage",
+    "translations": [
+        {
+            "translation": "repollo",
+            "language": "es"
+        },
+        {
+            "translation": "cabbage",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "camembert cheese",
+    "translations": [
+        {
+            "translation": "queso camembert",
+            "language": "es"
+        },
+        {
+            "translation": "camembert cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "capers",
+    "translations": [
+        {
+            "translation": "alcaparras",
+            "language": "es"
+        },
+        {
+            "translation": "capers",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cardamom",
+    "translations": [
+        {
+            "translation": "cardamomo",
+            "language": "es"
+        },
+        {
+            "translation": "cardamom",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "carrot",
+    "translations": [
+        {
+            "translation": "zanahoria",
+            "language": "es"
+        },
+        {
+            "translation": "carrot",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "caster sugar",
+    "translations": [
+        {
+            "translation": "azúcar glas",
+            "language": "es"
+        },
+        {
+            "translation": "caster sugar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cauliflower",
+    "translations": [
+        {
+            "translation": "coliflor",
+            "language": "es"
+        },
+        {
+            "translation": "cauliflower",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "caviar",
+    "translations": [
+        {
+            "translation": "caviar",
+            "language": "es"
+        },
+        {
+            "translation": "caviar",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        },
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "cayenne pepper",
+    "translations": [
+        {
+            "translation": "cayena",
+            "language": "es"
+        },
+        {
+            "translation": "cayenne pepper",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "celery",
+    "translations": [
+        {
+            "translation": "apio",
+            "language": "es"
+        },
+        {
+            "translation": "celery",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "champagne",
+    "translations": [
+        {
+            "translation": "champán",
+            "language": "es"
+        },
+        {
+            "translation": "champagne",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chard",
+    "translations": [
+        {
+            "translation": "acelga",
+            "language": "es"
+        },
+        {
+            "translation": "chard",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cheddar cheese",
+    "translations": [
+        {
+            "translation": "queso cheddar",
+            "language": "es"
+        },
+        {
+            "translation": "cheddar cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }                   
+    ]
+}
+
+{
+    "code": "cherry",
+    "translations": [
+        {
+            "translation": "cereza",
+            "language": "es"
+        },
+        {
+            "translation": "cherry",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chestnuts",
+    "translations": [
+        {
+            "translation": "castañas",
+            "language": "es"
+        },
+        {
+            "translation": "chestnuts",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "chicken",
+    "translations": [
+        {
+            "translation": "pollo",
+            "language": "es"
+        },
+        {
+            "translation": "chicken",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chicken breast",
+    "translations": [
+        {
+            "translation": "pechuga de pollo",
+            "language": "es"
+        },
+        {
+            "translation": "chicken breast",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chicken thigh",
+    "translations": [
+        {
+            "translation": "muslo de pollo",
+            "language": "es"
+        },
+        {
+            "translation": "chicken thigh",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "contramuslo de pollo",
+    "translations": [
+        {
+            "translation": "contramuslo de pollo",
+            "language": "es"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chicken stock",
+    "translations": [
+        {
+            "translation": "caldo de pollo",
+            "language": "es"
+        },
+        {
+            "translation": "chicken stock",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chicken wing",
+    "translations": [
+        {
+            "translation": "alitas de pollo",
+            "language": "es"
+        },
+        {
+            "translation": "chicken wong",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
     "code": "chickpeas",
     "translations": [
         {
@@ -7,6 +1028,3399 @@
         },
         {
             "translation": "chickpeas",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chickpea flour",
+    "translations": [
+        {
+            "translation": "harina de garbanzo",
+            "language": "es"
+        },
+        {
+            "translation": "chickpea flour",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chilli",
+    "translations": [
+        {
+            "translation": "guindilla",
+            "language": "es"
+        },
+        {
+            "translation": "chilli",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chinese mushrooms",
+    "translations": [
+        {
+            "translation": "setas chinas",
+            "language": "es"
+        },
+        {
+            "translation": "chinese mushrooms",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chipotle",
+    "translations": [
+        {
+            "translation": "chipotle",
+            "language": "es"
+        },
+        {
+            "translation": "chipotle",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chives",
+    "translations": [
+        {
+            "translation": "cebollino",
+            "language": "es"
+        },
+        {
+            "translation": "chives",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chocolate",
+    "translations": [
+        {
+            "translation": "chocolate",
+            "language": "es"
+        },
+        {
+            "translation": "chocolate",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chopped tomatoes",
+    "translations": [
+        {
+            "translation": "tomates troceados",
+            "language": "es"
+        },
+        {
+            "translation": "chopped tomatoes",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "chorizo",
+    "translations": [
+        {
+            "translation": "chorizo",
+            "language": "es"
+        },
+        {
+            "translation": "chorizo",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cider",
+    "translations": [
+        {
+            "translation": "sidra",
+            "language": "es"
+        },
+        {
+            "translation": "cider",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cinnamon",
+    "translations": [
+        {
+            "translation": "canela",
+            "language": "es"
+        },
+        {
+            "translation": "cinnamon",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "clams",
+    "translations": [
+        {
+            "translation": "almejas",
+            "language": "es"
+        },
+        {
+            "translation": "clams",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "clarified butter",
+    "translations": [
+        {
+            "translation": "mantequilla clarificada",
+            "language": "es"
+        },
+        {
+            "translation": "clarified butter",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "clementine",
+    "translations": [
+        {
+            "translation": "clementina",
+            "language": "es"
+        },
+        {
+            "translation": "clementine",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cloves",
+    "translations": [
+        {
+            "translation": "clavos",
+            "language": "es"
+        },
+        {
+            "translation": "cloves",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cockles",
+    "translations": [
+        {
+            "translation": "berberechos",
+            "language": "es"
+        },
+        {
+            "translation": "cockles",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "cocoa powder",
+    "translations": [
+        {
+            "translation": "cacao en polvo",
+            "language": "es"
+        },
+        {
+            "translation": "cocoa powder",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "coconut",
+    "translations": [
+        {
+            "translation": "coco",
+            "language": "es"
+        },
+        {
+            "translation": "coconut",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "coconut milk",
+    "translations": [
+        {
+            "translation": "leche de coco",
+            "language": "es"
+        },
+        {
+            "translation": "coconut milk",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "coconut oil",
+    "translations": [
+        {
+            "translation": "aceite de coco",
+            "language": "es"
+        },
+        {
+            "translation": "coconut oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cod",
+    "translations": [
+        {
+            "translation": "bacalao",
+            "language": "es"
+        },
+        {
+            "translation": "cod",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "coffee",
+    "translations": [
+        {
+            "translation": "café",
+            "language": "es"
+        },
+        {
+            "translation": "coffee",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "coffee beans",
+    "translations": [
+        {
+            "translation": "granos de café",
+            "language": "es"
+        },
+        {
+            "translation": "coffee beans",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cognac",
+    "translations": [
+        {
+            "translation": "coñac",
+            "language": "es"
+        },
+        {
+            "translation": "cognac",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "condensed milk",
+    "translations": [
+        {
+            "translation": "leche condensada",
+            "language": "es"
+        },
+        {
+            "translation": "condensed milk",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "coriander",
+    "translations": [
+        {
+            "translation": "cilantro",
+            "language": "es"
+        },
+        {
+            "translation": "coriander",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "corn flour",
+    "translations": [
+        {
+            "translation": "harina de maíz",
+            "language": "es"
+        },
+        {
+            "translation": "cornflour",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cottage cheese",
+    "translations": [
+        {
+            "translation": "queso cottage",
+            "language": "es"
+        },
+        {
+            "translation": "cottage cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "courgette",
+    "translations": [
+        {
+            "translation": "calabacín",
+            "language": "es"
+        },
+        {
+            "translation": "courgette",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "couscous",
+    "translations": [
+        {
+            "translation": "cuscús",
+            "language": "es"
+        },
+        {
+            "translation": "couscous",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "crab",
+    "translations": [
+        {
+            "translation": "cangrejo",
+            "language": "es"
+        },
+        {
+            "translation": "crab",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "cranberry",
+    "translations": [
+        {
+            "translation": "arándanos",
+            "language": "es"
+        },
+        {
+            "translation": "cranberry",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cooking cream",
+    "translations": [
+        {
+            "translation": "nata de cocinar",
+            "language": "es"
+        },
+        {
+            "translation": "cooking cream",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "cream cheese",
+    "translations": [
+        {
+            "translation": "queso crema",
+            "language": "es"
+        },
+        {
+            "translation": "cream cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "croutons",
+    "translations": [
+        {
+            "translation": "picatostes",
+            "language": "es"
+        },
+        {
+            "translation": "croutons",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "cucumber",
+    "translations": [
+        {
+            "translation": "pepino",
+            "language": "es"
+        },
+        {
+            "translation": "cucumber",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "cumin",
+    "translations": [
+        {
+            "translation": "comino",
+            "language": "es"
+        },
+        {
+            "translation": "cumin",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "curry powder",
+    "translations": [
+        {
+            "translation": "curry en polvo",
+            "language": "es"
+        },
+        {
+            "translation": "curry powder",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "dab",
+    "translations": [
+        {
+            "translation": "lenguado",
+            "language": "es"
+        },
+        {
+            "translation": "dab",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "dark chocolate",
+    "translations": [
+        {
+            "translation": "chocolate negro",
+            "language": "es"
+        },
+        {
+            "translation": "dark chocolate",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "date",
+    "translations": [
+        {
+            "translation": "dátil",
+            "language": "es"
+        },
+        {
+            "translation": "date",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "dijon mustard",
+    "translations": [
+        {
+            "translation": "mostaza de dijon",
+            "language": "es"
+        },
+        {
+            "translation": "dijon mustard",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "dill",
+    "translations": [
+        {
+            "translation": "eneldo",
+            "language": "es"
+        },
+        {
+            "translation": "dill",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "duck",
+    "translations": [
+        {
+            "translation": "pato",
+            "language": "es"
+        },
+        {
+            "translation": "duck",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "edam cheese",
+    "translations": [
+        {
+            "translation": "queso edam",
+            "language": "es"
+        },
+        {
+            "translation": "edam cheese",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "egg",
+    "translations": [
+        {
+            "translation": "huevo",
+            "language": "es"
+        },
+        {
+            "translation": "egg",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "eggplant",
+    "translations": [
+        {
+            "translation": "berenjena",
+            "language": "es"
+        },
+        {
+            "translation": "eggplant",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "egg white",
+    "translations": [
+        {
+            "translation": "clara de huevo",
+            "language": "es"
+        },
+        {
+            "translation": "egg white",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "egg yolk",
+    "translations": [
+        {
+            "translation": "yema de huevo",
+            "language": "es"
+        },
+        {
+            "translation": "egg yolk",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "emmental cheese",
+    "translations": [
+        {
+            "translation": "queso emmental",
+            "language": "es"
+        },
+        {
+            "translation": "emmental cheese",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "evaporated milk",
+    "translations": [
+        {
+            "translation": "leche evaporada",
+            "language": "es"
+        },
+        {
+            "translation": "evaporated milk",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "fennel",
+    "translations": [
+        {
+            "translation": "hinojo",
+            "language": "es"
+        },
+        {
+            "translation": "fennel",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "feta cheese",
+    "translations": [
+        {
+            "translation": "queso feta",
+            "language": "es"
+        },
+        {
+            "translation": "feta cheese",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "fig",
+    "translations": [
+        {
+            "translation": "higo",
+            "language": "es"
+        },
+        {
+            "translation": "fig",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "filo pastry",
+    "translations": [
+        {
+            "translation": "pasta filo",
+            "language": "es"
+        },
+        {
+            "translation": "filo pastry",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "fish",
+    "translations": [
+        {
+            "translation": "pescado",
+            "language": "es"
+        },
+        {
+            "translation": "fish",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "fish broth",
+    "translations": [
+        {
+            "translation": "fumet de pescado",
+            "language": "es"
+        },
+        {
+            "translation": "fish broth",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        },
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "fish roe",
+    "translations": [
+        {
+            "translation": "huevas de pescado",
+            "language": "es"
+        },
+        {
+            "translation": "fish roe",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        },
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "five-spice powder",
+    "translations": [
+        {
+            "translation": "polvo cinco especias",
+            "language": "es"
+        },
+        {
+            "translation": "five-spice powder",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "flaked salt",
+    "translations": [
+        {
+            "translation": "sal en escamas",
+            "language": "es"
+        },
+        {
+            "translation": "flaked salt",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "foie gras",
+    "translations": [
+        {
+            "translation": "foie gras",
+            "language": "es"
+        },
+        {
+            "translation": "foie gras",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "french beans",
+    "translations": [
+        {
+            "translation": "judías verdes",
+            "language": "es"
+        },
+        {
+            "translation": "french beans",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "garam masala",
+    "translations": [
+        {
+            "translation": "garam masala",
+            "language": "es"
+        },
+        {
+            "translation": "garam masala",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "garlic clove",
+    "translations": [
+        {
+            "translation": "diente de ajo",
+            "language": "es"
+        },
+        {
+            "translation": "garlic clove",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "gelatine",
+    "translations": [
+        {
+            "translation": "gelatina",
+            "language": "es"
+        },
+        {
+            "translation": "gelatine",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "ginger",
+    "translations": [
+        {
+            "translation": "jengibre",
+            "language": "es"
+        },
+        {
+            "translation": "ginger",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "gorgonzola cheese",
+    "translations": [
+        {
+            "translation": "queso gorgonzola",
+            "language": "es"
+        },
+        {
+            "translation": "gorgonzola cheese",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "gouda cheese",
+    "translations": [
+        {
+            "translation": "queso gouda",
+            "language": "es"
+        },
+        {
+            "translation": "gouda cheese",
+            "language": "en"
+        }
+    ]
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "grapefruit",
+    "translations": [
+        {
+            "translation": "pomelo",
+            "language": "es"
+        },
+        {
+            "translation": "grapefruit",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "grapes",
+    "translations": [
+        {
+            "translation": "uvas",
+            "language": "es"
+        },
+        {
+            "translation": "grapes",
+            "language": "en"
+        }
+    ]
+    "categories": []
+}
+
+{
+    "code": "green pepper",
+    "translations": [
+        {
+            "translation": "pimiento verde",
+            "language": "es"
+        },
+        {
+            "translation": "green pepper",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "red bell pepper",
+    "translations": [
+        {
+            "translation": "pimiento rojo",
+            "language": "es"
+        },
+        {
+            "translation": "red bell pepper",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "ham",
+    "translations": [
+        {
+            "translation": "jamón",
+            "language": "es"
+        },
+        {
+            "translation": "ham",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "york ham",
+    "translations": [
+        {
+            "translation": "jamón de york",
+            "language": "es"
+        },
+        {
+            "translation": "york ham",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "harissa",
+    "translations": [
+        {
+            "translation": "harissa",
+            "language": "es"
+        },
+        {
+            "translation": "harissa",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "hazelnut",
+    "translations": [
+        {
+            "translation": "avellana",
+            "language": "es"
+        },
+        {
+            "translation": "hazelnut",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "honey",
+    "translations": [
+        {
+            "translation": "miel",
+            "language": "es"
+        },
+        {
+            "translation": "honey",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "icing sugar",
+    "translations": [
+        {
+            "translation": "azúcar en polvo",
+            "language": "es"
+        },
+        {
+            "translation": "icing sugar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "kale",
+    "translations": [
+        {
+            "translation": "col rizada",
+            "language": "es"
+        },
+        {
+            "translation": "kale",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "ketchup",
+    "translations": [
+        {
+            "translation": "ketchup",
+            "language": "es"
+        },
+        {
+            "translation": "ketchup",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "kiwi",
+    "translations": [
+        {
+            "translation": "kiwi",
+            "language": "es"
+        },
+        {
+            "translation": "kiwi",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lamb",
+    "translations": [
+        {
+            "translation": "cordero",
+            "language": "es"
+        },
+        {
+            "translation": "lamb",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lamb chops",
+    "translations": [
+        {
+            "translation": "chuletas de cordero",
+            "language": "es"
+        },
+        {
+            "translation": "lamb chops",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "langoustines",
+    "translations": [
+        {
+            "translation": "langostinos",
+            "language": "es"
+        },
+        {
+            "translation": "langoustines",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "lard",
+    "translations": [
+        {
+            "translation": "manteca de cerdo",
+            "language": "es"
+        },
+        {
+            "translation": "lard",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "leek",
+    "translations": [
+        {
+            "translation": "puerro",
+            "language": "es"
+        },
+        {
+            "translation": "leek",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lemon",
+    "translations": [
+        {
+            "translation": "limón",
+            "language": "es"
+        },
+        {
+            "translation": "lemon",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lemon juice",
+    "translations": [
+        {
+            "translation": "zumo de limón",
+            "language": "es"
+        },
+        {
+            "translation": "lemon juice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lentils",
+    "translations": [
+        {
+            "translation": "lentejas",
+            "language": "es"
+        },
+        {
+            "translation": "lentils",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lettuce",
+    "translations": [
+        {
+            "translation": "lechuga",
+            "language": "es"
+        },
+        {
+            "translation": "lettuce",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lime",
+    "translations": [
+        {
+            "translation": "lima",
+            "language": "es"
+        },
+        {
+            "translation": "lime",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lime juice",
+    "translations": [
+        {
+            "translation": "zumo de lima",
+            "language": "es"
+        },
+        {
+            "translation": "lime juice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "liver",
+    "translations": [
+        {
+            "translation": "hígado",
+            "language": "es"
+        },
+        {
+            "translation": "liver",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "lobster",
+    "translations": [
+        {
+            "translation": "langosta",
+            "language": "es"
+        },
+        {
+            "translation": "lobster",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "long-grain rice",
+    "translations": [
+        {
+            "translation": "arroz de grano largo",
+            "language": "es"
+        },
+        {
+            "translation": "long-grain rice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "macaroni",
+    "translations": [
+        {
+            "translation": "macarrones",
+            "language": "es"
+        },
+        {
+            "translation": "macaroni",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "manchego cheese",
+    "translations": [
+        {
+            "translation": "queso manchego",
+            "language": "es"
+        },
+        {
+            "translation": "manchego cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "mandarin",
+    "translations": [
+        {
+            "translation": "mandarina",
+            "language": "es"
+        },
+        {
+            "translation": "mandarin",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "mango",
+    "translations": [
+        {
+            "translation": "mango",
+            "language": "es"
+        },
+        {
+            "translation": "mango",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "margarine",
+    "translations": [
+        {
+            "translation": "margarina",
+            "language": "es"
+        },
+        {
+            "translation": "margarine",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "mascarpone cheese",
+    "translations": [
+        {
+            "translation": "queso mascarpone",
+            "language": "es"
+        },
+        {
+            "translation": "mascarpone cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "mayonnaise",
+    "translations": [
+        {
+            "translation": "mayonesa",
+            "language": "es"
+        },
+        {
+            "translation": "mayonnaise",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "melon",
+    "translations": [
+        {
+            "translation": "melón",
+            "language": "es"
+        },
+        {
+            "translation": "melon",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "milk",
+    "translations": [
+        {
+            "translation": "leche",
+            "language": "es"
+        },
+        {
+            "translation": "milk",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "milk chocolate",
+    "translations": [
+        {
+            "translation": "chocolate con leche",
+            "language": "es"
+        },
+        {
+            "translation": "milk chocolate",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "mincemeat",
+    "translations": [
+        {
+            "translation": "carne picada",
+            "language": "es"
+        },
+        {
+            "translation": "mincemeat",
+            "language": "en"
+        }
+    ],
+    "categories": [
+    ]
+}
+
+{
+    "code": "mint",
+    "translations": [
+        {
+            "translation": "menta",
+            "language": "es"
+        },
+        {
+            "translation": "mint",
+            "language": "en"
+        }
+    ],
+    "categories": [
+    ]
+}
+
+{
+    "code": "monkfish",
+    "translations": [
+        {
+            "translation": "rape",
+            "language": "es"
+        },
+        {
+            "translation": "monkfish",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "mozzarella cheese",
+    "translations": [
+        {
+            "translation": "queso mozzarella",
+            "language": "es"
+        },
+        {
+            "translation": "mozzarella cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "mushrooms",
+    "translations": [
+        {
+            "translation": "champiñones",
+            "language": "es"
+        },
+        {
+            "translation": "mushrooms",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "mussels",
+    "translations": [
+        {
+            "translation": "mejillones",
+            "language": "es"
+        },
+        {
+            "translation": "mussels",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "mustard",
+    "translations": [
+        {
+            "translation": "mostaza",
+            "language": "es"
+        },
+        {
+            "translation": "mustard",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "mustard seeds",
+    "translations": [
+        {
+            "translation": "semillas de mostaza",
+            "language": "es"
+        },
+        {
+            "translation": "mustard seeds",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "naan bread",
+    "translations": [
+        {
+            "translation": "pan naan",
+            "language": "es"
+        },
+        {
+            "translation": "naan bread",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "rice noodles",
+    "translations": [
+        {
+            "translation": "tallarines de arroz",
+            "language": "es"
+        },
+        {
+            "translation": "noodles",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "nori",
+    "translations": [
+        {
+            "translation": "alga nori",
+            "language": "es"
+        },
+        {
+            "translation": "nori",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        },
+        {
+            "name" : "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "nut",
+    "translations": [
+        {
+            "translation": "nueces",
+            "language": "es"
+        },
+        {
+            "translation": "nut",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "nutmeg",
+    "translations": [
+        {
+            "translation": "nuez moscada",
+            "language": "es"
+        },
+        {
+            "translation": "nutmeg",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "octopus",
+    "translations": [
+        {
+            "translation": "pulpo",
+            "language": "es"
+        },
+        {
+            "translation": "octopus",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "oil",
+    "translations": [
+        {
+            "translation": "aceite",
+            "language": "es"
+        },
+        {
+            "translation": "oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "olive",
+    "translations": [
+        {
+            "translation": "aceitunas",
+            "language": "es"
+        },
+        {
+            "translation": "olive",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "olive oil",
+    "translations": [
+        {
+            "translation": "aceite de oliva",
+            "language": "es"
+        },
+        {
+            "translation": "olive oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "extra virgin olive oil",
+    "translations": [
+        {
+            "translation": "aceite de oliva virgen extra",
+            "language": "es"
+        },
+        {
+            "translation": "extra virgin olive oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "onion",
+    "translations": [
+        {
+            "translation": "cebolla",
+            "language": "es"
+        },
+        {
+            "translation": "onion",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "orange",
+    "translations": [
+        {
+            "translation": "naranja",
+            "language": "es"
+        },
+        {
+            "translation": "orange",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "orange juice",
+    "translations": [
+        {
+            "translation": "zumo de naranja",
+            "language": "es"
+        },
+        {
+            "translation": "orange juice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "oregano",
+    "translations": [
+        {
+            "translation": "orégano",
+            "language": "es"
+        },
+        {
+            "translation": "oregano",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "oysters",
+    "translations": [
+        {
+            "translation": "ostras",
+            "language": "es"
+        },
+        {
+            "translation": "oysters",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name" : "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "pancetta",
+    "translations": [
+        {
+            "translation": "panceta",
+            "language": "es"
+        },
+        {
+            "translation": "pancetta",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "papaya",
+    "translations": [
+        {
+            "translation": "papaya",
+            "language": "es"
+        },
+        {
+            "translation": "papaya",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "paprika",
+    "translations": [
+        {
+            "translation": "pimentón dulce",
+            "language": "es"
+        },
+        {
+            "translation": "paprika",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pimenton picante",
+    "translations": [
+        {
+            "translation": "pimentón picante",
+            "language": "es"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "parmesan cheese",
+    "translations": [
+        {
+            "translation": "queso parmesano",
+            "language": "es"
+        },
+        {
+            "translation": "parmesan cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "parsley",
+    "translations": [
+        {
+            "translation": "perejil",
+            "language": "es"
+        },
+        {
+            "translation": "parsley",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "peach",
+    "translations": [
+        {
+            "translation": "melocotón",
+            "language": "es"
+        },
+        {
+            "translation": "peach",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "peanuts",
+    "translations": [
+        {
+            "translation": "cacahuetes",
+            "language": "es"
+        },
+        {
+            "translation": "peanuts",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "pear",
+    "translations": [
+        {
+            "translation": "pera",
+            "language": "es"
+        },
+        {
+            "translation": "pear",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "peas",
+    "translations": [
+        {
+            "translation": "guisantes",
+            "language": "es"
+        },
+        {
+            "translation": "peas",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pepperoni",
+    "translations": [
+        {
+            "translation": "peperoni",
+            "language": "es"
+        },
+        {
+            "translation": "pepperoni",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pine nuts",
+    "translations": [
+        {
+            "translation": "piñones",
+            "language": "es"
+        },
+        {
+            "translation": "pine nuts",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "pineapple",
+    "translations": [
+        {
+            "translation": "piña",
+            "language": "es"
+        },
+        {
+            "translation": "pineapple",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pistachios",
+    "translations": [
+        {
+            "translation": "pistachos",
+            "language": "es"
+        },
+        {
+            "translation": "pistachios",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "DRIED_FRUIT_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "pitta bread",
+    "translations": [
+        {
+            "translation": "pan de pita",
+            "language": "es"
+        },
+        {
+            "translation": "pitta bread",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "polenta",
+    "translations": [
+        {
+            "translation": "polenta",
+            "language": "es"
+        },
+        {
+            "translation": "polenta",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pomegranate",
+    "translations": [
+        {
+            "translation": "granada",
+            "language": "es"
+        },
+        {
+            "translation": "pomegranate",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pork",
+    "translations": [
+        {
+            "translation": "cerdo",
+            "language": "es"
+        },
+        {
+            "translation": "pork",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pork chop",
+    "translations": [
+        {
+            "translation": "chuletas de cerdo",
+            "language": "es"
+        },
+        {
+            "translation": "pork chop",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pork loin",
+    "translations": [
+        {
+            "translation": "lomo de cerdo",
+            "language": "es"
+        },
+        {
+            "translation": "pork loin",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pork tenderloin",
+    "translations": [
+        {
+            "translation": "solomillo de cerdo",
+            "language": "es"
+        },
+        {
+            "translation": "pork tenderloin",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "pork sausages",
+    "translations": [
+        {
+            "translation": "salchichas de cerdo",
+            "language": "es"
+        },
+        {
+            "translation": "pork sausages",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "potatoe",
+    "translations": [
+        {
+            "translation": "patata",
+            "language": "es"
+        },
+        {
+            "translation": "potatoe",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "prawns",
+    "translations": [
+        {
+            "translation": "gambas",
+            "language": "es"
+        },
+        {
+            "translation": "prawns",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "puff pastry",
+    "translations": [
+        {
+            "translation": "masa de hojaldre",
+            "language": "es"
+        },
+        {
+            "translation": "puff pastry",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "serrano ham",
+    "translations": [
+        {
+            "translation": "jamón serrano",
+            "language": "es"
+        },
+        {
+            "translation": "serrano ham",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "pumpkin",
+    "translations": [
+        {
+            "translation": "calabaza",
+            "language": "es"
+        },
+        {
+            "translation": "pumpkin",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "quail",
+    "translations": [
+        {
+            "translation": "codorniz",
+            "language": "es"
+        },
+        {
+            "translation": "quail",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "quail egg",
+    "translations": [
+        {
+            "translation": "huevos de codorniz",
+            "language": "es"
+        },
+        {
+            "translation": "quail's egg",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "quinoa",
+    "translations": [
+        {
+            "translation": "quinoa",
+            "language": "es"
+        },
+        {
+            "translation": "quinoa",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "rabbit",
+    "translations": [
+        {
+            "translation": "conejo",
+            "language": "es"
+        },
+        {
+            "translation": "rabbit",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "radish",
+    "translations": [
+        {
+            "translation": "rábano",
+            "language": "es"
+        },
+        {
+            "translation": "radish",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "raspberry",
+    "translations": [
+        {
+            "translation": "frambuesa",
+            "language": "es"
+        },
+        {
+            "translation": "raspberry",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "red onion",
+    "translations": [
+        {
+            "translation": "cebolla roja",
+            "language": "es"
+        },
+        {
+            "translation": "red onion",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "red wine",
+    "translations": [
+        {
+            "translation": "vino tinto",
+            "language": "es"
+        },
+        {
+            "translation": "red wine",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "red wine vinegar",
+    "translations": [
+        {
+            "translation": "vinagre de vino tinto",
+            "language": "es"
+        },
+        {
+            "translation": "red wine vinegar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "rice",
+    "translations": [
+        {
+            "translation": "arroz",
+            "language": "es"
+        },
+        {
+            "translation": "rice",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "rice flour",
+    "translations": [
+        {
+            "translation": "harina de arroz",
+            "language": "es"
+        },
+        {
+            "translation": "rice flour",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "rice vinegar",
+    "translations": [
+        {
+            "translation": "vinagre de arroz",
+            "language": "es"
+        },
+        {
+            "translation": "rice vinegar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "ricotta cheese",
+    "translations": [
+        {
+            "translation": "queso ricotta",
+            "language": "es"
+        },
+        {
+            "translation": "ricotta cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "roquefort cheese",
+    "translations": [
+        {
+            "translation": "queso roquefort",
+            "language": "es"
+        },
+        {
+            "translation": "roquefort cheese",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "rosemary",
+    "translations": [
+        {
+            "translation": "romero",
+            "language": "es"
+        },
+        {
+            "translation": "rosemary",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "rum",
+    "translations": [
+        {
+            "translation": "ron",
+            "language": "es"
+        },
+        {
+            "translation": "rum",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "saffron",
+    "translations": [
+        {
+            "translation": "azafrán",
+            "language": "es"
+        },
+        {
+            "translation": "saffron",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "sage",
+    "translations": [
+        {
+            "translation": "salvia",
+            "language": "es"
+        },
+        {
+            "translation": "saffronsage",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "salmon",
+    "translations": [
+        {
+            "translation": "salmón",
+            "language": "es"
+        },
+        {
+            "translation": "salmon",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "sal",
+    "translations": [
+        {
+            "translation": "sal",
+            "language": "es"
+        },
+        {
+            "translation": "sal",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "sardine",
+    "translations": [
+        {
+            "translation": "sardina",
+            "language": "es"
+        },
+        {
+            "translation": "sardine",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "sausage",
+    "translations": [
+        {
+            "translation": "salchicha",
+            "language": "es"
+        },
+        {
+            "translation": "sausage",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "scallop",
+    "translations": [
+        {
+            "translation": "vieira",
+            "language": "es"
+        },
+        {
+            "translation": "scallop",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "seafood",
+    "translations": [
+        {
+            "translation": "marisco",
+            "language": "es"
+        },
+        {
+            "translation": "seafood",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "seaweed",
+    "translations": [
+        {
+            "translation": "algas",
+            "language": "es"
+        },
+        {
+            "translation": "seaweed",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        },
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "sesame oil",
+    "translations": [
+        {
+            "translation": "aceite de sésamo",
+            "language": "es"
+        },
+        {
+            "translation": "sesame oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "shallot",
+    "translations": [
+        {
+            "translation": "chalota",
+            "language": "es"
+        },
+        {
+            "translation": "shallot",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "sherry vinegar",
+    "translations": [
+        {
+            "translation": "vinagre de jerez",
+            "language": "es"
+        },
+        {
+            "translation": "sherry vinegar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "smoked fish",
+    "translations": [
+        {
+            "translation": "pescado ahumado",
+            "language": "es"
+        },
+        {
+            "translation": "smoked fish",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "smoked salmon",
+    "translations": [
+        {
+            "translation": "salmón ahumado",
+            "language": "es"
+        },
+        {
+            "translation": "smoked salmon",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "soy sauce",
+    "translations": [
+        {
+            "translation": "salsa de soja",
+            "language": "es"
+        },
+        {
+            "translation": "soy sauce",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "spaghetti",
+    "translations": [
+        {
+            "translation": "espaguetis",
+            "language": "es"
+        },
+        {
+            "translation": "spaghetti",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "spinach",
+    "translations": [
+        {
+            "translation": "espinacas",
+            "language": "es"
+        },
+        {
+            "translation": "spinach",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "spring onion",
+    "translations": [
+        {
+            "translation": "cebolleta",
+            "language": "es"
+        },
+        {
+            "translation": "spring onion",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "squash",
+    "translations": [
+        {
+            "translation": "calabaza",
+            "language": "es"
+        },
+        {
+            "translation": "squash",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "squid",
+    "translations": [
+        {
+            "translation": "calamares",
+            "language": "es"
+        },
+        {
+            "translation": "squid",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "star anise",
+    "translations": [
+        {
+            "translation": "anís estrellado",
+            "language": "es"
+        },
+        {
+            "translation": "star anise",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "steak",
+    "translations": [
+        {
+            "translation": "bistec",
+            "language": "es"
+        },
+        {
+            "translation": "steak",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "sugar",
+    "translations": [
+        {
+            "translation": "azúcar",
+            "language": "es"
+        },
+        {
+            "translation": "sugar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "tabasco",
+    "translations": [
+        {
+            "translation": "tabasco",
+            "language": "es"
+        },
+        {
+            "translation": "tabasco",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "tempura",
+    "translations": [
+        {
+            "translation": "tempura",
+            "language": "es"
+        },
+        {
+            "translation": "tempura",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "thyme",
+    "translations": [
+        {
+            "translation": "tomillo",
+            "language": "es"
+        },
+        {
+            "translation": "thyme",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "tofu",
+    "translations": [
+        {
+            "translation": "tofu",
+            "language": "es"
+        },
+        {
+            "translation": "tofu",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "tomato",
+    "translations": [
+        {
+            "translation": "tomate",
+            "language": "es"
+        },
+        {
+            "translation": "tomato",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "trout",
+    "translations": [
+        {
+            "translation": "trucha",
+            "language": "es"
+        },
+        {
+            "translation": "trout",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "turkey",
+    "translations": [
+        {
+            "translation": "pavo",
+            "language": "es"
+        },
+        {
+            "translation": "turkey",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "vanilla",
+    "translations": [
+        {
+            "translation": "vainilla",
+            "language": "es"
+        },
+        {
+            "translation": "vanilla",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "vegetable oil",
+    "translations": [
+        {
+            "translation": "aceite vegetal",
+            "language": "es"
+        },
+        {
+            "translation": "vegetable oil",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "vegetable stock",
+    "translations": [
+        {
+            "translation": "caldo de verduras",
+            "language": "es"
+        },
+        {
+            "translation": "vegetable stock",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "vinegar",
+    "translations": [
+        {
+            "translation": "vinagre",
+            "language": "es"
+        },
+        {
+            "translation": "vinegar",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "water",
+    "translations": [
+        {
+            "translation": "agua",
+            "language": "es"
+        },
+        {
+            "translation": "water",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+
+{
+    "code": "wasabi",
+    "translations": [
+        {
+            "translation": "wasabi",
+            "language": "es"
+        },
+        {
+            "translation": "wasabi",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "whiskey",
+    "translations": [
+        {
+            "translation": "whiskey",
+            "language": "es"
+        },
+        {
+            "translation": "whiskey",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "white pepper",
+    "translations": [
+        {
+            "translation": "pimienta blanca",
+            "language": "es"
+        },
+        {
+            "translation": "white pepper",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "white wine",
+    "translations": [
+        {
+            "translation": "vino blanco",
+            "language": "es"
+        },
+        {
+            "translation": "white wine",
+            "language": "en"
+        }
+    ],
+    "categories": []
+}
+
+{
+    "code": "worcestershire sauce",
+    "translations": [
+        {
+            "translation": "salsa worcestershire",
+            "language": "es"
+        },
+        {
+            "translation": "worcestershire sauce",
             "language": "en"
         }
     ],
@@ -33,16 +4447,54 @@
 }
 
 {
-    "code": "olive oil",
+    "code": "whipping cream",
     "translations": [
         {
-            "translation": "aceite de oliva",
+            "translation": "nata de montar",
             "language": "es"
         },
         {
-            "translation": "olive oil",
+            "translation": "whipping cream",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
+}
+
+{
+    "code": "yeast",
+    "translations": [
+        {
+            "translation": "levadura",
+            "language": "es"
+        },
+        {
+            "translation": "yeast",
             "language": "en"
         }
     ],
     "categories": []
+}
+
+{
+    "code": "yoghurt",
+    "translations": [
+        {
+            "translation": "yogur",
+            "language": "es"
+        },
+        {
+            "translation": "yoghurt",
+            "language": "en"
+        }
+    ],
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ]
 }

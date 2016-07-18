@@ -20,11 +20,15 @@ MEASUREMENT_CHOICES = (
     ('kg', 'kilogram'),
     ('ml', 'milliliter'),
     ('l', 'liter'),
+    ('pound', 'pound'),
+    ('oz', 'ounce'),
+    ('glass', 'glass'),
     ('unit', 'unit'),
     ('cup', 'cup'),
-    ('tsp', 'teaspoon'),
     ('tbsp', 'tablespoon'),
+    ('tsp', 'teaspoon'),
     ('rasher', 'rasher'),
+    ('stalk', 'stalk'),
 )
 
 MENU = (
@@ -53,6 +57,7 @@ CATEGORIES = (
     ('VEGETARIAN', 'Vegetarian'),
     ('VEGAN', 'Vegan'),
     ('MEDITERRANEAN', 'Mediterranean'),
+    ('UNCATEGORIZED', 'Uncategorized'),
 )
 
 

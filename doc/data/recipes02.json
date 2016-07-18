@@ -1,0 +1,1617 @@
+{
+    "title": "Guacahummus",
+    "language": "es",
+    "type_of_dish": "APPETIZER",
+    "difficulty": "LOW",
+    "cooking_time": 20,
+    "image": "https://c8.staticflickr.com/9/8716/16933742783_1b93c1c367_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/02/guacahummus/",
+    "categories": [
+        {
+            "name": "VEGETARIAN"
+        },
+        {
+            "name": "VEGAN"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 1,
+            "name": "aguacate",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 100,
+            "name": "garbanzos",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 2,
+            "name": "zumo de lima",
+            "measurement_unit": "tsp"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 0,
+            "name": "perejil",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 0,
+            "name": "pimentón molido",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+    {
+            "sort_number": 1,
+            "description": "Poner los garbanzos a remojo durante al menos 12 horas.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Escurrir los garbanzos y cocerlos en abundante agua con sal. Usando una olla a presión, se tarda alrededor de 20 minutos; con una olla normal, serán unas 2 horas (puede que menos).",
+            "image": "",
+            "video": "",
+            "time": 1200
+        },
+        {
+            "sort_number": 3,
+            "description": "Introducir en una picadora, o en un recipiente en el cual se pueda usar una batidora, los garbanzos. Se pueden reservar unos pocos para decorar después.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Limpiar y trocear el aguacate. Para limpiarlo, simplemente hay que cortar el aguacate por la mitad longitudinalmente, sacar el hueso (con un golpe seco con el cuchillo y tirando de él) e introducir una cuchara entre la piel y la carne. Si está en su punto, es muy fácil sacar la carne con este método.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "Meter el aguacate y el zumo de lima con los garbanzos, un poco de sal y pimienta, y triturar.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Picar el perejil al gusto y añadirlo a la mezcla, junto con la cucharada de harissa y mover con una cuchara o una espátula.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Decorar con un poco de pimentón molido (picante a poder ser) y/o unos garbanzos enteros. Mantener en frío hasta el momento de servir.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+{
+    "title": "Salpicón de pochas con pulpo",
+    "language": "es",
+    "type_of_dish": "FIRST-COURSE",
+    "difficulty": "MEDIUM",
+    "cooking_time": 90,
+    "image": "https://c4.staticflickr.com/9/8826/16933742963_49395b3326_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/02/salpicon-de-alubias-con-pulpo/",
+    "categories": [
+        {
+            "name": "SHELLFISH_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 1,
+            "name": "pulpo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 1,
+            "name": "cebolleta",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 1,
+            "name": "pimiento verde",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 1,
+            "name": "pimiento rojo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 0,
+            "name": "vinagre de jerez",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 0,
+            "name": "aceite de oliva virgen extra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0,
+            "name": "pimentón dulce",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 0,
+            "name": "cebollino",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Limpiar bien el pulpo. Cortar para separar la cabeza de los tentáculos y quitar la boca cortado alrededor.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Dejar las alubias en remojo durante unas 12 horas.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Cocer las alubias en una olla con agua (limpia, no la misma en que han estado en remojo) y un poco de sal.  En olla rápida pueden ser en torno a 30 o 40 minutos; unas 2 horas en olla normal.",
+            "image": "",
+            "video": "",
+            "time": 1800
+        },
+        {
+            "sort_number": 4,
+            "description": "Lavar con abundante agua el pulpo. Hay que repasar bien todos los brazos y tentáculos y luego darle la vuelta para limpiar la cabeza.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "Poner una olla con abundante agua (que el pulpo quede bien cubierto de agua) y sal a fuego fuerte.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Cuando el agua esté hirviendo, agarrar el pulpo por la cabeza (con un tenedor, unas pinzas o simplemente con las manos, con mucho cuidado) e introducirlo en el agua 3 segundos y sacarlo otros 3. Este proceso hay que repetirlo unas 3 o 4 veces.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Dejar que el pulpo se cueza durante al menos 30 minutos. Ir pinchando con el tenedor para comprobar el punto de cocción.",
+            "image": "",
+            "video": "",
+            "time": 1800
+        },
+        {
+            "sort_number": 8,
+            "description": "Limpiar bien el pulpo. Cortar para separar la cabeza de los tentáculos y quitar la boca cortado alrededor.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Dejar las alubias en remojo durante unas 12 horas.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 10,
+            "description": "Picar en cuadraditos muy finos la cebolleta y los pimientos. Reservar en un bol.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 11,
+            "description": "Trocear parte del pulpo, ya en rodajas, un poco más pequeño. Reservar algunas rodajas enteras.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 12,
+            "description": "Preparar una vinagreta con el aceite, el vinagre, la sal y la pimienta.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 13,
+            "description": "Incorporar las alubias, el pulpo y casi toda la vinagreta al bol de las verduras. Remover todo muy bien.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 14,
+            "description": "Añadir cebollino recién picado (para que no se oxide).",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 15,
+            "description": "Servir el salpicón decorando con las rodajas de pulpo y rociando con un poco más de vinagreta y una pizca de pimentón dulce.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }        
+    ]
+}
+
+{
+    "title": "Solomillo Wellington",
+    "language": "es",
+    "type_of_dish": "MAIN-DISH",
+    "difficulty": "HIGH",
+    "cooking_time": 60,
+    "image": "https://c1.staticflickr.com/6/5452/17366300808_1ba858cb4d_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 6,
+    "source": "http://noeliarcado.es/2015/02/solomillo-wellington/",
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 1,
+            "name": "solomillo de cerdo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 8,
+            "name": "jamón serrano",
+            "measurement_unit": "rasher"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 400,
+            "name": "champiñones",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 2,
+            "name": "diente de ajo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 10,
+            "name": "castañas",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 1,
+            "name": "huevo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 1,
+            "name": "masa de hojaldre",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 0,
+            "name": "sal en escamas",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Poner una sartén a fuego bien fuerte.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Preparar el solomillo limpiando la grasa que pueda tener. Salpimentarlo por ambas caras.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Echar unas gotas de aceite de oliva a la sartén y dorar bien el solomillo por todos lados. Solo debe tostarse, no hacerse, así que con un par de minutos sobra.",
+            "image": "",
+            "video": "",
+            "time": 120
+        },
+        {
+            "sort_number": 4,
+            "description": "Sacar el solomillo y sobre una tabla o bandeja repartir la mostaza con una brocha. No esperéis a que se enfríe demasiado para hacer este paso. Reservar y dejar atemperar.",
+            "image": "https://c3.staticflickr.com/8/7762/17896143458_9653d00635_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "En una picadora, o un recipiente apto para usar una batidora, añadir los champiñones limpios (intentaré hacer cuanto antes un video acerca de cómo se hace), los dientes de ajo, las castañas limpias, sal y pimienta. Triturar todo hasta que quede una mezcla homogénea.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Cocinar esa mezcla en una sartén (sin aceite) para que los champiñones vayan soltando el agua. En este momento añadir una rama de tomillo. Apartar y reservar.",
+            "image": "https://c4.staticflickr.com/8/7789/18085004371_2e837c1010_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Preparar en una tabla una lámina de papel transparente extendida. Colocar encima las tiras de jamón serrano hasta cubrir una superficie un poco más grande que el largo del solomillo.",
+            "image": "https://c5.staticflickr.com/9/8767/18080673572_8c522ef378_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "Encima del jamón, extender la mezcla de champiñones (dejando un poco de espacio antes de llegar al borde).",
+            "image": "https://c7.staticflickr.com/6/5460/17896140118_bb13319b07_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Colocar el solomillo encima y enrollarlo utilizando el papel transparente como ayuda. Cerrar los bordes y sellar con el papel. Reservar en el frigorífico unos 15 minutos.",
+            "image": "https://c5.staticflickr.com/9/8778/18080671252_c1e375dc47_b.jpg",
+            "video": "",
+            "time": 900
+        },
+        {
+            "sort_number": 10,
+            "description": "Preparar de nuevo en la tabla otra lámina de papel transparente. Colocar encima la lámina de hojaldre bien extendida. Posicionar en el centro el solomillo que estaba en el frigorífico. Enrollar siguiendo el mismo método, con cuidado de cortar las partes que sobren de hojaldre (que se pueden usar para decorar por encima). Reservar otros 5 minutos en el frigorífico o bien la noche entera.",
+            "image": "https://c4.staticflickr.com/8/7758/17463518043_af657b03f1_b.jpg",
+            "video": "",
+            "time": 300
+        },
+        {
+            "sort_number": 11,
+            "description": "Precalentar el horno a 200 grados.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 12,
+            "description": "Pintar el hojaldre con yema de huevo rebajada con una gota de agua. Decorar con el cuchillo y/o con las tiras sobrantes de hojaldre y echar un poco de sal en escamas por encima. Esto último es opcional.",
+            "image": "https://c5.staticflickr.com/8/7758/17896134388_c84fb011a3_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 13,
+            "description": "Hornear a 200 grados durante unos 30 o 35 minutos.",
+            "image": "",
+            "video": "",
+            "time": 1800
+        },
+        {
+            "sort_number": 14,
+            "description": "Dejar reposar 10 minutos antes de trocear y servir.",
+            "image": "https://c7.staticflickr.com/9/8757/17461464214_d94af4ea9b_b.jpg",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+
+{
+    "title": "Mousse de chocolate a la naranja",
+    "language": "es",
+    "type_of_dish": "DESSERT",
+    "difficulty": "MEDIUM",
+    "cooking_time": 30,
+    "image": "https://c2.staticflickr.com/9/8801/17560937521_f146dd36de_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 8,
+    "source": "http://noeliarcado.es/2015/02/mousse-de-chocolate-a-la-naranja/",
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 180,
+            "name": "chocolate para postres",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 50,
+            "name": "leche",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 75,
+            "name": "nata de cocinar",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 75,
+            "name": "aceite de oliva virgen extra",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 2,
+            "name": "yema de huevo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 75,
+            "name": "azúcar glas",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 5,
+            "name": "clara de huevo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 1,
+            "name": "naranja",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 20,
+            "name": "brandy",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Derretir el chocolate troceado con la mantequilla al baño maría o en el microondas. Para derretirlo en el microondas, hay que meter el recipiente primero unos 30 segundos. Sacarlo para remover y comprobar cómo está. Si no está derretido del todo se vuelve a meter en turnos de 10 segundos, para que no llegue a quemarse y amargar el plato.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Añadir a una cazuela la leche y la nata y ponerlas a calentar. Cuando estén bien calientes (no hace falta que lleguen a hervir), añadir el chocolate y mezclar bien para que se integre todo, ya fuera del fuego.",
+            "image": "https://c8.staticflickr.com/6/5461/18085642711_09c32d266c_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Por otro lado, hay que mezclar bien las yemas con el azúcar glas, hasta que las yemas blanqueen. Se puede hacer con unas varillas o con una mezcladora. Entonces añadir la mezcla del chocolate medio atemperada (suficiente con el tiempo que se tarda en batir las yemas) y la ralladura de la mitad de la naranja. Remover muy bien y reservar.",
+            "image": "https://c3.staticflickr.com/6/5338/17462110514_d7fe56cefe_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Echar las claras en otro recipiente y añadir una pizca de sal. Montarlas a punto de nieve.",
+            "image": "https://c3.staticflickr.com/6/5452/17896776498_0babaa6604_b.jpg",
+            "video": "",
+            "time": 0
+        },        
+        {
+            "sort_number": 5,
+            "description": "Mientras se montan las claras, se habrá enfriado la mezcla de chocolate. Hay que incorporar las claras muy poco a poco (una cucharada grande cada vez) e irlas integrando con una espátula, usando movimientos envolventes para no bajarlas.",
+            "image": "https://c1.staticflickr.com/9/8780/17896776128_cd776c5236_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Meter en el frigorífico y dejar enfriar unas 3 o 4 horas (o de un día para otro)."
+            "image": "https://c1.staticflickr.com/9/8859/17462104144_b965e216ac_b.jpg",
+            "video": "",
+            "time": 10800
+        }
+    ]
+}
+
+
+{
+    "title": "Milhojas de patata, tomate y cebolla caramelizada",
+    "language": "es",
+    "type_of_dish": "APPETIZER",
+    "difficulty": "LOW",
+    "cooking_time": 90,
+    "image": "https://c4.staticflickr.com/8/7759/17561737595_f69eaa1449_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/02/milhojas-de-patata-tomate-y-cebolla-caramelizada/",
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 4,
+            "name": "patata",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 4,
+            "name": "tomate",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 2,
+            "name": "cebolla",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 0,
+            "name": "aceite de oliva virgen extra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 300,
+            "name": "vinagre de módena",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 50,
+            "name": "azúcar moreno",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0,
+            "name": "perejil",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 250,
+            "name": "bonito",
+            "measurement_unit": "g"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Añadir a un cazo el vinagre y el azúcar moreno y cocinar a fuego lento hasta obtener una textura de crema densa (una media hora).",
+            "image": "",
+            "video": "",
+            "time": 1800
+        },
+        {
+            "sort_number": 2,
+            "description": "Picar el perejil muy fino y echarlo en el aceite de oliva para que macere. Reservar.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Cocer las patatas con piel en una olla con abundante agua con sal. Cuando estén listas, hay que dejarlas enfriar y reservar.",
+            "image": "",
+            "video": "",
+            "time": 1200
+        },
+        {
+            "sort_number": 4,
+            "description": "Picar las cebollas en juliana muy fina y echarlas a una sartén con una gota de aceite de oliva. Cocinar a fuego muy bajo para que se vayan pochando.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },        
+        {
+            "sort_number": 5,
+            "description": "Cuando estén bien pochadas, añadir la reducción de vinagre de módena y dejar que se siga reduciendo un poco más. Reservar.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Escaldar y pelar los tomates",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Cortar en rodajas del mismo tamaño los tomates y las patatas.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "Montar en cada plato una rodaja de patata, luego el tomate y por último la cebolla caramelizada. Hacer tantas capas como sean necesarias (con 2 es suficiente).",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Colocar encima del todo un trozo de bonito, aliñar con el aceite de perejil y decorar con la reducción de vinagre de módena restante.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+
+{
+    "title": "Pollo al ajillo",
+    "language": "es",
+    "type_of_dish": "MAIN-DISH",
+    "difficulty": "LOW",
+    "cooking_time": 50,
+    "image": "https://c6.staticflickr.com/8/7740/17561628341_38d6a4e102_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/02/pollo-al-ajillo/",
+    "categories": [],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 4,
+            "name": "muslo de pollo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 4,
+            "name": "contramuslo de pollo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 8,
+            "name": "diente de ajo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 2,
+            "name": "guindilla",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 4,
+            "name": "aceite de oliva virgen extra",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 200,
+            "name": "vino blanco",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Cortar por la mitad las piezas de pollo y salpimentarlas.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Echar el aceite de oliva en una olla (mejor si es profunda para que no salte mucho y manche todo). Añadir las piezas de pollo y tostarlo bien por todos lados.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Sacar el pollo de la olla y reservar.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Al mismo aceite añadir las guindillas y los ajos, algunos pelados y troceados y otros en entero. Dejarlos hacer un poco.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },        
+        {
+            "sort_number": 5,
+            "description": "Sacar las guindillas (que ya habrán dado sabor) y añadir de nuevo el pollo. Verter el vino blanco y dejar hacer hasta que reduzca y quede la salsa espesita.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+{
+    "title": "Ensalada de cuscús de ahumados y queso feta",
+    "language": "es",
+    "type_of_dish": "FIRST-COURSE",
+    "difficulty": "LOW",
+    "cooking_time": 20,
+    "image": "https://c5.staticflickr.com/6/5464/17373935628_65a4b355f5_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/03/ensalada-de-cuscus-de-ahumados-y-queso-feta/",
+    "categories": [
+        {
+            "name": "LACTOSE_ALLERGY"
+        },
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 2,
+            "name": "cuscús",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 2,
+            "name": "caldo de pollo",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 1,
+            "name": "cebolleta",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 1,
+            "name": "pimiento verde",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 50,
+            "name": "jamón de york",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 100,
+            "name": "salmón ahumado",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 100,
+            "name": "queso feta",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "perejil",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0,
+            "name": "aceite de oliva virgen extra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 0,
+            "name": "vinagre de jerez",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Añadir el cuscús a un recipiente amplio.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Poner a cocer el caldo de pollo a fuego fuerte.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Cuando el caldo este bien caliente, verterlo sobre el cuscús y sellar bien el recipiente utilizando papel transparente. Esperar 5 minutos.",
+            "image": "",
+            "video": "",
+            "time": 300
+        },
+        {
+            "sort_number": 4,
+            "description": "Al retirar el papel se habrá hinchado el cuscús. Solo hay que remover bien con un tenedor hasta que todos los granos estén sueltos.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "Picar en taquitos de medio a un centímetro más o menos la cebolleta, el pimiento verde y el jamón de york.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Trocear en tiras largas los ahumados.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Añadir la cebolleta, el pimiento, el jamón de york y los ahumados.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "Aliñar bien con aceite y vinagre. Si el caldo no tenía sal, echarle un poco también. Remover.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Echar por encima el queso feta, deshaciéndolo con las manos.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 10,
+            "description": "Por último, decorar con el perejil y/o con alguna tira de ahumado. Mantener en la nevera hasta 10 minutos antes de servir.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+{
+    "title": "Vitello tonnato",
+    "language": "es",
+    "type_of_dish": "APPETIZER",
+    "difficulty": "MEDIUM",
+    "cooking_time": 140,
+    "image": "https://c8.staticflickr.com/8/7689/17375379799_3abf5908fd_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 6,
+    "source": "http://noeliarcado.es/2015/03/vitello-tonnato/",
+    "categories": [
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 1,
+            "name": "redondo de ternera",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 2,
+            "name": "caldo de pollo",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 1,
+            "name": "puerro",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 1,
+            "name": "apio",
+            "measurement_unit": "stalk"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 1,
+            "name": "zanahoria",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 2,
+            "name": "agua",
+            "measurement_unit": "l"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 150,
+            "name": "vino blanco",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 1,
+            "name": "huevo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 250,
+            "name": "aceite de oliva",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 120,
+            "name": "atún en conserva",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 11,
+            "quantity": 0,
+            "name": "vinagre de jerez",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 12,
+            "quantity": 4,
+            "name": "anchoas",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 13,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 14,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 15,
+            "quantity": 0,
+            "name": "alcaparras",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Echar abundante agua en una olla. Añadir las verduras enteras, la sal y el vino blanco. Introducir la carne y dejar cocer durante una hora y media o hasta que esté tierna.",
+            "image": "https://c4.staticflickr.com/6/5453/18086025611_a7ee1e4f36_b.jpg",
+            "video": "",
+            "time": 5400
+        },
+        {
+            "sort_number": 2,
+            "description": "Sacar la pieza de la olla y dejarla enfriar en la tabla.",
+            "image": "https://c6.staticflickr.com/9/8785/17898849549_da74b05084_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Envolver la pieza en papel de aluminio y meterla en el frigorífico hasta que esté bien fría.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Echar en un vaso de batidora el huevo y el aceite. Introducir la batidora hasta el fondo del vaso y empezar a batir. Conforme se vaya cambiando la textura de la parte de abajo, ir levantando poco a poco la batidora.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "Cuando esté la mayonesa hecha, añadir el resto de los ingredientes y triturar todo bien. Debe quedar una salsa muy fina. Reservar en el frigorífico.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Cortar con un cuchillo muy afilado o con una máquina cortadora en lonchas muy finitas (procurando que sean todas del mismo grosor). Ir colocando las lonchas en el plato donde se vaya a servir.",
+            "image": "https://c6.staticflickr.com/6/5333/17898848189_19753dc1db_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Verter la salsa sobre la carne y dejar en la nevera durante al menos una hora. Servir en frío con unas alcaparras por encima.",
+            "image": "https://c1.staticflickr.com/6/5329/18081691672_fa06d48159_b.jpg",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+
+{
+    "title": "Albóndigas en salsa de tomate y vino tinto",
+    "language": "es",
+    "type_of_dish": "MAIN-DISH",
+    "difficulty": "MEDIUM",
+    "cooking_time": 60,
+    "image": "https://c4.staticflickr.com/6/5332/17375396619_f17ddbe2d6_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/03/albondigas-en-salsa-de-tomate-y-vino-tinto/",
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 300,
+            "name": "ternera picada",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 2,
+            "name": "diente de ajo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 0,
+            "name": "perejil",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 0,
+            "name": "aceite de oliva virgen extra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 1,
+            "name": "cebolla",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 800,
+            "name": "tomate",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 100,
+            "name": "vino tinto",
+            "measurement_unit": "ml"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "albahaca",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 300,
+            "name": "espaguetis",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 11,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Picar muy finamente los dientes de ajo, la cebolla y el perejil.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Escaldar los tomates y quitarles la piel. Trocearlos en cubos grandes.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Mezclar la ternera picada con el ajo, la sal, la pimienta y el perejil.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Darle forma de bolas de unos 2 centímetros y dorarlas por fuera en una sartén con unas gotas de aceite muy caliente. Reservar.",
+            "image": "https://c6.staticflickr.com/6/5326/17464916413_6cc1808096_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "En la misma sartén, sofreír la cebolla hasta que esté transparente.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Añadir los tomates triturados, la sal, la pimienta y la albahaca, y dejar cocinar un par de minutos.",
+            "image": "https://c3.staticflickr.com/6/5343/17897536458_c340c5f179_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Añadir el vino tinto y dejar que se evapore el alcohol.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "Echar la salsa un recipiente, o en una batidora, y triturar la salsa bien. Introducirla de nuevo en la sartén y añadir las albóndigas reservadas. Tapar y dejar cocinar durante una media hora (hasta que la salsa haya reducido y las albóndigas estén hechas).",
+            "image": "https://c3.staticflickr.com/6/5325/18058965466_1792a84fd3_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Mientras se cocina la salsa, cocer los espaguetis el tiempo indicado.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 10,
+            "description": "Apartar las albóndigas y mantecar (introducir la pasta en la salsa y cocinar con agua de cocción) los espaguetis en la salsa de tomate con una cucharada del agua de cocción.",
+            "image": "https://c8.staticflickr.com/6/5332/18086401631_c164617124_b.jpg",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
+
+
+
+{
+    "title": "Galletas con pepitas de chocolate",
+    "language": "es",
+    "type_of_dish": "DESSERT",
+    "difficulty": "LOW",
+    "cooking_time": 25,
+    "image": "https://c2.staticflickr.com/6/5338/17561623121_c431dd7a01_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 10,
+    "source": "http://noeliarcado.es/2015/03/galletas-con-pepitas-de-chocolate/",
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 220,
+            "name": "harina de trigo",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 100,
+            "name": "mantequilla",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 90,
+            "name": "azúcar moreno",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 45,
+            "name": "azúcar blanco",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 1,
+            "name": "levadura en polvo",
+            "measurement_unit": "tsp"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 1,
+            "name": "extracto de vainilla",
+            "measurement_unit": "tsp"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 1,
+            "name": "huevo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 100,
+            "name": "pepitas de chocolate",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Tamizar la harina y la levadura en polvo y echarlas en un recipiente.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Añadir el azúcar moreno, el azúcar blanco, la mantequilla pomada (precalentada unos segundos en el microondas hasta que tenga textura de pomada), el huevo y el azúcar avainillado. Mezclar bien con las manos hasta que la masa sea homogénea. Es importante hacerlo con las manos, porque el calor servirá para modelar mejor la mantequilla con el resto de ingredientes. Si no se tarda más.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Añadir las pepitas de chocolate y mezclar de nuevo hasta que queden bien repartidas.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Colocar papel transparente en la superficie de trabajo y colocar encima la masa. Ir modelándola hasta obtener la forma de un cilindro alargado de unos 2 o 3 centímetros de diámetro (no más grandes que luego se expanden). Enrollar bien en el papel transparente y meter en el frigorífico durante 30 minutos.",
+            "image": "https://c7.staticflickr.com/9/8764/18110950142_85b40295a8_b.jpg",
+            "video": "",
+            "time": 1800
+        },
+        {
+            "sort_number": 5,
+            "description": "Precalentar el horno a 200 grados centígrados.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Sacar el rollo con la masa del frigorífico. Cortar en rodajas la masa e ir colocándolas en la bandeja de horno (con un papel de horno para no manchar) con una separación entre ellas de unos 3 centímetros o más.",
+            "image": "https://c5.staticflickr.com/8/7750/17491809404_bd262ee542_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Cocinar en el horno durante unos 12 minutos.",
+            "image": "https://c1.staticflickr.com/9/8795/17491808704_0a10185dab_b.jpg",
+            "video": "",
+            "time": 720
+        }
+    ]
+}
+
+
+{
+    "title": "Hojaldre de puerro, queso y salmón",
+    "language": "es",
+    "type_of_dish": "FIRST-COURSE",
+    "difficulty": "MEDIUM",
+    "cooking_time": 40,
+    "image": "https://c4.staticflickr.com/6/5337/17561739515_f5850f732a_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 6,
+    "source": "http://noeliarcado.es/2015/03/hojaldre-de-puerro-queso-y-salmon/",
+    "categories": [
+        {
+            "name": "GLUTEN_ALLERGY"
+        },
+        {
+            "name": "FISH_ALLERGY"
+        }
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 1,
+            "name": "masa de hojaldre",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 2,
+            "name": "puerro",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 2,
+            "name": "aceite de oliva",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 100,
+            "name": "queso crema",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 100,
+            "name": "salmón ahumado",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 1,
+            "name": "huevo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0,
+            "name": "harina de trigo",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Limpiar los puerros y cortar las partes sobrantes. Dividir en dos a lo largo y trocear en trozos de medio centímetro aproximadamente. Deben quedar con forma semicircular.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Poner el aceite de oliva en una sartén a fuego medio. Saltear los puerros hasta que queden transparentes.",
+            "image": "https://c3.staticflickr.com/9/8786/17927019370_d6ae45a927_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Añadir la sal, la pimienta y el queso para untar. Mezclar bien y reservar en el frigorífico.",
+            "image": "https://c6.staticflickr.com/8/7787/17494160773_0e15588f89_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Precalentar el horno a 200 grados centígrados.",
+            "image": "",
+            "video": "",
+            "time": 1800
+        },
+        {
+            "sort_number": 5,
+            "description": "Colocar el hojaldre sobre un papel de horno encima de la superficie de trabajo. Distribuir la mezcla de puerros y queso, en el centro a lo largo, dándole forma.",
+            "image": "https://c2.staticflickr.com/8/7664/18114721985_d9a3974378_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 6,
+            "description": "Colocar encima de la mezcla las lonchas de salmón ahumado y espolvorear el eneldo.",
+            "image": "https://c3.staticflickr.com/8/7757/17927019010_4b56a514d4_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Hacer unos cortes en diagonal en los laterales más largos de la masa y cerrar intercalando una tira de cada lado hasta terminar (ver las imágenes de abajo).",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "Pintar con el huevo batido y espolvorear eneldo de nuevo.",
+            "image": "https://c8.staticflickr.com/9/8829/17928505519_7b3a2b3a04_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Hornear durante unos 15 o 20 minutos o hasta que esté bien dorado.",
+            "image": "",
+            "video": "",
+            "time": 900
+        }
+    ]
+}
