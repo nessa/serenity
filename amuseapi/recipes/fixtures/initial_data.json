@@ -2,18 +2,19 @@
     {
 	"model": "recipes.user",
 	"fields": {
-            "last_login": null,
-            "password": "pbkdf2_sha256$20000$NOWIFhlStBp9$IuU5QIYfpmbRy6p+ZXVJH+o2Yqdch3l31zaGIayz5P8=",
-            "email": "noeliarcado@gmail.com",
-            "username": "noeliarcado",
-            "is_active": true,
+            "password": "pbkdf2_sha256$20000$icsC59R8I8Ll$pkCOCPRyHcGwxnesSzM78IT64lU/T16Mcwxp9/jx8ug=",
+            "username": "admin",
             "last_name": "Noeliarcado",
-            "first_name": "El",
+            "email": "noeliarcado@gmail.com",
+            "is_staff": true,
+            "first_name": "Admin",
+            "last_login": "2016-07-19T16:54:25.907Z",
             "user_permissions": [],
-            "is_staff": false,
-            "date_joined": "2016-07-20T12:08:50.998Z",
+            "date_joined": "2016-07-19T16:54:00.325Z",
+            "is_active": true,
             "groups": [1, 2],
             "is_superuser": true
+            "last_login": null
 	},
 	"pk": 1
     },
