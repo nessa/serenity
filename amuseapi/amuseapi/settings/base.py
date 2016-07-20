@@ -10,8 +10,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # True X_FORWARDED_HOTS for proxy redirection
 USE_X_FORWARDED_HOST = True
 
-ALLOWED_HOSTS = []
-
 AUTH_USER_MODEL = 'recipes.User'
 
 # Application definition
