@@ -21,8 +21,8 @@ from rest_framework.permissions import SAFE_METHODS
 from rest_framework.permissions import AllowAny
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from recipes.permissions import IsModerator
-from recipes.permissions import IsOwnerOrModerator
+from recipes.permissions import IsEditor
+from recipes.permissions import IsOwnerOrEditor
 
 # Import filters
 import rest_framework_filters as filters
@@ -52,7 +52,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
 
     # PERMISSIONS:
-    # This endpoint will be completely open only for Moderators.
+    # This endpoint will be completely open only for Editors.
     # The other users only could see or edit its own user data.
     # The authenticated or unauthenticated users could create new users.
 
@@ -62,7 +62,7 @@ class UserViewSet(viewsets.ModelViewSet):
     pagination_class = LargeResultsSetPagination
 
     def get_permissions(self):
-        self.permission_classes = (IsModerator,)
+        self.permission_classes = (IsEditor,)
         return super(UserViewSet, self).get_permissions()
 
 
@@ -72,11 +72,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
 
     # PERMISSIONS:
-    # This endpoint will be open only for Moderators.
+    # This endpoint will be open only for Editors.
 
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-    permission_classes = (IsModerator,)
+    permission_classes = (IsEditor,)
 
     
 
@@ -131,8 +131,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
     """
 
     # PERMISSIONS:
-    # This endpoint will be completely open only for Moderators.
-    # Only authenticated users and Moderators could create a new recipe.
+    # This endpoint will be completely open only for Editors.
+    # Only authenticated users and Editors could create a new recipe.
     # The authenticated or unauthenticated users could see all the recipes.
 
     queryset = Recipe.objects.all()
@@ -152,7 +152,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
         elif self.action == 'create':
             self.permission_classes = (IsAuthenticated,)
         else:
-            self.permission_classes = (IsOwnerOrModerator,)
+            self.permission_classes = (IsOwnerOrEditor,)
             
         return super(RecipeViewSet, self).get_permissions()
 
@@ -285,7 +285,7 @@ class IngredientViewSet(viewsets.ModelViewSet):
     """
 
     # PERMISSIONS:
-    # This endpoint will be completely open only for Moderators.
+    # This endpoint will be completely open only for Editors.
 
     queryset = Ingredient.objects.all()
     serializer_class = IngredientSerializer
@@ -297,7 +297,7 @@ class IngredientViewSet(viewsets.ModelViewSet):
 
 
     def get_permissions(self):
-        self.permission_classes = (IsModerator,)
+        self.permission_classes = (IsEditor,)
         return super(IngredientViewSet, self).get_permissions()
 
 
@@ -313,7 +313,7 @@ class TranslationViewSet(viewsets.ModelViewSet):
     """
 
     # PERMISSIONS:
-    # This endpoint will be completely open only for Moderators.
+    # This endpoint will be completely open only for Editors.
     # The authenticated or unauthenticated users could see all the translations.
 
     queryset = TranslatedIngredient.objects.all()
@@ -330,7 +330,7 @@ class TranslationViewSet(viewsets.ModelViewSet):
         if self.action == 'list' or self.action == 'retrieve':
             self.permission_classes = (AllowAny,)
         else:
-            self.permission_classes = (IsModerator,)
+            self.permission_classes = (IsEditor,)
             
         return super(TranslationViewSet, self).get_permissions()
 

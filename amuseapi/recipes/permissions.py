@@ -2,15 +2,15 @@
 from rest_framework import permissions
 
     
-class IsOwnerOrModerator(permissions.BasePermission):
+class IsOwnerOrEditor(permissions.BasePermission):
     """
     Custom permission to only allow owners of an object to edit it.
     """
     def has_object_permission(self, request, view, obj):
         
-        # All permissions are allowed to moderators
+        # All permissions are allowed to editors
         user_groups = request.user.groups.values_list('name', flat=True)
-        if 'Moderador' in user_groups:
+        if 'Editor' in user_groups:
             return True
 
         # Otherwise permissions are only allowed to the owner of the object
@@ -22,23 +22,23 @@ class IsOwnerOrModerator(permissions.BasePermission):
 
 
 
-class IsModerator(permissions.BasePermission):
+class IsEditor(permissions.BasePermission):
     """
     Custom permission to only allow owners of an object to edit it.
     """
     def has_permission(self, request, view):
-        # All permissions are allowed to moderators
+        # All permissions are allowed to editors
         user_groups = request.user.groups.values_list('name', flat=True)
-        if 'Moderador' in user_groups:
+        if 'Editor' in user_groups:
             return True
 
         return False
 
 
     def has_object_permission(self, request, view, obj):
-        # All permissions are allowed to moderators
+        # All permissions are allowed to editors
         user_groups = request.user.groups.values_list('name', flat=True)
-        if 'Moderador' in user_groups:
+        if 'Editor' in user_groups:
             return True
 
         return False

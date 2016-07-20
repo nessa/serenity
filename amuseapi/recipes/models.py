@@ -66,11 +66,11 @@ class User(AbstractUser):
     name = models.CharField(max_length=100, default="")
     surname = models.CharField(max_length=100, default="")
     birthday = models.DateField(blank=True, null=True)
+
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email', 'name', 'surname', 'birthday']
     
-    REQUIRED_FIELDS = ['email', 'name', 'surname', 'url', 'birthday']
-    
-# This code is triggered whenever a new user has been created and saved
-# to the database
+# This code is triggered whenever a new user has been created and saved# to the database
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
     if created:
@@ -78,7 +78,7 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
         Token.objects.create(user=instance)
 
         # Set basic group by default
-        group = Group.objects.get(name='Usuario')
+        group = Group.objects.get(name='User')
         instance.groups.add(group)
 
 
