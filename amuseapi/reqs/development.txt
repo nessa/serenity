@@ -4,4 +4,3 @@ djangorestframework==3.4.0
 django-filter==0.13.0
 djangorestframework-filters==0.8.0
 djoser==0.3.2
-pyyaml==3.11
