@@ -13,7 +13,7 @@
             "date_joined": "2016-07-19T16:54:00.325Z",
             "is_active": true,
             "groups": [1, 2],
-            "is_superuser": true
+            "is_superuser": true,
             "last_login": null
 	},
 	"pk": 1
