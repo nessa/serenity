@@ -5,6 +5,8 @@ from configparser import RawConfigParser
 config = RawConfigParser()
 config.read('/etc/serenity-settings.ini')
 
+DEBUG = False
+
 # Host setting
 HOST = os.environ.get('HOST', 'http://localhost')
 
