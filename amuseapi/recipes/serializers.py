@@ -16,7 +16,7 @@ from django.contrib.auth.models import Group
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'name', 'surname', 'groups',
+        fields = ('username', 'email', 'first_name', 'last_name', 'groups',
                   'url', 'password',)
         extra_kwargs = {
             'password': {'write_only': True}
