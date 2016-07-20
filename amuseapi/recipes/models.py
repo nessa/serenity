@@ -63,12 +63,10 @@ CATEGORIES = (
 
 # User
 class User(AbstractUser):
-    name = models.CharField(max_length=100, default="")
-    surname = models.CharField(max_length=100, default="")
     birthday = models.DateField(blank=True, null=True)
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email', 'name', 'surname', 'birthday']
+    REQUIRED_FIELDS = ['email', 'first_name', 'last_name', 'birthday']
     
 # This code is triggered whenever a new user has been created and saved# to the database
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
