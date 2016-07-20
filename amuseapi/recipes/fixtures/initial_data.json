@@ -3,6 +3,24 @@
 	"model": "recipes.user",
 	"fields": {
             "last_login": null,
+            "password": "pbkdf2_sha256$20000$NOWIFhlStBp9$IuU5QIYfpmbRy6p+ZXVJH+o2Yqdch3l31zaGIayz5P8=",
+            "email": "noeliarcado@gmail.com",
+            "username": "noeliarcado",
+            "is_active": true,
+            "last_name": "Noeliarcado",
+            "first_name": "El",
+            "user_permissions": [],
+            "is_staff": false,
+            "date_joined": "2016-07-20T12:08:50.998Z",
+            "groups": [1, 2],
+            "is_superuser": true
+	},
+	"pk": 1
+    },
+    {
+	"model": "recipes.user",
+	"fields": {
+            "last_login": null,
             "password": "pbkdf2_sha256$20000$Rg0PNdXtCAp4$aPdBYX5TRYwY9riqJ6z87ozNKVQZOSs1t7SfCvJYgms=",
             "email": "noelia.salesmontes@gmail.com",
             "username": "noelia",
@@ -13,9 +31,8 @@
             "is_staff": false,
             "date_joined": "2016-07-20T12:08:55.998Z",
             "groups": [1, 2],
-            "is_superuser": false,
-            "birthday": null
+            "is_superuser": false
 	},
-	"pk": 1
+	"pk": 2
     }
 ]
