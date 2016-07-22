@@ -4,10 +4,15 @@ from __future__ import unicode_literals
 from django.core.management import call_command
 from django.db import models, migrations
 
-fixture = 'groups_initial_data'
 
-def load_fixture(apps, schema_editor):
-    call_command('loaddata', fixture, app_label='recipes')
+def load_groups_fixture(apps, schema_editor):
+    call_command('loaddata', 'groups_initial_data', app_label='recipes')
+
+def load_users_fixture(apps, schema_editor):
+    call_command('loaddata', 'users_initial_data', app_label='recipes')
+
+def load_ingredients_fixture(apps, schema_editor):
+    call_command('loaddata', 'ingredients_initial_data', app_label='recipes')
 
 class Migration(migrations.Migration):
 
@@ -16,5 +21,7 @@ class Migration(migrations.Migration):
     ]
     
     operations = [
-        migrations.RunPython(load_fixture),
+        migrations.RunPython(load_groups_fixture),
+        migrations.RunPython(load_users_fixture),
+        migrations.RunPython(load_ingredients_fixture),
     ]
