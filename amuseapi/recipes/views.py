@@ -86,19 +86,19 @@ class RecipeFilter(filters.FilterSet):
     created_before = filters.DateTimeFilter(name="created_timestamp",
         lookup_type='lt')
     created_after = filters.DateTimeFilter(name="created_timestamp",
-        lookup_type='ge')
+        lookup_type='gt')
     updated_before = filters.DateTimeFilter(name="updated_timestamp",
         lookup_type='lt')
     updated_after = filters.DateTimeFilter(name="updated_timestamp",
-        lookup_type='ge')
+        lookup_type='gt')
     servings_bigger = filters.NumberFilter(name="servings",
-        lookup_type = 'ge')   
+        lookup_type = 'gt')   
     servings_lower = filters.NumberFilter(name="servings",
-        lookup_expr = 'le')
+        lookup_expr = 'lt')
     rating_bigger = filters.NumberFilter(name="average_rating",
-        lookup_type = 'ge')   
+        lookup_type = 'gt')   
     rating_lower = filters.NumberFilter(name="average_rating",
-        lookup_expr = 'le')
+        lookup_expr = 'lt')
     
     # Exact (or iexact to be case-insensitive)
     language = filters.CharFilter(name='language',
@@ -269,7 +269,7 @@ class IngredientFilter(filters.FilterSet):
         
 class TranslationFilter(filters.FilterSet):
     updated_before = filters.DateTimeFilter(name="timestamp", lookup_type='lt')
-    updated_after = filters.DateTimeFilter(name="timestamp", lookup_type='ge')
+    updated_after = filters.DateTimeFilter(name="timestamp", lookup_type='gt')
     
     # Exact (or iexact to be case-insensitive)
     language = filters.CharFilter(name='language', lookup_type='iexact')
