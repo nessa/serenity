@@ -1,1 +1,39 @@
-[{"model": "recipes.user", "fields": {"last_login": null, "password": "pbkdf2_sha256$20000$Rg0PNdXtCAp4$aPdBYX5TRYwY9riqJ6z87ozNKVQZOSs1t7SfCvJYgms=", "email": "noelia.salesmontes@gmail.com", "username": "noelia", "is_active": true, "name": "Noelia", "last_name": "", "surname": "Sales Montes", "first_name": "", "user_permissions": [], "is_staff": false, "date_joined": "2016-07-20T12:08:55.998Z", "groups": [2], "is_superuser": false, "birthday": null}, "pk": 1}]
+[
+    {
+	"model": "recipes.user",
+	"fields": {
+            "password": "pbkdf2_sha256$20000$icsC59R8I8Ll$pkCOCPRyHcGwxnesSzM78IT64lU/T16Mcwxp9/jx8ug=",
+            "username": "admin",
+            "last_name": "Noeliarcado",
+            "email": "noeliarcado@gmail.com",
+            "is_staff": true,
+            "first_name": "Admin",
+            "last_login": "2016-07-19T16:54:25.907Z",
+            "user_permissions": [],
+            "date_joined": "2016-07-19T16:54:00.325Z",
+            "is_active": true,
+            "groups": [1, 2],
+            "is_superuser": true,
+            "last_login": null
+	},
+	"pk": 1
+    },
+    {
+	"model": "recipes.user",
+	"fields": {
+            "last_login": null,
+            "password": "pbkdf2_sha256$20000$Rg0PNdXtCAp4$aPdBYX5TRYwY9riqJ6z87ozNKVQZOSs1t7SfCvJYgms=",
+            "email": "noelia.salesmontes@gmail.com",
+            "username": "noelia",
+            "is_active": true,
+            "last_name": "Sales Montes",
+            "first_name": "Noelia",
+            "user_permissions": [],
+            "is_staff": false,
+            "date_joined": "2016-07-20T12:08:55.998Z",
+            "groups": [1, 2],
+            "is_superuser": false
+	},
+	"pk": 2
+    }
+]

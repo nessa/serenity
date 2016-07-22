@@ -1615,3 +1615,362 @@
         }
     ]
 }
+
+
+{
+    "title": "Tomates rellenos de arroz",
+    "language": "es",
+    "type_of_dish": "FIRST-COURSE",
+    "difficulty": "MEDIUM",
+    "cooking_time": 60,
+    "image": "https://c7.staticflickr.com/9/8848/16939143614_97845f7a18_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 2,
+    "source": "http://noeliarcado.es/2015/03/tomates-rellenos-de-arroz/",
+    "categories": [],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 4,
+            "name": "tomates",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 100,
+            "name": "arroz bomba",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 2,
+            "name": "diente de ajo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 0,
+            "name": "albahaca",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 0,
+            "name": "perejil",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 0,
+            "name": "orégano",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 300,
+            "name": "salsa de tomate",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 300,
+            "name": "patatas",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 1,
+            "name": "cebolla",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 3,
+            "name": "aceite de oliva",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 11,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 12,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Lavar y limpiar los tomates. Cortar la parte superior (que serán las tapas de los tomates) y extraer la pulpa (con cuidado de no agujerear el tomate). Salar el interior y los colocamos boca abajo, para que suelten el agua de vegetación.",
+            "image": "https://c7.staticflickr.com/9/8869/17927097278_4ecc2db7f3_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Picar el ajo muy finamente y la albahaca, el perejil y el orégano.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "En un recipiente mezclamos el arroz en crudo con el ajo, las hierbas, 1 cucharada de aceite de oliva, 1 cucharada de salsa de tomate, la pulpa de los tomates troceada, sal y pimienta.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Repartir una gota de aceite por el interior de los tomates (con un pincel es más fácil). Rellenarlos con la mezcla de arroz hasta dos tercios del volumen total.",
+            "image": "https://c4.staticflickr.com/8/7789/18116032931_a75b0db504_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "Pelar las patatas y cortarlas en cuadrados de unos 2 o 3 centímetros. Cocerlas durante 10 minutos.",
+            "image": "",
+            "video": "",
+            "time": 600
+        },
+        {
+            "sort_number": 6,
+            "description": "Pelar la cebolla y cortarlas en juliana.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 7,
+            "description": "Precalentar el horno a 180 grados centígrados.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "En una bandeja para horno, colocar la cebolla y las patatas en el fondo. Salpimentar.",
+            "image": "https://c3.staticflickr.com/8/7672/17492394394_6fcc5330f7_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Colocar los tomates (tapados con sus tapas) en la bandeja abriendo huecos entre las cebollas y las patatas. Aliñar todo con aceite de oliva.",
+            "image": "https://c4.staticflickr.com/8/7789/18116032931_a75b0db504_b.jpg",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 10,
+            "description": "Diluir la salsa de tomate restante con 150 mililitros de agua (la mitad de cantidad que de salsa de tomate aproximadamente). Verter sobre las patatas y las cebollas (el líquido debe llegar a la mitad de altura de los tomates).",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 11,
+            "description": "Meter al horno durante 40 minutos.",
+            "image": "",
+            "video": "",
+            "time": 2400
+        }
+    ]
+}
+
+
+{
+    "title": "Pollo en salsa de chili dulce",
+    "language": "es",
+    "type_of_dish": "SECOND-COURSE",
+    "difficulty": "LOW",
+    "cooking_time": 35,
+    "image": "https://c4.staticflickr.com/6/5460/17375385419_2261327e47_b.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://noeliarcado.es/2015/03/pollo-en-salsa-de-chili-dulce/",
+    "categories": [],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 3,
+            "name": "diente de ajo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 2,
+            "name": "pimiento jalapeño rojo";
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 0.25,
+            "name": "vinagre de manzana",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 0.75,
+            "name": "agua",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 0,
+            "name": "sal",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 1,
+            "name": "maicena",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 1,
+            "name": "aceite de oliva",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 500,
+            "name": "pechuga de pollo",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 1,
+            "name": "pimiento rojo",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 150,
+            "name": "piña",
+            "measurement_unit": "g"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 2,
+            "name": "ajos tiernos",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 11,
+            "quantity": 0,
+            "name": "pimienta negra",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+        {
+            "sort_number": 1,
+            "description": "Pelar los dientes de ajo.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 2,
+            "description": "Limpiar y quitar las semillas de los pimientos.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 3,
+            "description": "Triturar en una batidora o una picadora los pimientos, los dientes de ajo, el vinagre de manzana, el azúcar, el agua y la sal.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "Introducir la mezcla en una sartén o una olla y calentar a fuego medio-fuerte.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 5,
+            "description": "Cuando empiece a hervir, bajar la temperatura y remover durante unos 5 minutos hasta que la mezcla espese.",
+            "image": "",
+            "video": "",
+            "time": 300
+        },
+        {
+            "sort_number": 6,
+            "description": "En un vaso o un recipiente pequeño, mezclar la maicena con 2 cucharadas de agua y mezclar bien. Echarlo a la olla y remover un minuto más.",
+            "image": "",
+            "video": "",
+            "time": 60
+        },
+        {
+            "sort_number": 7,
+            "description": "Dejar enfriar completamente antes de guardar la salsa en un recipiente con tapadera (si es hermético mejor) y refrigerarla.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 8,
+            "description": "Calentar el aceite en una sartén grande o un wok a fuego medio-alto.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 9,
+            "description": "Trocear el pollo en cubos de unos 2 o 3 centímetros.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 10,
+            "description": "Limpiar y cortar el pimiento rojo y la piña en cubos de 1 o 2 centímetros.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 11,
+            "description": "Añadir el pimiento y la piña a la sartén y cocinar mientras se remueve durante unos 3 o 4 minutos (hasta que se reblandezcan).",
+            "image": "https://c2.staticflickr.com/8/7675/18116460761_58b384ba0e_b.jpg",
+            "video": "",
+            "time": 180
+        },
+        {
+            "sort_number": 12,
+            "description": "Añadir el pollo y dejar cocinar un minuto más.",
+            "image": "https://c1.staticflickr.com/8/7692/17927730800_22d46889a6_b.jpg",
+	    "video": "",
+            "time": 60
+        },
+        {
+            "sort_number": 13,
+            "description": "Echar la salsa de chili dulce tailandesa y remover hasta que esté todo integrado.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 14,
+            "description": "Cortar los ajos tiernos en juliana (no muy fina). Servir de inmediato con los ajos tiernos por encima.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }
+    ]
+}

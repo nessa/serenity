@@ -5,10 +5,11 @@ from configparser import RawConfigParser
 config = RawConfigParser()
 config.read('/etc/serenity-settings.ini')
 
-DEBUG = False
-
 # Host setting
-HOST = os.environ.get('HOST', 'http://localhost')
+ALLOWED_HOSTS = ['amuse-bouche.noeliarcado.es']
+
+# Disable debug
+DEBUG = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config.get('secret', 'SECRET_KEY')
@@ -54,7 +55,7 @@ LOGGING = {
 }
 
 
-# Database configuration
+# Postgre database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
