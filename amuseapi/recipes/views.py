@@ -213,7 +213,7 @@ class RecipeCommentViewSet(viewsets.ModelViewSet):
         return self.ordering_filter.filter_queryset(self.request, queryset, self)
     
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        serializer.save(user=self.request.user)
 
 
 
@@ -255,7 +255,7 @@ class RecipeRatingViewSet(viewsets.ModelViewSet):
 
 
     def perform_create(self, serializer):
-        serializer.save(owner=self.request.user)
+        serializer.save(user=self.request.user)
 
 
 
