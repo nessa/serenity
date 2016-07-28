@@ -204,7 +204,7 @@ class RecipeSerializer(serializers.HyperlinkedModelSerializer):
 
 class RecipeCommentSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
-    user = serializers.CharField(source='user.username')
+    user = serializers.CharField(source='user.username', read_only=True)
 
     class Meta:
         model = RecipeComment
@@ -213,7 +213,7 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
     # Override create method to update recipe comment
     def create(self, validated_data):
         related_recipe = Recipe.objects.get(id=validated_data.get('recipe')['id'])
-        related_user = User.objects.get(username=validated_data.get('user')['username'])
+        related_user = User.objects.get(username=self.context['request'].user)
 
         
         comment = RecipeComment.objects.create(recipe=related_recipe,
@@ -231,17 +231,17 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
 
 class RecipeRatingSerializer(serializers.ModelSerializer):
     recipe = serializers.CharField(source='recipe.id')
-    user = serializers.CharField(source='user.username')
-    
+    user = serializers.CharField(source='user.username', read_only=True)
+   
     class Meta:
         model = RecipeRating
-        fields = ('id', 'recipe',  'user', 'rating',)
+        fields = ('id', 'recipe', 'user', 'rating',)
         
     # Override create method to update recipe rating
     def create(self, validated_data):
-        related_recipe = Recipe.objects.get(id=validated_data.get('recipe')['id'])
-        related_user = User.objects.get(username=validated_data.get('user')['username'])
-
+        related_recipe = Recipe.objects.get(id=validated_data.get('recipe')['id'])        
+        related_user = User.objects.get(username=self.context['request'].user)
+     
         # Check if rating exists
         new_rating = None
         try:
@@ -253,7 +253,7 @@ class RecipeRatingSerializer(serializers.ModelSerializer):
                 user=related_user,
                 rating=validated_data.get('rating'))
             new_rating = True
-
+            
         if (new_rating):
             # Add new rating values to recipe
             related_recipe.total_rating += validated_data.get('rating')
