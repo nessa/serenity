@@ -97,7 +97,7 @@ class Recipe(models.Model):
     average_rating = models.FloatField(default=0)
     comments_number = models.IntegerField(default=0)
     servings = models.IntegerField()
-    source = models.CharField(max_length=200)
+    source = models.CharField(max_length=200, blank=True)
 
 class RecipeCategory(models.Model):
     recipe = models.ForeignKey(Recipe, related_name='categories')
