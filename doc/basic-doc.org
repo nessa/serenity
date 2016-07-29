@@ -928,3 +928,7 @@ http://getblimp.github.io/django-rest-framework-jwt/
 - Cambiando los modelos: por ejemplo, añadiendo ingredientes genéricos
 - python manage.py makemigrations
 - python manage.py migrate
+  
+** Exportar base de datos android sin rootear
+- adb shell "run-as com.amusebouche.amuseapp cp /data/data/com.amusebouche.amuseapp/databases/amuse.sqlite /sdcard/amuse2.db"
+- adb pull /sdcard/amuse2.db .
