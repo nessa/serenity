@@ -367,7 +367,86 @@ diferentes para optimizar el proceso de construcción.
 
 \section{Diseño detallado de componentes}
 
-TODO
+En esta sección se detalla el diseño de algunas de las funcionalidades de la
+aplicación, especificando las entidades que intervienen y el flujo de mensajes
+que tiene lugar entre estas.
+
+\subsection{Vista de usuario}
+
+En la vista de usuario tiene lugar una serie de acciones que involucran tanto
+a la API como a la base de datos de la aplicación, por lo que resulta interesante
+de analizar. Todo el flujo explicado a continuación puede verse en la
+figura~\ref{fig:diagrama-secuencia-login}.
+
+Desde la vista inicial (generada mediante la \textit{Actividad principal}, el
+usuario entra en la vista de usuario (de la cual es responsable la
+\textit{Actividad de usuario}). Al entrar, se llama al método \textit{onCreate}
+de la actividad en el cual se intenta obtener el \textit{token} de autenticación
+del usuario de la base de datos. Si este no existiera o si fuera obsoleto, al
+llamar a la petición de obtener datos de usuario, nos informaría de que el
+\textit{token} es inválido. Como resultado, se mostraría la vista de login. Si
+el \textit{token} fuera el correcto, se mostraría la vista de usuario en
+sesión, que informa de que está correctamente logueado.
+
+Si el usuario no ha podido iniciar sesión, puede optar por iniciarla o registrar
+un nuevo usuario. Para iniciar sesión, introduciría los datos necesarios
+(nombre de usuario y contraseña). La actividad lanzaría una petición a la API
+que devolverá el \textit{token} que será guardado en la base de datos para
+posteriores usos.
+
+Para registrarse, el usuario debe introducir los datos necesarios (nombre de
+usuario, contraseña, nombre, apellido y correo electrónico) y se lanzará la
+correspondiente petición a la API que devolverá los datos del usuario
+correctamente registrado.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{cap5/img/diagrama_secuencia_login}
+  \caption{Diagrama de secuencia - Vista de usuario}
+  \label{fig:diagrama-secuencia-login}
+\end{figure}
+
+
+\subsection{Creación de recetas}
+
+En la vista de creación de recetas hay una particularidad interesante que
+se analiza a continuación.
+
+Desde la vista inicial (generada mediante la \textit{Actividad principal}, el
+usuario entra en la vista de creación (de la cual es responsable la
+\textit{Actividad de creación}) pulsando sobre el botón de añadir. Al entrar, se
+llama al método \textit{onCreate} de la actividad, en el cual se crea una nueva
+receta con valores por defecto. Una vez creada, se muestra la vista de creación
+al usuario.
+
+El usuario podrá ir modificando cada atributo en función de sus necesidades.
+Cada vez que se modifique uno, se validará que su valor es correcto y se
+informará al usuario. También se comprobará si todas las validaciones son
+correctas para activar o desactivar el botón de guardado en función de esto.
+
+Un caso particular sería al añadir un nuevo ingrediente a la receta. En este
+caso, el usuario pulsará sobre el botón de añadir un nuevo ingrediente. Se
+mostrará el diálogo pertinente, que requiere que se añadan el nombre, la cantidad
+y la unidad de medida. Se validará cada atributo al igual que en el caso general:
+el usuario podrá guardar el nuevo ingrediente cuando todos los valores sean
+correctos. Cuando el usuario quiera guardar el ingrediente, este se añadirá a
+la receta y se mostrará la actualización en la vista, pero además se hace una
+llamada a la base de datos para buscar las categorías con las que está relacionado
+dicho ingrediente. Se actualizan las categorías de la receta con las que se han
+obtenido y se muestran en la vista.
+
+Por último, cuando el usuario esté satisfecho con los datos que ha introducido y
+todos sean válidos, podrá guardar la receta. La receta se creará en la base
+de datos y se informará al usuario mediante un mensaje.
+
+Todo este flujo puede verse en la figura~\ref{fig:diagrama-secuencia-crear-receta}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{cap5/img/diagrama_secuencia_crear_receta}
+  \caption{Diagrama de secuencia - Creación de receta}
+  \label{fig:diagrama-secuencia-crear-receta}
+\end{figure}
 
 
 \section{Diseño físico de datos}
@@ -384,28 +463,379 @@ entre ellas.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{cap5/img/diagrama_fisico_datos_1}
-  \caption{}
+  \caption{Diagrama físico de datos de la API I}
   \label{fig:diagrama-fisico-datos-1}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{cap5/img/diagrama_fisico_datos_2}
-  \caption{}
-  \label{fig:diagrama-fisico-datos-2}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=\textwidth]{cap5/img/diagrama_fisico_datos_3}
-  \caption{}
-  \label{fig:diagrama-fisico-datos-3}
 \end{figure}
 
 
 A continuación se detalla todo lo especificado en dichos diagramas.
 
+\subsubsection{AbstractUser}
+
+Este modelo representa a un usuario registrado en el sistema. Forma parte de la
+aplicación \texttt{django.contrib.auth}. El modelo \texttt{User} hereda de este.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{username}: De tipo cadena. Representa el nombre de usuario.
+\item \texttt{email}: De tipo cadena. Representa la dirección de correo
+  electrónico.
+\item \texttt{first\_name}: De tipo cadena. Representa el nombre.
+\item \texttt{last\_name}: De tipo cadena. Representa el apellido.
+\item \texttt{is\_active}: De tipo booleano. Especifica si el usuario está
+  activado.
+\item \texttt{is\_staff}: De tipo booleano. Especifica si el usuario forma parte
+  del staff.
+\item \texttt{is\_superuser}: De tipo booleano. Especifica si el usuario es
+  superusuario.
+\item \texttt{last\_login}: De tipo fecha. Representa la última fecha de acceso
+  al sistema.
+\item \texttt{password}: De tipo cadena. Representa la contraseña del usuario.
+  Se almacena cifrada irreversiblemente de acuerdo a las exigencias de la actual
+  Ley de Protección de Datos.
+\end{itemize}
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{cap5/img/diagrama_fisico_datos_2}
+  \caption{Diagrama físico de datos de la API II}
+  \label{fig:diagrama-fisico-datos-2}
+\end{figure}
+
 \subsubsection{User}
+
+Este modelo hereda todos sus atributos y métodos de \texttt{AbstractUser}. Se
+utiliza para modificar los campos requeridos de \texttt{AbstractUser} y para
+generar el \textit{token} de autenticación.
+
+Sus relaciones son:
+\begin{itemize}
+\item User - Recipe: 1:*
+\item User - Token: 1:1 
+\end{itemize}
+
+\subsubsection{Session}
+
+Este modelo representa una sesión de un usuario que ha accedido mediante web.
+Forma parte de la aplicación \texttt{django.contrib.sessions}.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{session\_key}: De tipo cadena. Representa el identificador de la
+  sesión.
+\item \texttt{session\_data}: De tipo texto. Representa los datos asociados a la
+  sesión.
+\item \texttt{expire\_date}: De tipo fecha. Representa hasta qué fecha son
+  válidos los datos de la sesión.
+\end{itemize}
+
+\subsubsection{Token}
+
+Este modelo representa un \textit{token} de autenticación asignado a un usuario.
+Forma parte de la aplicación \texttt{rest-framework.authtoken}.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{key}: De tipo cadena. Representa la clave del \textit{token}.
+\item \texttt{user}: Clave foránea. Representa el usuario al cual se le ha
+  asignado este \textit{token}.
+\item \texttt{created}: De tipo fecha. Representa el momento de creación.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item User - Token: 1:1 
+\end{itemize}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{cap5/img/diagrama_fisico_datos_3}
+  \caption{Diagrama físico de datos de la API III}
+  \label{fig:diagrama-fisico-datos-3}
+\end{figure}
+
+
+\subsubsection{Recipe}
+
+Este modelo representa una receta descrita por un usuario.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único de la
+  receta.
+\item \texttt{owner}: Clave foránea. Representa el usuario creador de la receta.
+\item \texttt{language}: De tipo enumerado. Representa el idioma en el cual está
+  escrita la receta. Puede tomar los siguientes valores:
+  \begin{itemize}
+  \item es
+  \item en
+  \end{itemize}
+\item \texttt{type\_of\_dish}: De tipo enumerado. Representa el tipo de plato.
+  Puede tomar los siguientes valores:
+  \begin{itemize}
+  \item LOW
+  \item MEDIUM
+  \item HIGH
+  \end{itemize}
+\item \texttt{difficulty}: De tipo enumerador. Representa la dificultad de
+  realización de la receta. Puede tomar los siguientes valores:
+  \begin{itemize}
+  \item APPETIZER
+  \item FIRST-COURSE
+  \item SECOND-COURSE
+  \item MAIN-DISH
+  \item DESSERT
+  \item OTHER
+  \end{itemize}
+\item \texttt{created\_timestamp}: De tipo fecha. Representa el momento de
+  creación de la receta.
+\item \texttt{updated\_timestamp}: De tipo fecha. Representa el momento de
+  última actualización de la receta.
+\item \texttt{cooking\_time}: De tipo flotante. Representa el tiempo que tarda
+  en ejecutarse la receta.
+\item \texttt{image}: De tipo URL. Representa la URL de la imagen asociada a la
+  receta.
+\item \texttt{total\_rating}: De tipo entero. Representa el sumatorio total de
+  todas las valoraciones de la receta.
+\item \texttt{users\_rating}: De tipo entero. Representa la cantidad total de
+  usuarios que han valorado la receta.
+\item \texttt{average\_rating}: De tipo flotante. Representa la media de
+  valoraciones de la receta.
+\item \texttt{servings}: De tipo entero. Representa el número de comensales que
+  pueden comer preparando la receta.
+\item \texttt{source}: De tipo cadena. Representa la fuente original de la
+  receta.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item User - Recipe: 1:*
+\item Recipe - RecipeCategory: 1:*
+\item Recipe - RecipeIngredient: 1:*
+\item Recipe - RecipeDirection: 1:*
+\item Recipe - RecipeComment: 1:*
+\item Recipe - RecipeRating: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeCategory}
+
+Este modelo representa una categoría asociada a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único de la
+  categoría.
+\item \texttt{recipe}: Clave foránea. Representa la receta a la que pertenece
+  esta categoría.
+\item \texttt{name}: De tipo enumerado. Representa el nombre de la categoría.
+  Puede tomar los siguientes valores:
+  \begin{itemize}
+  \item GLUTEN\_ALLERGY
+  \item LACTOSE\_ALLERGY
+  \item FISH\_ALLERGY
+  \item SHELLFISH\_ALLERGY
+  \item DRIED\_FRUIT\_ALLERGY
+  \item VEGETARIAN
+  \item VEGAN
+  \item MEDITERRANEAN
+  \item UNCATEGORIZED
+  \end{itemize}
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeCategory: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeIngredient}
+
+Este modelo representa un ingrediente asociado a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único del
+  ingrediente.
+\item \texttt{recipe}: Clave foránea. Representa la receta a la que pertenece
+  este ingrediente.
+\item \texttt{sort\_number}: De tipo entero. Representa la posición del
+  ingrediente dentro del listado completo asociado a la receta.
+\item \texttt{name}: De tipo cadena. Representa el nombre del ingrediente.
+\item \texttt{quantity}: De tipo flotante. Representa la cantidad del
+  ingrediente.
+\item \texttt{measurement\_unit}: De tipo enumerado. Representa la unidad de
+  medida en que se mida la cantidad del ingrediente. Puede tomar los siguientes
+  valores:
+  \begin{itemize}
+  \item g
+  \item kg
+  \item ml
+  \item l
+  \item pound
+  \item oz
+  \item glass
+  \item unit
+  \item cup
+  \item tbsp
+  \item tsp
+  \item rasher
+  \item stalk
+  \end{itemize}
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeIngredient: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeDirection}
+
+Este modelo representa un paso asociado a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único del
+  paso.
+\item \texttt{recipe}: Clave foránea. Representa la receta a la que pertenece
+  este paso.
+\item \texttt{sort\_number}: De tipo entero. Representa la posición del
+  paso dentro del listado completo asociado a la receta.
+\item \texttt{description}: De tipo cadena. Representa la descripción del paso
+  a realizar.
+\item \texttt{image}: De tipo URL. Representa la URL de la imagen asociada a
+  este paso.
+\item \texttt{video}: De tipo URL. Representa la URL del video asociado a este
+  paso.
+\item \texttt{time}: De tipo flotante. Representa el tiempo de cronómetro que
+  puede activarse tras la ejecución del paso.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeDirection: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeComment}
+
+Este modelo representa un comentario asociado a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único del
+  ingrediente.
+\item \texttt{recipe}: Clave foránea. Representa la receta a la que pertenece
+  este ingrediente.
+\item \texttt{comment}: De tipo cadena. Representa el comentario.
+\item \texttt{timestamp}: De tipo fecha. Representa el momento de creación del
+  comentario.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeComment: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeRating}
+
+Este modelo representa una valoración asociada a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único de la
+  valoración.
+\item \texttt{recipe}: Clave foránea. Representa la receta a la que pertenece
+  esta valoración.
+\item \texttt{rating}: De tipo entero. Representa la puntuación.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeRating: 1:*
+\end{itemize}
+
+
+
+\subsubsection{Ingredient}
+
+Este modelo representa un ingrediente categorizado de la aplicación.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único del
+  ingrediente.
+\item \texttt{code}: De tipo cadena. Representa el código identificativo del
+  ingrediente.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Ingredient - TranslatedIngredient: 1:*
+\item Ingredient - IngredientCategory: 1:*
+\end{itemize}
+
+
+\subsubsection{TranslatedIngredient}
+
+Este modelo representa una traducción de un ingrediente.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único de la
+  traducción.
+\item \texttt{ingredient}: Clave foránea. Representa el ingrediente al que
+  pertenece esta traducción.
+\item \texttt{translation}: De tipo cadena. Representa la traducción del
+  ingrediente.
+\item \texttt{language}: De tipo enumerado. Representa el idioma en el cual está
+  traducido el ingrediente. Puede tomar los siguientes valores:
+  \begin{itemize}
+  \item es
+  \item en
+  \end{itemize}
+\item \texttt{timestamp}: De tipo fecha. Representa el momento de creación de la
+  traducción.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Ingredient - TranslatedIngredient: 1:*
+\end{itemize}
+
+
+\subsubsection{IngredientCategory}
+
+Este modelo representa una categoría asociada a un ingrediente.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único de la
+  categoría.
+\item \texttt{ingredient}: Clave foránea. Representa el ingrediente al que
+  pertenece esta categoría.
+\item \texttt{name}: De tipo enumerado. Representa el nombre de la categoría.
+  Puede tomar los siguientes valores:
+  \begin{itemize}
+  \item GLUTEN\_ALLERGY
+  \item LACTOSE\_ALLERGY
+  \item FISH\_ALLERGY
+  \item SHELLFISH\_ALLERGY
+  \item DRIED\_FRUIT\_ALLERGY
+  \item VEGETARIAN
+  \item VEGAN
+  \item MEDITERRANEAN
+  \item UNCATEGORIZED
+  \end{itemize}
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Ingredient - IngredientCategory: 1:*
+\end{itemize}
 
 
 
@@ -418,11 +848,167 @@ modelos de la base de datos de la aplicación móvil.
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{cap5/img/diagrama_fisico_datos_4}
-  \caption{}
+  \caption{Diagrama físico de datos de la aplicación móvil}
   \label{fig:diagrama-fisico-datos-4}
 \end{figure}
 
 A continuación se detalla todo lo especificado en dicho diagrama.
+
+
+\subsubsection{AppData}
+
+Este modelo representa las configuración y los datos de la aplicación guardados
+como pares de clave-valor.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{key}: Clave primaria. Representa el identificador único del
+  ingrediente que también refleja su significado asociado.
+\item \texttt{value}: De tipo cadena. Representa el valor guardado para la
+  clave dada.
+\end{itemize}
+
+
+\subsubsection{Ingredient}
+
+Este modelo representa un ingrediente categorizado de la aplicación.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{\_id}: Clave primaria. Representa el identificador único del
+  ingrediente.
+\item \texttt{translation}: De tipo cadena. Representa la traducción del
+  ingrediente.
+\item \texttt{language}: De tipo enumerado. Representa el idioma en el cual está
+  traducido el ingrediente.
+\item \texttt{timestamp}: De tipo fecha. Representa el momento de creación de la
+  traducción.
+\item \texttt{categories}: De tipo cadena. Representa una cadena con todas las
+  categorías asociadas al ingrediente separadas por un caracter especial.  
+\end{itemize}
+
+
+\subsubsection{Recipe}
+
+Este modelo representa una receta descrita por un usuario.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{\_id}: Clave primaria. Representa el identificador único de la
+  receta en la base de datos.
+\item \texttt{id}: De tipo cadena. Representa el identificador único de la
+  receta en la API.
+\item \texttt{owner}: De tipo cadena. Representa el nombre de usuario del
+  usuario creador de la receta.
+\item \texttt{language}: De tipo enumerado. Representa el idioma en el cual está
+  escrita la receta.
+\item \texttt{type\_of\_dish}: De tipo enumerado. Representa el tipo de plato.
+\item \texttt{difficulty}: De tipo enumerador. Representa la dificultad de
+  realización de la receta.
+\item \texttt{created\_timestamp}: De tipo fecha. Representa el momento de
+  creación de la receta.
+\item \texttt{updated\_timestamp}: De tipo fecha. Representa el momento de
+  última actualización de la receta.
+\item \texttt{cooking\_time}: De tipo flotante. Representa el tiempo que tarda
+  en ejecutarse la receta.
+\item \texttt{image}: De tipo cadena. Representa la URL de la imagen asociada a
+  la receta.
+\item \texttt{total\_rating}: De tipo entero. Representa el sumatorio total de
+  todas las valoraciones de la receta.
+\item \texttt{users\_rating}: De tipo entero. Representa la cantidad total de
+  usuarios que han valorado la receta.
+\item \texttt{average\_rating}: De tipo flotante. Representa la media de
+  valoraciones de la receta.
+\item \texttt{servings}: De tipo entero. Representa el número de comensales que
+  pueden comer preparando la receta.
+\item \texttt{source}: De tipo cadena. Representa la fuente original de la
+  receta.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeCategory: 1:*
+\item Recipe - RecipeIngredient: 1:*
+\item Recipe - RecipeDirection: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeCategory}
+
+Este modelo representa una categoría asociada a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{\_id}: Clave primaria. Representa el identificador único de la
+  categoría.
+\item \texttt{\_recipe\_id}: Representa el identificador de la base de datos de
+  la receta a la que pertenece esta categoría
+\item \texttt{recipe\_id}: Representa el identificador de la API de la receta
+  a la que pertenece esta categoría.
+\item \texttt{name}: De tipo enumerado. Representa el nombre de la categoría.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeCategory: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeIngredient}
+
+Este modelo representa un ingrediente asociado a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{id}: Clave primaria. Representa el identificador único del
+  ingrediente.
+\item \texttt{\_recipe\_id}: Representa el identificador de la base de datos de
+  la receta a la que pertenece este ingrediente.
+\item \texttt{recipe\_id}: Representa el identificador de la API de la receta
+  a la que pertenece este ingrediente.
+\item \texttt{sort\_number}: De tipo entero. Representa la posición del
+  ingrediente dentro del listado completo asociado a la receta.
+\item \texttt{name}: De tipo cadena. Representa el nombre del ingrediente.
+\item \texttt{quantity}: De tipo flotante. Representa la cantidad del
+  ingrediente.
+\item \texttt{measurement\_unit}: De tipo cadena. Representa la unidad de
+  medida en que se mida la cantidad del ingrediente.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeIngredient: 1:*
+\end{itemize}
+
+
+\subsubsection{RecipeDirection}
+
+Este modelo representa un paso asociado a una receta.
+
+Sus atributos son:
+\begin{itemize}
+\item \texttt{\_id}: Clave primaria. Representa el identificador único del
+  paso.
+\item \texttt{\_recipe\_id}: Representa el identificador de la base de datos de
+  la receta a la que pertenece este paso.
+\item \texttt{recipe\_id}: Representa el identificador de la API de la receta
+  a la que pertenece este paso.
+\item \texttt{sort\_number}: De tipo entero. Representa la posición del
+  paso dentro del listado completo asociado a la receta.
+\item \texttt{description}: De tipo cadena. Representa la descripción del paso
+  a realizar.
+\item \texttt{image}: De tipo cadena. Representa la URL de la imagen asociada a
+  este paso.
+\item \texttt{video}: De tipo cadena. Representa la URL del video asociado a este
+  paso.
+\item \texttt{time}: De tipo flotante. Representa el tiempo de cronómetro que
+  puede activarse tras la ejecución del paso.
+\end{itemize}
+
+Sus relaciones son:
+\begin{itemize}
+\item Recipe - RecipeDirection: 1:*
+\end{itemize}
 
 
 \section{Diseño de la imagen corporativa}
