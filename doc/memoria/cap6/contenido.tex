@@ -159,6 +159,36 @@ ilustraciones, diagramas, líneas, gráficos, logotipos,... Se ha utilizado para
 diseñar el logotipo de la aplicación, así como los iconos e imágenes necesarias.
 
 
+\subsubsection{Bibliotecas de terceros}
+
+En el proyecto se han utilizado un gran número de bibliotecas auxiliares para
+facilitar el desarrollo y ampliar la funcionalidad de forma sencilla.
+
+\begin{description}
+\item[com.android.support:design] Biblioteca con componentes de Material Design
+  compatibles con versiones superiores a 2.1.
+
+\item[com.squareup.picasso] Biblioteca para carga de imágenes tanto desde
+  recursos de la aplicación, como de URLs externas. Permite reciclar y cancelar
+  la descarga, transformar de forma compleja las imágenes usando poca memoria y
+  las cachea automáticamente en memoria y en disco.
+  
+\item[com.github.woxthebox:draglistview] Biblioteca que permite arrastrar y
+  soltar elementos en una lista o en un \textit{grid}.
+  
+\item[com.squareup.retrofit2:retrofit] Biblioteca para realizar peticiones
+  HTTP de forma más simple y fiable.
+
+\item[com.squareup.retrofit2:converter-gson] Biblioteca que proporciona un
+  conversor automático para traducir las respuestas de las peticiones a objetos
+  de la aplicación.
+  
+\item[com.squareup.okhttp3:logging-interceptor] Biblioteca que proporciona un
+  interceptor para las peticiones de Retrofit que se encarga de imprimir en logs
+  toda la información relevante de estas.
+\end{description}
+
+Todas las biblioteca estás liberadas bajo la licencia Apache, versión 2.0.
 
 \section{Organización del código fuente}
 
@@ -184,7 +214,8 @@ con los siguientes elementos:
     específicamente para la app.
   \end{itemize}
 \item Repositorio \textbf{drf-vagrant-config}~\cite{repo-serenity}: Configuración
-  de vagrant y ansible para un proyecto con Django REST Framwork.
+  de Vagrant y Ansible para un proyecto con Django REST Framwork. Necesaria para
+  la realización de pruebas sobre el sistema.
 \end{itemize}
 
 
@@ -222,58 +253,122 @@ El código de la aplicación móvil contiene lo siguiente:
 \begin{itemize}
 \item \texttt{app/src/main}:
   \begin{itemize}
-  \item \texttt{assets}
   \item \texttt{java/com/amusebouche}
     \begin{itemize}
-    \item \texttt{amuseapp}: Directorio con las clases con las actividades, los
-      fragmentos y los adaptadores.
+    \item \texttt{activities}: Directorio con las \textit{actividades}, clases que se
+      encargan de crear una ventana donde mostrar una interfaz de usuario.
       \begin{itemize}
-      \item \texttt{DetailActivity.java}
-      \item \texttt{EditionActivity.java}
-      \item \texttt{GridviewCellAdapter.java}
-      \item \texttt{InformationFragment.java}
-      \item \texttt{LanguagesDialog.java}
-      \item \texttt{LeftMenuAdapter.java}
-      \item \texttt{MainActivity.java}
-      \item \texttt{MediaActivity.java}
-      \item \texttt{RecipeDetailFirstTabFragment.java}
-      \item \texttt{RecipeDetailFourthTabFragment.java}
-      \item \texttt{RecipeDetailSecondTabFragment.java}
-      \item \texttt{RecipeDetailThirdTabFragment.java}
-      \item \texttt{RecipeEditionDirectionListAdapter.java}
-      \item \texttt{RecipeEditionFirstTabFragment.java	}
-      \item \texttt{RecipeEditionIngredientListAdapter.java}
-      \item \texttt{RecipeEditionSecondTabFragment.java}
-      \item \texttt{RecipeEditionThirdTabFragment.java	}
-      \item \texttt{RecipeListFragment.java}
-      \item \texttt{SettingsFragment.java}
-      \item \texttt{SplashScreenActivity.java}
-      \item \texttt{UserFragment.java}
+      \item \texttt{SplashScreenActivity.java}: Actividad de la vista de carga
+        inicial.
+      \item \texttt{MainActivity.java}: Actividad de la vista principal de la
+        aplicación.
+      \item \texttt{DetailActivity.java}: Actividad de la vista de detalle de
+        una receta.
+      \item \texttt{EditionActivity.java}: Actividad de la vista de edición de
+        una receta.
+      \item \texttt{MediaActivity.java}: Actividad de la vista para mostrar
+        elementos media.
       \end{itemize}
-    \item \texttt{data}: Directorio con las clases que reflejan los datos a
-      mover por la aplicación y a guardar en la base de datos.
+    \item \texttt{adapters}: Directorio con los \textit{adaptadores}, puentes
+      entre una vista y los datos que la conforman.
       \begin{itemize}
-      \item \texttt{Comment.java}
-      \item \texttt{DatabaseHelper.java}
-      \item \texttt{Recipe.java}
-      \item \texttt{RecipeCategory.java}
-      \item \texttt{RecipeCategoryContract.java}
-      \item \texttt{RecipeContract.java}
-      \item \texttt{RecipeDirection.java}
-      \item \texttt{RecipeDirectionContract.java}
-      \item \texttt{RecipeIngredient.java}
-      \item \texttt{RecipeIngredientContract.java}
-      \item \texttt{UserFriendlyRecipeData.java}
+      \item \texttt{AutoCompleteArrayAdapter.java}: Adaptador para las vistas
+        de texto que se pueden autocompletar.
+      \item \texttt{GridviewCellAdapter.java}: Adaptador para la vista de
+        \textit{grid}.
+      \item \texttt{LeftMenuAdapter.java}: Adaptador para la vista del menú
+        lateral.
+      \item \texttt{RecipeEditionDirectionListAdapter.java}: Adaptador para la
+        vista del listado de pasos de una receta.
+      \item \texttt{RecipeEditionIngredientListAdapter.java}: Adaptador para la
+        vista del listado de ingredientes de una receta.
       \end{itemize}
-    \item \texttt{services}: Directorio con los servicios.
+    \item \texttt{data}: Directorio con las clases de datos e interfaces con
+      la base de datos (\textit{contracts}).
       \begin{itemize}
-      \item \texttt{ServiceHandler.java}
+      \item \texttt{AppDataContract.java}: Interfaz con la base de datos de la
+        tabla de datos de la aplicación.
+      \item \texttt{Comment.java}: Clase que representa el comentario de un
+        usuario sobre una receta.
+      \item \texttt{Ingredient.java}: Clase que representa un ingrediente
+        categorizable.
+      \item \texttt{IngredientContract.java}: Interfaz con la base de datos
+        de la tabla de ingredientes categorizables.
+      \item \texttt{Recipe.java}: Clase que representa una receta.
+      \item \texttt{RecipeCategory.java}: Clase que representa la categoría de
+        una receta.
+      \item \texttt{RecipeCategoryContract.java}: Interfaz con la base de datos
+        de la tabla de categorías de recetas.
+      \item \texttt{RecipeContract.java}: Interfaz con la base de datos
+        de la tabla de recetas.
+      \item \texttt{RecipeDirection.java}: Clase que representa el paso de
+        una receta.
+      \item \texttt{RecipeDirectionContract.java}: Interfaz con la base de datos
+        de la tabla de pasos de recetas.
+      \item \texttt{RecipeIngredient.java}: Clase que representa el ingrediente
+        de una receta.
+      \item \texttt{RecipeIngredientContract.java}: Interfaz con la base de datos
+        de la tabla de ingredientes de recetas.
       \end{itemize}
-    \item \texttt{ui}: Directorio con las clases relacionadas con la interfaz
-      de usuario.
+    \item \texttt{dialogs}: Directorio con los \textit{diálogos}, ventanas que
+      aparecen para hacer que el usuario tome una decisión o introduzca
+      información adicional.
       \begin{itemize}
-      \item \texttt{CustomNumberPicker.java}
-      \item \texttt{ImageManager.java}
+      \item \texttt{LanguagesDialog.java}: Clase del diálogo que solicita al
+        usuario que seleccione un idioma.
+      \end{itemize}
+    \item \texttt{fragments}: Directorio con los \textit{fragmentos}, clases que
+      reflejan una parte de la interfaz gráfica o de un comportamiento que puede
+      incluirse dentro de una actividad.
+      \begin{itemize}
+      \item \texttt{InformationFragment.java}: Fragmento de la vista de
+        información.
+      \item \texttt{RecipeDetailFirstTabFragment.java}: Primer fragmento de la
+        vista de detalle que contiene los datos básicos y las categorías.
+      \item \texttt{RecipeDetailSecondTabFragment.java}: Segundo fragmento de la
+        vista de detalle que contiene los ingredientes.
+      \item \texttt{RecipeDetailThirdTabFragment.java}: Tercer fragmento de la
+        vista de detalle que contiene los pasos.
+      \item \texttt{RecipeDetailFourthTabFragment.java}: Cuarto fragmento de
+        la vista de detalle que contiene los comentarios de usuarios.
+      \item \texttt{RecipeEditionFirstTabFragment.java}: Primer fragmento de
+        la vista de edición que contiene los datos básicos y las categorías.
+      \item \texttt{RecipeEditionSecondTabFragment.java}: Segundo fragmento de
+        la vista de edición que contiene los ingredientes.
+      \item \texttt{RecipeEditionThirdTabFragment.java}: Tercer fragmento de la
+        vista de edición que contiene los pasos.
+      \item \texttt{RecipeListFragment.java}: Fragmento de la vista del
+        \textit{grid} de recetas listadas.
+      \item \texttt{SettingsFragment.java}: Fragmento de la vista de
+        configuración.
+      \item \texttt{UserFragment.java}: Fragmento de la vista de usuario, que
+        contiene el login y el registro.
+      \end{itemize}
+    \item \texttt{services}: Directorio con los \textit{servicios} y
+      \textit{manejadores}, clases que intervienen para facilitar el usuario de
+      diversos elementos o bibliotecas.
+      \begin{itemize}
+      \item \texttt{AmuseAPI.java}: Interfaz de API necesaria para Retrofit.
+      \item \texttt{AppData.java}: Recopilación de valores necesarios para la
+        aplicación.
+      \item \texttt{CustomDateFormat.java}: Manejador de fechas para trabajar
+        con UTC y zona actual.
+      \item \texttt{DatabaseHelper.java}: Gestor de la base de datos que se
+        encarga de hacer todas las acciones de creación, inserción, borrado,
+        modificación y obtención de datos.
+      \item \texttt{ImageHandler.java}: Manejador de imágenes que utiliza
+        Picasso para cargarlas si es necesario.
+      \item \texttt{RequestHandler.java}: Manejador de construcción de URLs
+        para peticiones.
+      \item \texttt{RetrofitServiceGenerator.java}: Generador del servicio de
+        Retrofit que añade los interceptores necesarios.
+      \item \texttt{UserFriendlyTranslationsHandler.java}: Manejador de cadenas
+        de traducción y listas de datos traducidos.
+      \end{itemize}
+    \item \texttt{ui}: Directorio con los componentes personalizados de la
+      interfaz gráfica.
+      \begin{itemize}
+      \item \texttt{CustomNumberPicker.java}: Selector de números personalizado.
       \end{itemize}
     \end{itemize}
     
@@ -302,135 +397,55 @@ El código de la aplicación móvil contiene lo siguiente:
       landscape.
     \item \texttt{values}: Directorio con los datos genéricos.
       \begin{itemize}
-      \item \texttt{colors.xml}
-      \item \texttt{dimens.xml}
-      \item \texttt{integers.xml}
-      \item \texttt{strings.xml}
-      \item \texttt{styles.xml}
+      \item \texttt{colors.xml}: Definición de colores para la interfaz gráfica.
+      \item \texttt{dimens.xml}: Definición de tamaños para la interfaz gráfica.
+      \item \texttt{integers.xml}: Definición de enteros.
+      \item \texttt{strings.xml}: Definición de cadenas de traducción (en inglés).
+      \item \texttt{styles.xml}: Definición de estilos de la interfaz gráfica.
       \end{itemize}
     \end{itemize}
   \item \texttt{AndroidManifest.xml}
   \end{itemize}
 \end{itemize}
 
-\subsection{Configuración de Vagrant}
-
-
-El código de la aplicación móvil contiene lo siguiente:
-
-\begin{itemize}
-\item \texttt{provisioning}
-  \begin{itemize}
-  \item \texttt{roles}
-    \begin{itemize}
-    \item \texttt{deploy}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \end{itemize}
-    \item \texttt{django}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \item \texttt{templates}
-      \end{itemize}
-    \item \texttt{gunicorn}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \item \texttt{templates}
-      \end{itemize}
-    \item \texttt{nginx}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \item \texttt{templates}
-      \end{itemize}
-    \item \texttt{postgresql}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \item \texttt{templates}
-      \end{itemize}
-    \item \texttt{supervisor}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \item \texttt{templates}
-      \end{itemize}
-    \item \texttt{system}
-      \begin{itemize}
-      \item \texttt{tasks}
-      \end{itemize}
-    \end{itemize}
-  \item \texttt{playbook.yml}
-  \item \texttt{vars.yml}
-  \end{itemize}
-\item \texttt{Vagrantfile}
-\end{itemize}
-
 
 \section{Detalles de implementación}
 
-TODO
-
-\subsection{Ingredientes categorizados}
-
-%Se intentó usar dbpedia, pero no eran suficientemente fiables.
-
-%Testeando DBpedia: URL: http://es.dbpedia.org/sparql
-
-
-%\begin{bashcode}
-%PREFIX dcterms: <http://purl.org/dc/terms/>
-%select * where{
-% ?marisco dcterms:subject <http://es.dbpedia.org/resource/Categoría:Marisco> .
-%}
-%\end{bashcode}
-
-
-%Es muy importante que la aplicación no de un falso positivo, es decir,
-%\textbf{nunca} debe filtrar como ``APTA PARA CELÍACOS'' una receta que no lo es.
-%Para ello, hemos implementado un sistema de ingredientes categorizados.
-
-%Entonces, cuando un usuario introduce los ingredientes de una receta se comprueba
-%uno a uno si tiene categorías asociadas. Si las tiene, se añaden a la receta.
-%Si el ingrediente no existe entre los ingredientes descargados, se añade la
-%categoría de ``SIN CATEGORIZAR'', para asegurar que se revise manualmente.
-
-%Hemos intentado buscar otros métodos que automaticen esto, pero de momento no
-%se ha encontrado ninguno que no ponga en riesgo de que aparezcan falsos
-%positivos.
-
-
-
-\subsection{Desincronización entre elementos del grid}
-
-%Librería Picasso: http://square.github.io/picasso/
-%Está licenciada bajo Licencia Apache (compatible según la Free Software Foundation con GPLv3).
-
-%Resuelve el problema del grid (desorden en las vistas y mal funcionamiento
-%de memoria). Utilizar un método que implemente AsyncTask en este caso no es
-%suficiente, porque hay que manejar la cache y tener en cuenta muchos otros
-%factores.
-
-
-\subsection{Lectura automática y reconocimiento de voz}
-
-%Los tiempos no cuadraban y se quedaba en un bucle infinito.
-    
-
-\subsection{Vagrant y Ansible}
-
-
+En esta sección se describen algunos detalles en la implementación del proyecto,
+tanto de la API como de la aplicación móvil, que son de interés debido a la
+especial atención que hubo que poner sobre ellos, llegando a dar lugar a
+reimplementar secciones de código importantes.
 
 
 \subsection{Migraciones de la base de datos}
 
-También se puede generar una migración personalizada para realizar otras
-tareas, como por ejemplo, rellenar la base de datos.
-
-Para ello, lo primero que tendremos que hacer es, teniendo la base de datos ya
-rellena, exportar los datos:
+Django posee su propio sistema de migraciones, que hace las veces de sistema de
+control de versiones para el esquema de la base de datos. Al utilizar el
+comando \texttt{makemigrations}, se generarán las nuevas migraciones basadas en
+los cambios que se han hecho sobre los modelos de la aplicación.
 
 \begin{bashcode}
-
+$ python manage.py makemigrations 
 \end{bashcode}
 
+Una vez generadas las migraciones (que pueden verse en el directorio
+\textit{migrations}), pueden aplicarse sobre la base de datos con el comando:
+
+\begin{bashcode}
+$ python manage.py migrate
+\end{bashcode}
+
+Todo este sistema funciona automáticamente, pero también se puede generar una
+migración personalizada para realizar otras tareas, como por ejemplo, rellenar
+a base de datos.
+
+Para ello, lo primero que tendremos que hacer es, teniendo la base de datos ya
+rellena, exportar los datos (sustituyendo \textit{app} por el nombre de nuestra
+aplicación):
+
+\begin{bashcode}
+$ python manage.py dumpdata app > app/fixtures/initial_data.json
+\end{bashcode}
 
 Luego hemos de generar una migración vacía, para poder personalizarla. Para
 crearla hemos de ejecutar el siguente comando:
@@ -537,3 +552,561 @@ Synchronizing apps without migrations:
 Running migrations:
   No migrations to apply.
 \end{bashcode}
+
+
+\subsection{Ingredientes categorizados}
+
+
+La idea original para este sistema es que fuera completamente automático. Es
+decir, que fuera capaz de detectar dinámicamente en función del nombre de un
+ingrediente si es alérgeno o no.
+
+Para ello, se intentaron utilizar proyectos que manejan información semántica,
+como dbpedia. Se hicieron varias pruebas trabajando con consultas sobre esa
+información, probando en ambos sentidos: obteniendo información de un ingrediente
+y buscando si estaba categorizado como alérgeno y  obtenido información de una
+categoría alérgena (como, por ejemplo, el marisco) y buscando si aparecían
+los ingredientes que formaban parte de dicha categoría. Un ejemplo de dichas
+consultas es el siguiente:
+
+\begin{bashcode}
+PREFIX dcterms: <http://purl.org/dc/terms/>
+select * where{
+  ?marisco dcterms:subject <http://es.dbpedia.org/resource/Categoría:Marisco> .
+}
+\end{bashcode}
+
+Sin embargo, la información que proporcionaban estas consultas era inconsistente
+de un ingrediente a otro y no permitía una forma automatizada de filtrar dicha
+información.
+
+Teniendo en cuenta que, bajo la premisa inicial, es muy importante que la
+aplicación no de un falso positivo, es decir, \textbf{nunca} debe filtrar como
+``APTA PARA CELÍACOS'' una receta que no lo es. Por tanto, fue necesario
+implementar un sistema de ingredientes categorizados integrado dentro de la
+propia API.
+
+Se incluyeron clases específicas para manejar los datos de los ingredientes y
+sus categorías asociadas (los alérgenos). Además, teniendo en cuenta que la
+aplicación móvil debía ser multiidioma, añadimos la capacidad de traducir cada
+ingrediente a cada idioma. Así, tuvieron que añadirse los modelos
+\texttt{Ingredient}, \texttt{IngredientCategory} y \texttt{TranslatedIngredient},
+según ya se vio en el capítulo~\ref{chap:diseno}, en la
+sección~\ref{sec:diseno-fisico-datos}.
+
+\begin{minted}{python}
+# Generic ingredients
+class Ingredient(models.Model):
+    code = models.CharField(max_length=100)
+
+class TranslatedIngredient(models.Model):
+    ingredient = models.ForeignKey(Ingredient, related_name='translations')
+    translation = models.CharField(max_length=100)
+    language = models.CharField(choices=LANGUAGE_CHOICES, default='es',
+        max_length=10)
+    timestamp = models.DateTimeField(auto_now=True)
+
+class IngredientCategory(models.Model):
+    ingredient = models.ForeignKey(Ingredient, related_name='categories')
+    name = models.CharField(max_length=100)
+\end{minted}
+
+Al entrar en la aplicación móvil, se descargan todos los ingredientes del
+idioma seleccionado. Inicialmente se descargan todos y se guarda la fecha, para
+posteriormente descargar tan sólo aquellos que se hayan actualizado a posteriori.
+
+Cuando un usuario va a crear o editar una receta, se utilizan estos ingredientes
+almacenados para comprobar qué categorías tienes asociadas y añadirlas
+automáticamente a la receta conforme se vayan incluyendo los ingredientes. En
+caso de que se añada un ingrediente que no existe en la base de datos, se añade
+la categoría de ``SIN CATEGORIZAR'', para asegurar que sea revisada manualmente.
+
+El siguiente código forma parte del flujo comentado:
+
+\begin{minted}{java}
+/**
+ * Add category for a new ingredient that has been set.
+ * Search the ingredient categories and check if they have been added
+ * yet. Otherwise, add them.
+ *
+ * @param name Ingredient name that has been added.
+ */
+private void addCategoryForIngredient(String name) {
+    if (mDatabaseHelper.existIngredient(name)) {
+        // If ingredient exists in database, we add all its categories
+        //to the recipe
+        Ingredient ing = mDatabaseHelper.getIngredientByTranslation(name);
+
+        ArrayList<String> categories = new ArrayList<>(
+            Arrays.asList(ing.getCategories().split(
+                Pattern.quote(Ingredient.CATEGORY_SEPARATOR))));
+
+        for (int c = 0; c < categories.size(); c++) {
+            boolean found = false;
+
+            for (int ci = 0; ci < mEditionActivity.getRecipe().
+                getCategories().size(); ci++) {
+                if (categories.get(c).equals(mEditionActivity.getRecipe()
+                    .getCategories().get(ci).getName())) {
+                    found = true;
+                }
+            }
+
+            if (!found) {
+                // Add category to recipe
+                mEditionActivity.getRecipe().getCategories().add(
+                    new RecipeCategory(categories.get(c)));
+
+                // Add category to forced recipes
+                mEditionActivity.getForcedCategories().add(categories.get(c));
+            }
+        }
+    } else {
+        // If ingredient doesn't exist in database, we add
+        // UNCATEGORIZED category
+        boolean found = false;
+
+        for (RecipeCategory c :
+             mEditionActivity.getRecipe().getCategories()) {
+            if (c.getName().equals(RecipeCategory.CATEGORY_UNCATEGORIZED)) {
+                found = true;
+            }
+        }
+
+        if (!found) {
+            // Add category to recipe
+            mEditionActivity.getRecipe().getCategories().add(
+                new RecipeCategory(RecipeCategory.CATEGORY_UNCATEGORIZED));
+
+            // Add category to forced recipes
+            mEditionActivity.getForcedCategories().add(
+                RecipeCategory.CATEGORY_UNCATEGORIZED);
+        }
+    }
+}
+\end{minted}
+
+Se ha intentado buscar otros métodos que automaticen esto, pero de momento no se
+ha encontrado ninguno que no ponga en riesgo que aparezcan falsos positivos.
+
+
+\subsection{Desincronización entre elementos del grid}
+
+En la vista principal de la aplicación móvil, se muestra un \textit{grid}
+de varias columnas (2 o 3 habitualmente) que contiene una celda cuadrada por
+cada receta cargada. En esta celda se visualiza la imagen principal de la
+receta y su nombre.
+
+Para rellenar este \textit{grid}, se utilizaba un \textit{adapter} personalizado
+que se cargaba desde el \textit{fragment} \texttt{RecipeListFragment} de la
+siguiente forma:
+
+\begin{minted}{java}
+mGridView = (GridView) mLayout.findViewById(R.id.gridview);
+mGridView.setAdapter(new GridviewCellAdapter(getActivity(), this,
+                                             screenWidth));
+\end{minted}
+
+Cada vez que se modificaba el listado de recetas a mostrar, se tiene que
+notificar el cambio en el adaptador de la siguiente forma:
+
+\begin{minted}{java}
+// Notify the adapter the new elements added
+GridviewCellAdapter adapter = (GridviewCellAdapter) mGridView.getAdapter();
+adapter.notifyDataSetChanged();
+\end{minted}
+
+En el \textit{adapter} se había implementado el método \texttt{getView} que es
+llamado cada vez que se necesita mostrar una vista en el \textit{grid}. Aquí es
+donde se inicializaba el nombre de la receta en el \texttt{TextView} indicado
+y se llamaba a una tarea asíncrona para cargar la imagen desde la URL en el
+\texttt{ImageView}. Pues bien, esta tarea asíncrona parecía no funcionar
+correctamente con el \textit{adapter} y en la vista se pintaban las recetas
+a destiempo, repetidas o mal colocadas.
+
+La solución era implementar un sistema de carga de imágenes con cache y carga
+asíncrona mejorado, pero esto ya existe en multitud de bibliotecas disponibles
+con licencias libres. Viendo los comentarios de la comunidad, se optó por
+utilizar la biblioteca \textit{Picasso},\cite{picasso}\cite{picasso-book} que no
+sólo simplificaba la carga de la imagen, sino que aportaba reciclado de
+\texttt{ImageViews} y transformaciones complejas de las imágenes, además de
+cacheo automático tanto en memoria como en disco. Además, está licenciada bajo
+Licencia Apache (compatible según la Free Software Foundation con GPLv3).
+
+Su utilización es muy simple. Primero, hay que añadir la dependencia al archivo
+de configuración de Gradle.
+
+\begin{minted}{java}
+compile "com.squareup.picasso:picasso:2.5.2"
+\end{minted}
+
+Para facilitar su uso y añadir la utilización de un indicador de carga a cada
+imagen, se implementó un manejador con un método que se encargaba de hacer
+la llamada a Picasso para obtener la imagen dinámicamente. Mientras la imagen
+se carga se muestra el indicador de carga que se oculta en cuanto la petición
+termina, tanto exitosa como fallidamente. Si la petición es correcta, se muestra
+la imagen de la URL. En caso contrario, se muestra una imagen por defecto para
+que no se queje el bloque vacío.
+
+El código queda tal y como sigue:
+
+\begin{minted}{java}
+/**
+ * Set an image in a image view using the Picasso library.
+ * @param context Context where the image will be set.
+ * @param imageName Name of the image. Could be an URL, a file path or
+ *                  an empty string. If it's an empty string, we will
+ *                  set a random sample image.
+ * @param imageView Image view we want to set up.
+ * @param progressBar Loading indicator, if exists.
+ * @see Picasso library: com.squareup.picasso.Picasso
+ */
+public static void setCellImage(Context context, String imageName,
+                                ImageView imageView,
+                                final ProgressBar progressBar) {
+    // Get a default image from the image position
+    int resource;
+    int position = (int)imageView.getTag() % 3;
+    switch (position) {
+        default:
+        case 0:
+            resource = R.drawable.fake_food_1;
+            break;
+        ...
+    }
+
+    // Check if image is defined correctly. If not, load the alternative
+    // resource.
+    if (imageName == null || imageName.equals("")) {
+        imageView.setImageDrawable(context.getDrawable(resource));
+    } else {
+        // Define callback for progress bar and enable it if it's defined
+        Callback callback = null;
+        if (progressBar != null) {
+            progressBar.setVisibility(View.VISIBLE);
+            callback = new Callback() {
+            @Override
+                public void onSuccess() {
+                    progressBar.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onError() {}
+            };
+        }
+
+        Picasso.with(context)
+                .load(imageName)
+                .resize(RESIZE_PIXELS.get(), RESIZE_PIXELS.get())
+                .centerInside()
+                .noFade()
+                .error(resource)
+                .into(imageView, callback);
+    }
+}
+\end{minted}
+
+Utilizando este sistema, todas las recetas aparecen en el \textit{grid} con su
+correspondiente imagen y sin modificarse su posición.
+
+
+\subsection{Peticiones a la API}
+
+Al igual que con la carga de imágenes, para realizar las peticiones a la API
+también utilizábamos tareas asíncronas (\texttt{AsyncTask}). Las ventajas de
+utilizar este método es que es simple y rápido a la hora de introducir
+ejecuciones asíncronas en una \textit{activity} o en un \textit{fragment}. Sin
+embargo, el principal problema viene a la hora de ejecutar estas peticiones
+en bucle, puesto que se complica y ensucia mucho el código, y además da problemas
+a la hora de cancelar el flujo actual. Además, el manejador de peticiones que
+fue implementado desde cero era poco adaptable: cada vez que hacíamos un cambio
+había que reimplementar y probar todas las peticiones de nuevo.
+
+La solución, de nuevo, recayó en utilizar una biblioteca externa:
+Retrofit.\cite{retrofit-book} Retrofit proporciona un cliente HTTP seguro y muy
+simple de utilizar. Simplemente se necesita definir las interfaces de los
+métodos de la API a solicitar y llamar a esos métodos.
+
+La API se define de forma tan simple como la siguiente:
+
+\begin{minted}{java}
+public interface AmuseAPI {
+
+    // Authentication requests
+
+    @GET("auth/me/")
+    Call<ResponseBody> me();
+
+    @FormUrlEncoded
+    @POST("auth/login/")
+    Call<ResponseBody> login(@Field("username") String username,
+                             @Field("password") String password);
+
+    @POST("auth/logout/")
+    Call<ResponseBody> logout();
+
+    @FormUrlEncoded
+    @POST("auth/register/")
+    Call<ResponseBody> register(@Field("username") String username,
+                                @Field("email") String email,
+                                @Field("first_name") String name,
+                                @Field("last_name") String surname,
+                                @Field("password") String password);
+
+
+    // Recipes requests
+
+    @GET
+    Call<ResponseBody> getRecipes(@Url String url);
+
+    @GET("recipes/{id}/")
+    Call<ResponseBody> getRecipe(@Path("id") String id);
+
+    @POST("recipes/")
+    Call<ResponseBody> createRecipe(@Body Recipe body);
+
+    @PUT("recipes/{id}/")
+    Call<ResponseBody> updateRecipe(@Path("id") String id,
+                                    @Body Recipe body);
+
+
+    // Recipe's comments requests
+
+    @GET("comments/")
+    Call<ResponseBody> getComments(@Query("recipe") String id);
+
+    @FormUrlEncoded
+    @POST("comments/")
+    Call<ResponseBody> addComment(@Field("recipe") String recipe,
+                                  @Field("comment") String comment);
+
+
+    // Recipe's ratings requests
+
+    @FormUrlEncoded
+    @POST("ratings/")
+    Call<ResponseBody> rateRecipe(@Field("recipe") String recipe,
+                                  @Field("rating") Integer rating);
+
+
+    // Ingredients requests
+
+    @GET("translations/")
+    Call<ResponseBody> getIngredients(@Query("page") Integer page,
+                                      @Query("language") String language,
+                                      @Query("updated_after") String date);
+}
+\end{minted}
+
+Para añadir la capacidad enviar el \textit{token} de autenticación a través de
+la petición, se implementó un generador de servicios de Retrofit como el
+siguiente, que añade un interceptor al cliente HTTP para modificar
+automáticamente las cabeceras de la petición y añadir dicho \textit{token}.
+
+
+\begin{minted}{java}
+/**
+ * Create a retrofit service that uses token authorization by implementing
+ * an interceptor that sends the token in an authorization header.
+ * @param serviceClass service class
+ * @param authToken authorization token
+ * @param enableLogging boolean to enable logging
+ * @return new service instance
+ */
+public static <S> S  createService(Class<S> serviceClass,
+                                   final String authToken,
+                                   boolean enableLogging) {
+
+    OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
+    Retrofit.Builder builder = new Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(API_BASE_URL);
+
+    if (authToken != null) {
+        httpClient.addInterceptor(new Interceptor() {
+            @Override
+            public Response intercept(Interceptor.Chain chain)
+                            throws IOException {
+              
+                Request original = chain.request();
+
+                // Request customization: add request headers
+                Request.Builder requestBuilder = original.newBuilder()
+                    .header("Authorization", "Token " + authToken)
+                    .method(original.method(), original.body());
+
+                Request request = requestBuilder.build();
+                return chain.proceed(request);
+            }
+        });
+    }
+
+    if (enableLogging) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+
+        // set the desired log level
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        // add logging as last interceptor
+        httpClient.addInterceptor(logging);
+    }
+
+    OkHttpClient client = httpClient.build();
+    Retrofit retrofit = builder.client(client).build();
+    return retrofit.create(serviceClass);
+}
+\end{minted}
+
+Luego a la hora de realizar la petición, tan sólo hay que crear el servicio
+especificando la interfaz de la API que queremos utilizar, definir la llamada y
+sus respectivos \textit{callbacks}.
+
+\begin{minted}{java}
+mAPI = RetrofitServiceGenerator.createService(AmuseAPI.class);
+Call<ResponseBody> call = mAPI.request_name(data...);
+
+call.enqueue(new Callback<ResponseBody>() {
+    @Override
+    public void onResponse(Call<ResponseBody> call,
+                           Response<ResponseBody> response) {
+        // Success code
+    }
+    
+    @Override
+    public void onFailure(Call<ResponseBody> call, Throwable t) {
+        // Error code
+    }
+});
+\end{minted}
+
+
+\subsection{Lectura automática y reconocimiento de voz}
+
+La lectura automática y el reconocimiento de voz se han implementado en base a
+dos bibliotecas de Android: \texttt{android.speech.tts.TextToSpeech} y
+\\ \texttt{android.speech.SpeechRecognizer}.
+
+La primera es tan fácil de usar como crear una nueva instancia, definir el
+idioma en que debe leerse e iniciar la lectura con una cadena de texto.
+
+\begin{minted}{java}
+mTTS = new TextToSpeech(this.getActivity(), new TextToSpeech.OnInitListener() {
+    @Override
+    public void onInit(int status) {
+        if (status != TextToSpeech.ERROR) {
+            Locale locale = new Locale(language);
+            mTTS.setLanguage(locale);
+        }
+    }
+});
+
+mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+\end{minted}
+
+El sistema de reconocimiento de voz es algo más complejo de utilizar. Su uso
+habitual es el siguiente:
+
+\begin{minted}{java}
+mSpeechRecognizer = SpeechRecognizer.createSpeechRecognizer(getActivity());
+
+final Intent recognizerIntent = new Intent(
+    RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE,
+    language);
+recognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,
+    getActivity().getPackageName());
+recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+    RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
+recognizerIntent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3);
+
+mSpeechRecognizer.setRecognitionListener(new RecognitionListener() {
+    @Override
+    public void onBeginningOfSpeech() {}
+
+    @Override
+    public void onBufferReceived(byte[] buffer) {}
+
+    @Override
+    public void onEndOfSpeech() {}
+
+    @Override
+    public void onError(final int errorCode) {
+        // Error code
+    }
+
+    @Override
+    public void onEvent(int arg0, Bundle arg1) {}
+
+    @Override
+    public void onPartialResults(Bundle arg0) {}
+
+    @Override
+    public void onReadyForSpeech(Bundle arg0) {
+        // Activation code
+    }
+
+    @Override
+    public void onResults(final Bundle results) {
+        // Success code
+    }
+});
+\end{minted}
+
+Sin embargo, hubo problemas al agrupar estos sistemas en un bucle continuo. Se
+pretendía que, cuando se activara el modo de lectura continua, se empezara a
+leer el primer paso. A continuación, el sistema solicitaría nuevas órdenes a
+seguir mediante un diálogo de captura de órdenes (bien por voz o por la
+pantalla). El problema era que los tiempos entre los diversos elementos no
+cuadraban y el diálogo de captura de órdenes se bloqueaba en un bucle infinito
+del cual no se podía salir bajo ninguna circunstancia. Esto era causado porque
+el sistema del reconocedor de voz no puede (tal y como está implementado)
+permanecer escuchando hasta que reciba un estímulo. Esto se solucionó utilizando
+un termporidor intermedio entre cada franja de escucha del reconocedor.
+
+Finalmente, el flujo quedó como sigue:
+
+Al mostrar el diálogo de órdenes, se crea una nueva instancia de
+\texttt{speech recognizer}. A continuación, puede ocurrir uno de los siguientes
+eventos.
+\begin{enumerate}
+\item \textsc{Activación}: Se ejecutan los siguientes pasos:
+  \begin{itemize}
+  \item Se muestra un mensaje con las órdenes posibles.
+  \item Se activa una animación que indica que se está escuchando.
+  \item Se cancela el temporizador del reconocedor de espera en caso de que esté
+    activado.
+  \end{itemize}
+\item \textsc{Error}: el sistema no ha podido capturar ninguna orden por alguna
+  circunstancia ajena. Se ejecutan los siguientes pasos:
+  \begin{itemize}
+  \item Se muestra el error en pantalla.
+  \item Para la animación de escucha.
+  \item Reinicia el temporizador del reconocedor.
+  \end{itemize}
+\item \textsc{Éxito}: el sistema ha capturado una palabra. Se ejecutan los
+  siguientes pasos:
+  \begin{itemize}
+  \item Se para el temporizador del reconocedor.
+  \item Se para la animación de escucha.
+  \item Se identifica la orden que puede ser:
+    \begin{itemize}
+    \item \textit{Válida}: Se ejecuta la orden correspondiente, que puede ser
+      volver a leer el mismo paso, leer el paso siguiente, activar el cronómetro
+      o salir.
+    \item \textit{Inválida}: Se considera error y se ejecutan los mismos pasos
+      que en el evento 2 - Error.
+    \end{itemize}  
+  \end{itemize}
+\end{enumerate}
+
+Respecto al temporizador del reconocedor, cuando termina el tiempo de espera
+(sin haberse cancelado previamente) se activa de nuevo el reconocedor para
+que vuelva a escuchar. Es decir, se activa el evento de inicialización del
+reconocedor.
+
+Respecto al \texttt{text to speech}, cuando este termina de leer el texto que
+se le haya indicado, ejecuta la siguiente orden correspondiente, que será
+activar el crónometro si hay un tiempo definido en el paso actual o mostrar el
+diálogo de captura de órdenes en caso contrario.
+
