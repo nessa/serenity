@@ -617,7 +617,7 @@ julio hasta la fecha.
 \section{Pruebas no funcionales}
 
 Las pruebas no funcionales buscan verificar aspectos del proyecto más allá de su
-funcionalidad, como la seguridad.
+funcionalidad, como la seguridad o la calidad del código.
 
 \subsection{Pruebas de seguridad}
 
@@ -637,12 +637,165 @@ realizaron se encuentran las siguientes:
   un error 403 con el siguiente mensaje:
   \begin{minted}{bash}
 $ curl -X POST http://amuse-bouche.noeliarcado.es/auth/login/
-    --data 'username=test&password=test'
+    --data 'username=test&password=wrong_password'
 
 {"non_field_errors":["Unable to login with provided credentials."]}
   \end{minted}
 
+\item Se intentó iniciar sesión con credenciales válidas. La petición devuelve un
+  200 con el token de autenticación:
+
+  \begin{minted}{bash}
+$ curl -X POST http://amuse-bouche.noeliarcado.es/auth/login/ \
+    --data 'username=test&password=password'
+
+    {"auth_token":"token"}
+
+    
+$ curl -X GET http://amuse-bouche.noeliarcado.es/auth/me/ \
+    -H 'Authorization: Token token'
+    
+{"email":"test@gmail.com","first_name":"test","last_name":"test",
+ "id":3,"username":"test"}%  
+  \end{minted}
+
+\item Se intentó acceder al \textit{endpoint} de recetas utilizando varios
+  métodos con el siguiente resultado:
+
+  \begin{itemize}
+  \item Método GET: Devuelve el listado de recetas correctamente, enviando un
+    \textit{token} de autenticación o no.
+
+  \item Métodos POST, PUT y DELETE: Devuelve error 403 con credenciales inválidas o sin
+    credenciales.
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'
+
+{"detail":"Authentication credentials were not provided."}            
+    \end{minted}
+
+    Si las credenciales son válidas, pero el usuario no es el poseedor de la
+    receta, devuelve un error 403 con el sigiente mensaje:
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'
+
+{"detail":"You do not have permission to perform this action."}%               
+    \end{minted}
+
+    Si las credenciales son válidas y el usuario es el poseedor de la receta,
+    se devuelve un código 200 y se efectúa la operación correctamente..
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'    
+    \end{minted}
+    
+  \end{itemize}
+
+\item Se intentó acceder a los \textit{endpoints} de comentarios y puntuaciones
+  con el siguiente resultado:
+
+  \begin{itemize}
+  \item Método GET: Devuelve el listado de comentarios (o puntuaciones)
+    correctamente, enviando un \textit{token} de autenticación o no.
+
+  \item Métodos POST y PUT: Devuelve error 403 con credenciales
+    inválidas o sin credenciales.
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'
+
+{"detail":"Authentication credentials were not provided."}            
+    \end{minted}
+
+    Si las credenciales son válidas, se devuelve un código 200 y se efectúa la
+    operación correctamente..
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'    
+    \end{minted}
+
+  \item Método DELETE: Devuelve error 403 con credenciales inválidas o sin
+    credenciales.
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/translations/1/ \
+      -H 'Authorization: Token token'
+
+{"detail":"Authentication credentials were not provided."}            
+    \end{minted}
+
+    Si las credenciales son válidas y el usuario forma parte del grupo de
+    Moderadores, se devuelve un código 200 y se efectúa la operación correctamente.
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'    
+    \end{minted}
+  \end{itemize}
+
   
+\item Se intentó acceder al \textit{endpoint} de traducciones
+  con el siguiente resultado:
+  
+  \begin{itemize}
+  \item Método GET: Devuelve el listado de traducciones correctamente, enviando
+    un \textit{token} de autenticación o no.
+
+  \item Métodos POST, PUT y DELETE: Devuelve error 403 con credenciales inválidas o sin
+    credenciales.
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/translations/1/ \
+      -H 'Authorization: Token token'
+
+{"detail":"Authentication credentials were not provided."}            
+    \end{minted}
+
+    Si las credenciales son válidas, pero el usuario no es el poseedor de la
+    receta, devuelve un error 403 con el sigiente mensaje:
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/18/ \
+      -H 'Authorization: Token token'
+
+{"detail":"You do not have permission to perform this action."}%               
+    \end{minted}
+
+    Si las credenciales son válidas y el usuario forma parte del grupo de
+    Moderadores, se devuelve un código 200 y se efectúa la operación correctamente.
+
+    \begin{minted}{bash}
+$ curl -X METHOD http://amuse-bouche.noeliarcado.es/recipes/1/ \
+      -H 'Authorization: Token token'    
+    \end{minted}
+    
+  \end{itemize}
+  
+\item Se intentó acceder al \textit{endpoint} de ingredientes e independientemente
+  del método utilizado, siempre devuelve error 403 a menos que el usuario
+  cuyo \textit{token} se envíe sea del grupo de moderadores.
+\item Se intentó acceder al \textit{endpoint} de usuarios e independientemente
+  del método utilizado, siempre devuelve error 403 a menos que el usuario
+  cuyo \textit{token} se envíe sea del grupo de moderadores.
 \end{itemize}
 
 \subsection{Verificación de la calidad del código}
+
+Para el código Python, utilizando \textbf{pylint} y \textbf{python-mode} en
+Emacs se revisa cada fichero de código conforme se va desarrollando para
+comprobar que no existan fallos y además para satisfacer el estándar PEP8 de
+codificación. Se comprueban características como puede ser la longitud del
+código de línea, la comprobación de que los nombres de variables sean
+gramaticalmente correctos según su estándar de codificación, o la comprobación
+de que las interfaces declaradas sean realmente puestas en práctica, entre otras
+cosas.
+
+Para el código Java, se emplea el propio Android Studio que trae sus propios
+verificadores y resaltadores de serie.

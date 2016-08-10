@@ -48,7 +48,7 @@ sistema:
 \subsubsection{Cliente de la aplicación Android}
 
 Los usuarios que deseen utilizar la app deberán contar con un dispositivo que
-soporte como mínimo la versión 4.0 del sistema operativo Android. Para la
+soporte como mínimo la versión 5.1 del sistema operativo Android. Para la
 instalación inicial se necesitará que posean acceso a internet y a los servicios
 de Google Play. Posteriormente podrán utilizar la app sin conectarse, si así lo
 desean.
@@ -1114,4 +1114,451 @@ Ubuntu.
 En esta sección se detallarán las interfaces visuales de la app del proyecto,
 indicando qué acciones realizan cada uno de los componentes que las conforman.
 
-TODO
+\subsection{Aspecto desde el menú principal}
+
+La figura~\ref{fig:captura_menu_01} muestra el aspecto del icono de la
+aplicación desde el escritorio de Android y la figura~\ref{fig:captura_menu_02},
+desde el menú de aplicaciones.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_menu_01}
+  \caption{Icono en el lanzador}
+  \label{fig:captura_menu_01}
+\end{figure}
+
+Se observa que el icono es fácilmente identificable debido al estilo y los
+tonos utilizados. Al pulsar el icono de la aplicación, se inicia la pantalla de
+carga.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_menu_02}
+  \caption{Icono en el menú}
+  \label{fig:captura_menu_02}
+\end{figure}
+
+
+\subsection{Pantalla de carga}
+
+Cuando se pulsa el icono, se inicia la aplicación y se muestra la pantalla de
+carga. En caso de que se inicie la aplicación por primera vez, se muestra un
+diálogo para introducir el idioma de las recetas, como el que aparece en la
+figura~\ref{fig:captura_01}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_01}
+  \caption{Interfaz de usuario: Pantalla de carga - Diálogo de idiomas}
+  \label{fig:captura_01}
+\end{figure}
+
+Después de introducir el idioma o en caso de que
+no aparezca el diálogo, se actualizan los ingredientes mientras se muestra un
+indicador de carga y mensaje tal y como se ve en la figura~\ref{fig:captura_02}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_02}
+  \caption{Interfaz de usuario: Pantalla de carga - Cargando...}
+  \label{fig:captura_02}
+\end{figure}
+
+
+\subsection{Pantalla de listado de recetas}
+
+Tras cargar la aplicación, se muestra el listado de últimas recetas (cargadas
+desde la API) o, en caso de que esté activada la opción ``Modo sin conexión'' en
+la configuración, se cargará el listado de recetas ya descargadas. Ambas tienen
+el mismo aspecto que puede verse en la figura~\ref{fig:captura_03}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_03}
+  \caption{Interfaz de usuario: Listado de recetas}
+  \label{fig:captura_03}
+\end{figure}
+
+En esta vista, se pueden realizar varias acciones:
+\begin{enumerate}
+\item Pulsar sobre el icono de la hamburguesa, el icono que se encuentra a la
+  izquierda en la barra de acción superior. En ese caso, se abrirá el menú
+  lateral.
+\item Pulsar sobre el icono de actualizar, el primero a la derecha en la barra
+  de acción superior. Se recargará la vista actual de recetas.
+\item Pulsar sobre el icono de la lupa, el segundo a la derecha en la barra
+  de acción superior. Se mostrará la vista lateral que contiene los filtros
+  aplicables a la receta. En caso de que esté abierta dicha vista, se cerrará.
+\item Pulsar sobre la imagen de una de las recetas visibles. Se mostrará una
+  animación que conecta con la pantalla de detalle de la receta.
+\item Pulsar sobre el botón flotante con el símbolo '+'. Se mostrará la vista
+  de edición de una receta generando una receta nueva desde cero.
+\end{enumerate}
+
+En caso de que no se encuentren recetas, la vista tendrá el aspecto que se
+muestra en la figura~\ref{fig:captura_04}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_04}
+  \caption{Interfaz de usuario: Listado vacío}
+  \label{fig:captura_04}
+\end{figure}
+
+La vista de filtrado de recetas tiene el aspecto que se muestra en las
+figuras~\ref{fig:captura_06} y~\ref{fig:captura_07}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_06}
+  \caption{Interfaz de usuario: Filtro de recetas}
+  \label{fig:captura_06}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_07}
+  \caption{Interfaz de usuario: Filtro de recetas con autocompletado}
+  \label{fig:captura_07}
+\end{figure}
+
+
+\subsection{Menú lateral}
+
+Desde cualquier vista que posea el icono de la hamburguesa en su barra de acción
+se podrá visualizar el menú lateral, que tiene el aspecto que se muestra en la
+figura~\ref{fig:captura_05}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_05}
+  \caption{Interfaz de usuario: Menú lateral}
+  \label{fig:captura_05}
+\end{figure}
+
+En esta vista, se pueden realizar varias acciones:
+\begin{enumerate}
+\item Pulsar sobre ``Login'' y aparecería la pantalla de usuario en caso de que
+  haya iniciado sesión o la pantalla de login en caso contrario.
+\item Pulsar sobre ``Últimas recetas'' y aparecería la pantalla de listado de
+  recetas con las recetas cargadas desde la API.
+\item Pulsar sobre ``Descargadas'' y aparecería la pantalla de listado de
+  recetas con las recetas de la base de datos.
+\item Pulsar sobre ``Mis recetas'' y aparecería la pantalla de listado de
+  recetas con las recetas de la base de datos que pertenecen al usuario.
+\item Pulsar sobre ``Configuración'' y aparecería la pantalla de configuración.
+\item Pulsar sobre ``Información'' y aparecería la pantalla de información.
+\end{enumerate}
+
+
+\subsection{Pantalla de login}
+
+La pantalla de login tiene el aspecto que se muestra en la
+figura~\ref{fig:captura_13}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_13}
+  \caption{Interfaz de usuario: Login}
+  \label{fig:captura_13}
+\end{figure}
+
+En esta vista se puede:
+\begin{enumerate}
+\item Pulsar sobre el botón ``Iniciar sesión'' una vez
+  rellenados los datos solicitados para iniciar la sesión con el usuario
+  especificado. En caso de que funcione correctamente, aparecerá la pantalla de
+  usuario en sesión. En caso contrario, se mostrará el error.
+\item Pulsar sobre el botón de ``Registrarse'' para acceder a la pantalla de
+  registro.
+\end{enumerate}
+
+\subsection{Pantalla de registro}
+
+La pantalla de registro es la que aparece en la figura~\ref{fig:captura_14}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_14}
+  \caption{Interfaz de usuario: Registro}
+  \label{fig:captura_14}
+\end{figure}
+
+En esta vista se puede:
+\begin{enumerate}
+\item Pulsar sobre el botón ``Registrar'' una vez rellenados los datos
+  solicitados para registrar un nuevo usuario especificado. En caso de que
+  funcione correctamente, aparecerá la pantalla de login con un mensaje de
+  éxito. En caso contrario, se mostrará el error.
+\item Pulsar sobre el botón de ``Iniciar sesión para acceder a la pantalla de
+  login.
+\end{enumerate}
+
+\subsection{Pantalla de usuario}
+
+La vista de usuario en sesión puede verse en la figura~\ref{fig:captura_15}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_15}
+  \caption{Interfaz de usuario: Usuario en sesión}
+  \label{fig:captura_15}
+\end{figure}
+
+En esta vista se puede pulsar sobre el botón ``Abandonar'' para cerrar la sesión,
+volviendo a aparecer la pantalla de login.
+
+
+\subsection{Pantalla de detalle de receta}
+
+Esta vista se muestra al pulsar sobre la imagen de una receta desde la pantalla
+de listado de recetas. Posee varias pestañas con los siguientes datos:
+\begin{enumerate}
+\item Pestaña de información, que tiene el aspecto de las
+  figuras~\ref{fig:captura_08} y~\ref{fig:captura_09}.
+
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_08}
+    \caption{Interfaz de usuario: Detalle de receta - Información}
+    \label{fig:captura_08}
+  \end{figure}
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_09}
+    \caption{Interfaz de usuario: Detalle de receta - Categorías}
+    \label{fig:captura_09}
+  \end{figure}
+
+\item Pestaña de ingredientes, que es tal y como se muestra en la
+  figura~\ref{fig:captura_10}.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_10}
+    \caption{Interfaz de usuario: Detalle de receta - Ingredientes}
+    \label{fig:captura_10}
+  \end{figure}
+
+
+\item Pestaña de pasos, que se muestra en la figura~\ref{fig:captura_11}.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_11}
+    \caption{Interfaz de usuario: Detalle de receta - Pasos}
+    \label{fig:captura_11}
+  \end{figure}
+
+\item Pestaña de comentarios, como la que se muestra en la
+  figura~\ref{fig:captura_12}.
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_12}
+    \caption{Interfaz de usuario: Detalle de receta - Comentarios}
+    \label{fig:captura_12}
+  \end{figure}
+\end{enumerate}
+
+
+En esta pantalla se pueden accionar los siguientes eventos:
+\begin{enumerate}
+\item Al pulsar sobre el icono del lápiz de la barra superior, se mostrará la
+  pantalla de edición de una receta con la receta actual.
+\item Al pulsar sobre el icono de la flecha hacia abajo de la barra superior,
+  se descarga la receta actual y se guarda en la base de datos.
+\item Al pulsar sobre el icono de la flecha hacia arriba de la barra superior,
+  se actualiza la receta de la API con los datos locales.
+\item Al pulsar sobre el icono de la estrella de la barra superior, se muestra el
+  diálogo de ``Puntuar receta'' (que se ve en la figura~\ref{fig:captura_16}),
+  desde el cual se puede enviar una puntuación a la API.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_16}
+    \caption{Interfaz de usuario: Detalle de receta - Puntuar receta}
+    \label{fig:captura_16}
+  \end{figure}
+
+\item Al pulsar sobre el icono de la papelera de la barra superior, aparece un
+  diálogo de confirmación como el que se ve en la figura~\ref{fig:captura_17},
+  que preguntará si se desea borrar la receta.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_17}
+    \caption{Interfaz de usuario: Detalle de receta - Borrar receta}
+    \label{fig:captura_17}
+  \end{figure}
+
+\item Al pulsar sobre el botón ``Empieza a hablar'' de la pestaña de pasos, se
+  activa la lectura automática, tal y como se ve en la
+  figura~\ref{fig:captura_18}. También capturará órdenes por voz o por pantalla
+  como se ve en la figura~\ref{fig:captura_19}.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_18}
+    \caption{Interfaz de usuario: Detalle de receta - Lectura automática}
+    \label{fig:captura_18}
+  \end{figure}
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_19}
+    \caption{Interfaz de usuario: Detalle de receta - Captura de órdenes}
+    \label{fig:captura_19}
+  \end{figure}
+
+\end{enumerate}
+
+
+
+\subsection{Pantalla de edición de receta}
+
+Esta vista se muestra al pulsar sobre el icono de '+' del listado de recetas o
+sobre el icono del lápiz desde la pantalla de detalle de una receta. Posee
+varias pestañas con los siguientes datos:
+\begin{enumerate}
+\item Pestaña de información, donde se introducirán los datos que se ven en las
+  figuras~\ref{fig:captura_20} y~\ref{fig:captura_21}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_20}
+  \caption{Interfaz de usuario: Edición de receta - Información}
+  \label{fig:captura_20}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_21}
+  \caption{Interfaz de usuario: Edición de receta - Categorías}
+  \label{fig:captura_21}
+\end{figure}
+
+\item Pestaña de ingredientes, que es donde se introducen los ingredientes, como
+  se ve en la figura~\ref{fig:captura_22}.
+  
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_22}
+  \caption{Interfaz de usuario: Edición de receta - Ingredientes}
+  \label{fig:captura_22}
+\end{figure}
+
+\item Pestaña de pasos, que se muestra en la figura~\ref{fig:captura_24}.
+  
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_24}
+  \caption{Interfaz de usuario: Edición de receta - Pasos}
+  \label{fig:captura_24}
+\end{figure}
+
+\end{enumerate}
+
+En esta pantalla se pueden llevar a cabo las siguientes acciones:
+\begin{enumerate}
+\item Al pulsar sobre el icono flotante con el icono de '+' en la pestaña de
+  ingredientes, se mostrará el diálogo de añadir un ingrediente, que puede verse
+  en la figura~\ref{fig:captura_23}.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_23}
+    \caption{Interfaz de usuario: Edición de receta - Añadir ingrediente}
+    \label{fig:captura_23}
+  \end{figure}
+
+\item Al pulsar sobre un ingrediente se muestra el diálogo de editar un
+  ingrediente, idéntico al de la figura~\ref{fig:captura_23}.
+  
+\item Al pulsar sobre el icono flotante con el icono de '+' en la pestaña de
+  pasos, se mostrará el diálogo de añadir un paso, que puede verse
+  en la figura~\ref{fig:captura_25}.
+  
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_25}
+    \caption{Interfaz de usuario: Edición de receta - Añadir paso}
+    \label{fig:captura_25}
+  \end{figure}
+
+
+\item Al pulsar sobre un ingrediente se muestra el diálogo de editar un
+  paso, idéntico al de la figura~\ref{fig:captura_25}.
+
+\item Al pulsar sobre el icono del disquete en la barra superior, se guarda la
+  receta en la base de datos.
+\end{enumerate}
+
+
+\subsection{Pantalla de configuración}
+
+En esta pantalla se modifica la configuración básica de la aplicación. Tiene el
+aspecto que se ve en la figura~\ref{fig:captura_26}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_26}
+  \caption{Interfaz de usuario: Configuración}
+  \label{fig:captura_26}
+\end{figure}
+
+Se puede efectuar las siguientes acciones:
+\begin{enumerate}
+\item Habilitar o deshabiltiar las diferentes configuraciones con selectores.
+\item Modificar el idioma de las recetas, pulsando sobre la celda con título
+  ``Idioma de las recetas''. Entonces aparece un diálogo como el de la
+  figura~\ref{fig:captura_27} donde se puede seleccionar otro idioma.
+\item Actualizar el listado de ingredientes, pulsando sobre la celda
+  que reza ``Actualizar ingredientes''.
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{cap5/img/captura_27}
+    \caption{Interfaz de usuario: Configuración - Cambiar idioma}
+    \label{fig:captura_27}
+  \end{figure}
+
+\item Instalar los paquetes de idiomas, pulsando sobre la celda cuyo título es
+  ``Descargar paquetes de idiomas''.
+\end{enumerate}
+
+\subsection{Pantalla de información}
+
+La pantalla de información contiene una interfaz como la de la
+figura~\ref{fig:captura_28}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_28}
+  \caption{Interfaz de usuario: Información}
+  \label{fig:captura_28}
+\end{figure}
+
+En esta vista se puede:
+\begin{enumerate}
+\item Visualizar la licencias de la aplicación pulsando sobre el botón
+  ``Licencia GPLv3'' o ``Licencias de terceros''. Aparecen como en las
+  figuras~\ref{fig:captura_29} y~\ref{fig:captura_30}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_29}
+  \caption{Interfaz de usuario: Información - Licencia GPLv3}
+  \label{fig:captura_29}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{cap5/img/captura_30}
+  \caption{Interfaz de usuario: Información - Licencias de terceros}
+  \label{fig:captura_30}
+\end{figure}
+
+\end{enumerate}
