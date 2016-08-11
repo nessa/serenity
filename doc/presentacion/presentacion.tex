@@ -1,0 +1,231 @@
+% ===================================================================
+% Presentación con Latex Beamer
+% ===================================================================
+\documentclass[10pt,xcolor=svgnames]{beamer}
+% \documentclass[handout,xcolor=svgnames]{beamer} %Version imprimible
+% -------------------------------------------------------------------
+% Paquetes personalizados
+\usepackage{paquetes}
+\usepackage{colores}
+\usepackage{info}
+\usepackage{modo}
+\usepackage{licencia}
+% -------------------------------------------------------------------
+
+% Comienza el documento
+\begin{document}
+% Tikz -> Imágenes
+\tikzstyle{every picture}+=[remember picture]
+% Entorno matemático
+\everymath{\displaystyle}
+% ------------------------------------------------------------------
+
+% Título a partir del fondo especial
+\begin{frame}
+  \maketitle
+\end{frame}
+
+% Transparencia de índice
+\begin{frame}{Índice}
+  \transdissolve
+  \tableofcontents
+\end{frame}
+
+\section{Introducción}
+
+\subsection{Objetivos}
+
+\begin{frame}{Objetivos}
+  \transdissolve
+  Crear una aplicación móvil de acceso público que permita la visualización
+  de recetas de cocina\\
+
+  \vspace*{1cm}
+
+  \pause
+
+  \textsc{Requisitos:}\\
+  \begin{enumerate}
+  \item<2-5> Lectura automática y captura de órdenes
+  \item<3-5> Creación y subida de recetas
+  \item<4-5> Categorización y filtrado (alérgenos)
+  \item<5> Multiidioma
+  \end{enumerate}
+\end{frame}
+
+
+\subsection{Motivaciones}
+
+\begin{frame}{¿Por qué este proyecto?}
+  \transdissolve
+  \begin{block}{Cuando cocinamos...}
+    \begin{itemize}
+    \item leemos las recetas desde el dispositivo
+    \item paramos para ver cada paso
+    \item podemos poner en riesgo el dispositivo
+    \end{itemize}
+  \end{block}
+
+  \begin{center}
+    Necesidad personal
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{¿Por qué Android?}
+  \transdissolve
+  
+  \begin{block}{Android}
+    Sistema operativo basado en el núcleo Linux\\
+  \end{block}
+  
+  \begin{itemize}
+  \item Popularidad
+  \item Interés personal
+  \item Biblioteca \texttt{Text To Speech} desarrollada por Google
+  \item Biblioteca \texttt{Speech Recognizer} desarrollada por Google
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Planificación}
+
+\begin{frame}{Diagrama de Gantt [1/2]}
+  \transdissolve
+  \begin{cambiarmargen}{-2.5cm}{-2.5cm}
+
+    \begin{table}[hbtp]
+      \centering
+      \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Iteración} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
+        \hline
+        Planificación & 56 horas & 77 horas \\
+        \hline
+        Aprendizaje & 224 horas & 242 horas \\
+        \hline
+        Diseño visual & 56 horas & 22 horas \\
+        \hline
+        Desarrollo API & 128 horas & 110 horas \\
+        \hline
+        Desarrollo app & 128 horas & 132 horas \\
+        \hline
+        Ampliación API & 168 horas & 88 horas \\
+        \hline
+        Ampliación app & 216 horas & 222 horas \\
+        \hline
+        Despliegue & 32 horas & 26 horas \\
+        \hline
+        Resolución de \textit{bugs} & 160 horas & 152 horas \\
+        \hline
+        Documentación & 80 horas & 65 horas \\
+        \hline
+        \textbf{Total} & 1249 horas & 1136 horas \\
+        \hline
+      \end{tabular}
+      \caption{Comparación de la estimación con los tiempos reales}
+      \label{tab:estimacion_tiempo}
+    \end{table}
+    
+  \end{cambiarmargen}
+\end{frame}
+
+\section{Desarrollo}
+
+
+
+
+\section{Conclusiones}
+
+\subsection{El futuro del proyecto}
+
+\begin{frame}{Apertura del wiki}
+  \transdissolve
+  
+  \begin{itemize}
+  \item Apertura completa: sin restricciones\\
+    \then{} seguimiento de la evolución del wiki
+
+    \vspace*{0.5cm}
+  \item Versión estática de los artículos principales\\
+    \then{} información fiable\\
+    \then{} versión en PDF exportada a \LaTeX{}
+  \end{itemize}
+  
+\end{frame}
+
+\subsection{Conclusión}
+
+\begin{frame}{Objetivos cumplidos}
+  \transdissolve
+
+  \begin{enumerate}
+  \item<1-3> Aplicación de acceso público para crear y compartir recetas
+
+    \vspace*{0.2cm}
+  \item<2-3> Categorización y filtrado, multiidioma...
+
+    \vspace*{0.2cm}
+  \item<3> Lectura automática y captura de órdenes
+  \end{enumerate}  
+  
+\end{frame}
+
+
+\begin{frame}{Experiencia}
+  \transdissolve
+
+  He aprendido...
+  \begin{itemize}
+  \item a trabajar en plataformas Android
+  \item algo más de Python (Django)
+  \item a utilizar Vagrant
+  \item despliegue de un proyecto real en Google Play
+  \item muchas recetas nuevas
+  \end{itemize}
+\end{frame}  
+
+
+\begin{frame}{Futuras ampliaciones}
+  \transdissolve
+
+  \begin{itemize}
+  \item Unidades de medida dinámicas
+    \then{} Multiplicador por comensales
+
+    \vspace*{0.5cm}
+  \item Calendario de comidas
+
+    \vspace*{0.5cm}
+  \item Listado de la compra
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Bibliografía}
+
+  \begin{thebibliography}{4}
+  \bibitem{man-linux} \textit{Marko Gargenta},
+    \newblock \textsc{Learning Android\\Building Applications for the Android
+      Market} O'Reilly Media 2011
+  \bibitem{python-admin} \textit{Norman Peitek \& Marcus Pöhls},
+    \newblock \textsc{Picasso: Easy Image Loading on Android} Leanpub
+  \bibitem{guia-linux} \textit{Norman Peitek \& Marcus Pöhls},
+    \newblock \textsc{Retrofit: Love working with APIs on Android} Leanpub
+  \end{thebibliography}
+\end{frame}
+
+
+\begin{frame}{Preguntas}
+  \transdissolve
+
+  \begin{center}
+    \Large Gracias por su atención\\
+    \vspace*{1cm}
+    \Huge \textcolor{naranja}{¿Preguntas?}\\
+  \end{center}
+\end{frame}  
+
+\licencia
+
+\end{document}

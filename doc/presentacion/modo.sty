@@ -1,0 +1,96 @@
+% Modo y características:
+% ==== = ===============
+\mode<presentation>
+{
+  \usefonttheme{structuresmallcapsserif}
+  % The outertheme defines the head and the footline of each slide.
+  %%\useoutertheme{sidebar}
+  \useoutertheme{split}
+  % The innertheme defines the enumerate and itemize items styles
+  \useinnertheme{circles}
+  
+  \setbeamercolor{alerted text}{fg=orange}
+  \setbeamercolor{background canvas}{bg=white}
+  \setbeamercolor{block body alerted}{bg=gris}
+  \setbeamercolor{block body}{bg=verdeclaro}
+  \setbeamercolor{block body example}{bg=gris}
+  \setbeamercolor{block title alerted}{use={normal text,alerted text},fg=alerted text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+  \setbeamercolor{block title}{bg=verde, fg=white}
+  \setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=normal text.bg!75!black}
+  \setbeamercolor{fine separation line}{}
+  \setbeamercolor{frametitle}{fg=white, bg=verde}
+  \setbeamercolor{item projected}{fg=white, bg=verde}%% Highlight item
+  \setbeamercolor{normal text}{bg=gris}
+  \setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+  \setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+  \setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+  \setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+  \setbeamercolor{section in sidebar}{fg=naranja}
+  \setbeamercolor{section in sidebar shaded}{fg=grey}
+  \setbeamercolor{separation line}{}
+  \setbeamercolor{sidebar}{bg=red}
+  \setbeamercolor{sidebar}{parent=palette primary}
+  \setbeamercolor{structure}{bg=verde, fg=white}
+  \setbeamercolor{subsection in sidebar}{fg=verde}
+  \setbeamercolor{subsection in sidebar shaded}{fg=grey}
+  \setbeamercolor{title}{fg=white}
+  \setbeamercolor{titlelike}{fg=yellow}
+}
+\setbeamertemplate{itemize item}{\color{verde}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\color{verde}$\blacktriangleright$}
+% --------------------------------------------------------------------
+\hypersetup{colorlinks=true,%
+    linkcolor=naranja,%
+    citecolor=naranja,%
+    filecolor=naranja,%
+    menucolor=naranja,%
+    pagecolor=naranja,%
+    urlcolor=naranja}
+% --------------------------------------------------------------------
+% Color del tema:
+% ===== === ====
+%\usecolortheme[named=DarkBlue]{structure}
+% --------------------------------------------------------------------
+% Fondo:
+% =====
+% Modificación del fondo
+\newcommand{\cambiarfondo}[1]{%
+\setbeamertemplate{background}{%
+\includegraphics[width=\paperwidth,height=\paperheight]{#1}
+}}
+% Vaciar fondo
+\newcommand{\sinfondo}{%
+\setbeamertemplate{background}{}
+}
+% --------------------------------------------------------------------
+% Definición de comportamiento en cada nueva subsección:
+%  -> Título en función de sección y subsección
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+   \frametitle{Índice}
+   \transdissolve
+   \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+% --------------------------------------------------------------------
+% Márgenes:
+% ========
+% Márgenes laterales (adecuación con el fondo)
+\setbeamersize{text margin left=1.5cm, text margin right=1.5cm}
+% Cambiar márgenes
+\newenvironment{cambiarmargen}[2]{%
+ \begin{list}{}{%
+  \setlength{\topsep}{0pt}%
+  \setlength{\leftmargin}{#1}%
+  \setlength{\rightmargin}{#2}%
+  \setlength{\listparindent}{\parindent}%
+  \setlength{\itemindent}{\parindent}%
+		  \setlength{\parsep}{\parskip}%
+		  }%
+ \item[]}{\end{list}}
+% --------------------------------------------------------------------
+% Comando "entonces"
+\newcommand{\then}{
+  \textcolor{naranja}{\large \ding{229}}
+}
