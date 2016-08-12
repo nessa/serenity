@@ -15,7 +15,7 @@
 % Comienza el documento
 \begin{document}
 % Tikz -> Imágenes
-\tikzstyle{every picture}+=[remember picture]
+%\tikzstyle{every picture}+=[remember picture]
 % Entorno matemático
 \everymath{\displaystyle}
 % ------------------------------------------------------------------
@@ -27,37 +27,15 @@
 
 % Transparencia de índice
 \begin{frame}{Índice}
-  \transdissolve
   \tableofcontents
 \end{frame}
 
 \section{Introducción}
 
-\subsection{Objetivos}
 
-\begin{frame}{Objetivos}
-  \transdissolve
-  Crear una aplicación móvil de acceso público que permita la visualización
-  de recetas de cocina\\
-
-  \vspace*{1cm}
-
-  \pause
-
-  \textsc{Requisitos:}\\
-  \begin{enumerate}
-  \item<2-5> Lectura automática y captura de órdenes
-  \item<3-5> Creación y subida de recetas
-  \item<4-5> Categorización y filtrado (alérgenos)
-  \item<5> Multiidioma
-  \end{enumerate}
-\end{frame}
-
-
-\subsection{Motivaciones}
+\subsection{Contexto}
 
 \begin{frame}{¿Por qué este proyecto?}
-  \transdissolve
   \begin{block}{Cuando cocinamos...}
     \begin{itemize}
     \item leemos las recetas desde el dispositivo
@@ -67,31 +45,85 @@
   \end{block}
 
   \begin{center}
-    Necesidad personal
+    Motivación personal
   \end{center}
 \end{frame}
 
+\subsection{Objetivos}
 
-\begin{frame}{¿Por qué Android?}
-  \transdissolve
-  
+\begin{frame}{Objetivos}
+  \begin{center}
+    Crear una aplicación móvil de acceso \textbf{público} que permita la
+    visualización de \textbf{recetas} de cocina
+  \end{center}
+
+  \vspace*{0.5cm}
+
+  \textsc{Requisitos:}\\
+  \begin{enumerate}
+  \item Lectura automática y captura de órdenes
+  \item Creación y subida de recetas
+  \item Categorización y filtrado (alérgenos)
+  \item Multiidioma
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{¿Por qué Android?}  
   \begin{block}{Android}
-    Sistema operativo basado en el núcleo Linux\\
+    Sistema operativo basado en el núcleo Linux
   \end{block}
   
   \begin{itemize}
   \item Popularidad
-  \item Interés personal
-  \item Biblioteca \texttt{Text To Speech} desarrollada por Google
-  \item Biblioteca \texttt{Speech Recognizer} desarrollada por Google
+  \item Interés personal (iOS descartado)
+  \item Biblioteca \textsc{Text To Speech} desarrollada por Google
+  \item Biblioteca \textsc{Speech Recognizer} desarrollada por Google
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{¿Por qué Django?}  
+  \begin{block}{Django}
+    Framework de desarrollo web basado en MVC
+  \end{block}
+  
+  \begin{itemize}
+  \item Python en desarrollo web
+  \item Popularidad
+  \item Robustez
+  \item Software libre
+  \item Django Rest Framework
   \end{itemize}
 \end{frame}
 
 
 \subsection{Planificación}
 
-\begin{frame}{Diagrama de Gantt [1/2]}
-  \transdissolve
+\begin{frame}{Desarrollo iterativo}
+
+  \begin{enumerate}
+  \item Preparación previa:
+    \begin{itemize}
+    \item Definición de requisitos y planificación
+    \item Aprendizaje autodidacta
+    \item Diseño visual
+    \end{itemize}
+  \item Desarrollo de la base de la API
+  \item Desarrollo de la base de la app
+  \item Ampliación de la API
+  \item Amplicación de la app
+  \item Revisión
+    \begin{itemize}
+    \item Despliegue en producción de la API
+    \item Plan de pruebas - testers
+    \item Resolución de \textit{bugs}
+    \item Documentación
+    \end{itemize}
+  \end{enumerate}
+  
+\end{frame}
+  
+\begin{frame}{Estimación VS tiempo real}
   \begin{cambiarmargen}{-2.5cm}{-2.5cm}
 
     \begin{table}[hbtp]
@@ -123,58 +155,250 @@
         \textbf{Total} & 1249 horas & 1136 horas \\
         \hline
       \end{tabular}
-      \caption{Comparación de la estimación con los tiempos reales}
       \label{tab:estimacion_tiempo}
     \end{table}
     
   \end{cambiarmargen}
 \end{frame}
 
-\section{Desarrollo}
 
+%% Contenido
 
+\section{El proyecto}
 
+\subsection{Descripción}
 
-\section{Conclusiones}
+\begin{frame}{¿Qué es Amuse Bouche?}
 
-\subsection{El futuro del proyecto}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{./img/logotipo}
+  \end{figure}
 
-\begin{frame}{Apertura del wiki}
-  \transdissolve
+  \begin{center}
+    API + Aplicación móvil
+  \end{center}
+  
+\end{frame}
+
+\begin{frame}{API}
+
+  API REST para manejar los datos a compartir:
   
   \begin{itemize}
-  \item Apertura completa: sin restricciones\\
-    \then{} seguimiento de la evolución del wiki
+  \item Usuarios
+  \item Recetas
+    \begin{itemize}
+    \item Categorías
+    \item Ingredientes
+    \item Pasos      
+    \end{itemize}
+  \item Puntuaciones
+  \item Comentarios
+  \end{itemize}
 
-    \vspace*{0.5cm}
-  \item Versión estática de los artículos principales\\
-    \then{} información fiable\\
-    \then{} versión en PDF exportada a \LaTeX{}
+  Y los datos para funcionalidades extra:
+  \begin{itemize}
+  \item Ingredientes categorizados
+    \begin{itemize}
+    \item Categorías
+    \item Traducciones
+    \end{itemize}
   \end{itemize}
   
 \end{frame}
 
-\subsection{Conclusión}
+\begin{frame}{Aplicación móvil}
+  \begin{itemize}
+  \item Funcionalidad:
+    \begin{itemize}
+    \item Crear y editar de recetas a nivel local
+    \item  Compartir recetas
+    \item Lectura automática y captura de órdenes
+    \item Multiidioma
+    \item Categorización y filtrado
+    \end{itemize}
+  \item Funcionalidades y detalles extra:
+    \begin{itemize}
+    \item Material Design
+    \item Modo sin conexión
+    \item Modo solo WiFi
+    \item Autocompletado de ingredientes (en filtrado y añadir ingrediente)
+    \item Cronómetro integrado
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Aplicación móvil}
+  \begin{minipage}{\linewidth}
+    \centering
+    \begin{minipage}{0.4\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/captura_02}
+      \end{figure}
+    \end{minipage}
+    \hspace{0.05\linewidth}
+    \begin{minipage}{0.4\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/captura_13}
+      \end{figure}
+    \end{minipage}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}{Aplicación móvil}
+  \begin{minipage}{\linewidth}
+    \centering
+    \begin{minipage}{0.4\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/captura_03}
+      \end{figure}
+    \end{minipage}
+    \hspace{0.05\linewidth}
+    \begin{minipage}{0.4\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/captura_05}
+      \end{figure}
+    \end{minipage}
+  \end{minipage}
+\end{frame}
+
+
+
+\begin{frame}{Aplicación móvil}
+  \begin{minipage}{\linewidth}
+    \centering
+    \begin{minipage}{0.4\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/captura_06}
+      \end{figure}
+    \end{minipage}
+    \hspace{0.05\linewidth}
+    \begin{minipage}{0.4\linewidth}
+      \begin{figure}[H]
+        \includegraphics[width=\linewidth]{img/captura_13}
+      \end{figure}
+    \end{minipage}
+  \end{minipage}
+\end{frame}
+
+
+\subsection{Desarrollo}
+
+\begin{frame}{Tecnologías utilizadas}
+  \begin{itemize}
+  \item API:
+    \begin{itemize}
+    \item Python, Django, Django Rest Framework
+    \item nginx, Gunicorn, Supervisor
+    \item PostgreSQL
+    \end{itemize}
+  \item Aplicación móvil:
+    \begin{itemize}
+    \item SDK oficial
+    \item Text To Speech, Speech Recognizer
+    \item Picasso, Retrofit
+    \end{itemize}
+  \item Otras:
+    \begin{itemize}
+    \item GNU Emacs, Android Studio, Vagrant,...
+    \end{itemize}    
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{Implementación: Categorización}
+
+  \begin{cambiarmargen}{-0.5cm}{-0.5cm}
+    \textcolor{naranja}{\textsc{Idea original}}: Sistema automático de detección
+    de alérgenos
+
+    \begin{block}{DBpedia}
+      Consulta sobre información semántica de datos de Wikipedia
+    \end{block}
+
+    
+    \begin{minted}{bash}
+PREFIX dcterms: <http://purl.org/dc/terms/>
+select * where{
+  ?marisco dcterms:subject
+  <http://es.dbpedia.org/resource/Categoría:Marisco> .
+}
+    \end{minted}
+
+    \vspace*{0.5cm}
+    
+    \then{} Información inconsistente: automatización imposible\\
+    \then{} Peligro de obtener un falso positivo
+  \end{cambiarmargen}
+\end{frame}
+
+
+
+\begin{frame}{Implementación: Categorización}
+
+  \textcolor{naranja}{\textsc{Solución}}: \textit{Endpoint} de ingredientes
+  categorizados en la API
+
+  \begin{itemize}
+  \item Intolerancia al gluten
+  \item Intolerancia a la lactosa
+  \item Alergia al marisco
+  \item Alergia al pescado
+  \item Alergia a los frutos secos
+  \item \textbf{Sin categorizar}
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}{Implementación: Captura de órdenes}
+
+  Flujo de speech recognizer: imagen
+  
+\end{frame}
+
+\begin{frame}{Pruebas de software}
+
+  \begin{block}{Entorno de testing}
+    Desplegado con Vagrant y Ansible
+    
+    \begin{itemize}
+    \item Plan de pruebas - Bloques funcionales
+    \item Pruebas de seguridad
+    \item Verificación de calidad del código
+    \end{itemize}
+  \end{block}
+      
+  \begin{block}{Entorno de producción real}
+    Desde julio de 2016
+    \begin{itemize}
+    \item Play Store: Beta de la app
+    \item Testers y dispositivos variados
+    \end{itemize}
+  \end{block}
+  
+\end{frame}
+
+
+%% Conclusiones
+
+\section{Conclusiones}
 
 \begin{frame}{Objetivos cumplidos}
-  \transdissolve
-
   \begin{enumerate}
-  \item<1-3> Aplicación de acceso público para crear y compartir recetas
-
-    \vspace*{0.2cm}
-  \item<2-3> Categorización y filtrado, multiidioma...
-
-    \vspace*{0.2cm}
-  \item<3> Lectura automática y captura de órdenes
+  \item Visualización de recetas
+  \item Acceso público y compartir recetas
+  \item Categorización y filtrado
+  \item Multiidioma
+  \item Lectura automática
+  \item Captura de órdenes
   \end{enumerate}  
   
 \end{frame}
 
 
 \begin{frame}{Experiencia}
-  \transdissolve
-
   He aprendido...
   \begin{itemize}
   \item a trabajar en plataformas Android
@@ -187,10 +411,9 @@
 
 
 \begin{frame}{Futuras ampliaciones}
-  \transdissolve
 
   \begin{itemize}
-  \item Unidades de medida dinámicas
+  \item Unidades de medida dinámicas\\
     \then{} Multiplicador por comensales
 
     \vspace*{0.5cm}
@@ -216,13 +439,20 @@
 \end{frame}
 
 
+\begin{frame}{Demostración}
+
+  \begin{center}
+    \Huge Demostración
+  \end{center}
+\end{frame}  
+
+
 \begin{frame}{Preguntas}
-  \transdissolve
 
   \begin{center}
     \Large Gracias por su atención\\
     \vspace*{1cm}
-    \Huge \textcolor{naranja}{¿Preguntas?}\\
+    \Huge \textcolor{naranja}{¿Preguntas?}
   \end{center}
 \end{frame}  
 

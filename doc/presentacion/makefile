@@ -2,8 +2,8 @@ DOC = presentacion
 PDF = $(DOC).pdf
 
 pdf:
-	pdflatex $(DOC).tex
-	pdflatex $(DOC).tex
+	pdflatex --shell-escape $(DOC).tex
+	pdflatex --shell-escape $(DOC).tex
 
 clean: 
 	$(RM) -f *.ps *.dvi *.aux *.toc \
