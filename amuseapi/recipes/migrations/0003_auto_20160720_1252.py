@@ -14,6 +14,20 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='recipeingredient',
             name='measurement_unit',
-            field=models.CharField(choices=[('g', 'gram'), ('kg', 'kilogram'), ('ml', 'milliliter'), ('l', 'liter'), ('pound', 'pound'), ('oz', 'ounce'), ('glass', 'glass'), ('unit', 'unit'), ('cup', 'cup'), ('tbsp', 'tablespoon'), ('tsp', 'teaspoon'), ('rasher', 'rasher'), ('stalk', 'stalk')], max_length=100, default='unit'),
+            field=models.CharField(choices=[
+                ('g', 'gram'),
+                ('kg', 'kilogram'),
+                ('ml', 'milliliter'),
+                ('l', 'liter'),
+                ('pound', 'pound'),
+                ('oz', 'ounce'),
+                ('glass', 'glass'),
+                ('unit', 'unit'),
+                ('cup', 'cup'),
+                ('tbsp', 'tablespoon'),
+                ('tsp', 'teaspoon'),
+                ('rasher', 'rasher'),
+                ('stalk', 'stalk')
+            ], max_length=100, default='unit'),
         ),
     ]

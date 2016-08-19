@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
                 ('average_rating', models.FloatField(default=0)),
                 ('comments_number', models.IntegerField(default=0)),
                 ('servings', models.IntegerField()),
-                ('source', models.CharField(max_length=200)),
+                ('source', models.CharField(blank=True, max_length=200)),
                 ('owner', models.ForeignKey(related_name='recipes', to=settings.AUTH_USER_MODEL)),
             ],
         ),

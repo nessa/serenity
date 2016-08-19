@@ -13,6 +13,9 @@ def load_users_fixture(apps, schema_editor):
 
 def load_ingredients_fixture(apps, schema_editor):
     call_command('loaddata', 'ingredients_initial_data', app_label='recipes')
+    
+def load_recipes_fixture(apps, schema_editor):
+    call_command('loaddata', 'recipes_initial_data', app_label='recipes')
 
 class Migration(migrations.Migration):
 
@@ -24,4 +27,5 @@ class Migration(migrations.Migration):
         migrations.RunPython(load_groups_fixture),
         migrations.RunPython(load_users_fixture),
         migrations.RunPython(load_ingredients_fixture),
+        migrations.RunPython(load_recipes_fixture),
     ]
