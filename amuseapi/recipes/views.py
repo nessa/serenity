@@ -107,21 +107,57 @@ class RecipeFilter(filters.FilterSet):
         lookup_type='exact')
     difficulty = filters.CharFilter(name='difficulty',
         lookup_type='exact')
+
+    # Custom filter definitions
+    def filter_in_categories(queryset, value):
+        if not value:
+            return queryset
+
+        for v in value.split(','):
+            queryset = queryset.filter(categories__name=v)
+        
+        return queryset
+    
+    def filter_not_in_categories(queryset, value):
+        if not value:
+            return queryset
+    
+        queryset = queryset.exclude(categories__name__in=value.split(',')).distinct()
+        
+        return queryset
+    
+    def filter_with_ingredients(queryset, value):
+        if not value:
+            return queryset
+
+        for v in value.split(','):
+            queryset = queryset.filter(ingredients__name=v)
+        
+        return queryset
+    
+    def filter_without_ingredients(queryset, value):
+        if not value:
+            return queryset
+    
+        queryset = queryset.exclude(ingredients__name__in=value.split(',')).distinct()
+        
+        return queryset
     
     # Relationships
-    category = filters.CharFilter(name='categories__name',
-        lookup_type='contains')
-    ingredient = filters.CharFilter(name='ingredients__name',
-        lookup_type='contains')
+    category = filters.CharFilter(action=filter_in_categories)
+    exclude_category = filters.CharFilter(action=filter_not_in_categories)
+    ingredient = filters.CharFilter(action=filter_with_ingredients)
+    exclude_ingredient = filters.CharFilter(action=filter_without_ingredients)
     user = filters.CharFilter(name='owner__username',
         lookup_type='contains')
 
     class Meta:
         model = Recipe
         fields = ['title', 'created_before', 'created_after', 'updated_before',
-            'updated_after', 'servings', 'servings_bigger', 'servings_lower',
-            'average_rating', 'rating_bigger', 'rating_lower', 'language',
-            'type_of_dish', 'difficulty', 'category', 'ingredient', 'user']
+                  'updated_after', 'servings', 'servings_bigger', 'servings_lower',
+                  'average_rating', 'rating_bigger', 'rating_lower', 'language',
+                  'type_of_dish', 'difficulty', 'category', 'exclude_category',
+                  'ingredient', 'exclude_ingredient', 'user']
 
 
 
