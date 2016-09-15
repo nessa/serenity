@@ -1,0 +1,119 @@
+{
+    "title": "Beijing beef",
+    "language": "en",
+    "type_of_dish": "MAIN-DISH",
+    "difficulty": "LOW",
+    "cooking_time": 20,
+    "image": "http://www.lecremedelacrumb.com/wp-content/uploads/2016/02/beijing-beef-1w-680x1020.jpg",
+    "total_rating": 0,
+    "users_rating": 0,
+    "average_rating": 0.0,
+    "servings": 4,
+    "source": "http://www.lecremedelacrumb.com/2016/02/20-minute-beijing-beef.html",
+    "categories": [
+    ],
+    "ingredients": [
+        {
+            "sort_number": 1,
+            "quantity": 1.5,
+            "name": "flank steak",
+            "measurement_unit": "pound"
+        },
+        {
+            "sort_number": 2,
+            "quantity": 1,
+            "name": "red pepper",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 3,
+            "quantity": 2,
+            "name": "green pepper",
+            "measurement_unit": "1"
+        },
+        {
+            "sort_number": 4,
+            "quantity": 0.5,
+            "name": "onion",
+            "measurement_unit": "unit"
+        },
+        {
+            "sort_number": 5,
+            "quantity": 0.3,
+            "name": "water",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 6,
+            "quantity": 0.3,
+            "name": "sugar",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 7,
+            "quantity": 0.3,
+            "name": "ketchup",
+            "measurement_unit": "cup"
+        },
+        {
+            "sort_number": 8,
+            "quantity": 4,
+            "name": "rice vinegar",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 9,
+            "quantity": 0.5,
+            "name": "red pepper flakes",
+            "measurement_unit": "tsp"
+        },
+        {
+            "sort_number": 10,
+            "quantity": 1,
+            "name": "minced garlic",
+            "measurement_unit": "tsp"
+        },
+        {
+            "sort_number": 11,
+            "quantity": 2,
+            "name": "corn starch",
+            "measurement_unit": "tbsp"
+        },
+        {
+            "sort_number": 12,
+            "quantity": 0,
+            "name": "rice",
+            "measurement_unit": "unit"
+        }
+    ],
+    "directions": [
+    {
+            "sort_number": 1,
+            "description": "Add sliced steak to a large greased skillet and saute over medium heat 2 to 3 minutes til just browned.",
+            "image": "",
+            "video": "",
+            "time": 180
+        },
+        {
+            "sort_number": 2,
+            "description": "Add peppers and onions and saute 1 to 2 minutes longer.",
+            "image": "",
+            "video": "",
+            "time": 120
+        },
+        {
+            "sort_number": 3,
+            "description": "In a medium bowl whisk together water, sugar, ketchup, vinegar, red pepper flakes, and garlic. Add to pan with the steak and peppers and stir to coat. Cover and bring to a boil.",
+            "image": "",
+            "video": "",
+            "time": 0
+        },
+        {
+            "sort_number": 4,
+            "description": "In a small bowl stir together cold water and corn starch til dissolved. Add to pan and stir until thickened. Serve over cooked rice.",
+            "image": "",
+            "video": "",
+            "time": 0
+        }
+    ]
+}
