@@ -74,12 +74,23 @@
     Sistema operativo basado en el núcleo Linux
   \end{block}
   
-  \begin{itemize}
-  \item Popularidad
-  \item Interés personal (iOS descartado)
-  \item Biblioteca \textsc{Text To Speech} desarrollada por Google
-  \item Biblioteca \textsc{Speech Recognizer} desarrollada por Google
-  \end{itemize}
+
+  
+  \begin{minipage}[t]{.6\textwidth}
+    \vspace*{0.3cm}
+    \begin{itemize}
+    \item Popularidad
+    \item Interés personal (iOS descartado)
+    \item Biblioteca \textsc{Text To Speech}
+    \item Biblioteca \textsc{Speech Recognizer}
+    \end{itemize}
+  \end{minipage}%
+  \begin{minipage}[t]{.4\textwidth}    
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\textwidth]{./img/android-logo}
+    \end{figure}
+  \end{minipage}
 \end{frame}
 
 \begin{frame}{¿Por qué Django?}  
@@ -87,13 +98,22 @@
     Framework de desarrollo web basado en MVC
   \end{block}
   
-  \begin{itemize}
-  \item Python en desarrollo web
-  \item Popularidad
-  \item Robustez
-  \item Software libre
-  \item Django Rest Framework
-  \end{itemize}
+  \begin{minipage}[t]{.6\textwidth}
+    \vspace*{0.5cm}
+    \begin{itemize}
+    \item Python en desarrollo web
+    \item Popularidad
+    \item Robustez
+    \item Software libre
+    \item Django Rest Framework
+    \end{itemize}
+  \end{minipage}%
+  \begin{minipage}[t]{.4\textwidth}    
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\textwidth]{./img/python-y-django}
+    \end{figure}
+  \end{minipage}
 \end{frame}
 
 
@@ -128,31 +148,31 @@
 
     \begin{table}[hbtp]
       \centering
-      \begin{tabular}{|l|c|c|}
+      \begin{tabular}{|l|r|r|}
         \hline
         \textbf{Iteración} & \textbf{Tiempo estimado} & \textbf{Tiempo real} \\
         \hline
-        Planificación & 56 horas & 77 horas \\
+        Planificación & 56 horas & \textcolor{red}{77 horas} \\
         \hline
-        Aprendizaje & 224 horas & 242 horas \\
+        Aprendizaje & 224 horas & \textcolor{red}{242 horas} \\
         \hline
-        Diseño visual & 56 horas & 22 horas \\
+        Diseño visual & 56 horas & \textcolor{verde}{22 horas} \\
         \hline
-        Desarrollo API & 128 horas & 110 horas \\
+        Desarrollo API & 128 horas & \textcolor{verde}{110 horas} \\
         \hline
-        Desarrollo app & 128 horas & 132 horas \\
+        Desarrollo app & 128 horas & \textcolor{red}{132 horas} \\
         \hline
-        Ampliación API & 168 horas & 88 horas \\
+        Ampliación API & 168 horas & \textcolor{verde}{88 horas} \\
         \hline
-        Ampliación app & 216 horas & 222 horas \\
+        Ampliación app & 216 horas & \textcolor{red}{222 horas} \\
         \hline
-        Despliegue & 32 horas & 26 horas \\
+        Despliegue & 32 horas & \textcolor{verde}{26 horas} \\
         \hline
-        Resolución de \textit{bugs} & 160 horas & 152 horas \\
+        Resolución de \textit{bugs} & 160 horas & \textcolor{verde}{152 horas} \\
         \hline
-        Documentación & 80 horas & 65 horas \\
+        Documentación & 80 horas & \textcolor{verde}{65 horas} \\
         \hline
-        \textbf{Total} & 1249 horas & 1136 horas \\
+        \textbf{Total} & 1249 horas & \textcolor{verde}{1136 horas} \\
         \hline
       \end{tabular}
       \label{tab:estimacion_tiempo}
@@ -212,8 +232,8 @@
   \begin{itemize}
   \item Funcionalidad:
     \begin{itemize}
-    \item Crear y editar de recetas a nivel local
-    \item  Compartir recetas
+    \item Crear y editar recetas a nivel local
+    \item Compartir recetas
     \item Lectura automática y captura de órdenes
     \item Multiidioma
     \item Categorización y filtrado
@@ -276,7 +296,7 @@
     \hspace{0.05\linewidth}
     \begin{minipage}{0.4\linewidth}
       \begin{figure}[H]
-        \includegraphics[width=\linewidth]{img/captura_13}
+        \includegraphics[width=\linewidth]{img/captura_11}
       \end{figure}
     \end{minipage}
   \end{minipage}
@@ -286,24 +306,35 @@
 \subsection{Desarrollo}
 
 \begin{frame}{Tecnologías utilizadas}
-  \begin{itemize}
-  \item API:
+
+  \begin{minipage}[t]{.6\textwidth}
     \begin{itemize}
-    \item Python, Django, Django Rest Framework
-    \item nginx, Gunicorn, Supervisor
-    \item PostgreSQL
+    \item API:
+      \begin{itemize}
+      \item Python, Django, Django Rest Framework
+      \item nginx, Gunicorn, Supervisor
+      \item PostgreSQL
+      \end{itemize}
+    \item Aplicación móvil:
+      \begin{itemize}
+      \item SDK oficial
+      \item Text To Speech
+      \item Speech Recognizer
+      \item Picasso, Retrofit
+      \end{itemize}
+    \item Otras:
+      \begin{itemize}
+      \item GNU Emacs, Android Studio
+      \item Vagrant, Ansible
+      \end{itemize}    
     \end{itemize}
-  \item Aplicación móvil:
-    \begin{itemize}
-    \item SDK oficial
-    \item Text To Speech, Speech Recognizer
-    \item Picasso, Retrofit
-    \end{itemize}
-  \item Otras:
-    \begin{itemize}
-    \item GNU Emacs, Android Studio, Vagrant,...
-    \end{itemize}    
-  \end{itemize}
+  \end{minipage}%
+  \begin{minipage}[t]{.4\textwidth}    
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=\textwidth]{./img/nube-tecnologias}
+    \end{figure}
+  \end{minipage}
 \end{frame}
 
 
@@ -352,12 +383,6 @@ select * where{
 \end{frame}
 
 
-\begin{frame}{Implementación: Captura de órdenes}
-
-  Flujo de speech recognizer: imagen
-  
-\end{frame}
-
 \begin{frame}{Pruebas de software}
 
   \begin{block}{Entorno de testing}
@@ -384,6 +409,8 @@ select * where{
 %% Conclusiones
 
 \section{Conclusiones}
+
+\subsection{Conclusiones}
 
 \begin{frame}{Objetivos cumplidos}
   \begin{enumerate}
@@ -425,20 +452,6 @@ select * where{
 \end{frame}
 
 
-\begin{frame}{Bibliografía}
-
-  \begin{thebibliography}{4}
-  \bibitem{man-linux} \textit{Marko Gargenta},
-    \newblock \textsc{Learning Android\\Building Applications for the Android
-      Market} O'Reilly Media 2011
-  \bibitem{python-admin} \textit{Norman Peitek \& Marcus Pöhls},
-    \newblock \textsc{Picasso: Easy Image Loading on Android} Leanpub
-  \bibitem{guia-linux} \textit{Norman Peitek \& Marcus Pöhls},
-    \newblock \textsc{Retrofit: Love working with APIs on Android} Leanpub
-  \end{thebibliography}
-\end{frame}
-
-
 \begin{frame}{Demostración}
 
   \begin{center}
@@ -452,7 +465,8 @@ select * where{
   \begin{center}
     \Large Gracias por su atención\\
     \vspace*{1cm}
-    \Huge \textcolor{naranja}{¿Preguntas?}
+    \large \url{https://github.com/nessa/serenity}\\
+    \large \url{https://github.com/nessa/serenity-app}
   \end{center}
 \end{frame}  
 
