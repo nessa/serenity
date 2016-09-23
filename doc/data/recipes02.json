@@ -29,7 +29,7 @@
             "sort_number": 3,
             "quantity": 2,
             "name": "green pepper",
-            "measurement_unit": "1"
+            "measurement_unit": "unit"
         },
         {
             "sort_number": 4,
